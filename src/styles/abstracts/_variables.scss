@@ -1,0 +1,215 @@
+// $default: calc(14px + (16 - 14) * ((100vw - 400px) / (1600 - 400)));
+$family: (
+	primary: "'Judson', serif",
+	second: "'Open Sans', sans-serif",
+);
+
+$color: (
+	main: #004A8F, // title, màu nền chính
+	mainOverlay: #0055A5,
+
+	mainBg: #fff,
+	mainBgOverlay: rgba(#fff, .5),
+
+
+
+	base: #707070, // text
+	base-2:#BCBCBC, // text
+
+	baseBold: #848484,
+	baseBlur: #C4C4C4,
+
+	breadcrumb: #848484,
+	breadcrumbActive: #ED1C24,
+
+	dateTime: #C4C4C4,
+
+	navigation: #F8F8F8,
+
+
+
+	textInput: #000,
+	subInput: #BCBCBC,
+
+	underline: #ED1C24, // gạch chân
+
+	textShadow: rgba(#BCBCBC, .3), // Đoạn text lớn đằng sau title
+
+	boxOverlayActive: rgba(#000, .7),
+	boxOverlay: rgba(#000, .3),
+
+	boxLightOverlay: rgba(#FFFFFF, .95),
+
+	boxVideoOverlay: rgba(#707070, .7),
+
+
+
+	iconMain: #004A8F,
+	iconMainBgActive: #EEEEEE,
+
+
+	buttonSwiper: #EEEEEE,
+	
+	bulletBg: #C4C4C4,
+	bulletText: #C4C4C4,
+	bulletTextActive: #004A8F,
+	bulletBtn: #707070,
+
+);
+
+$letterSpacing:(
+	ls20: (
+		default: 20px,
+
+		// dùng các key của $media
+		ps: 10px,
+	),
+	ls18: (
+		default: 18px,
+
+		// dùng các key của $media
+		ps: 10px,
+	),
+);
+
+
+// line height dùng số không dùng pixel nha
+$lineHeight:(
+	lh30: (
+		default: 1.4,
+
+		// dùng các key của $media
+		ps: 1.2,
+	)
+);
+
+// dùng rem (1 rem = 10px)
+// Cách sử dụng: @include size(s12); --> sử dụng biến s12
+// ----> tương đương với font-size: 1.2rem;
+$sizes:(
+	s4: .4rem,
+	s8: .8rem,
+	s12: 1.2rem,
+
+	// header top, LINK MORE
+	s15: 1.5rem,
+
+	s16: 1.6rem,
+
+	// BUTTON BOOK
+	s17: 1.7rem,
+
+	// header navigation, INHERIT, TEXT, READMORE
+	s18: 1.8rem,
+
+	// header top Đặt phòng
+	s21: 2.1rem,
+
+	s24: 2.4rem,
+	
+	// SUB TITLE
+	s26: 2.6rem,
+
+
+	s36: 3.6rem,
+
+	// banner Resort
+	s40: 4rem,
+	
+	// banner WelcomeTo, TITLE 2
+	s41: 4.1rem,
+
+	s42: 4.2rem,
+
+	// TITLE
+	s51: 5.1rem,
+
+	// banner Title primary
+	s73: 7.3rem, // 73px in 1920px device
+
+	// TITLE SHADOW
+	s251: 25.1rem,
+	test: 100rem,
+);
+
+// Cách sử dụng: map-get($media, ps)
+$media: (
+	// personal computer
+	px: 1920px,
+	pl: 1680px,
+	pm: 1440px,
+	ps: 1336px,
+	
+	// tablet
+	tx: 1280px,
+	tl: 1024px,
+	tm: 900px,
+	ts: 768px,
+
+	// mobile
+	mx: 640px,
+	ml: 540px,
+	mm: 480px,
+	ms: 384px,
+
+	// mobile small
+	sx: 360px,
+	sl: 320px,
+);
+
+// Cách sử dụng: Không tùy chỉnh trong đây (phần này mặc định)
+$container-max-widths: (
+	default: 1640px,
+	pl: 1400px, 
+	pm: 1200px, 
+	tx: 960px,
+
+	// về talet thì sẽ width = 96%;
+);
+
+// Cách sử dụng: @include block(banner, margin, 20px); --> sử dụng biến s12
+// tham số 1: tên key trong block
+// tham số 2: thuộc tính cần gán
+// tham số 3: (có thể bỏ qua) còn nếu có thì sẽ là 
+//				giá trị trái phải như của margin or padding
+// ----> tương đương với margin: 1080px 20px;
+$block: (
+	header: (
+		default: 183px,
+		ps: 120px,
+		tm: 100px,
+	),
+	banner: (
+		default: 1080px,
+		pl: 960px,
+		ps: 320px,
+	),
+
+	boxIndex: (
+		default: 1080px,
+		pl: 960px,
+		ps: 320px,
+		tx: 100px,
+	),
+);
+
+// Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
+// tham số 1: tên key trong block
+// tham số 2: thuộc tính cần gán
+// tham số 3: (có thể bỏ qua) còn nếu có thì sẽ là 
+//				giá trị trái phải như của margin or padding
+// ----> tương đương với margin: 1080px 20px;
+// y như block
+// chú ý khi khoảng cách giống nhau nhưng media khác nhau thì có thể thêm đằng sau là -2 -3 (loại 2 loại 3)
+$space: (
+	s134: (
+		default: 134px,
+		ps: 120px,
+		tm: 100px,
+	),
+	s134-2: (
+		default: 134px,
+		ps: 121px,
+		tl: 20px,
+	)
+);

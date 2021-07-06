@@ -1,0 +1,115 @@
+.banner{
+  max-width: 1920px;
+  margin: auto;
+  
+  // @include heightBanner;
+
+  position: relative;
+  display: block;
+
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+
+  // background-color: map-get($color, bg-light);
+
+  &--overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    // background-color: map-get($color, primary);
+    clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+  }
+
+  &-img{
+    position: absolute;
+    // @include pathBanner(top);
+    // @include pathBanner(left);
+    // @include pathBanner(right);
+    // @include pathBanner(bottom);
+    // top: map-get($block, banner-path);
+    // left: map-get($block, banner-path);
+    // right: map-get($block, banner-path);
+    // bottom: map-get($block, banner-path);
+
+    img{
+      object-position: 0 -42px;
+    }
+
+    @media (max-width: map-get($media, ps)){
+      img{
+        object-position: center;
+      }
+    }
+  }
+
+  &-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    // width: 65%;
+    text-align: center;
+
+    padding: 72px 264px;
+
+    overflow: hidden;
+
+    &__title{
+      &--size{
+        // @include sizeBannerTitle;
+        // @include bold;
+        padding: 0 64px;
+        line-height: 80px;
+      }
+    }
+    &__desc{
+      &--size{
+        margin-top: 24px;
+        // @include sizeBannerText;
+        // @include lineText;
+  
+        @media (max-width: map-get($media, mm)){
+          // display: none;
+        }
+      }
+    }
+
+    @media (max-width: map-get($media, pm)){
+      padding: 64px 169px;
+    }
+    @media (max-width: map-get($media, ps)){
+      padding: 64px 96px;
+    }
+    @media (max-width: map-get($media, tl)){
+      transform: none;
+      // @include pathBanner(top);
+      // @include pathBanner(left);
+      // @include pathBanner(right);
+      // @include pathBanner(bottom);
+      width: auto;
+      height: auto;
+
+      padding: 0 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: map-get($media, ml)){
+      padding: 0 12px;
+
+      &__title{
+        &--size{
+          padding: 0;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,202 @@
+@mixin family--primary {
+  font-family: map-get($family, primary), sans-serif;
+}
+
+@mixin p-line-clamp ($i) {
+  display: -webkit-box;
+  -webkit-line-clamp: #{$i};
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin uppercase{
+  text-transform: uppercase;
+}
+@mixin italic{
+  font-style: italic;
+}
+
+////////////////////////////////////////////////
+//////////// FONT WEIGHT //////////////////////
+
+// 100 Thin
+// 200 Extra Light
+// 300 Light
+// 400 Normal
+// 500 Medium
+// 600 Semi Bold
+// 700 Bold
+// 800 Extra Bold
+// 900 Ultra Bold
+
+@mixin thin{
+  font-weight: 100;
+}
+@mixin extra-light{
+  font-weight: 200;
+}
+@mixin light{
+  font-weight: 300;
+}
+@mixin regular{
+  font-weight: 400;
+}
+@mixin normal{
+  font-weight: 400;
+}
+@mixin medium{
+  font-weight: 500;
+}
+@mixin semi-bold{
+  font-weight: 600;
+}
+@mixin bold{
+  font-weight: 700;
+}
+@mixin extra-bold{
+  font-weight: 800;
+}
+@mixin ultra-bold{
+  font-weight: 900;
+}
+
+//////////// FONT WEIGHT ///////////////////////
+////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////
+//////////// FONT SIZE /////////////////////////
+@each $size, $keyVal in $sizes{
+  .size-#{$size}{
+    font-size: $keyVal;
+  }
+}
+
+@mixin size($size)
+{
+  font-size: map-get($sizes, #{$size});
+}
+
+//////////// FONT SIZE ////////////////////////
+////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////
+//////////// LETTER SPACING ////////////////////
+
+@mixin letterSpacing($key){
+  @each $idx, $val in map-get($letterSpacing, #{$key}){
+    @if $idx == default{
+      letter-spacing: $val;
+    }
+    @else{
+      @media (max-width: map-get($media, $idx)){
+        letter-spacing: $val;
+      }
+    }
+  }
+}
+
+//////////// LETTER SPACING ////////////////////
+////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////
+//////////// LINE HEIGHT ////////////////////
+
+@mixin letterSpacing($key){
+  @each $idx, $val in map-get($lineHeight, #{$key}){
+    @if $idx == default{
+      letter-spacing: $val;
+    }
+    @else{
+      @media (max-width: map-get($media, $idx)){
+        letter-spacing: $val;
+      }
+    }
+  }
+}
+
+//////////// LINE HEIGHT ////////////////////
+////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////
+///////////////// BLOCK ////////////////////////
+
+@mixin block($key, $name, $side: -1){
+  @each $idx, $val in map-get($block, #{$key}){
+    @if $side == -1{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+///////////////// BLOCK ////////////////////////
+////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////
+///////////////// SPACE ////////////////////////
+
+@mixin space($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($space, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+///////////////// SPACE ////////////////////////
+////////////////////////////////////////////////
+
+
+
+// @mixin blockPath($name){
+// 	#{$name}: map-get($block, path);
+
+// 	@each $key, $value in $media{
+// 		@if map-get($block, 'path-#{$key}'){
+// 			@media (max-width: $value) {
+// 					#{$name}: map-get($block, 'path-#{$key}');
+// 			}
+// 		}
+// 	}
+// }

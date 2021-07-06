@@ -1,0 +1,8 @@
+if breadcrumbs
+  if breadcrumbs.length
+    section#breadcrumb
+      .breadcrumb
+        ul.breadcrumb-list.container
+          each bb in breadcrumbs
+            li.breadcrumb-item
+              a.breadcrumb-item__link.uppercase(href="#")= bb
