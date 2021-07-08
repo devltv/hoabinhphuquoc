@@ -1,16 +1,15 @@
-- var attributes = {};
-if imgBanner
+if banner
+  - var attributes = {};
   - attributes.src = imgBanner;
-if styleBanner
   - attributes.style = styleBanner;
 
-section#banner
-  .banner
-    .banner--overlay
-    .banner-img 
-      img(src="#{imgBanner}" alt="banner")&attributes(attributes)
-    .banner-content.overlay.container
-      .banner-content__title
-        h2.banner-content__title--size.uppercase #{titleBanner} 
-      .banner-content__desc
-        p.banner-content__desc--size #{textBanner}
+  section#banner
+    .banner
+      .banner--overlay
+      .banner-img 
+        img(src="#{imgBanner}" alt="banner")&attributes(attributes)
+      .banner-content.overlay.container
+        .banner-content__title
+          h2.banner-content__title--size.uppercase #{titleBanner} 
+        .banner-content__desc
+          p.banner-content__desc--size #{textBanner}

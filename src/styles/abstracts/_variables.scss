@@ -1,132 +1,96 @@
 // $default: calc(14px + (16 - 14) * ((100vw - 400px) / (1600 - 400)));
 $family: (
-	primary: "'Judson', serif",
-	second: "'Open Sans', sans-serif",
+	primary: "Judson",
+	second: "Open Sans",
 );
 
 $color: (
-	main: #004A8F, // title, màu nền chính
-	mainOverlay: #0055A5,
-
+	main: #004a8f,
+	// title, màu nền chính
+	mainOverlay: #0055a5,
 	mainBg: #fff,
-	mainBgOverlay: rgba(#fff, .5),
-
-
-
-	base: #707070, // text
-	base-2:#BCBCBC, // text
-
+	mainBgOverlay: rgba(#fff, 0.5),
+	base: #707070,
+	// text
+	base-2: #bcbcbc,
+	// text
 	baseBold: #848484,
-	baseBlur: #C4C4C4,
-
+	baseBlur: #c4c4c4,
 	breadcrumb: #848484,
-	breadcrumbActive: #ED1C24,
-
-	dateTime: #C4C4C4,
-
-	navigation: #F8F8F8,
-
-
-
+	breadcrumbActive: #ed1c24,
+	dateTime: #c4c4c4,
+	navigation: #f8f8f8,
 	textInput: #000,
-	subInput: #BCBCBC,
-
-	underline: #ED1C24, // gạch chân
-
-	textShadow: rgba(#BCBCBC, .3), // Đoạn text lớn đằng sau title
-
-	boxOverlayActive: rgba(#000, .7),
-	boxOverlay: rgba(#000, .3),
-
-	boxLightOverlay: rgba(#FFFFFF, .95),
-
-	boxVideoOverlay: rgba(#707070, .7),
-
-
-
-	iconMain: #004A8F,
-	iconMainBgActive: #EEEEEE,
-
-
-	buttonSwiper: #EEEEEE,
-	
-	bulletBg: #C4C4C4,
-	bulletText: #C4C4C4,
-	bulletTextActive: #004A8F,
+	subInput: #bcbcbc,
+	underline: #ed1c24,
+	// gạch chân
+	textShadow: rgba(#bcbcbc, 0.3),
+	// Đoạn text lớn đằng sau title
+	boxOverlayActive: rgba(#000, 0.7),
+	boxOverlay: rgba(#000, 0.3),
+	boxLightOverlay: rgba(#ffffff, 0.95),
+	boxVideoOverlay: rgba(#707070, 0.7),
+	iconMain: #004a8f,
+	iconMainBgActive: #eeeeee,
+	buttonSwiper: #eeeeee,
+	bulletBg: #c4c4c4,
+	bulletText: #c4c4c4,
+	bulletTextActive: #004a8f,
 	bulletBtn: #707070,
-
 );
 
-$letterSpacing:(
+$letterSpacing: (
 	ls20: (
 		default: 20px,
-
 		// dùng các key của $media
 		ps: 10px,
 	),
 	ls18: (
 		default: 18px,
-
 		// dùng các key của $media
 		ps: 10px,
 	),
 );
 
-
 // line height dùng số không dùng pixel nha
-$lineHeight:(
+$lineHeight: (
 	lh30: (
 		default: 1.4,
-
 		// dùng các key của $media
 		ps: 1.2,
-	)
+	),
 );
 
 // dùng rem (1 rem = 10px)
 // Cách sử dụng: @include size(s12); --> sử dụng biến s12
 // ----> tương đương với font-size: 1.2rem;
-$sizes:(
-	s4: .4rem,
-	s8: .8rem,
+$sizes: (
+	s4: 0.4rem,
+	s8: 0.8rem,
 	s12: 1.2rem,
-
 	// header top, LINK MORE
 	s15: 1.5rem,
-
 	s16: 1.6rem,
-
 	// BUTTON BOOK
 	s17: 1.7rem,
-
 	// header navigation, INHERIT, TEXT, READMORE
 	s18: 1.8rem,
-
 	// header top Đặt phòng
 	s21: 2.1rem,
-
 	s24: 2.4rem,
-	
 	// SUB TITLE
 	s26: 2.6rem,
-
-
 	s36: 3.6rem,
-
 	// banner Resort
 	s40: 4rem,
-	
 	// banner WelcomeTo, TITLE 2
 	s41: 4.1rem,
-
 	s42: 4.2rem,
-
 	// TITLE
 	s51: 5.1rem,
-
 	// banner Title primary
-	s73: 7.3rem, // 73px in 1920px device
-
+	s73: 7.3rem,
+	// 73px in 1920px device
 	// TITLE SHADOW
 	s251: 25.1rem,
 	test: 100rem,
@@ -139,38 +103,34 @@ $media: (
 	pl: 1680px,
 	pm: 1440px,
 	ps: 1336px,
-	
 	// tablet
 	tx: 1280px,
 	tl: 1024px,
 	tm: 900px,
 	ts: 768px,
-
 	// mobile
 	mx: 640px,
 	ml: 540px,
 	mm: 480px,
 	ms: 384px,
-
 	// mobile small
 	sx: 360px,
-	sl: 320px,
+	sl: 320px
 );
 
 // Cách sử dụng: Không tùy chỉnh trong đây (phần này mặc định)
 $container-max-widths: (
 	default: 1640px,
-	pl: 1400px, 
-	pm: 1200px, 
+	pl: 1400px,
+	pm: 1200px,
 	tx: 960px,
-
 	// về talet thì sẽ width = 96%;
 );
 
 // Cách sử dụng: @include block(banner, margin, 20px); --> sử dụng biến s12
 // tham số 1: tên key trong block
 // tham số 2: thuộc tính cần gán
-// tham số 3: (có thể bỏ qua) còn nếu có thì sẽ là 
+// tham số 3: (có thể bỏ qua) còn nếu có thì sẽ là
 //				giá trị trái phải như của margin or padding
 // ----> tương đương với margin: 1080px 20px;
 $block: (
@@ -180,28 +140,48 @@ $block: (
 		tm: 100px,
 	),
 	banner: (
-		default: 1080px,
-		pl: 960px,
-		ps: 320px,
+		default: 548px,
 	),
-
 	boxIndex: (
 		default: 1080px,
 		pl: 960px,
 		ps: 320px,
 		tx: 100px,
 	),
+	tourContentService: (
+		default: 624px,
+		ps: 500px,
+		tx: 200px,
+	)
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
 // tham số 1: tên key trong block
 // tham số 2: thuộc tính cần gán
-// tham số 3: (có thể bỏ qua) còn nếu có thì sẽ là 
+// tham số 3: (có thể bỏ qua) còn nếu có thì sẽ là
 //				giá trị trái phải như của margin or padding
 // ----> tương đương với margin: 1080px 20px;
 // y như block
 // chú ý khi khoảng cách giống nhau nhưng media khác nhau thì có thể thêm đằng sau là -2 -3 (loại 2 loại 3)
 $space: (
+	s17-breadcrumb: (
+		default: 17px,
+		ps: 16px,
+		tx: 12px,
+		mx: 9px,
+	),
+	s34: (
+		default: 34px,
+		ps: 32px,
+		tx: 24px,
+		mx: 18px,
+	),
+	s48: (
+		default: 48px,
+		ps: 42px,
+		tx: 38px,
+		mx: 32px,
+	),
 	s134: (
 		default: 134px,
 		ps: 120px,
@@ -211,5 +191,9 @@ $space: (
 		default: 134px,
 		ps: 121px,
 		tl: 20px,
-	)
+	),
+	s132: (
+		default: 132px,
+		ps: 110px,
+	),
 );

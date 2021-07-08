@@ -1,0 +1,23 @@
+.service-1{
+  .tour-content{
+    &--container{
+      @extend .margin-auto;
+      
+      &>*{
+        // height: 624px;
+        // @media (max-width: 1366px){
+        //   height: 500px;
+        // }
+        @include block(tourContentService, height);
+        @include size(s73);
+
+      }
+    }
+
+    &-item{
+      position: relative;
+
+      
+    }
+  }
+}

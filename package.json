@@ -72,9 +72,10 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
-		"@fancyapps/fancybox": "^3.5.7",
-		"axios": "^0.19.2",
-		"swiper": "^5.4.5"
+		"@fancyapps/ui": "^4.0.0-alpha.4",
+		"axios": "^0.21.1",
+		"gsap": "^3.7.0",
+		"swiper": "^6.7.5"
 	},
 	"prettier": {
 		"useTabs": true,

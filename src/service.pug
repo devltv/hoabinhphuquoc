@@ -1,0 +1,22 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Page | Service';
+	//- - let bodyClass = 'index-page';
+	- let banner = false;
+
+
+	- let bannerSub = true;
+	- let titleBannerSub = "Trang chủ";
+	- let imgBannerSub = "./assets/images/page/service/banner.png";
+	- let breadcrumbBanner = [["Trang chủ", ""], ["Trang chủ", "active"]];
+	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
+
+//- block loading
+//- 	include _templates/_layout/_loading
+//- block banner,breadcrumb
+block main
+	div(id="servicePage")
+		include _templates/service/s-1.pug
+
+block scripts

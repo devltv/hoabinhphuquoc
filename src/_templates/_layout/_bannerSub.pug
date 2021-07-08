@@ -1,0 +1,39 @@
+if bannerSub
+  - var attributes = {};
+  - attributes.src = imgBannerSub;
+
+  section#bannerSub
+    .banner-sub
+      .overlay-banner
+      .banner-sub__img
+        img(alt="banner sub")&attributes(attributes)
+      .banner-sub-content.container
+        .banner-sub-content__title
+          h2 #{titleBannerSub} 
+        .banner-sub-content__bb
+          ul.bb
+            each bb, idx in breadcrumbBanner
+              if idx == 0
+                if bb[1] == "active"
+                  li.bb-item.active
+                    a.bb-item__link(href="#")= bb[0]
+                else 
+                  li.bb-item
+                    a.bb-item__link(href="#")= bb[0]
+              else
+                if bb[1] == "active"
+                  li.bb-item.active
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7.23" height="13.247" viewBox="0 0 7.23 13.247">
+                      <g id="Group_4932" data-name="Group 4932" transform="translate(-1707.523 -2418.824)">
+                        <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      </g>
+                    </svg>
+                    a.bb-item__link(href="#")= bb[0]
+                else 
+                  li.bb-item
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7.23" height="13.247" viewBox="0 0 7.23 13.247">
+                      <g id="Group_4932" data-name="Group 4932" transform="translate(-1707.523 -2418.824)">
+                        <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      </g>
+                    </svg>
+                    a.bb-item__link(href="#")= bb[0]

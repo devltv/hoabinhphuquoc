@@ -1,11 +1,11 @@
-img{
-  // width: 100%;
-  // @include block(boxIndex, padding, 12px);
-  width: 100%;
-  @include block(boxIndex, height);
-  // padding: 1080px;
-  // height: map-get(map-get($block, banner), pl);
-  @media(max-width: map-get($media, tx)){
+// img{
+//   // width: 100%;
+//   // @include block(boxIndex, padding, 12px);
+//   width: 100%;
+//   @include block(boxIndex, height);
+//   // padding: 1080px;
+//   // height: map-get(map-get($block, banner), pl);
+//   @media(max-width: map-get($media, tx)){
     
-  }
-}
+//   }
+// }

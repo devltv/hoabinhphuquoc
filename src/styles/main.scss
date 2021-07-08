@@ -15,6 +15,7 @@
 @import "components/forms";
 @import "components/banner";
 @import "components/breadcrumb";
+@import "components/overlay";
 
 
 // layout
@@ -23,3 +24,4 @@
 
 // page
 @import "pages/index/style";
+@import "pages/service/style";

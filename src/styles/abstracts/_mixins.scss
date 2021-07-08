@@ -1,6 +1,9 @@
 @mixin family--primary {
   font-family: map-get($family, primary), sans-serif;
 }
+@mixin family--second {
+  font-family: map-get($family, second), serif;
+}
 
 @mixin p-line-clamp ($i) {
   display: -webkit-box;

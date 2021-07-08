@@ -1,3 +1,6 @@
+////////////////////////////////////////////////////////////
+//////////////// BANNER ////////////////////////////////////
+
 .banner{
   max-width: 1920px;
   margin: auto;
@@ -113,3 +116,108 @@
 
   }
 }
+
+//////////////// BANNER ///////////////////////////////
+////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////
+//////////////// SUB BANNER /////////////////////////////
+
+.banner-sub{
+  position: relative;
+  @include block(banner, height);
+
+  &__img{
+    width: 100%;
+    height: 100%;
+
+    img{
+      object-position: bottom;
+    }
+  }
+
+  &-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    &__title{
+      &>*{
+        @include family--primary;
+        @include bold;
+        color: map-get($color, mainBg);
+        @include size(s73);
+      }
+    }
+
+    &__bb{
+      @include space(s48, margin-top);
+
+      .bb{
+        list-style-type: none;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &>*{
+          &:not(:first-child){
+            // margin-left: 36px;
+            position: relative;
+            // padding-left: 24px;
+            @include space(s34, padding-left);
+
+            svg{
+              width: map-get($sizes, s8);
+              position: absolute;
+              top: 50%;
+              @include space(s17-breadcrumb, left);
+              transform: translate(-50%,-50%);
+
+              path{
+                stroke: map-get($color, mainBg);
+              }
+            }
+          }
+        }
+
+        &-item{
+          &>*{
+            color: map-get($color, mainBg);
+            @include size(s18);
+          }
+
+          &__link{
+            display: block;
+            padding-top: .6rem;
+            padding-bottom: .6rem;
+          }
+
+          &.active{
+            .bb-item__link{
+              position: relative;
+
+              &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: map-get($color, breadcrumbActive);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////// SUB BANNER /////////////////////////////
+////////////////////////////////////////////////////////////
