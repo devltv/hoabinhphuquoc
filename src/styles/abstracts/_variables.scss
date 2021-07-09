@@ -150,8 +150,14 @@ $block: (
 	),
 	tourContentService: (
 		default: 624px,
-		ps: 500px,
-		tx: 200px,
+		pl: 600px,
+		pm: 520px,
+		ps: 480px,
+		tx: 420px,
+		tl: 420px,
+	),
+	tourIconService:(
+		default: 62px,
 	)
 );
 
@@ -169,6 +175,15 @@ $space: (
 		ps: 16px,
 		tx: 12px,
 		mx: 9px,
+	),
+	s24: (
+		default: 24px,
+		pm: 22px,
+		tx: 18px,
+		ts: 16px,
+	),
+	s28: (
+		default: 28px,
 	),
 	s34: (
 		default: 34px,
