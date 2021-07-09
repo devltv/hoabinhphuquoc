@@ -10,6 +10,7 @@ $color: (
 	mainOverlay: #0055a5,
 	mainBg: #fff,
 	mainBgOverlay: rgba(#fff, 0.5),
+	// bgDark: rgba(#000,.15),
 	base: #707070,
 	// text
 	base-2: #bcbcbc,
@@ -32,7 +33,10 @@ $color: (
 	boxVideoOverlay: rgba(#707070, 0.7),
 	iconMain: #004a8f,
 	iconMainBgActive: #eeeeee,
+
 	buttonSwiper: #eeeeee,
+	buttonSwiper-2: #F8F8F8,
+
 	bulletBg: #c4c4c4,
 	bulletText: #c4c4c4,
 	bulletTextActive: #004a8f,
