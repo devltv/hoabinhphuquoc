@@ -3,8 +3,8 @@
   &__title {
     text-align: center;
     
-    @include space(s42, margin-top);
-    @include space(s42, margin-bottom);
+    @include space(s42, padding-top);
+    @include space(s42, padding-bottom);
     &--size{
     @include size(s51);
     @include family--primary;
