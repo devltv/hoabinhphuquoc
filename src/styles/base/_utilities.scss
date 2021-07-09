@@ -8,7 +8,22 @@
   margin: auto;
 }
 
+.btn-link--booking{
+  display: inline-block;
+  background: map-get($color, main );
+  padding: 8px 16px;
+  color: white;
+  font-weight: bold;
+  @include size(s17);
 
+}
+.btn-link--more{
+  display: inline-block;
+  color: map-get($color, main );
+  padding: 8px 0px;
+  @include size(s15);
+  
+}
 // [hidden],
 // .hidden,
 // .d-none {
