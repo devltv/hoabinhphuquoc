@@ -4,7 +4,7 @@
     text-align: center;
     
     @include space(s42, padding-top);
-    @include space(s42, padding-bottom);
+    @include space(s42, paddings-bottom);
     &--size{
     @include size(s51);
     @include family--primary;
