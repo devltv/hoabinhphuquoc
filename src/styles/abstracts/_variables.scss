@@ -10,6 +10,7 @@ $color: (
 	mainOverlay: #0055a5,
 	mainBg: #fff,
 	mainBgOverlay: rgba(#fff, 0.5),
+	// bgDark: rgba(#000,.15),
 	base: #707070,
 	// text
 	base-2: #bcbcbc,
@@ -32,7 +33,10 @@ $color: (
 	boxVideoOverlay: rgba(#707070, 0.7),
 	iconMain: #004a8f,
 	iconMainBgActive: #eeeeee,
+
 	buttonSwiper: #eeeeee,
+	buttonSwiper-2: #F8F8F8,
+
 	bulletBg: #c4c4c4,
 	bulletText: #c4c4c4,
 	bulletTextActive: #004a8f,
@@ -151,8 +155,14 @@ $block: (
 	),
 	tourContentService: (
 		default: 624px,
-		ps: 500px,
-		tx: 200px,
+		pl: 600px,
+		pm: 520px,
+		ps: 480px,
+		tx: 420px,
+		tl: 420px,
+	),
+	tourIconService:(
+		default: 62px,
 	)
 
 );
@@ -177,6 +187,15 @@ $space: (
 	),
 	s17: (
 		default: 17px,
+	),
+	s24: (
+		default: 24px,
+		pm: 22px,
+		tx: 18px,
+		ts: 16px,
+	),
+	s28: (
+		default: 28px,
 	),
 	s34: (
 		default: 34px,
@@ -207,8 +226,8 @@ $space: (
 		default: 42px,
 		
 	),
+	
 	s50: (
 		default: 50px,
-		
 	),
 );

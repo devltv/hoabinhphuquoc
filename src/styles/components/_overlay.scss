@@ -7,3 +7,26 @@
   background: radial-gradient(rgba(#000, .7), rgba(#000, 0));
   opacity: 0.5;
 }
+
+.overlay-restroom{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, .15);
+}
+
+.path-restroom{
+  position: absolute;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // background-image: url('../assets/icons/Path.png');
+  }
+}
