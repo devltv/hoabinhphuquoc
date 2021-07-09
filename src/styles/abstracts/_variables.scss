@@ -59,6 +59,7 @@ $lineHeight: (
 		// dùng các key của $media
 		ps: 1.2,
 	),
+	
 );
 
 // dùng rem (1 rem = 10px)
@@ -159,6 +160,7 @@ $block: (
 	tourIconService:(
 		default: 62px,
 	)
+
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
@@ -170,11 +172,17 @@ $block: (
 // y như block
 // chú ý khi khoảng cách giống nhau nhưng media khác nhau thì có thể thêm đằng sau là -2 -3 (loại 2 loại 3)
 $space: (
+	s8:(
+		default: 8px,
+	),
 	s17-breadcrumb: (
 		default: 17px,
 		ps: 16px,
 		tx: 12px,
 		mx: 9px,
+	),
+	s17: (
+		default: 17px,
 	),
 	s24: (
 		default: 24px,
@@ -190,6 +198,9 @@ $space: (
 		ps: 32px,
 		tx: 24px,
 		mx: 18px,
+	),
+	s36: (
+		default: 36px,
 	),
 	s48: (
 		default: 48px,
@@ -207,8 +218,12 @@ $space: (
 		ps: 121px,
 		tl: 20px,
 	),
-	s132: (
-		default: 132px,
-		ps: 110px,
+	s42: (
+		default: 42px,
+		
+	),
+	
+	s50: (
+		default: 50px,
 	),
 );
