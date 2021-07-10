@@ -30,7 +30,6 @@
     $wh: 43px;
     .swiper-button-next,
     .swiper-button-prev{
-
       &::after{
         content: "";
       }
@@ -47,9 +46,33 @@
 
     .swiper-button-next{
       right: calc(#{$spaceButtonSwiper} - #{$wh});
+      @media (max-width: map-get($media, pm)){
+        right: calc(-20px - #{$wh});
+      }
+      @media (max-width: map-get($media, ps)){
+        right: calc(-10px - #{$wh});
+      }
+      @media (max-width: map-get($media, tx)){
+        right: calc(0px - #{$wh});
+      }
+      @media (max-width: map-get($media, tl)){
+        right: calc(30px - #{$wh});
+      }
     }
     .swiper-button-prev{
       left: calc(#{$spaceButtonSwiper} - #{$wh});
+      @media (max-width: map-get($media, pm)){
+        left: calc(-20px - #{$wh});
+      }
+      @media (max-width: map-get($media, ps)){
+        left: calc(-10px - #{$wh});
+      }
+      @media (max-width: map-get($media, tx)){
+        left: calc(0px - #{$wh});
+      }
+      @media (max-width: map-get($media, tl)){
+        left: calc(30px - #{$wh});
+      }
     }
     & .restroom-box {
       box-shadow: 0px 3px 6px rgba(#000, .16);
@@ -58,10 +81,21 @@
       &__img {
         max-width: 100%;
         height: 295px;
+        @media (max-width: map-get($media, pm)){
+          height: 245px;
+        }
+        @media (max-width: map-get($media, tx)){
+          height: 200px;
+        }
       }
       &__content{
         @include space(s34, padding, 36px);
- 
+        @media (max-width: map-get($media, pm)){
+          padding: 26px 28px;
+        }
+        @media (max-width: map-get($media, tx)){
+          padding: 18px 20px;
+        }
       }
       &__title {
         position: relative;
@@ -95,13 +129,44 @@
       &__bottom{
         display: flex;
         justify-content: space-between;
+        @media (max-width: map-get($media, mx)){
+          .btn-link--booking {
+            padding: 8px 8px;
+          }
+        }
         & .restroom-box__more{
           svg{
             margin-left: 8px;
+            @media (max-width: map-get($media, mx)){
+              margin-left: 4px;
+            }
           }
         }
       
       }
     }
+  }
+  &__more{
+    @include space(s72, padding-top);
+    @include space(s72, padding-bottom);
+    text-align: center;
+    &--size{
+      @include size(s18);
+      font-weight: light;
+      color: map-get($color, mainBg);
+      position: relative;
+      
+      &::after{
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        background: map-get($color , mainBg );
+        width: 100%;
+        height: 1px;
+      }
+      
+    }
+    
   }
 }
