@@ -159,12 +159,18 @@ $block: (
 		pm: 520px,
 		ps: 480px,
 		tx: 420px,
-		tl: 420px,
+		tl: 380px,
+		ts: 310px,
+		mx: 280px,
+		ml: 250px,
+		mm: 220px,
 	),
 	tourIconService:(
 		default: 62px,
-	)
-
+		tl: 48px,
+		mx: 36px,
+		ml: 32px,
+	),
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
@@ -175,6 +181,7 @@ $block: (
 // ----> tương đương với margin: 1080px 20px;
 // y như block
 // chú ý khi khoảng cách giống nhau nhưng media khác nhau thì có thể thêm đằng sau là -2 -3 (loại 2 loại 3)
+
 $space: (
 	s8:(
 		default: 8px,
@@ -188,15 +195,8 @@ $space: (
 	s17: (
 		default: 17px,
 	),
-	s24: (
-		default: 24px,
-		pm: 22px,
-		tx: 18px,
-		ts: 16px,
-	),
-	s28: (
-		default: 28px,
-	),
+
+
 	s34: (
 		default: 34px,
 		ps: 32px,
@@ -229,5 +229,40 @@ $space: (
 	
 	s50: (
 		default: 50px,
+	),
+
+);
+
+
+
+///////////////////// PAGE ////////////////////////////
+
+// service
+$serviceBox: (
+	s52: (
+		default: 52px,
+		pl: 32px,
+		pm: 24px,
+		ps: 4%,
+	),
+	s90: (
+		default: 90px,
+		pl: 10%,
+		tl: 15%,
+		mx: 10%,
+		ml: 2%,
+	),
+	s24: (
+		default: 24px,
+		pm: 0px,
+		tx: 8px,
+		tl: 4px,
+		tm: 0,
+	),
+	s28: (
+		default: 28px,
+		pl: 24px,
+		ps: 18px,
+		tl: 12px
 	),
 );

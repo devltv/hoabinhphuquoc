@@ -11,9 +11,8 @@
     }
     &-card{
       position: relative;
-
       transform-style: preserve-3d;
-
+      
       &:hover{
         .tour-content__img{
           transform: perspective(1000px) rotateY(-180deg);
@@ -24,6 +23,7 @@
       }
 
       &.tour-content-card--defalt{
+        
         .tour-content__img{
           transform: none;
         }
@@ -67,17 +67,17 @@
       justify-content: flex-end;
       align-items: center;
       height: 100%;
-      padding: 52px;
+      @include serviceBox(s52, padding);
       
-     
-
       &-icons{
         // flex: 1;
         display: flex;
         justify-content: center;
         align-items: flex-end;
         
-        padding: 0 90px;
+        @include serviceBox(s90, padding-left);
+        @include serviceBox(s90, padding-right);
+
         flex-wrap: wrap;
 
         &>*{
@@ -99,7 +99,7 @@
 
         line-height: 1.4;
         &>*{
-          @include space(s28, margin-top);
+          @include serviceBox(s28, margin-top);
         }
 
         &__title{
@@ -108,29 +108,40 @@
             @include bold;
 
             display: inline-block;
-            position: relative;
-            &::after{
-              content: "";
-              position: absolute;
-              bottom: -1.2rem;
-              left: 50%;
-              transform: translate(-50%, -50%);
+            @include p-line-clamp(1);
+          }
 
-              width: 50px;
-              height: 3px;
-              background-color: map-get($color, underline);
-            }
+          position: relative;
+          &::after{
+            content: "";
+            position: absolute;
+            bottom: -1.2rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 50px;
+            height: 3px;
+            background-color: map-get($color, underline);
+
           }
         }
 
         &__desc{
-          @include space(s24, padding-left);
-          @include space(s24, padding-right);
+          @include serviceBox(s24, padding-left);
+          @include serviceBox(s24, padding-right);
 
-          min-height: 90px;
+          min-height: 75px;
 
           &>*{
             @include size(s18);
+
+            @media (max-width: map-get($media, tl)) {
+              @include p-line-clamp(2);
+            }
+          }
+
+          @media (max-width: map-get($media, ts)) {
+            display: none;
           }
         }
 
@@ -141,6 +152,9 @@
         }
 
         &__more{
+          @media (max-width: map-get($media, ts)) {
+            margin-top: 36px;
+          }
           &>*{
             color: map-get($color, mainBg);
             @include size(s12);
