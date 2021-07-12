@@ -96,6 +96,7 @@ $sizes: (
 	// banner Title primary
 	s73: 7.3rem,
 	// 73px in 1920px device
+	s215: 21.5rem,
 	// TITLE SHADOW
 	s251: 25.1rem,
 	test: 100rem,
@@ -171,6 +172,10 @@ $block: (
 		mx: 36px,
 		ml: 32px,
 	),
+	titleBackground: (
+		default: 250px,
+	),
+
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
@@ -211,6 +216,9 @@ $space: (
 		ps: 42px,
 		tx: 38px,
 		mx: 32px,
+	),
+	s72: (
+		default: 72px,
 	),
 	s134: (
 		default: 134px,

@@ -17,7 +17,7 @@ function index2(){
           prevEl: ".swiper-button-prev",
         },
         breakpoints:{
-          1281:{
+          1441:{
             slidesPerView: 3,
           },
           1681:{
