@@ -1,25 +1,122 @@
 $spaceIndex: (
-	s50: (
-		default: 50px,
+  s24: (
+		default: 24px,
+    pm: 18px,
+    tx: 16px,
+    tl: 14px,
+    ts: 12px,
 	),
 
-  s42: (
-		default: 42px,
-		
-	),
   s34: (
 		default: 34px,
 		ps: 32px,
 		tx: 24px,
 		mx: 18px,
 	),
+  s34-2: (
+		default: 34px,
+		pm: 30px,
+    tx: 25px,
+    tl: 20px,
+    ts: 18px,
+		
+	),
+  s36: (
+    default: 36px,
+  ),
+
+  s42: (
+		default: 42px,
+		
+	),
+  s44: (
+		default: 44px,
+		
+	),
+  s50: (
+		default: 50px,
+	),
+
   s72: (
 		default: 72px,
+    pm: 45px,
 	),
-);
+  s88: (
+		default: 88px,
+    pm: 80px,
+	),
 
+);
+$spaceIndex3: (
+    s48:(
+        default: 48px,
+        tx: 4px,
+    ),
+);
+$blockIndex: (
+  imgIndex3: (
+		default: 454px,
+    pm: 400px,
+    ps: 380px,
+    tm: 360px,
+    ts: 310px,
+    mx: 280px,
+    ml: 240px,
+
+	),
+
+  
+);
 @mixin spaceIndex($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spaceIndex, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin blockIndex($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIndex, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spaceIndex3($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceIndex3, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
