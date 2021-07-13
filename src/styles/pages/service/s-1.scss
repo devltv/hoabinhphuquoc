@@ -153,6 +153,7 @@
           @include serviceBox(s24, padding-right);
 
           min-height: 75px;
+          line-height: 1.4;
 
           &>*{
             @include size(s18);
