@@ -4,14 +4,22 @@
       @extend .margin-auto;
       
       &>*{
-        @include block(tourContentService, height); 
+        @include blockService(tourContentService, height); 
         padding-left: 0;
         padding-right: 0;
       }
+
+      @include rp(mx){
+        flex-direction: column;
+      }
     }
+
+
     &-card{
       position: relative;
       transform-style: preserve-3d;
+
+
       
       &:hover{
         .tour-content__img{
@@ -38,6 +46,11 @@
             transform: none;
           }
         }
+      }
+
+      @include rp(mx){
+        flex: initial;
+        max-width: 100%;
       }
     }
 
@@ -69,6 +82,10 @@
       height: 100%;
       @include serviceBox(s52, padding);
       
+      @include rp(mx){
+        justify-content: center;
+      }
+
       &-icons{
         // flex: 1;
         display: flex;
@@ -81,8 +98,8 @@
         flex-wrap: wrap;
 
         &>*{
-          @include block(tourIconService, width);
-          @include block(tourIconService, height);
+          @include blockService(tourIconService, width);
+          @include blockService(tourIconService, height);
 
           margin: 1.2rem;
 
@@ -94,6 +111,11 @@
 
       &-content{
         height: 50%;
+        
+        @include rp(mx){
+          justify-content: center;
+        }
+
         color: map-get($color, mainBg);
         text-align: center;
 
@@ -131,6 +153,7 @@
           @include serviceBox(s24, padding-right);
 
           min-height: 75px;
+          line-height: 1.4;
 
           &>*{
             @include size(s18);
@@ -141,7 +164,15 @@
           }
 
           @media (max-width: map-get($media, ts)) {
-            display: none;
+            &>p{
+              display: none;
+            }
+            min-height: auto;
+          }
+          @media (max-width: map-get($media, mx)) {
+            span{
+              display: block;
+            }
           }
         }
 
@@ -153,7 +184,7 @@
 
         &__more{
           @media (max-width: map-get($media, ts)) {
-            margin-top: 36px;
+            // margin-top: 24px;
           }
           &>*{
             color: map-get($color, mainBg);

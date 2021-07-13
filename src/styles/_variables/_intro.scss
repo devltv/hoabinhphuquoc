@@ -1,0 +1,68 @@
+
+$blockIntro: (
+	bannerIntro: (
+    // -> màn hình 1920
+		default: 501px, 
+    pl: 301px,
+	),
+);
+
+$spaceIntro: (
+	s26: (
+    default: 26px,
+
+  ),
+  s10: (
+    default: 10px,
+  )
+);
+
+@mixin spaceIntro($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceIntro, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockIntro($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIntro, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

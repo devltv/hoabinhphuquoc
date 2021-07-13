@@ -3,7 +3,7 @@ declare var Swiper: any;
 function index2() {
   if (document.getElementById('index2')) {
     new Swiper(".index-restroom--swiper", {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 8,
       // slidesPerGroup: 3,
       // loop: true,
@@ -17,6 +17,18 @@ function index2() {
         prevEl: ".swiper-button-prev",
       },
       breakpoints: {
+        541: {
+          slidesPerView: 1.5,
+          spaceBetween: 8,
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 8,
+        },
+        1281: {
+          slidesPerView: 2,
+          spaceBetween: 12,
+        },
         1441: {
           slidesPerView: 3,
         },

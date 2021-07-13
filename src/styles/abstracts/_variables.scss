@@ -69,6 +69,7 @@ $lineHeight: (
 // dùng rem (1 rem = 10px)
 // Cách sử dụng: @include size(s12); --> sử dụng biến s12
 // ----> tương đương với font-size: 1.2rem;
+// 1920 -> 10px -> 1 rem = 10px
 $sizes: (
 	s4: 0.4rem,
 	s8: 0.8rem,
@@ -99,10 +100,10 @@ $sizes: (
 	s215: 21.5rem,
 	// TITLE SHADOW
 	s251: 25.1rem,
-	test: 100rem,
 );
 
-// Cách sử dụng: map-get($media, ps)
+// Cách sử dụng: map-get($media, ps);
+// Hoặc là: @include rp(ps);
 $media: (
 	// personal computer
 	px: 1920px,
@@ -130,6 +131,7 @@ $container-max-widths: (
 	pl: 1400px,
 	pm: 1200px,
 	tx: 960px,
+	tl: 96%,
 	// về talet thì sẽ width = 96%;
 );
 
@@ -154,24 +156,7 @@ $block: (
 		ps: 320px,
 		tx: 100px,
 	),
-	tourContentService: (
-		default: 624px,
-		pl: 600px,
-		pm: 520px,
-		ps: 480px,
-		tx: 420px,
-		tl: 380px,
-		ts: 310px,
-		mx: 280px,
-		ml: 250px,
-		mm: 220px,
-	),
-	tourIconService:(
-		default: 62px,
-		tl: 48px,
-		mx: 36px,
-		ml: 32px,
-	),
+	
 	titleBackground: (
 		default: 250px,
 	),
@@ -229,9 +214,12 @@ $space: (
 	s50: (
 		default: 50px,
 	),
+
 	s72: (
 		default: 72px,
 	),
+
+	// Khoảng cách 2 section
 	s134: (
 		default: 134px,
 		ps: 120px,
@@ -252,7 +240,6 @@ $space: (
 	
 
 );
-
 
 
 ///////////////////// PAGE ////////////////////////////
@@ -286,3 +273,6 @@ $serviceBox: (
 		tl: 12px
 	),
 );
+@import "../_variables/index";
+@import "../_variables/service";
+@import "../_variables/intro";

@@ -192,30 +192,8 @@
 
 ////////////////////////////////////////////////
 ///////////////// PAGE ////////////////////////
-@mixin serviceBox($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($serviceBox, #{$key}){
-    @if $side == '-1'{
-      @if $idx == default{
-        #{$name}: $val;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
-          #{$name}: $val;
-        }
-      }
-    }
-    @else{
-      @if $idx == default{
-        #{$name}: $val $side;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
-          #{$name}: $val $side;
-        }
-      }
-    }
-  }
-}
+
+
 ///////////////// SPACE ////////////////////////
 ////////////////////////////////////////////////
 
@@ -232,3 +210,15 @@
 // 		}
 // 	}
 // }
+
+////////////////////////////////////////////////
+/////////////////////////MEDIA ///////////////////
+
+@mixin rp($canvas) {
+  @media (max-width: map-get($media, #{$canvas})){
+    @content;
+  }
+}
+
+/////////////////////////MEDIA ///////////////////
+////////////////////////////////////////////////
