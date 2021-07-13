@@ -130,6 +130,7 @@ $container-max-widths: (
 	pl: 1400px,
 	pm: 1200px,
 	tx: 960px,
+	tl: 96%,
 	// về talet thì sẽ width = 96%;
 );
 
@@ -154,24 +155,7 @@ $block: (
 		ps: 320px,
 		tx: 100px,
 	),
-	tourContentService: (
-		default: 624px,
-		pl: 600px,
-		pm: 520px,
-		ps: 480px,
-		tx: 420px,
-		tl: 380px,
-		ts: 310px,
-		mx: 280px,
-		ml: 250px,
-		mm: 220px,
-	),
-	tourIconService:(
-		default: 62px,
-		tl: 48px,
-		mx: 36px,
-		ml: 32px,
-	),
+	
 	titleBackground: (
 		default: 250px,
 	),
@@ -220,6 +204,8 @@ $space: (
 	s72: (
 		default: 72px,
 	),
+
+	// Khoảng cách 2 section
 	s134: (
 		default: 134px,
 		ps: 120px,
@@ -238,39 +224,9 @@ $space: (
 	s50: (
 		default: 50px,
 	),
-
 );
-
 
 
 ///////////////////// PAGE ////////////////////////////
-
-// service
-$serviceBox: (
-	s52: (
-		default: 52px,
-		pl: 32px,
-		pm: 24px,
-		ps: 4%,
-	),
-	s90: (
-		default: 90px,
-		pl: 10%,
-		tl: 15%,
-		mx: 10%,
-		ml: 2%,
-	),
-	s24: (
-		default: 24px,
-		pm: 0px,
-		tx: 8px,
-		tl: 4px,
-		tm: 0,
-	),
-	s28: (
-		default: 28px,
-		pl: 24px,
-		ps: 18px,
-		tl: 12px
-	),
-);
+@import "../_variables/index";
+@import "../_variables/service";

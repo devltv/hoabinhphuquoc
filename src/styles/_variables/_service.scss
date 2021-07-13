@@ -1,0 +1,100 @@
+// service
+$serviceBox: (
+	s52: (
+		default: 52px,
+		pl: 32px,
+		pm: 24px,
+		ps: 4%,
+	),
+	s90: (
+		default: 90px,
+		pl: 11%,
+		tl: 13%,
+		mx: 11%,
+	),
+	s24: (
+		default: 24px,
+		pm: 0px,
+		tx: 8px,
+		tl: 4px,
+		tm: 0,
+	),
+	s28: (
+		default: 28px,
+		pl: 24px,
+		ps: 18px,
+		tl: 12px,
+		ts: 22px,
+	),
+);
+
+$blockService: (
+	tourContentService: (
+		default: 624px,
+		pl: 600px,
+		pm: 520px,
+		ps: 480px,
+		tx: 420px,
+		tl: 380px,
+		ts: 310px,
+		mx: 380px,
+		ml: 360px,
+		mm: 320px,
+	),
+	tourIconService:(
+		default: 62px,
+		tl: 48px,
+		mx: 36px,
+		ml: 32px,
+	),
+);
+
+
+@mixin serviceBox($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($serviceBox, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin blockService($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockService, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

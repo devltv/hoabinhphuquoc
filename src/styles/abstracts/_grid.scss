@@ -8,17 +8,17 @@
 
 .container{
 	position: relative;
-	width: 96%;
+	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 
 	@each $idx, $value in $container-max-widths{
 		@if $idx == default{
-			max-width: $value;
+			width: $value;
 		}
 		@else{
 			@media (max-width: map-get($media, $idx)) {
-				max-width: $value;
+				width: $value;
 			}
 		}
 	}

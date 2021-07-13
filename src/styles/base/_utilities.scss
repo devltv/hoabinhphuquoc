@@ -25,26 +25,38 @@
   
 }
 
-.title-shadow{
+.title-primary{
   display: inline-block;
   position: relative;
 
-  min-width: 980px;
+  & .title-shadow{
+    @include size(s215);
+    @include family--primary;
+    color: map-get($color, textShadow );
+    font-weight: bold;
 
-  @include size(s215);
-  @include family--primary;
-  color: map-get($color, textShadow );
-  font-weight: bold;
+    @include rp(mx){
+      display: none;
+    }
+  }
+
   .title-content{
-    position: absolute;
     @include size(s51);
+    @include family--primary;
+    font-weight: bold;
     color: map-get($color, main );
+    
+    position: absolute;
     top: 50%;
     left: 50%;
-    content: "";
+    transform: translate(-50%, -50%);
+    @include rp(mx){
+      position: initial;
+      top: initial;
+      left: initial;
+      transform: none;
+    }
     min-width: 144px;
-    transform: translateX(-50%);
-
   }
 
 }
