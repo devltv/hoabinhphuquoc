@@ -201,10 +201,13 @@ $space: (
 		default: 17px,
 	),
 
-
+	s24: (
+		default: 24px,
+		pm: 20px,
+	),
 	s34: (
 		default: 34px,
-		ps: 32px,
+		pm: 32px,
 		tx: 24px,
 		mx: 18px,
 	),
@@ -241,12 +244,12 @@ $space: (
 	),
 	s140: (
 		default: 140px,
+		pl: 120px,
+		pm: 100px,
+
 		
 	),
 	
-	s50: (
-		default: 50px,
-	),
 
 );
 

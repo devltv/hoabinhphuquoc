@@ -23,6 +23,9 @@
             }
             &--desc {
                 @include size(s51);
+                @media (max-width: map-get($media, pm)){
+                    font-size: 4.5rem;
+                }
                 @include family--primary;
                 font-weight: bold;
                 color: map-get($color, base);
@@ -84,10 +87,12 @@
             &__desc {
                 
                 & > * {
-                    @include space(s24,margin,0);
-                    @include size(s18);
                     @include p-line-clamp(2);
                     line-height: 1.4;
+                    @include size(s18);
+                    @include space(s24,margin,0);
+                    
+                    
                 }
             }
             &__bottom {
