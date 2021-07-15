@@ -1,0 +1,50 @@
+
+@mixin blockwedding($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($spaceIntro, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
+  @mixin spacewedding($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($spaceIntro, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
+    
