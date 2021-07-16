@@ -1,0 +1,28 @@
+.service-2{
+  .service-tour{
+    &__title{
+      line-height: 1;
+      text-align: center;
+      width: 100%;
+  
+      @include space(s90, margin-top);
+    }
+  
+    &__content{
+      @include spaceService2(bottomTitle, margin-top);
+  
+      &-desc{
+        text-align: center;
+        @include spaceService2(bottomDesc, padding-bottom);
+      }
+  
+      &-img{
+        @include blockService(imgCarService, height);
+
+        img{
+          object-position: left;
+        }
+      }
+    }
+  }
+}
