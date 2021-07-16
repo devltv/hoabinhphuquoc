@@ -47,6 +47,7 @@ $spaceIndex: (
 	),
 
 );
+//section,padding,margin
 $spaceIndex3: (
  
     s48:(
@@ -63,6 +64,7 @@ $spaceIndex4: (
   ),
   s12: (
     default: 12px,
+    mx: 4px,
   ),
   s16: (
     default: 16px,
@@ -77,16 +79,24 @@ $spaceIndex4: (
     default: 40px,
     ps: 38px,
     tx: 36px,
-    tm: 28px,
+    tm: 24px,
     ts: 24px,
    
  ),
-   s80: (
-      default: 80px,
-      pm: 72px,
-      tx: 68px,
-      tm: 54px,
-      ts: 48px,
+    sLeftRightContentBox: (
+      default: 57px,
+      pl: 46px,
+      tx: 32px,
+      tm: 42px,
+      ts: 32px,
+      mx: 10px,
+      ms: 6px,
+    ),
+   s70: (
+      default: 70px,
+      pm: 56px,
+      ts: 36px,
+ 
        
    ),
    s104: (
@@ -94,14 +104,17 @@ $spaceIndex4: (
      pl: 78px,
      pm: 76px,
      ps: 64px,
-     tx: 78px,
-     tm: 56px,
+     tx: 18px,
+     tm: 18px,
+     mx: 20px,
+     ms: 18px,
     
      
      
      
    ),
 );
+//height
 $blockIndex: (
   imgIndex3: (
 		default: 454px,
@@ -115,14 +128,21 @@ $blockIndex: (
 	),
   imgIndex4:(
     default: 757px,
+    pm: 728px,
+    ps: 700px,
+    tx: 680px,
+    tl: 670px,
+    tm: 650px,
+    ts: 630px,
+    mx: 600px,
   ),
   boxIndex4:(
     default: 618px,
     pm: 600px,
     ps: 580px,
-    tx: 550px,
-    tl: 500px,
-    tm: 480px,
+    tx: 500px,
+    tl: 480px,
+    tm: 460px,
 
   ),
   boxImgIndex4:(
@@ -132,9 +152,9 @@ $blockIndex: (
     default: 120px,
     pm: 118px,
     ps: 114px,
-    tx: 108px,
-    tl: 98px,
-    tm: 94px,
+    tx: 98px,
+    tl: 94px,
+    tm: 90px,
   ),
   
 );
