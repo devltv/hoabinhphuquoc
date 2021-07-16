@@ -73,6 +73,7 @@ $lineHeight: (
 $sizes: (
 	s4: 0.4rem,
 	s8: 0.8rem,
+	s11: 1.1rem,
 	s12: 1.2rem,
 	// header top, LINK MORE
 	s15: 1.5rem,
@@ -92,8 +93,11 @@ $sizes: (
 	// banner WelcomeTo, TITLE 2
 	s41: 4.1rem,
 	s42: 4.2rem,
+
 	// TITLE
+	s45: 4.5rem,
 	s51: 5.1rem,
+	s58: 5.8rem,
 	// banner Title primary
 	s73: 7.3rem,
 	// 73px in 1920px device
@@ -185,9 +189,13 @@ $space: (
 		default: 17px,
 	),
 
+	s24: (
+		default: 24px,
+		pm: 20px,
+	),
 	s34: (
 		default: 34px,
-		ps: 32px,
+		pm: 32px,
 		tx: 24px,
 		mx: 18px,
 	),
@@ -233,12 +241,47 @@ $space: (
 	),
 	s140: (
 		default: 140px,
+		pl: 120px,
+		pm: 100px,
+
 		
 	),
+	
+
 );
 
 
 ///////////////////// PAGE ////////////////////////////
+
+// service
+$serviceBox: (
+	s52: (
+		default: 52px,
+		pl: 32px,
+		pm: 24px,
+		ps: 4%,
+	),
+	s90: (
+		default: 90px,
+		pl: 10%,
+		tl: 15%,
+		mx: 10%,
+		ml: 2%,
+	),
+	s24: (
+		default: 24px,
+		pm: 0px,
+		tx: 8px,
+		tl: 4px,
+		tm: 0,
+	),
+	s28: (
+		default: 28px,
+		pl: 24px,
+		ps: 18px,
+		tl: 12px
+	),
+);
 @import "../_variables/index";
 @import "../_variables/service";
 @import "../_variables/intro";
