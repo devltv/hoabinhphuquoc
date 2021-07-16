@@ -1,0 +1,45 @@
+#utilities-1__wrapper{
+    
+    .tour-title{
+        width: 100%;
+        text-align: center;
+    }
+    .section-box{
+        position: relative;
+        .background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: -1;
+            img{
+                opacity: 0.1;
+            }
+        }
+        .items-section{
+            padding-top: 42px;
+            // width: 1187px;
+            margin: auto;
+            justify-content: space-between;
+            .items{
+                padding: 0 15px;
+                height: 100%;
+                &__image{
+                    transition: .3s ease-in-out;
+                    @include blockUtilities(utilities-1, height);
+                    width: 100%;
+                    // height: 434px;
+                    // img{
+                    //     width: 100%;
+                    //     height: auto;
+                    //     // object-fit: contain;
+                    // }
+                }
+                .items__text{
+                   
+                }
+            }
+        }
+    }
+    
+}
