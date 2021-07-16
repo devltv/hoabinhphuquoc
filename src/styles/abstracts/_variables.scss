@@ -160,7 +160,6 @@ $block: (
 	titleBackground: (
 		default: 250px,
 	),
-
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
@@ -213,6 +212,12 @@ $space: (
 
 	s72: (
 		default: 72px,
+	),
+
+	s90:(
+		default: 90px,
+		tx: 72px,
+		mx: 60px,
 	),
 
 	// Khoảng cách 2 section

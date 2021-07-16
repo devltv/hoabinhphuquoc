@@ -1,0 +1,94 @@
+.service-3{
+  .service-logo{
+    @include spaceService3(topListLogo, margin-top);
+    &--list{
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__item{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+      padding: 0 8px;
+
+      &-img{
+        width: 98px;
+        height: 98px;
+        border-radius: 1000px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: map-get($color, iconMainBgActive);
+
+        @include spaceService3(bottomImg, margin-bottom);
+        img{
+          height: 43px;
+          object-fit: contain;
+        }
+      }
+      &-desc{
+        text-align: center;
+      
+        // @include rp(tl){
+        //   text-align: center;
+        //   width: 70%;
+        // }
+        // @include rp(ts){
+        //   width: 100%;
+        // }
+      }
+    }
+  }
+
+  .service-wrapper{
+    &-container{
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__left{
+      @include blockService(imgShopService, height);
+    }
+    &__right{
+      margin-left: auto;
+      align-self: stretch;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .shop{
+        &__title{
+          &>*{
+            color: map-get($color, main);
+            @include size(s51);
+            @include bold;
+            @include family--primary;
+
+          }
+          position: relative;
+          &::after{
+            position: absolute;
+            content: "";
+            bottom: -9px;
+            left: 0;
+            height: 6px;
+            min-width: 122px;
+            background-color: map-get($color, underline);
+          }
+
+          @include spaceService3(bottomShopTitle, margin-bottom);
+        }
+
+        &__desc{
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
