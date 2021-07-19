@@ -182,11 +182,51 @@ function toggleIndex4() {
 
   }
 }
+function index6(){
+  if (document.getElementById('index6')) {
+    new Swiper(".index-discover--swiper", {
+      slidesPerView: 3,
+      centeredSlides: true,
+       spaceBetween: 0,
+      // slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+      },
+      on: {
+        init: function () {
+          var Active = document.querySelector('.swiper-slide-active .content__box');
+          Active.classList.add('active');
+        },
+        transitionStart: function() {
+          var Active_show = document.querySelectorAll('.content__box');
+          Active_show.forEach(function(item){
+            item.classList.remove('active');
+          })
+        },
+        transitionEnd: function() {
+          var Active_show = document.querySelector('.swiper-slide-active .content__box');
+          Active_show.classList.add('active');
+        }
+      }
+    });
+  }
+}
+
 export default {
   index: function () {
     index2();
     index3();
     toggleIndex3();
     toggleIndex4();
+    index6();
   }
 }
