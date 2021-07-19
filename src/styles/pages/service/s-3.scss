@@ -1,12 +1,12 @@
-.service-3{
-  .service-logo{
+.service-3 {
+  .service-logo {
     @include spaceService3(topListLogo, margin-top);
-    &--list{
+    &--list {
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    &__item{
+    &__item {
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -14,7 +14,7 @@
 
       padding: 0 8px;
 
-      &-img{
+      &-img {
         width: 98px;
         height: 98px;
         border-radius: 1000px;
@@ -26,69 +26,37 @@
         background-color: map-get($color, iconMainBgActive);
 
         @include spaceService3(bottomImg, margin-bottom);
-        img{
+        img {
           height: 43px;
           object-fit: contain;
         }
       }
-      &-desc{
+      &-desc {
         text-align: center;
-      
-        // @include rp(tl){
-        //   text-align: center;
-        //   width: 70%;
-        // }
-        // @include rp(ts){
-        //   width: 100%;
-        // }
+
+        @include rp(tl) {
+          width: 70%;
+        }
+        @include rp(ts) {
+          width: 80%;
+        }
       }
     }
   }
+  .service-wrapper {
+    @include space(s90, margin-top);
 
-  .service-wrapper{
-    &-container{
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    &__left{
+    &__img {
       @include blockService(imgShopService, height);
     }
-    &__right{
-      margin-left: auto;
-      align-self: stretch;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      .shop{
-        &__title{
-          &>*{
-            color: map-get($color, main);
-            @include size(s51);
-            @include bold;
-            @include family--primary;
-
-          }
-          position: relative;
-          &::after{
-            position: absolute;
-            content: "";
-            bottom: -9px;
-            left: 0;
-            height: 6px;
-            min-width: 122px;
-            background-color: map-get($color, underline);
-          }
-
-          @include spaceService3(bottomShopTitle, margin-bottom);
-        }
-
-        &__desc{
-          line-height: 1.4;
+    &__content {
+    .box {
+      &__title {
+        @include rp(ts) {
+          @include spaceService3(bottomShopTitle, margin-top);
         }
       }
     }
+  }
   }
 }

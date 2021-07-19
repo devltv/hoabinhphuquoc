@@ -1,169 +1,160 @@
-.index4{
-    
-    .index-uilities{
-        &__wrapper{
+.index4 {
+    .index-uilities {
+        &__wrapper {
             position: relative;
         }
-        &__layout{
+        &__layout {
             display: flex;
-            &--img{
+            &--img {
                 width: 70%;
-                @include blockIndex(imgIndex4,height);
+                @include blockIndex(imgIndex4, height);
                 background: url(../assets/images/page/index/hoboi3.png);
-                position: relative;   
+                position: relative;
                 background-repeat: no-repeat;
-                }
-            &--color{
+            }
+            &--color {
                 width: 32%;
-                @include blockIndex(imgIndex4,height);
-                background: map-get($color, main );
-                & .overlay-restroom{
+                @include blockIndex(imgIndex4, height);
+                background: map-get($color, main);
+                & .overlay-restroom {
                     width: 32%;
                     left: 68%;
                 }
             }
-            
-            }
-        &__content{
+        }
+        &__content {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 100%;
-            
         }
-        .container{
+        .container {
             height: 100%;
         }
-        &__box{
+        &__box {
             position: absolute;
             top: 50%;
             right: 0;
             transform: translateY(-50%);
             display: flex;
-            @include blockIndex(boxIndex4,height);
-            @include rp(tx){
+            @include blockIndex(boxIndex4, height);
+            @include rp(tx) {
                 right: 10%;
             }
-
         }
-        &__left{
+        &__left {
             max-width: 618px;
-            @include blockIndex(boxIndex4,height);
-            background: map-get($color , mainBg );
+            @include blockIndex(boxIndex4, height);
+            background: map-get($color, mainBg);
             box-sizing: border-box;
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 content: "";
                 top: 20px;
                 left: 20px;
                 right: 20px;
                 bottom: 20px;
-                border: 1px solid map-get($color, main );
-               
+                border: 1px solid map-get($color, main);
             }
         }
-        &__boxleft{
-            @include spaceIndex4(s24,padding);
-            
+        &__boxleft {
+            @include spaceIndex4(s24, padding);
         }
-        .content{
-            @include spaceIndex4(s104,padding, 57px);
-            @include rp(pl){
-                @include spaceIndex4(s104,padding, 46px);
+        .content {
+            @include spaceIndex4(s104, padding, 57px);
+            @include rp(pl) {
+                @include spaceIndex4(s104, padding, 46px);
             }
-            @include rp(tm){
-                @include spaceIndex4(s104,padding, 42px);
+            @include rp(tm) {
+                @include spaceIndex4(s104, padding, 42px);
             }
-            @include rp(ts){
-                @include spaceIndex4(s104,padding, 32px);
+            @include rp(ts) {
+                @include spaceIndex4(s104, padding, 32px);
             }
-          
-            &__title{
+
+            &__title {
                 @include spaceIndex4(s80, margin-bottom);
                 position: relative;
-                &::after{
+                &::after {
                     position: absolute;
                     top: 100%;
                     left: 0;
                     content: "";
                     height: 6px;
-                    background: map-get($color, underline );
+                    background: map-get($color, underline);
                     width: 25%;
-                    
-
                 }
-                &--size{
-                @include size(s58);
-                color: map-get($color , main );
-                font-weight: bold;
-                @include family--primary;
+                &--size {
+                    @include size(s58);
+                    color: map-get($color, main);
+                    font-weight: bold;
+                    @include family--primary;
                 }
             }
-            &__desc{
+            &__desc {
                 @include spaceIndex4(s40, margin-bottom);
-                &--size{
+                &--size {
                     @include size(s18);
                     line-height: 1.8;
-                    color: map-get($color, base );
-                    @include rp(ts){
-                       @include p-line-clamp(6);
+                    color: map-get($color, base);
+                    @include rp(ts) {
+                        @include p-line-clamp(6);
                     }
                 }
             }
-            &__more{
-                    svg {
-                        margin-left: 8px;
-                    }
+            &__more {
+                svg {
+                    margin-left: 8px;
+                }
             }
         }
-        &__right{
+        &__right {
             max-width: 120px;
-            @include rp(tm){
+            @include rp(tm) {
                 max-width: 108px;
             }
-            @include rp(ts){
+            @include rp(ts) {
                 max-width: 98px;
             }
-            @include spaceIndex4(s12,margin-left);
-            &--items{
+            @include spaceIndex4(s12, margin-left);
+            &--items {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                @include blockIndex(boxRighrIndex4,height);
-                background: map-get($color , main );
+                @include blockIndex(boxRighrIndex4, height);
+                background: map-get($color, main);
                 list-style-type: none;
                 text-align: center;
-                @include spaceIndex4(s2,margin,0);
-                box-shadow: 0 3px 6px rgba(0,0,0,.16);
+                @include spaceIndex4(s2, margin, 0);
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
             }
-            
-            &--desc{
+
+            &--desc {
                 @include size(s11);
-                color: map-get($color,mainBg );
-                @include spaceIndex4(s16, margin-top)
+                color: map-get($color, mainBg);
+                @include spaceIndex4(s16, margin-top);
             }
         }
-        .active{
+        .active {
             width: 140px;
-            @include rp(tm){
+            @include rp(tm) {
                 max-width: 126px;
             }
-            @include rp(ts){
+            @include rp(ts) {
                 max-width: 118px;
             }
             position: relative;
-            box-shadow: inset 0 3px 6px rgba(0,0,0,.16);
-            &::after{
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
+            &::after {
                 position: absolute;
                 content: "";
                 top: 0;
                 left: 100%;
                 height: 100%;
                 width: 10%;
-                background: map-get($color, underline );
-
+                background: map-get($color, underline);
             }
         }
     }

@@ -13,9 +13,10 @@ import * as fetchData from "./components/fetchData";
 
 // Layout
 import {header} from "./layout/header";
-import index from "./page/index";
 
 // Page
+import index from "./page/index";
+import {service} from "./page/service";
 
 
 ///////////////////////////////////////////////////////////////
@@ -33,6 +34,7 @@ function layout(){
 // function Page
 function page(){
   index.index();
+  service();
 }
 
 ////////////////////////////////////////////////////////////////
