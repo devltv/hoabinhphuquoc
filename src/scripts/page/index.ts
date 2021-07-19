@@ -68,18 +68,35 @@ function toggleIndex3() {
   if (document.getElementById('index3')) {
     var contentList = document.querySelectorAll(".index-endow__content .index-endow__left--desc");
     var contentRight = document.querySelectorAll(".index-endow__content .index-endow__slide");
-
-
+    var active = document.querySelector(".index-endow__content .active");
+    console.log(active);
     if (!contentList) {
       return;
     }
+
+    var itemActive = active.getAttribute('data-active');
+    contentRight.forEach(function (itemRight) {
+      var itemRightActive = itemRight.getAttribute('data-active');
+      if (itemActive == itemRightActive) {
+        var itemRightEle = <HTMLElement>itemRight;
+        itemRightEle.style.display = "block";
+      } else {
+        var itemRightEle = <HTMLElement>itemRight;
+        itemRightEle.style.display = "none";
+      }
+
+    })
+    console.log(itemActive);
+
     contentList.forEach(function (item) {
       item.addEventListener('click', function () {
         // console.log(item.getAttribute('data-active'));
         var itemActive = item.getAttribute('data-active');
+
         contentRight.forEach(function (itemRight) {
           var itemRightEle = <HTMLElement>itemRight;
           itemRightEle.style.display = "none";
+
         })
 
         contentRight.forEach(function (itemRight) {
@@ -119,10 +136,61 @@ function toggleIndex3() {
 
   }
 }
+function toggleIndex4() {
+  if (document.getElementById('index4')) {
+    var contentLeft = document.querySelectorAll(".index-uilities__box .index-uilities__boxleft ");
+    var contentList = document.querySelectorAll(".index-uilities__box .index-uilities__right--items");
+    var active = document.querySelector(".index-uilities__box .active");
+    if (!contentList) {
+      return;
+    }
+    var itemActive = active.getAttribute('data-active');
+    contentLeft.forEach(function (itemLeft) {
+      var itemLeftActive = itemLeft.getAttribute('data-active');
+      var itemLeftEle = <HTMLElement>itemLeft;
+      if (itemActive == itemLeftActive) {
+        itemLeftEle.style.display = "block";
+      }else{
+        itemLeftEle.style.display = "none";
+      }
+
+    })
+
+    contentList.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var itemActive = item.getAttribute('data-active');
+
+
+        contentLeft.forEach(function (itemLeft) {
+          var itemLeftEle = <HTMLElement>itemLeft;
+          itemLeftEle.style.display = "none";
+
+        })
+
+        contentLeft.forEach(function (itemLeft) {
+          var itemLeftActive = itemLeft.getAttribute('data-active');
+          var itemLeftEle = <HTMLElement>itemLeft;
+          if (itemActive == itemLeftActive) {
+            itemLeftEle.style.display = "block";
+          }
+
+        })
+        contentList.forEach(function (e) {
+          e.classList.remove("active");
+        })
+
+        // them active vao item da click
+        item.classList.add("active");
+      })
+    })
+
+  }
+}
 export default {
   index: function () {
     index2();
     index3();
     toggleIndex3();
+    toggleIndex4();
   }
 }
