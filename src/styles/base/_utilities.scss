@@ -26,10 +26,18 @@
 }
 
 .title-primary{
+  max-width: 100%;
+  overflow: hidden;
   display: inline-block;
   position: relative;
 
+  @include rp(mx){
+    width: 100%;
+  }
+
   & .title-shadow{
+    line-height: 1.05;
+
     @include size(s215);
     @include rp(ps){
       font-size: 18.5rem;
@@ -64,10 +72,69 @@
       left: initial;
       transform: none;
     }
-    min-width: 144px;
+
+    // min-width: 144px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.title-second{
+  &>*{
+    color: map-get($color, main);
+    @include size(s51);
+    @include bold;
+    @include family--primary;
+  }
+  position: relative;
+  &::after{
+    position: absolute;
+    content: "";
+    bottom: -9px;
+    left: 0;
+    height: 6px;
+    min-width: 122px;
+    background-color: map-get($color, underline);
+  }
+}
+
+.service-wrapper{
+  &-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include rp(ts) {
+      flex-direction: column;
+    }
+  }
+  &__img {
+    @include rp(ts) {
+      @include blockService(imgShopService, max-height);
+    }
   }
 
+  &__content{
+
+    margin-left: auto;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .box{
+      &__title{
+        @include spaceService3(bottomShopTitle, margin-bottom);
+      }
+
+      &__desc{
+        line-height: 1.4;
+      }
+    }
+  }
 }
+
 // [hidden],
 // .hidden,
 // .d-none {
