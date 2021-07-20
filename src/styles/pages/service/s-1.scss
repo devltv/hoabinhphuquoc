@@ -1,4 +1,11 @@
 .service-1{
+  .tour-title{
+    text-align: center;
+    width: 100%;
+
+    @include space(s90, margin-top);
+    @include space(s90, margin-bottom);
+  }
   .tour-content{
     &--container{
       @extend .margin-auto;

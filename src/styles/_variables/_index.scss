@@ -1,4 +1,5 @@
 $spaceIndex: (
+  
   s24: (
 		default: 24px,
     pm: 18px,
@@ -43,15 +44,63 @@ $spaceIndex: (
 	),
   s88: (
 		default: 88px,
-    pm: 80px,
 	),
 
 );
 $spaceIndex3: (
+ 
     s48:(
         default: 48px,
         tx: 4px,
     ),
+);
+$spaceIndex4: (
+  s2: (
+    default: 2px,
+  ),
+  s8: (
+    default: 8px,
+  ),
+  s12: (
+    default: 12px,
+  ),
+  s16: (
+    default: 16px,
+  ),
+   s20: (
+      default: 20px,
+   ),
+   s24: (
+      default: 24px,
+   ),
+   s40: (
+    default: 40px,
+    ps: 38px,
+    tx: 36px,
+    tm: 28px,
+    ts: 24px,
+   
+ ),
+   s80: (
+      default: 80px,
+      pm: 72px,
+      tx: 68px,
+      tm: 54px,
+      ts: 48px,
+       
+   ),
+   s104: (
+     default: 104px,
+     pl: 78px,
+     pm: 76px,
+     ps: 64px,
+     tx: 78px,
+     tm: 56px,
+    
+     
+     
+     
+   ),
 );
 $blockIndex: (
   imgIndex3: (
@@ -64,7 +113,29 @@ $blockIndex: (
     ml: 240px,
 
 	),
+  imgIndex4:(
+    default: 757px,
+  ),
+  boxIndex4:(
+    default: 618px,
+    pm: 600px,
+    ps: 580px,
+    tx: 550px,
+    tl: 500px,
+    tm: 480px,
 
+  ),
+  boxImgIndex4:(
+    default: 45px,
+  ),
+  boxRighrIndex4:(
+    default: 120px,
+    pm: 118px,
+    ps: 114px,
+    tx: 108px,
+    tl: 98px,
+    tm: 94px,
+  ),
   
 );
 @mixin spaceIndex($key, $name, $side: '-1'){
@@ -117,6 +188,30 @@ $blockIndex: (
 }
 @mixin spaceIndex3($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spaceIndex3, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spaceIndex4($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceIndex4, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
