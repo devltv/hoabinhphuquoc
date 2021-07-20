@@ -185,6 +185,11 @@ function toggleIndex4() {
     })
 
   }
+
+  var idx3 = document.querySelectorAll('.index3');
+  idx3.forEach(function(idx){
+    idx.classList.add('active');
+  })
 }
 export default {
   index: function () {

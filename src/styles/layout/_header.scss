@@ -1,0 +1,82 @@
+.header{
+
+  &-top{
+    @include blockHeader(top, height);
+    background-color: map-get($color, main);
+    
+    .container{
+      height: 100%;
+    }
+
+    &__content{
+      width: 100%;
+      height: 100%;
+
+      .content{
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        &-info{
+          display: flex;
+          flex-direction: row;
+
+          &__item{
+            display: flex;
+            flex-direction: row;
+
+            line-height: 2rem;
+
+            &>*{
+              &:not(:first-child){
+                margin-left: 12px;
+              }
+              font-size: 1.5rem;
+            }
+
+            &:not(:first-child){
+              padding-left: 16px;
+              position: relative;
+              
+              &::after{
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                width: 1px;
+
+                background-color: map-get($color, mainBg);
+              }
+            }
+            &:not(:last-child){
+              padding-right: 16px;
+            }
+
+            &-icon{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        span, p{
+          color: map-get($color, mainBg);
+        }
+
+        svg{
+          path{
+            stroke: map-get($color, mainBg);
+            fill: map-get($color, mainBg);
+          }
+        }
+
+      }
+    }
+  }
+}
