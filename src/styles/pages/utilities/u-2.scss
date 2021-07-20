@@ -20,12 +20,21 @@
         .section-1{
             @include utilitiesBox(m-b-70, margin-bottom);
             &__image{
-                height: 490px;
+                @include blockUtilities(utilities-2, height);
                 margin: auto;
             }
             &__text{
                 margin: auto;
-                @include utilitiesBox(p35, padding)
+                @include utilitiesBox(p35, padding);
+                @include rp(pm){
+                    font-size: 1.8rem;
+                }
+                @include rp(ps){
+                    font-size: 1.6rem;
+                }
+                @include rp(tl){
+                    font-size: 1.4rem;
+                }
             }
         }   
         .section-2{
@@ -93,6 +102,9 @@
                     @include rp(mm){
                         font-size: 4vw;
                     }
+                    @include rp(ml){
+                        font-size: 3rem;
+                    }
                     &::after{
                         position: absolute;
                         bottom: -15px;
@@ -100,7 +112,17 @@
                         content: "";
                         background: map-get($color, underline);
                         height: 6px;
-                        width: 122px;
+                        width: 20%;
+                        @include rp(pl){
+                            bottom: -10px;
+                        }
+                        @include rp(pm){
+                            height: 5px;
+                        }
+                        @include rp(ml){
+                            height: 4px;
+                            bottom: -5px;
+                        }
                     }
                 }
             }

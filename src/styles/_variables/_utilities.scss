@@ -36,7 +36,7 @@ $utilitiesBox: (
 		default: 35px 0,
 		pl: 25px 0,
 		pm: 25px 0,
-		ps: 4% 0 ,
+		ps: 2% 0 ,
 	),
   m-b-70:(
     default: 70px,
@@ -55,13 +55,21 @@ $blockUtilities: (
 		tl: 25vw,
     mm: 40vw,
 	),
+  utilities-2: (
+		default: 490px,
+		pl: 384px,
+		pm: 304px,
+		tx: 244px,
+		tl: 25vw,
+    mm: 40vw,
+	),
   utilities-3: (
 		default: 613px,
 		pl: 513px,
 		pm: 483px,
 		tx: 383px,
 		tl: 35vw,
-    // mm: 40vw,
+    ml: 220px,
 	),
 	tourIconService:(
 		default: 62px,
