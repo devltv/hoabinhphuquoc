@@ -15,7 +15,6 @@
 
   &__title {
     text-align: center;
-    
     @include spaceIndex(s42, padding-top);
     @include spaceIndex(s42, padding-bottom);
     &--size{

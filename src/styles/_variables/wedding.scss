@@ -1,11 +1,38 @@
-$spaceWedding1(
+$spacewedding1:(
 
 );
-$spaceWedding2(
-  s
+$spacewedding2:(
+  s84:(
+    default:84px,
+  )
 );
-@mixin blockwedding($key, $name, $side: '-1'){
-    @each $idx, $val in map-get($spaceIntro, #{$key}){
+@mixin spacewedding2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spacewedding2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockwedding2($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($blockwedding2, #{$key}){
       @if $side == '-1'{
         @if $idx == default{
           #{$name}: $val;
@@ -28,28 +55,3 @@ $spaceWedding2(
       }
     }
   }
-  @mixin spacewedding($key, $name, $side: '-1'){
-    @each $idx, $val in map-get($spaceIntro, #{$key}){
-      @if $side == '-1'{
-        @if $idx == default{
-          #{$name}: $val;
-        }
-        @else{
-          @media (max-width: map-get($media, $idx)){
-            #{$name}: $val;
-          }
-        }
-      }
-      @else{
-        @if $idx == default{
-          #{$name}: $val $side;
-        }
-        @else{
-          @media (max-width: map-get($media, $idx)){
-            #{$name}: $val $side;
-          }
-        }
-      }
-    }
-  }
-    

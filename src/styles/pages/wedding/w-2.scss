@@ -1,5 +1,5 @@
 .wedding-container{
     &__content{
-        margin-left: auto;
+        @include spacewedding2 (s84, margin-top);
     }
 }
