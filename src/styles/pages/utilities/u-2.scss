@@ -3,8 +3,9 @@
     .tour-title{
         width: 100%;
         text-align: center;
+        @include utilitiesBox(s90, margin-top);
     }
-    .section-box{
+    .custom-bg{
         position: relative;
         z-index: 1;
         &::after{
@@ -17,29 +18,32 @@
             background: map-get($color, buttonSwiper );
             z-index: -1;
         }
+    }
+    .section-box{
         .section-1{
-            @include utilitiesBox(m-b-70, margin-bottom);
             &__image{
                 @include blockUtilities(utilities-2, height);
                 margin: auto;
             }
             &__text{
+                color: map-get($color, base);
                 margin: auto;
                 @include utilitiesBox(p35, padding);
-                @include rp(pm){
-                    font-size: 1.8rem;
-                }
                 @include rp(ps){
                     font-size: 1.6rem;
                 }
                 @include rp(tl){
                     font-size: 1.4rem;
                 }
+                @include rp(mm){
+                    width: 80%;
+                    flex:  0 0 80%;
+                }
             }
         }   
         .section-2{
+            @include utilitiesBox(m70, margin);
             position: relative;
-            margin: auto;
             display: flex;
             align-items: center;
             &__image{
@@ -52,7 +56,7 @@
                         content: "";
                         width: 100%;
                         height: 100%;
-                        background: map-get($color, boxVideoOverlay );
+                        background: map-get($color, bg-utilities-2 );
                     }
                 }
                 @include rp(mx){
@@ -75,10 +79,11 @@
                     .section-2__text--decs{
                         .decs,
                         .time{
-                            color: map-get($color, mainBg );
+                            color: map-get($color, textInput );
                         }
                     }
                 }
+                
                 margin-left: auto;
                 &--title{
                     @include utilitiesBox(m-b-70, margin-bottom);
@@ -87,6 +92,7 @@
                     @include family--primary;
                     font-weight: bold;
                     @include size(s51);
+                    @include size(s51);
                     @include rp(pm){
                         font-size: 4.0rem;
                     }
@@ -94,16 +100,19 @@
                         font-size: 3.6rem;
                     }
                     @include rp(tx){
-                        font-size: 3.4rem;
+                        font-size: 3.2rem;
                     }
                     @include rp(tl){
-                        font-size: 3.2vw;
+                        font-size: 3rem;
+                    }
+                    @include rp(ts){
+                        font-size: 2.8rem;
                     }
                     @include rp(mm){
-                        font-size: 4vw;
-                    }
-                    @include rp(ml){
                         font-size: 3rem;
+                    }
+                    @include rp(sl){
+                        font-size: 2.4rem;
                     }
                     &::after{
                         position: absolute;
@@ -121,7 +130,7 @@
                         }
                         @include rp(ml){
                             height: 4px;
-                            bottom: -5px;
+                            bottom: -5%;
                         }
                     }
                 }
