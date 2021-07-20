@@ -1,0 +1,131 @@
+#utilities-2__wrapper{
+    
+    .tour-title{
+        width: 100%;
+        text-align: center;
+    }
+    .section-box{
+        position: relative;
+        z-index: 1;
+        &::after{
+            position: absolute;
+            @include utilitiesBox(m-t-90, top);
+            width: 100%;
+            height: 100%;
+            left: 0;
+            content: "";
+            background: map-get($color, buttonSwiper );
+            z-index: -1;
+        }
+        .section-1{
+            @include utilitiesBox(m-b-70, margin-bottom);
+            &__image{
+                @include blockUtilities(utilities-2, height);
+                margin: auto;
+            }
+            &__text{
+                margin: auto;
+                @include utilitiesBox(p35, padding);
+                @include rp(pm){
+                    font-size: 1.8rem;
+                }
+                @include rp(ps){
+                    font-size: 1.6rem;
+                }
+                @include rp(tl){
+                    font-size: 1.4rem;
+                }
+            }
+        }   
+        .section-2{
+            position: relative;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            &__image{
+                @include rp(mx){
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background: map-get($color, boxVideoOverlay );
+                    }
+                }
+                @include rp(mx){
+                    width: 100%;
+                    flex: unset;
+                }
+                @include blockUtilities(utilities-3, height);
+            }
+            &__text{
+                @include rp(mx){
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 0;
+                    width: 80%;
+                    height: 100%;
+                    .section-2__text--decs{
+                        .decs,
+                        .time{
+                            color: map-get($color, mainBg );
+                        }
+                    }
+                }
+                margin-left: auto;
+                &--title{
+                    @include utilitiesBox(m-b-70, margin-bottom);
+                    position: relative;
+                    color: map-get($color, main );
+                    @include family--primary;
+                    font-weight: bold;
+                    @include size(s51);
+                    @include rp(pm){
+                        font-size: 4.0rem;
+                    }
+                    @include rp(ps){
+                        font-size: 3.6rem;
+                    }
+                    @include rp(tx){
+                        font-size: 3.4rem;
+                    }
+                    @include rp(tl){
+                        font-size: 3.2vw;
+                    }
+                    @include rp(mm){
+                        font-size: 4vw;
+                    }
+                    @include rp(ml){
+                        font-size: 3rem;
+                    }
+                    &::after{
+                        position: absolute;
+                        bottom: -15px;
+                        left: 0;
+                        content: "";
+                        background: map-get($color, underline);
+                        height: 6px;
+                        width: 20%;
+                        @include rp(pl){
+                            bottom: -10px;
+                        }
+                        @include rp(pm){
+                            height: 5px;
+                        }
+                        @include rp(ml){
+                            height: 4px;
+                            bottom: -5px;
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}

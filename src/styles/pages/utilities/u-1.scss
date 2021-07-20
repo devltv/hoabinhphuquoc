@@ -1,0 +1,89 @@
+#utilities-1__wrapper{
+    // @include utilitiesBox(m-t-90, margin-top);
+    .tour-title{
+        width: 100%;
+        text-align: center;
+    }
+    .section-box{
+        position: relative;
+        .background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: -1;
+            img{
+                opacity: 0.1;
+            }
+        }
+        .items-section{
+            padding-top: 42px;
+            margin: auto;
+            justify-content: space-between;
+            @include rp(mm){
+                flex-direction: column;
+            }
+            .items{
+                @include rp(mm){
+                    width: 100%;
+                    flex: 0 0 100%;
+                }
+                width: 49%;
+                flex: 0 0 49%;
+                height: 100%;
+                cursor: pointer;
+
+                &:hover{
+                    .items__image{
+                        &--hover{
+                            bottom: 0;
+                        }
+                    }
+                }
+                &__image{
+                    overflow: hidden;
+                    transition: .3s ease-in-out;
+                    @include blockUtilities(utilities-1, height);
+                    width: 100%;
+                    position: relative;
+                    &--hover{
+                        transition: 0.3s ease-in-out;
+                        text-align: center;
+                        position: absolute;
+                        bottom: -100px;
+                        left: 0;
+                        width: 100%;
+                        @include utilitiesBox(p8, padding);
+                        text-transform: uppercase;
+                        color: map-get($color, mainBg );
+                        background: map-get($color, boxOverlay );
+                        p{
+                            @include size(s51);
+                            @include rp(pm){
+                                font-size: 4.0rem;
+                            }
+                            @include rp(ps){
+                                font-size: 3.6rem;
+                            }
+                            @include rp(tx){
+                                font-size: 3.2rem;
+                            }
+                            @include rp(tl){
+                                font-size: 3vw;
+                            }
+                            @include rp(mm){
+                                font-size: 4vw;
+                            }
+                        }
+                    }
+                }
+                &__text{
+                    @include utilitiesBox(p63, padding);
+                }
+                
+               
+            }
+        }
+    }
+    
+}
