@@ -1,0 +1,131 @@
+// service
+$utilitiesBox: (
+	m-t-90: (
+    default: 90px,
+		pl: 82px ,
+		pm: 54px ,
+		ps: 8% 0,
+    mm: 20px ,
+  ),
+  m-b-15:(
+    default: 15px,
+		pm: 12px,
+		ps: 4% ,
+    mm: 7px ,
+  ),
+  p63: (
+		default: 63px 0,
+		pl: 42px 0,
+		pm: 34px 0,
+		ps: 8% 0,
+    mm: 20px 0,
+	),
+  p8: (
+		default: 8px 0,
+		pl: 6px 0,
+		pm: 4px 0,
+		// ps: 4% 0,
+	),
+  p15: (
+		default: 0 15px,
+		pl: 0 10px,
+		pm: 0 8px,
+		ps: 0 4% ,
+	),
+  p35: (
+		default: 35px 0,
+		pl: 25px 0,
+		pm: 25px 0,
+		ps: 2% 0 ,
+	),
+  m-b-70:(
+    default: 70px,
+		pl: 60px,
+		pm: 50px,
+		ps: 4vw ,
+  )
+);
+
+$blockUtilities: (
+	utilities-1: (
+		default: 434px,
+		pl: 384px,
+		pm: 304px,
+		tx: 244px,
+		tl: 25vw,
+    mm: 40vw,
+	),
+  utilities-2: (
+		default: 490px,
+		pl: 384px,
+		pm: 304px,
+		tx: 244px,
+		tl: 25vw,
+    mm: 40vw,
+	),
+  utilities-3: (
+		default: 613px,
+		pl: 513px,
+		pm: 483px,
+		tx: 383px,
+		tl: 35vw,
+    ml: 220px,
+	),
+	tourIconService:(
+		default: 62px,
+		tl: 48px,
+		mx: 36px,
+		ml: 32px,
+	),
+);
+
+
+@mixin utilitiesBox($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($utilitiesBox, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockUtilities($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockUtilities, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

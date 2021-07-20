@@ -114,6 +114,17 @@ $spaceIndex4: (
      
    ),
 );
+$spaceIndex6:(
+    s88:(
+      default: 88px,
+    ),
+    s80:(
+      default: 80px,
+    ),
+    s56:(
+      default: 56px,
+    ),
+);
 //height
 $blockIndex: (
   imgIndex3: (
@@ -156,7 +167,18 @@ $blockIndex: (
     tl: 94px,
     tm: 90px,
   ),
-  
+  boxIndex6:(
+    default: 610px,
+  ),
+  imgIndex6:(
+    default: 630px,
+  ),
+  swipperIndex6:(
+    default: 630px,
+  ),
+  inforIndex6:(
+    default: 472px,
+  ),
 );
 @mixin spaceIndex($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spaceIndex, #{$key}){
@@ -232,6 +254,30 @@ $blockIndex: (
 }
 @mixin spaceIndex4($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spaceIndex4, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spaceIndex6($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceIndex6, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
