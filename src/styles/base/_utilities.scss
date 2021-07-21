@@ -56,13 +56,14 @@
   }
 
   .title-content{
-    @include size(s51);
+    // @include size(s51);
+    @include title(s51);
     @include family--primary;
     font-weight: bold;
     color: map-get($color, main );
     
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -82,7 +83,9 @@
 .title-second{
   &>*{
     color: map-get($color, main);
-    @include size(s51);
+    // @include size(s51);
+    @include title(s51);
+
     @include bold;
     @include family--primary;
   }

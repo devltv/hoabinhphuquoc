@@ -17,6 +17,11 @@
       &-img {
         width: 98px;
         height: 98px;
+        @include rp(tl){
+          width: 72px;
+          height: 72px;
+        }
+
         border-radius: 1000px;
 
         display: flex;
@@ -28,6 +33,10 @@
         @include spaceService3(bottomImg, margin-bottom);
         img {
           height: 43px;
+          @include rp(tl){
+            height: 24px;
+          }
+
           object-fit: contain;
         }
       }
