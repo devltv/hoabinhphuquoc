@@ -3,7 +3,9 @@
     .tour-title{
         width: 100%;
         text-align: center;
-        @include utilitiesBox(s90, margin-top);
+        // @include utilitiesBox(s90, margin-top);
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
     }
     .custom-bg{
         position: relative;
@@ -88,32 +90,36 @@
                 &--title{
                     @include utilitiesBox(m-b-70, margin-bottom);
                     position: relative;
-                    color: map-get($color, main );
-                    @include family--primary;
-                    font-weight: bold;
-                    @include size(s51);
-                    @include size(s51);
-                    @include rp(pm){
-                        font-size: 4.0rem;
+                    // @include size(s51);
+                    &>*{
+                        @include size(s51);
+                        color: map-get($color, main );
+                        @include family--primary;
+                        font-weight: bold;
+
+                        @include rp(pm){
+                            font-size: 4.0rem;
+                        }
+                        @include rp(ps){
+                            font-size: 3.6rem;
+                        }
+                        @include rp(tx){
+                            font-size: 3.2rem;
+                        }
+                        @include rp(tl){
+                            font-size: 3rem;
+                        }
+                        @include rp(ts){
+                            font-size: 2.8rem;
+                        }
+                        @include rp(mm){
+                            font-size: 3rem;
+                        }
+                        @include rp(sl){
+                            font-size: 2.4rem;
+                        }
                     }
-                    @include rp(ps){
-                        font-size: 3.6rem;
-                    }
-                    @include rp(tx){
-                        font-size: 3.2rem;
-                    }
-                    @include rp(tl){
-                        font-size: 3rem;
-                    }
-                    @include rp(ts){
-                        font-size: 2.8rem;
-                    }
-                    @include rp(mm){
-                        font-size: 3rem;
-                    }
-                    @include rp(sl){
-                        font-size: 2.4rem;
-                    }
+                    
                     &::after{
                         position: absolute;
                         bottom: -15px;

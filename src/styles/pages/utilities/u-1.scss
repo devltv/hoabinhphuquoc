@@ -3,7 +3,10 @@
     .tour-title{
         width: 100%;
         text-align: center;
-        @include utilitiesBox(s90, margin-top);
+        // @include utilitiesBox(s90, margin-top);
+        
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
     }
     .section-box{
         position: relative;
@@ -58,7 +61,7 @@
                         text-transform: uppercase;
                         color: map-get($color, mainBg );
                         background: map-get($color, boxOverlay );
-                        p{
+                        &>*{
                             @include size(s51);
                             @include rp(pm){
                                 font-size: 4.0rem;

@@ -3,7 +3,9 @@
     .tour-title{
         width: 100%;
         text-align: center;
-        @include utilitiesBox(s90, margin-top);
+        // @include utilitiesBox(s90, margin-top);
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
     }
     .section-box{
         .image__section{
@@ -12,7 +14,8 @@
         .section__text{
             margin: auto;
             color: map-get($color, base);
-            @include utilitiesBox(p35, padding);
+            @include utilitiesBox(p35, padding-top);
+            
             @include rp(pm){
                 font-size: 1.8rem;
             }
