@@ -2,65 +2,60 @@
 
 
 $libraryBox: (
-  s90: (
-		default: 90px,
-		pl: 11%,
-		tl: 13%,
-		mx: 11%,
-	),
-	m-t-90: (
+  
+    m-t-90: (
     default: 90px,
-		pl: 82px ,
-		pm: 54px ,
-		ps: 44px,
+        pl: 82px ,
+        pm: 54px ,
+        ps: 44px,
     mm: 20px ,
-  ),
-  m-b-15:(
-    default: 15px,
-		pm: 12px,
-		ps: 4% ,
-    mm: 7px ,
-  ),
-  p63: (
-		default: 63px 0,
-		pl: 42px 0,
-		pm: 34px 0,
-		ps: 8% 0,
-    mm: 20px 0,
-	),
-  p8: (
-		default: 8px 0,
-		pl: 6px 0,
-		pm: 4px 0,
-		// ps: 4% 0,
-	),
-  p15: (
-		default: 0 15px,
-		pl: 0 10px,
-		pm: 0 8px,
-		ps: 0 4% ,
-	),
-  p35: (
-		default: 35px 0,
-		pl: 25px 0,
-		pm: 25px 0,
-		ps: 4% 0 ,
-	),
-  m-b-70:(
-    default: 70px,
-		pl: 60px,
-		pm: 50px,
-		ps: 40px,
-    tl: 35px,
-    ml: 25px,
-  ),
-  m70:(
-    default: 70px auto,
-		pl: 60px auto,
-		pm: 50px auto,
-		ps: 35px auto,
-    mm: 20px auto,
-  )
+    ),
+    p-r-32:(
+        default: 32px,
+        pm: 12px,
+        ps: 4% ,
+        mm: 7px ,
+    ),
+    p63: (
+        default: 63px 0,
+        pl: 42px 0,
+        pm: 34px 0,
+        ps: 8% 0,
+        mm: 20px 0,
+        ),
+    p8: (
+        default: 8px 0,
+        pl: 6px 0,
+        pm: 4px 0,
+        // ps: 4% 0,
+        ),
+    p15: (
+        default: 0 15px,
+        pl: 0 10px,
+        pm: 0 8px,
+        ps: 0 4% ,
+        ),
+    p35: (
+        default: 35px 0,
+        pl: 25px 0,
+        pm: 25px 0,
+        ps: 4% 0 ,
+        ),
+    m-b-70:(
+        default: 70px,
+        pl: 60px,
+        pm: 50px,
+        ps: 40px,
+        tl: 35px,
+        ml: 25px,
+    ),
+    m70:(
+        default: 70px auto,
+        pl: 60px auto,
+        pm: 50px auto,
+        ps: 35px auto,
+        mm: 20px auto,
+    )
 );
 
 $blockLibrary: (

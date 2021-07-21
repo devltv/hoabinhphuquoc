@@ -1,8 +1,55 @@
-// #library-1__wrapper{
-//     .tour-title{
-//         width: 100%;
-//         text-align: center;
-//         @include space(s90, margin-top);
-//         @include space(s48, margin-bottom);
-//     }
-// }
+#library-1__wrapper{
+    .tour-title{
+        width: 100%;
+        text-align: center;
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
+    }
+    .section-box{
+        .image__section,
+        .video__section{
+            margin: auto;
+            &--title{
+                display: flex;
+                position: relative;
+                p{
+                    color: map-get($color, main );
+                    @include family--primary;
+                    font-weight: bold; 
+                    @include libraryBox(p-r-32, padding-right);
+                    display: inline-block;
+                    @include size(s51);
+                    @include rp(pm){
+                        font-size: 4.0rem;
+                    }
+                    @include rp(ps){
+                        font-size: 3.6rem;
+                    }
+                    @include rp(tx){
+                        font-size: 3.2rem;
+                    }
+                    @include rp(tl){
+                        font-size: 3rem;
+                    }
+                    @include rp(ts){
+                        font-size: 2.8rem;
+                    }
+                    @include rp(mm){
+                        font-size: 3rem;
+                    }
+                    @include rp(sl){
+                        font-size: 2.4rem;
+                    }
+                }
+                &::after{
+                    content: "";
+                    flex: 1 1;
+                    border-bottom: 1px solid map-get($color, main );
+                    margin-bottom: 20px;
+                    
+                }
+                
+            }
+        }
+    }
+}
