@@ -37,6 +37,7 @@ $color: (
 	buttonSwiper: #eeeeee,
 	buttonSwiper-2: #F8F8F8,
 
+	bulletBgHidden: #F8F8F8,
 	bulletBg: #c4c4c4,
 	bulletText: #c4c4c4,
 	bulletTextActive: #004a8f,
@@ -261,6 +262,13 @@ $space: (
 	
 	s50: (
 		default: 50px,
+	),
+
+	s60: (
+		default: 60px,
+		pm: 56px,
+		tx: 48px,
+		mx: 36px,
 	),
 
 	s72: (

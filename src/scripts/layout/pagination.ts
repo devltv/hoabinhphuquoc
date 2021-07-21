@@ -37,9 +37,11 @@ function paginationCreate(objClass:any, totalBox:any, liActive:number, totalPage
 
   objClass.innerHTML = createPagination(totalPage, liActive);
 
+  var strIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247"><g id="Group_4724" data-name="Group 4724" transform="translate(-1707.523 -2418.824)"><path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>`;
+
   // thay đổi kí tự next và prev
-  changeIcon(objClass, "next", `<svg xmlns="http://www.w3.org/2000/svg" width="26.65" height="17.567" viewBox="0 0 26.65 17.567"  style="transform:rotate(90deg)"><path id="Path_5" data-name="Path 5" d="M1760,5251.718l9.082-9.082,9.082,9.082" transform="translate(-1755.757 -5238.393)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/></svg>`);
-  changeIcon(objClass, "prev", `<svg xmlns="http://www.w3.org/2000/svg" width="26.65" height="17.567" viewBox="0 0 26.65 17.567" style="transform:rotate(270deg)"><path id="Path_5" data-name="Path 5" d="M1760,5251.718l9.082-9.082,9.082,9.082" transform="translate(-1755.757 -5238.393)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/></svg>`);
+  changeIcon(objClass, "next", strIcon);
+  changeIcon(objClass, "prev", strIcon);
 
   // click button
   clickButton(objClass, totalBox, totalPage, itemPages, scrollTop);
