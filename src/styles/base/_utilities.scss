@@ -35,7 +35,7 @@
     width: 100%;
   }
 
-  & .title-shadow{
+ .title-shadow{
     line-height: 1.05;
 
     @include size(s215);
@@ -56,13 +56,14 @@
   }
 
   .title-content{
-    @include size(s51);
+    // @include size(s51);
+    @include title(s51);
     @include family--primary;
     font-weight: bold;
     color: map-get($color, main );
     
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -82,7 +83,9 @@
 .title-second{
   &>*{
     color: map-get($color, main);
-    @include size(s51);
+    // @include size(s51);
+    @include title(s51);
+
     @include bold;
     @include family--primary;
   }
@@ -135,109 +138,167 @@
   }
 }
 
-// [hidden],
-// .hidden,
-// .d-none {
-// 	display: none !important;
-// }
+.endow {
+  &__content {
+    display: flex;
+  }
 
-// .desktop {
-// 	@media (max-width: 1024px) {
-// 		display: none !important;
-// 	}
-// }
+  &__left{
+    @include spaceIndex3(s48, padding-right);
 
-// .mobile {
-// 	@media (min-width: 1025px) {
-// 		display: none !important;
-// 	}
-// }
+    @include rp(tm) {
+      padding: 0 0 24px 0;
+    }
 
-// .d-block {
-// 	display: block;
-// }
+    &--list {
+      list-style-type: none;
 
-// .d-inline-block {
-// 	display: inline-block;
-// }
+      max-width: 276px;
+      @include rp(pm) {
+        max-width: 95%;
+      }
+      @include rp(tl) {
+        max-width: 90%;
+      }
+      @include rp(tm) {
+        max-width: 100%;
+        overflow-x: scroll;
 
-// .d-flex {
-// 	display: flex;
-// }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        
+        display: flex;
+        // justify-content: space-between;
+      }
+    }
+    &--items {
+      // display: inline-block;
 
-// .d-inline-flex {
-// 	display: inline-flex;
-// }
+      @include spaceIndex(s32, padding, 0);
+      cursor: pointer;
+      position: relative;
 
-// .flex-wrap {
-// 	flex-wrap: wrap;
-// }
+      &:not(:last-child)::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 95%;
+        height: 1px;
+        background: map-get($color, base);
+        content: "";
+      }
 
-// .align-center {
-// 	align-items: center;
-// }
+      @include rp(tm) {
+        white-space: nowrap;
+        &:not(:last-child){
+          margin-right: 36px;
+        }
+        &:not(:last-child)::after {
+          width: 0%;
+        }
+        margin: 0;
+        
+      }
 
-// .align-end {
-// 	align-items: flex-end;
-// }
+      @include rp(ts) {
+        &:not(:last-child){
+          margin-right: 24px;
+        }
+      }
+    }
+    &--desc {
+      @include size(s45);
 
-// .justify-center {
-// 	justify-content: center;
-// }
+      @include rp(tm) {
+        font-size: 4rem;
+      }
+      @include rp(tl) {
+        font-size: 3.8rem;
+      }
+      @include rp(ts) {
+        font-size: 3.4rem;
+      }
+      @include rp(mx) {
+        font-size: 3rem;
+      }
+      @include rp(ml) {
+        font-size: 2.6rem;
+      }
+      @include rp(mm) {
+        font-size: 2.2rem;
+      }
+      @include family--primary;
+      font-weight: bold;
+      color: map-get($color, base);
+      &.active {
+        color: map-get($color, main);
+      }
+    }
+  }
+  &__slide{
+    display: none !important;
+    &.active{
+      display: block !important;
+    }
+  }
+  &__right {
+    @include rp(tm) {
+      padding: 0 !important;
+    }
+    position: relative;
 
-// .justify-end {
-// 	justify-content: flex-end;
-// }
+    @include rp(tx) {
+      padding: 0 50px;
+    }
+    
+    .endow-box {
+      position: relative;
 
-// .justify-space-between {
-// 	justify-content: space-between;
-// }
-
-// .flex-center {
-// 	justify-content: center;
-// 	align-items: center;
-// }
-
-// .list-style-none {
-// 	list-style-type: none;
-// }
-
-// .ml-auto {
-// 	margin-left: auto;
-// }
-
-// .mr-auto {
-// 	margin-right: auto;
-// }
-
-// .mx-auto {
-// 	margin-right: auto;
-// 	margin-left: auto;
-// }
-
-// .overflow-hidden {
-// 	overflow: hidden;
-// }
-
-// .font-italic {
-// 	font-style: italic;
-// }
-
-// .text-uppercase {
-// 	text-transform: uppercase;
-// }
-
-// .text-capitalize {
-// 	text-transform: capitalize;
-// }
-
-// .text-center {
-// 	text-align: center;
-// }
-
-// .field-validation-error {
-// 	display: inline-block;
-// 	margin: 0.5rem 0;
-// 	font-size: 12px;
-// 	color: red;
-// }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 8px;
+        background: map-get($color, main);
+        top: 99%;
+        left: 0;
+      }
+      &__img {
+        @include blockIndex(imgIndex3, height);
+      }
+      &__content {
+        @include spaceIndex(s34-2, padding);
+        background: map-get($color, navigation);
+      }
+      &__title {
+        &--size {
+          @include size(s26);
+          @include rp(ts) {
+            font-size: 2.4rem;
+          }
+          font-weight: bold;
+          color: map-get($color, main);
+        }
+      }
+      &__desc {
+        & > * {
+          @include spaceIndex(s24, margin, 0);
+          @include size(s18);
+          @include rp(ts) {
+            font-size: 1.6rem;
+          }
+          @include p-line-clamp(2);
+          line-height: 1.4;
+        }
+      }
+      &__bottom {
+        .endow-box__more {
+          svg {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}

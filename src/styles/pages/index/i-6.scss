@@ -1,14 +1,35 @@
 .index6 {
     .index-discover {
+        .title-primary{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+    
+            @include space(s90, margin-top);
+            @include space(s48, margin-bottom);
+        }
         &__intro {
             display: flex;
             justify-content: center;
             @include spaceIndex6(s56, margin-bottom);
+
             & > * {
-                @include size(s18);
+                // @include size(s18);
                 color: map-get($color, base);
                 text-align: center;
-                width: 60%;
+                line-height: 1.6;
+
+                width: 56%;
+                @include rp(pl){
+                    width: 65%;
+                }
+
+                @include rp(tx){
+                    width: 80%;
+                }
+                @include rp(ts){
+                    width: 96%;
+                }
             }
         }
         &__slide {

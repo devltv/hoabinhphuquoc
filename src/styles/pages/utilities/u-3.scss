@@ -1,0 +1,34 @@
+#utilities-3__wrapper{
+    
+    .tour-title{
+        width: 100%;
+        text-align: center;
+        // @include utilitiesBox(s90, margin-top);
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
+    }
+    .section-box{
+        .image__section{
+            @include blockUtilities(utilities-4, height);
+        }
+        .section__text{
+            margin: auto;
+            color: map-get($color, base);
+            @include utilitiesBox(p35, padding-top);
+            
+            @include rp(pm){
+                font-size: 1.8rem;
+            }
+            @include rp(ps){
+                font-size: 1.6rem;
+            }
+            @include rp(tl){
+                font-size: 1.4rem;
+            }
+            @include rp(mm){
+                width: 80%;
+                flex:  0 0 80%;
+            }
+        }
+    }
+}

@@ -1,82 +1,13 @@
 .index-endow {
-    &__content {
+    .title-primary {
+        width: 100%;
         display: flex;
-        .index-endow__left {
-            @include spaceIndex3(s48, padding-right);
-            @include rp(tm){
-                padding: 24px 0;
-            }
-            &--list {
-                max-width: 276px;
-                @include rp(pm){
-                    max-width: 95%;
-                }
-                @include rp(tl){
-                    max-width: 90%;
-                }
-                @include rp(tm){
-                    max-width: 100%;
-                }
-                list-style-type: none;
-                @include rp(tm){
-                    display: flex;
-                    justify-content: space-between;
-                }
-            }
-            &--items {
-                @include spaceIndex(s72, margin, 0);
+        justify-content: center;
 
-                position: relative;
-                &:not(:last-child)::after {
-                    position: absolute;
-                    top: 175%;
-                    left: 0;
-                    width: 95%;
-                    height: 1px;
-                    background: map-get($color, base);
-                    content: "";
-                }
-                @include rp(tm){
-                    &:not(:last-child)::after {
-                        width: 0%;
-                    }
-                    margin: 0;
-                }
-               
-            }
-            &--desc {
-                @include size(s45);
-                @include rp(tm){
-                    font-size: 4.0rem;
-                }
-                @include rp(tl){
-                    font-size: 3.8rem;
-                }
-                @include rp(ts){
-                    font-size: 3.4rem;
-                }
-                @include rp(mx){
-                    font-size: 3.0rem;
-                }
-                @include rp(ml){
-                    font-size: 2.6rem;
-                }
-                @include rp(mm){
-                    font-size: 2.2rem;
-                }
-                @include family--primary;
-                font-weight: bold;
-                color: map-get($color, base);
-                &.active{
-                    color: map-get($color, main );
-                }
-            }
-        }
+        @include space(s48, margin-top);
+        @include space(s48, margin-bottom);
     }
-    &__right {
-        @include rp(tm){
-            padding: 0 !important;
-        }
+    .endow__right {
         position: relative;
         $wh: 43px;
         .swiper-button-next,
@@ -89,90 +20,51 @@
             width: $wh;
             height: $wh;
 
+            @media (max-width: map-get($media, tl)) {
+                $wh: 36px;
+
+                width: $wh;
+                height: $wh;
+            }
+
+            @media (max-width: map-get($media, mx)) {
+                $wh: 30px;
+
+                width: $wh;
+                height: $wh;
+            }
+
             border-radius: 1000px;
         }
 
         $spaceButtonSwiper: -35px;
         .swiper-button-next {
             right: calc(#{$spaceButtonSwiper} - #{$wh});
-            @include rp(pm){
+            @include rp(pm) {
                 right: calc(-15px - #{$wh});
             }
-            @include rp(tx){
+            @include rp(tx) {
                 right: 0;
             }
-            @include rp(tm){
+            @include rp(tm) {
                 right: 18px;
             }
-            
         }
         .swiper-button-prev {
             left: calc(#{$spaceButtonSwiper} - #{$wh});
-            @include rp(pm){
+            @include rp(pm) {
                 left: calc(-15px - #{$wh});
             }
-            @include rp(tx){
+            @include rp(tx) {
                 left: 0;
-             }
-            @include rp(tm){
+            }
+            @include rp(tm) {
                 left: 18px;
             }
         }
-        @include rp(tx){
-           padding: 0 50px;
-        }
-        & .index-endow__slide{
-            display: none;
-        }
-        .endow-box {
-            position: relative;
-            &::after{
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 8px;
-                background: map-get($color, main );
-                top: 99%;
-                left: 0;
-            }
-            &__img{
-                @include blockIndex(imgIndex3, height);
-            }
-            &__content {
-                @include spaceIndex(s34-2,padding);
-                background: map-get($color, navigation);
-            }
-            &__title {
-                &--size {
-                    @include size(s26);
-                    @include rp(ts){
-                        font-size: 2.4rem;
-                    }
-                    font-weight: bold;
-                    color: map-get($color, main);
-                }
-            }
-            &__desc {
-                
-                & > * {
-                    @include spaceIndex(s24,margin,0);
-                    @include size(s18);
-                    @include rp(ts){
-                        font-size: 1.6rem;
-                    }
-                    @include p-line-clamp(2);
-                    line-height: 1.4;
-                }
-            }
-            &__bottom {
-                
-                & .endow-box__more {
-                    svg {
-                        margin-left: 8px;
-                    }
-                }
-            }
 
+        & .endow__slide {
+            display: none;
         }
     }
 }

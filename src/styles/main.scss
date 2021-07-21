@@ -22,8 +22,15 @@
 // layout
 @import "layout/header";
 @import "layout/footer";
+@import "layout/pagination";
 
 // page
 @import "pages/index/style";
 @import "pages/service/style";
+<<<<<<< HEAD
 @import "pages/cuisine/style";
+=======
+@import "pages/utilities/style";
+@import "pages/library/style";
+@import "pages/endow/style";
+>>>>>>> 018ccdba75f38d1bf0e0dfcb4bff393478655635

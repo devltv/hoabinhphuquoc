@@ -80,6 +80,19 @@
   font-size: map-get($sizes, #{$size});
 }
 
+
+@mixin title($key){
+  @each $idx, $val in map-get($title, #{$key}){
+    @if $idx == default{
+      font-size: $val;
+    }
+    @else{
+      @media (max-width: map-get($media, $idx)){
+        font-size: $val;
+      }
+    }
+  }
+}
 //////////// FONT SIZE ////////////////////////
 ////////////////////////////////////////////////
 
