@@ -4,11 +4,18 @@
 $libraryBox: (
   
     m-t-90: (
-    default: 90px,
+      default: 90px,
         pl: 82px ,
         pm: 54px ,
         ps: 44px,
-    mm: 20px ,
+      mm: 20px ,
+    ),
+    m-t-53: (
+      default: 53px,
+        pl: 43px ,
+        pm: 33px ,
+        ps: 23px,
+        mm: 13px ,
     ),
     p-r-32:(
         default: 32px,
@@ -30,13 +37,13 @@ $libraryBox: (
         pm: 20px 0,
         ps: 3% 0 ,
         ),
-    m-b-70:(
-        default: 70px,
-        pl: 60px,
-        pm: 50px,
-        ps: 40px,
-        tl: 35px,
-        ml: 25px,
+    m-b-60:(
+        default: 60px,
+        pl: 50px,
+        pm: 40px,
+        ps: 30px,
+        tl: 25px,
+        ml: 15px,
     ),
     m70:(
         default: 70px auto,
@@ -54,12 +61,22 @@ $blockLibrary: (
 		// pm: 304px,
 		// tx: 244px,
 		// // tl: 220px,
-        // tm: 224px,
-        // ts: 204px,
-        // mx: 164px,
-        // mm: 100%,
+    // tm: 224px,
+    // ts: 204px,
+    // mx: 164px,
+    // mm: 100%,
 	),
- 
+  library-video-top: (
+		default: 502px,
+		pl: 402px,
+		// pm: 304px,
+		// tx: 244px,
+		// // tl: 220px,
+    // tm: 224px,
+    // ts: 204px,
+    // mx: 164px,
+    // mm: 100%,
+	),
 );
 
 

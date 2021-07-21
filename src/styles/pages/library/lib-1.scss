@@ -9,22 +9,68 @@
         .image__section{
             &--image{
                 .box-list{
-                    display: flex;
-                    width: 100%;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    @include libraryBox(p30, padding);
-                    .box{
-                        transition: 0.3s ease-in-out;
-                        width: 32.5%;
-                        margin-top: 10px;
-                        @include blockLibrary(library-1, height);
+                    
+                    &__items{
+                        display: flex;
+                        width: 100%;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        @include libraryBox(p30, padding);
+                        &--image{
+                            transition: 0.3s ease-in-out;
+                            width: 32.5%;
+                            margin-top: 10px;
+                            @include blockLibrary(library-1, height);
+                        }
+                    }
+                }
+            }
+        }
+        .video__section{
+            &--video{
+                .box-list{
+                    &__items{
+                        @include libraryBox(p30, padding);
+                        &--top{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            @include blockLibrary(library-video-top, height);
+                            &-big{
+                                width: 813px;
+                                height: 100%;
+                            }
+                            &-small{
+                                width: 502px;
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                iframe{
+                                    height: 49%;
+                                }
+                            }
+                        }
+                        &--bottom{
+                            @include libraryBox(m-t-53, margin-top);
+                            display: flex;
+                            justify-content: space-between;
+                            height: 228px;
+                            width: 100%;
+                            iframe{
+                                width: 32%;
+                            }
+                        }
                     }
                 }
             }
         }
         .image__section,
         .video__section{
+            .box-pagination{
+                justify-content: flex-start;
+            }
+            @include libraryBox(m-b-60, padding-bottom);
             margin: auto;
             &--title{
                 display: flex;
