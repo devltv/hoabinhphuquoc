@@ -6,6 +6,23 @@
         @include space(s48, margin-bottom);
     }
     .section-box{
+        .image__section{
+            &--image{
+                .box-list{
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    @include libraryBox(p30, padding);
+                    .box{
+                        transition: 0.3s ease-in-out;
+                        width: 32.5%;
+                        margin-top: 10px;
+                        @include blockLibrary(library-1, height);
+                    }
+                }
+            }
+        }
         .image__section,
         .video__section{
             margin: auto;
@@ -48,7 +65,6 @@
                     margin-bottom: 20px;
                     
                 }
-                
             }
         }
     }

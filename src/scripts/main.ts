@@ -17,7 +17,7 @@ import {header} from "./layout/header";
 // Page
 import index from "./page/index";
 import {service} from "./page/service";
-
+import {library} from "./page/library";
 
 ///////////////////////////////////////////////////////////////
 // function Common
@@ -35,6 +35,7 @@ function layout(){
 function page(){
   index.index();
   service();
+  library();
 }
 
 ////////////////////////////////////////////////////////////////

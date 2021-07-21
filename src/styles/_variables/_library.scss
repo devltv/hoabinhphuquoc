@@ -23,23 +23,12 @@ $libraryBox: (
         ps: 8% 0,
         mm: 20px 0,
         ),
-    p8: (
-        default: 8px 0,
-        pl: 6px 0,
-        pm: 4px 0,
-        // ps: 4% 0,
-        ),
-    p15: (
-        default: 0 15px,
-        pl: 0 10px,
-        pm: 0 8px,
-        ps: 0 4% ,
-        ),
-    p35: (
-        default: 35px 0,
-        pl: 25px 0,
-        pm: 25px 0,
-        ps: 4% 0 ,
+    
+    p30: (
+        default: 30px 0,
+        pl: 20px 0,
+        pm: 20px 0,
+        ps: 3% 0 ,
         ),
     m-b-70:(
         default: 70px,
@@ -60,15 +49,15 @@ $libraryBox: (
 
 $blockLibrary: (
 	library-1: (
-		default: 434px,
-		pl: 384px,
-		pm: 304px,
-		tx: 244px,
-		// tl: 220px,
-    tm: 224px,
-    ts: 204px,
-    mx: 164px,
-    mm: 100%,
+		default: 324px,
+		pl: 100%,
+		// pm: 304px,
+		// tx: 244px,
+		// // tl: 220px,
+        // tm: 224px,
+        // ts: 204px,
+        // mx: 164px,
+        // mm: 100%,
 	),
  
 );
@@ -100,7 +89,7 @@ $blockLibrary: (
 }
 
 @mixin blockLibrary($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($blocklibrary, #{$key}){
+  @each $idx, $val in map-get($blockLibrary, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
