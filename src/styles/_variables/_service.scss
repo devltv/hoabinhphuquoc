@@ -30,14 +30,14 @@ $serviceBox: (
 
 
 $spaceService2: (
-  bottomTitle: (
-    default: 36px,
+  title: (
+    default: 36px, 
+    tl: 24px, 
   ),
-
-  bottomDesc:(
+  desc:(
     default: 70px,
     pm: 56px,
-    tl: 48px,
+    tl: 24px,
   ),
 );
 
@@ -61,15 +61,16 @@ $spaceService4: (
   ),
   bottomDesc: (
     default: 60px,
+    pm: 48px,
+    ts: 24px,
   ),
 
   bottomImg:(
     default: 140px,
     pl: 120px,
-    ps: 100px,
     tx: 90px,
-    tm: 70px,
-    mx: 56px,
+    tm: 64px,
+    mx: 36px,
   ),
 );
 

@@ -1,4 +1,12 @@
 .index-endow {
+    .title-primary{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include space(s48, margin-top);
+        @include space(s48, margin-bottom);
+    }
     &__content {
         display: flex;
         .index-endow__left {
@@ -46,6 +54,7 @@
             }
             &--desc {
                 @include size(s45);
+
                 @include rp(tm){
                     font-size: 4.0rem;
                 }
@@ -88,6 +97,20 @@
 
             width: $wh;
             height: $wh;
+
+            @media (max-width: map-get($media, tl)){
+                $wh: 36px;
+        
+                width: $wh;
+                height: $wh;
+            }
+    
+            @media (max-width: map-get($media, mx)){
+            $wh: 30px;
+    
+            width: $wh;
+            height: $wh;
+            }
 
             border-radius: 1000px;
         }

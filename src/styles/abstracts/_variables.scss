@@ -107,6 +107,47 @@ $sizes: (
 	s251: 25.1rem,
 );
 
+$title: (
+	s58: (
+		default: 5.8rem,
+	),
+	s51: (
+		default: 5.1rem,
+		pm: 4.8rem,
+		ps: 4.2rem,
+		tx: 3.8rem,
+		ml: 3.4rem,
+	),
+	s45: (
+		default: 4.5rem,
+		tx: 4rem,
+		mx: 3.8rem,
+	),
+	s41: (
+		default: 4.1rem,
+		tx: 3.8rem,
+		mx: 3.6rem,
+	),
+	s31: (
+		default: 3.1rem,
+	),
+	s26: (
+		default: 2.6rem,
+		ts: 2.4rem,
+		ml: 2rem,
+	),
+	s21: (
+		default: 2.1rem,
+		tx: 2rem,
+		mx: 1.9rem,
+	),
+
+	s18: (
+		default: 1.8rem,
+		tx: 1.7rem,
+	),
+);
+
 // Cách sử dụng: map-get($media, ps);
 // Hoặc là: @include rp(ps);
 $media: (
@@ -226,7 +267,8 @@ $space: (
 	s90:(
 		default: 90px,
 		tx: 72px,
-		mx: 60px,
+		mx: 42px,
+		mm: 36px,
 	),
 
 	// Khoảng cách 2 section

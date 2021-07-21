@@ -9,19 +9,19 @@
     }
   
     &__content{
-      @include spaceService2(bottomTitle, margin-top);
+      @include spaceService2(title, margin-top);
   
       &-desc{
         text-align: center;
-        @include spaceService2(bottomDesc, padding-bottom);
+        @include spaceService2(desc, padding-bottom);
       }
   
       &-img{
         @include blockService(imgCarService, height);
 
-        img{
-          object-position: left;
-        }
+        // img{
+        //   object-position: left;
+        // }
       }
     }
   }
