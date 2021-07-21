@@ -1,10 +1,18 @@
 // service
+
+
 $utilitiesBox: (
+  s90: (
+		default: 90px,
+		pl: 11%,
+		tl: 13%,
+		mx: 11%,
+	),
 	m-t-90: (
     default: 90px,
 		pl: 82px ,
 		pm: 54px ,
-		ps: 8% 0,
+		ps: 44px,
     mm: 20px ,
   ),
   m-b-15:(
@@ -36,13 +44,22 @@ $utilitiesBox: (
 		default: 35px 0,
 		pl: 25px 0,
 		pm: 25px 0,
-		ps: 2% 0 ,
+		ps: 4% 0 ,
 	),
   m-b-70:(
     default: 70px,
 		pl: 60px,
 		pm: 50px,
-		ps: 4vw ,
+		ps: 40px,
+    tl: 35px,
+    ml: 25px,
+  ),
+  m70:(
+    default: 70px auto,
+		pl: 60px auto,
+		pm: 50px auto,
+		ps: 35px auto,
+    mm: 20px auto,
   )
 );
 
@@ -52,24 +69,31 @@ $blockUtilities: (
 		pl: 384px,
 		pm: 304px,
 		tx: 244px,
-		tl: 25vw,
-    mm: 40vw,
+		// tl: 220px,
+    tm: 224px,
+    ts: 204px,
+    mx: 164px,
+    mm: 100%,
 	),
   utilities-2: (
 		default: 490px,
 		pl: 384px,
 		pm: 304px,
-		tx: 244px,
-		tl: 25vw,
-    mm: 40vw,
+		tx: 100%,
 	),
   utilities-3: (
 		default: 613px,
 		pl: 513px,
 		pm: 483px,
 		tx: 383px,
-		tl: 35vw,
-    ml: 220px,
+		tl: 354px,
+    ml: 250px,
+	),
+  utilities-4: (
+		default: 769px,
+		pl: 659px,
+		pm: 583px,
+		tx: 100%,
 	),
 	tourIconService:(
 		default: 62px,
