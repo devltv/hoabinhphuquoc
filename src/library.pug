@@ -1,0 +1,21 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Page | Utilities';
+	//- - let bodyClass = 'index-page';
+	- let banner = false;
+	
+	- let bannerSub = false;
+	- let titleBannerSub = "Thư Viện";
+	- let imgBannerSub = "./assets/images/page/service/banner.png";
+	- let breadcrumbBanner = [["Trang chủ", ""], ["Tiện ích", "active"]];
+	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
+
+//- block loading
+//- 	include _templates/_layout/_loading
+//- block banner,breadcrumb
+block main
+	div(id="servicePage")
+		include _templates/library/lib-1.pug
+
+block scripts
