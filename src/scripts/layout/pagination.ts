@@ -101,10 +101,12 @@ function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:nu
     let item = liBtns[i];
     
     item.onclick = function(){
-      console.log(this);
       // let classItem = this.getAttribute('class');
-      let dataItem = this.getAttribute('data-number');
-
+      let dataItem = parseInt(this.getAttribute('data-number'));
+      
+      if (this.classList.contains('btn-hidden') || dataItem == itemActive){
+        return;
+      }
       if (this.classList.contains('next') && itemActive < totalPage){
         itemActive = itemActive + 1;
       }
@@ -112,9 +114,10 @@ function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:nu
         itemActive = itemActive - 1;
       }
       else{
-        if (dataItem){
-          itemActive = parseInt(dataItem);
+        if (!dataItem){
+          return;
         }
+        itemActive = dataItem;
       }
 
       hiddenNextPrev(objClass, itemActive, totalPage);
