@@ -117,12 +117,22 @@ $spaceIndex4: (
 $spaceIndex6:(
     s88:(
       default: 88px,
+      pl: 80px,
+      pm: 72px,
+      ps: 64px,
     ),
     s80:(
       default: 80px,
+      pl: 76px,
+      pm: 72px,
+      ps: 64px,
     ),
     s56:(
       default: 56px,
+      pl: 52,
+      pm: 46px,
+      ps: 28px,
+      
     ),
 );
 //height
@@ -169,15 +179,12 @@ $blockIndex: (
   ),
   boxIndex6:(
     default: 610px,
+    pl: 580px,
+    pm: 550px,
   ),
   imgIndex6:(
     default: 630px,
-  ),
-  swipperIndex6:(
-    default: 630px,
-  ),
-  inforIndex6:(
-    default: 472px,
+    
   ),
 );
 @mixin spaceIndex($key, $name, $side: '-1'){

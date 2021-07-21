@@ -1,0 +1,179 @@
+.cuisine1{
+    .cuisine-kitchen{
+        .title-primary{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        
+            @include space(s48, margin-top);
+            @include space(s48, margin-bottom);
+        }
+        &__section{
+            @include blockCuisine(sectionCuisine1,height);
+        }
+        &__section{
+            .content{
+                display: flex;
+                @include rp(tm){
+                    justify-content: center;
+                }
+                @include blockCuisine(sectionCuisine1,height);
+                &__left{
+                    width: 50%;
+                    @include rp(tm){
+                        width: 80%;
+                        order: 2;
+                    }
+                    @include rp(ml){
+                        width: 100%;
+                        
+                    }
+                }
+                &__img{
+                    position: relative;
+                    max-width: 100%;
+                    @include blockCuisine(sectionCuisine1,height);
+                    @include rp(tm){
+                        width: 80%;
+                        margin: auto;
+                    }
+                    @include rp(ts){
+                        width: 90%;
+                        
+                    }
+                    @include rp(mx){
+                        width: 100%;
+                        margin: 0;
+                    }
+                    &--First{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        @include blockCuisine(wImgCuisine1, width);
+                        @include blockCuisine(imgCuisine1, height);
+    
+                        padding: 14px;
+    
+                        background: map-get($color, mainBg );
+                        border: solid 1px map-get($color, main );
+                        
+                    }
+                    &--Second{
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        @include blockCuisine(imgCuisine1-2, height);
+                        @include blockCuisine(wImgCuisine1-2, width);
+                    }
+                }
+                &__right{
+                    @include spaceCuisine1(sRight,padding-left);
+                    
+                    width: 50%;
+
+                    @include rp(tm){
+                        width: 80%;
+                        order: 1;
+                        margin-bottom: 16px;
+                    }
+                    @include rp(ml){
+                        width: 100%;
+                        
+                    }
+                }
+                &__title{
+                    margin-bottom: 4px;
+                    &>*{
+                        @include size(s26);
+                        @include rp(pm){
+                            font-size: 24px;
+                        }
+                        @include rp(tx){
+                            font-size: 22px;
+                        }
+                        @include rp(mx){
+                            font-size: 20px;
+                        }
+                        @include rp(mm){
+                            font-size: 18px;
+                        }
+                        font-weight: bold;
+                        color: map-get($color, base );
+                        
+                    }
+                
+                }
+                &__titleSub{
+                    @include spaceCuisine1(s54,margin-bottom);
+                    &>*{
+                        @include family--primary;
+                        @include size(s50);
+                        @include rp(pm){
+                            font-size: 48px;
+                        }
+                        @include rp(tx){
+                            font-size: 46px;
+                        }
+                        @include rp(tx){
+                            font-size: 44px;
+                        }
+                
+                        @include rp(mm){
+                            font-size: 40px;
+                        }
+                        @include rp(sx){
+                            font-size: 34px;
+                        }
+                        @include rp(sl){
+                            font-size: 30px;
+                        }
+                        font-weight: bold;
+                        color: map-get($color, main );
+                    }
+                    
+                }
+                &__desc{
+                    @include spaceCuisine1(s70, margin-bottom);
+                    &>*{
+                        @include size(s18);
+                        @include rp(pm){
+                            font-size: 16px;
+                        }
+                        @include rp(mx){
+                            font-size: 15px;
+                        }
+                        @include rp(mm){
+                            font-size: 14px;
+                        }
+                        color: map-get($color, base );
+                        line-height: 1.6;
+                    }
+                   
+                }
+                &__icons{
+                    // width: 100%;
+                    // height: 96px;
+                    
+                }
+                &__list{
+                    width: 100%;
+                    @include blockCuisine(listCuisine1,height);
+                
+                    list-style-type: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                &__items{
+                    img{
+                        object-fit: contain;
+                        @include blockCuisine(ImgIcons,width);
+                        @include blockCuisine(ImgIcons,height);
+                    }
+                }
+            }
+        }
+        
+    }
+}

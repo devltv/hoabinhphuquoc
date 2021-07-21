@@ -47,9 +47,13 @@
                 .content__infor {
                     position: absolute;
                     top: 90%;
+                    @include rp(pl){
+                        top: 85%;
+                    }
                     left: 50%;
                     z-index: 1;
                     transform: translateX(-50%);
+
                     // width: 80%;
                     // @include blockIndex(inforIndex6,height);
 
@@ -71,13 +75,32 @@
                 @include blockIndex(sipperIndex6, height);
             }
         }
+        
         .content__box.active {
+            z-index: 1;
+            
+            .content__img{
+                margin-top: -2px;
+                @include blockIndex(imgIndex6,height);
+                
+            }
             .content__infor {
                 position: absolute;
                 top: 15%;
                 left: 10%;
                 right: 10%;
                 bottom: 10%;
+                @include rp(pl){
+                    top: 10%;
+                    left: 8%;
+                    right: 8%;
+                    bottom: 12%;
+                }
+                @include rp(pm){
+                    top: 9%;
+                    bottom: 16%;
+                }
+
                 z-index: 1;
                 transform: translateX(0%);
                 background: map-get($color, boxOverlayActive);

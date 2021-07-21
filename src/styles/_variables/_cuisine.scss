@@ -1,0 +1,144 @@
+
+$spaceCuisine1:(
+    s54: (
+        default: 54px,
+        pl: 48px,
+        pm: 36px,
+        tm: 32px,
+        ml: 24px,
+    ),
+    s70:(
+        default: 70px,
+        pl: 48px,
+        pm: 24px,
+        tm: 20px,
+    ),
+    sRight: (
+        default: 70px,
+        pl: 60px,
+        ps: 50px,
+        tm: 0px,
+    ),
+);
+
+
+
+$blockCuisine: (
+    sectionCuisine1:(
+        default: 500px,
+        pl: 460px,
+        pm: 405px,
+        ps: 400px,
+        tm: 380px,
+        ml: 350px,
+        mm: 270px,
+        
+
+    ),
+    imgCuisine1: (
+        default: 380px,
+        pl: 360px,
+        pm: 330px,
+        tm: 300px,
+        mx: 290px,
+        ml: 260px,
+        mm: 220px,
+        sx: 200px,
+        
+    ),
+    wImgCuisine1: (
+      default: 530px,
+      pl: 470px,
+      pm: 410px,
+      mx: 380px,
+      ml: 80%,
+      // mm: 280px,
+      // ms: 330px,
+      // sx: 100%
+
+    ),
+    imgCuisine1-2: (
+        default: 225px,
+        pl: 205px,
+        pm: 180px,
+        tm: 170px,
+        mx: 150px,
+        mm: 140px,
+        
+    ),
+    wImgCuisine1-2: (
+      default: 400px,
+      pl: 355px,
+      pm: 295px,
+      mx: 60%,
+      // ml: 250px,
+      // mm: 250x,
+      
+    ),
+    listCuisine1: (
+      default: 96px,
+      pl: 88px,
+      pm: 80px,
+      tm: 64px,
+      mx: 56px,
+      ml: 48px,
+    ),
+    ImgIcons:(
+      default: 64px,
+      pl: 56px,
+      pm: 48px,
+      tx: 44px,
+      mx: 40px,
+      ml: 36px,
+    ),
+);
+
+
+@mixin blockCuisine($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($blockCuisine, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
+@mixin spaceCuisine1($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($spaceCuisine1, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }

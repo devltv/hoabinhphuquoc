@@ -49,8 +49,8 @@ function index3() {
       slidesPerView: 1,
       // spaceBetween: 8,
       // slidesPerGroup: 3,
-      loop: true,
-      loopFillGroupWithBlank: true,
+       loop: true,
+      // loopFillGroupWithBlank: true,
       // pagination: {
       //   el: ".swiper-pagination",
       //   clickable: true,
@@ -192,9 +192,11 @@ function index6(){
       slidesPerView: 3,
       centeredSlides: true,
        spaceBetween: 0,
+       centeredSlidesBounds: true,
+       
       // slidesPerGroup: 3,
       loop: true,
-      loopFillGroupWithBlank: true,
+      // loopFillGroupWithBlank: true,
       // pagination: {
       //   el: ".swiper-pagination",
       //   clickable: true,
