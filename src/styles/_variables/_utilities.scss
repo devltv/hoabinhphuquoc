@@ -1,0 +1,155 @@
+// service
+
+
+$utilitiesBox: (
+  s90: (
+		default: 90px,
+		pl: 11%,
+		tl: 13%,
+		mx: 11%,
+	),
+	m-t-90: (
+    default: 90px,
+		pl: 82px ,
+		pm: 54px ,
+		ps: 44px,
+    mm: 20px ,
+  ),
+  m-b-15:(
+    default: 15px,
+		pm: 12px,
+		ps: 4% ,
+    mm: 7px ,
+  ),
+  p63: (
+		default: 63px 0,
+		pl: 42px 0,
+		pm: 34px 0,
+		ps: 8% 0,
+    mm: 20px 0,
+	),
+  p8: (
+		default: 8px 0,
+		pl: 6px 0,
+		pm: 4px 0,
+		// ps: 4% 0,
+	),
+  p15: (
+		default: 0 15px,
+		pl: 0 10px,
+		pm: 0 8px,
+		ps: 0 4% ,
+	),
+  p35: (
+		default: 35px,
+		pl: 25px,
+		pm: 25px,
+		ps: 4%,
+	),
+  m-b-70:(
+    default: 70px,
+		pl: 60px,
+		pm: 50px,
+		ps: 40px,
+    tl: 35px,
+    ml: 25px,
+  ),
+  m70:(
+    default: 70px auto,
+		pl: 60px auto,
+		pm: 50px auto,
+		ps: 35px auto,
+    mm: 20px auto,
+  )
+);
+
+$blockUtilities: (
+	utilities-1: (
+		default: 434px,
+		pl: 384px,
+		pm: 304px,
+		tx: 244px,
+		// tl: 220px,
+    tm: 224px,
+    ts: 204px,
+    mx: 164px,
+    mm: 100%,
+	),
+  utilities-2: (
+		default: 490px,
+		pl: 384px,
+		pm: 304px,
+		tx: 100%,
+	),
+  utilities-3: (
+		default: 613px,
+		pl: 513px,
+		pm: 483px,
+		tx: 383px,
+		tl: 354px,
+    ml: 250px,
+	),
+  utilities-4: (
+		default: 769px,
+		pl: 659px,
+		pm: 583px,
+		tx: 100%,
+	),
+	tourIconService:(
+		default: 62px,
+		tl: 48px,
+		mx: 36px,
+		ml: 32px,
+	),
+);
+
+
+@mixin utilitiesBox($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($utilitiesBox, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockUtilities($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockUtilities, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

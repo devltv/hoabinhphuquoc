@@ -1,0 +1,17 @@
+.service-5{
+  @include spaceService4(bottomImg, margin-top);
+
+  .service-wrapper{
+    &__content{
+      margin-left: initial;
+      margin-right: auto;
+    }
+    &__img {
+      @include blockService(imgKaService, height);
+
+      @include rp(ts) {
+        @include spaceService3(bottomShopTitle, margin-top);
+      }
+    }
+  }
+}

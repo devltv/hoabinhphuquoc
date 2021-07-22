@@ -1,0 +1,26 @@
+@import 'u-1';
+@import 'u-2';
+@import 'u-3';
+@import 'u-4';
+
+
+.infor-utilites{
+    .decs{
+        @include utilitiesBox(m-b-15, margin-bottom);
+        // line-height: 2.0
+    }
+    .time{
+        @include italic;
+        font-weight: bold;
+    }
+    .decs,
+    .time{
+        color: map-get($color, base);
+        @include rp(ps){
+            font-size: 1.6rem;
+        }
+        @include rp(tl){
+            font-size: 1.4rem;
+        }
+    }
+}

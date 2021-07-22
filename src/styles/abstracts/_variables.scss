@@ -37,10 +37,15 @@ $color: (
 	buttonSwiper: #eeeeee,
 	buttonSwiper-2: #F8F8F8,
 
+	bulletBgHidden: #F8F8F8,
 	bulletBg: #c4c4c4,
 	bulletText: #c4c4c4,
 	bulletTextActive: #004a8f,
 	bulletBtn: #707070,
+	//cuisine bg overlay
+	bg-cuisineOverlay: rgba(#ECECEC,0.4),
+	// utilities bg
+	bg-utilities-2: rgba(#EEEEEE, 0.75),
 );
 
 $letterSpacing: (
@@ -87,6 +92,7 @@ $sizes: (
 	s24: 2.4rem,
 	// SUB TITLE
 	s26: 2.6rem,
+	s31: 3.1rem,
 	s36: 3.6rem,
 	// banner Resort
 	s40: 4rem,
@@ -96,6 +102,7 @@ $sizes: (
 
 	// TITLE
 	s45: 4.5rem,
+	s50: 5.0rem,
 	s51: 5.1rem,
 	s58: 5.8rem,
 	// banner Title primary
@@ -104,6 +111,47 @@ $sizes: (
 	s215: 21.5rem,
 	// TITLE SHADOW
 	s251: 25.1rem,
+);
+
+$title: (
+	s58: (
+		default: 5.8rem,
+	),
+	s51: (
+		default: 5.1rem,
+		pm: 4.8rem,
+		ps: 4.2rem,
+		tx: 3.8rem,
+		ml: 3.4rem,
+	),
+	s45: (
+		default: 4.5rem,
+		tx: 4rem,
+		mx: 3.8rem,
+	),
+	s41: (
+		default: 4.1rem,
+		tx: 3.8rem,
+		mx: 3.6rem,
+	),
+	s31: (
+		default: 3.1rem,
+	),
+	s26: (
+		default: 2.6rem,
+		ts: 2.4rem,
+		ml: 2rem,
+	),
+	s21: (
+		default: 2.1rem,
+		tx: 2rem,
+		mx: 1.9rem,
+	),
+
+	s18: (
+		default: 1.8rem,
+		tx: 1.7rem,
+	),
 );
 
 // Cách sử dụng: map-get($media, ps);
@@ -164,7 +212,6 @@ $block: (
 	titleBackground: (
 		default: 250px,
 	),
-
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
@@ -219,8 +266,22 @@ $space: (
 		default: 50px,
 	),
 
+	s60: (
+		default: 60px,
+		pm: 56px,
+		tx: 48px,
+		mx: 36px,
+	),
+
 	s72: (
 		default: 72px,
+	),
+
+	s90:(
+		default: 90px,
+		tx: 72px,
+		mx: 42px,
+		mm: 36px,
 	),
 
 	// Khoảng cách 2 section
@@ -277,6 +338,11 @@ $serviceBox: (
 		tl: 12px
 	),
 );
+@import "../_variables/header";
 @import "../_variables/index";
 @import "../_variables/service";
 @import "../_variables/intro";
+@import "../_variables/cuisine";
+@import "../_variables/utilities";
+@import "../_variables/library";
+

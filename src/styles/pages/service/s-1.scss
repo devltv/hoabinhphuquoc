@@ -1,4 +1,12 @@
 .service-1{
+  .tour-title{
+    text-align: center;
+    width: 100%;
+
+    @include space(s90, margin-top);
+    @include space(s90, margin-bottom);
+  }
+
   .tour-content{
     &--container{
       @extend .margin-auto;
@@ -18,8 +26,6 @@
     &-card{
       position: relative;
       transform-style: preserve-3d;
-
-
       
       &:hover{
         .tour-content__img{
@@ -126,7 +132,9 @@
 
         &__title{
           &>*{
-            @include size(s21);
+            // @include size(s21);
+            @include title(s21);
+
             @include bold;
 
             display: inline-block;
@@ -144,7 +152,6 @@
             width: 50px;
             height: 3px;
             background-color: map-get($color, underline);
-
           }
         }
 
@@ -156,7 +163,8 @@
           line-height: 1.4;
 
           &>*{
-            @include size(s18);
+            // @include size(s18);
+            @include title(s18);
 
             @media (max-width: map-get($media, tl)) {
               @include p-line-clamp(2);

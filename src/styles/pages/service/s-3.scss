@@ -1,0 +1,71 @@
+.service-3 {
+  .service-logo {
+    @include spaceService3(topListLogo, margin-top);
+    &--list {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+      padding: 0 8px;
+
+      &-img {
+        width: 98px;
+        height: 98px;
+        @include rp(tl){
+          width: 72px;
+          height: 72px;
+        }
+
+        border-radius: 1000px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: map-get($color, iconMainBgActive);
+
+        @include spaceService3(bottomImg, margin-bottom);
+        img {
+          height: 43px;
+          @include rp(tl){
+            height: 24px;
+          }
+
+          object-fit: contain;
+        }
+      }
+      &-desc {
+        text-align: center;
+
+        @include rp(tl) {
+          width: 70%;
+        }
+        @include rp(ts) {
+          width: 80%;
+        }
+      }
+    }
+  }
+  .service-wrapper {
+    @include space(s90, margin-top);
+
+    &__img {
+      @include blockService(imgShopService, height);
+    }
+    &__content {
+    .box {
+      &__title {
+        @include rp(ts) {
+          @include spaceService3(bottomShopTitle, margin-top);
+        }
+      }
+    }
+  }
+  }
+}

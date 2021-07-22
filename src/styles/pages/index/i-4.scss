@@ -1,59 +1,95 @@
-.index4{
-    
-    .index-uilities{
-        &__wrapper{
-            position: relative;
-        }
-        &__layout{
+.index4 {
+    .index-uilities {
+        .title-primary{
+            width: 100%;
             display: flex;
-            &--img{
+            justify-content: center;
+    
+            @include space(s90, margin-top);
+            @include space(s48, margin-bottom);
+        }
+        &__wrapper {
+            position: relative;
+            @include blockIndex(imgIndex4,height);
+        }
+        &__layout {
+            display: flex;
+            height: 100%;
+
+            &--img {
                 width: 70%;
-                @include blockIndex(imgIndex4,height);
-                background: url(../assets/images/page/index/hoboi3.png);
-                position: relative;   
-                background-repeat: no-repeat;
+                height: 100%;
+
+                @include rp(tx){
+                    width: 100%;
                 }
+                
+                position: relative; 
+            }
+                
             &--color{
-                width: 32%;
-                @include blockIndex(imgIndex4,height);
-                background: map-get($color, main );
-                & .overlay-restroom{
-                    width: 32%;
-                    left: 68%;
+                width: 30%;
+                position: relative;
+
+                @include blockIndex(imgIndex4, height);
+                background: map-get($color, main);
+
+                @include rp(tx){
+                    display: none;
                 }
             }
-            
-            }
-        &__content{
+        }
+        &__content {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 100%;
-            
         }
-        .container{
+
+        .container {
             height: 100%;
         }
-        &__box{
+        &__box {
             position: absolute;
             top: 50%;
             right: 0;
+            width: 744px;
+            
+            @include rp(tx){
+                width: 640px;
+            }
+            @include rp(ts){
+                width: 90%;
+            }
+            @include rp(mx){
+                width: 98%;
+            }
             transform: translateY(-50%);
             display: flex;
+
             @include blockIndex(boxIndex4,height);
-            @include rp(tx){
-                right: 10%;
+
+            @include rp(pl){
+                right: 4%;
             }
+            @include rp(tx){
+                // width: 100%;
+                right: initial;
+                left: 50%;
+                transform: translate(-50% , -50%);
+            }
+           
 
         }
         &__left{
-            max-width: 618px;
-            @include blockIndex(boxIndex4,height);
+            // @include blockIndex(boxIndex4,height);
+            align-self: stretch;
+            
             background: map-get($color , mainBg );
             box-sizing: border-box;
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 content: "";
                 top: 20px;
@@ -61,110 +97,190 @@
                 right: 20px;
                 bottom: 20px;
                 border: 1px solid map-get($color, main );
-               
+                @include rp(mx){
+                    top: 14px;
+                    left: 14px;
+                    right: 14px;
+                    bottom: 14px;
+                }
+            }
+            @include rp(tx){
+                width: 80%
             }
         }
-        &__boxleft{
+        &__boxleft{     
+            height: 100%;
             @include spaceIndex4(s24,padding);
-            
         }
         .content{
-            @include spaceIndex4(s104,padding, 57px);
-            @include rp(pl){
-                @include spaceIndex4(s104,padding, 46px);
-            }
-            @include rp(tm){
-                @include spaceIndex4(s104,padding, 42px);
-            }
-            @include rp(ts){
-                @include spaceIndex4(s104,padding, 32px);
-            }
-          
+            @include spaceIndex4(s104,padding-top);
+            @include spaceIndex4(s104,padding-bottom);
+            @include spaceIndex4(sLeftRightContentBox,padding-right);
+            @include spaceIndex4(sLeftRightContentBox,padding-left);
+            
+            
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
             &__title{
-                @include spaceIndex4(s80, margin-bottom);
+                @include spaceIndex4(s70, margin-bottom);
                 position: relative;
-                &::after{
+                &::after {
                     position: absolute;
                     top: 100%;
                     left: 0;
                     content: "";
                     height: 6px;
-                    background: map-get($color, underline );
+                    background: map-get($color, underline);
                     width: 25%;
-                    
-
                 }
-                &--size{
-                @include size(s58);
-                color: map-get($color , main );
-                font-weight: bold;
-                @include family--primary;
+                &--size {
+                    // @include size(s58);
+                    @include title(s51);
+
+                    color: map-get($color, main);
+                    font-weight: bold;
+                    @include family--primary;
                 }
             }
-            &__desc{
+            &__desc {
                 @include spaceIndex4(s40, margin-bottom);
-                &--size{
+                &--size {
                     @include size(s18);
                     line-height: 1.8;
-                    color: map-get($color, base );
-                    @include rp(ts){
-                       @include p-line-clamp(6);
-                    }
+                    color: map-get($color, base);
+                    @include p-line-clamp(6);
+
                 }
             }
-            &__more{
-                    svg {
-                        margin-left: 8px;
-                    }
+            &__more {
+                svg {
+                    margin-left: 8px;
+                }
             }
         }
         &__right{
-            max-width: 120px;
-            @include rp(tm){
-                max-width: 108px;
-            }
-            @include rp(ts){
-                max-width: 98px;
-            }
+            
+            // width: 120px;
+            // @include rp(tm){
+            //     width: 108px;
+            // }
+            // @include rp(ts){
+            //     width: 98px;
+            // }
+            // @include rp(mx){
+            //     width: 88px;
+            // }
+            // @include rp(ml){
+            //     width: 80px;
+            // }
+            // @include rp(ms){
+            //     width: 64px;
+            // }
+           
             @include spaceIndex4(s12,margin-left);
+            height: 100%;
+
+            &--list{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+                &>*{
+                    height: 19.5%;
+                }
+            }
             &--items{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                @include blockIndex(boxRighrIndex4,height);
-                background: map-get($color , main );
+
+                // @include blockIndex(boxRighrIndex4, height);
+
+                background: map-get($color, main);
+
                 list-style-type: none;
                 text-align: center;
-                @include spaceIndex4(s2,margin,0);
-                box-shadow: 0 3px 6px rgba(0,0,0,.16);
-            }
+                // @include spaceIndex4(s2, margin, 0);
+              
+
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+                @include rp(mx){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   
+                }
             
+                &.active {
+                    background: map-get($color, mainOverlay);
+                    width: 140px;
+                    @include rp(tm){
+                        width: 126px;
+                    }
+                    @include rp(ts){
+                        width: 118px;
+                    }
+                    @include rp(mx){
+                        width: 104px;
+                    }
+                    @include rp(ml){
+                        width: 92px;
+                    }
+                    @include rp(ms){
+                        width: 72px;
+                    }
+                    position: relative;
+                    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        left: 100%;
+                        height: 100%;
+                        width: 10%;
+                        background: map-get($color, underline);
+                    }
+                }
+            }
+            &--img{
+                @include rp(mx){
+                    height: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                svg{
+                    // width: 72px;
+                    height: 48px;
+                    @include rp(tx){
+                        // width: 64px;
+                        height: 44px;
+                    }
+                    @include rp(mx){
+                        // width: 64px;
+                        height: 70%;
+                    }
+                }
+            }
             &--desc{
-                @include size(s11);
+                // @include size(s11);
+                font-size: 11px;
+
                 color: map-get($color,mainBg );
-                @include spaceIndex4(s16, margin-top)
-            }
-        }
-        .active{
-            width: 140px;
-            @include rp(tm){
-                max-width: 126px;
-            }
-            @include rp(ts){
-                max-width: 118px;
-            }
-            position: relative;
-            box-shadow: inset 0 3px 6px rgba(0,0,0,.16);
-            &::after{
-                position: absolute;
-                content: "";
-                top: 0;
-                left: 100%;
-                height: 100%;
-                width: 10%;
-                background: map-get($color, underline );
+                @include spaceIndex4(s16, margin-top);
+                @include rp(mx){
+                    display: none;
+                }
+
 
             }
         }
+
     }
 }

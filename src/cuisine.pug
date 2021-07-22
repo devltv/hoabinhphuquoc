@@ -1,0 +1,21 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Page | Index';
+	- let bodyClass = 'index-page';
+	- let titleBanner = "Lorem ipsum dolor sit amet";
+	- let textBanner = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.";
+	- let imgBanner = "./assets/images/banner.jpg";
+	//- - let breadcrumbs = ["Tiện ích", "INCOTERMS 2000"];
+
+//- block loading
+//- 	include _templates/_layout/_loading
+//- block banner,breadcrumb
+block main
+	div(id="cuisinePage")
+		include _templates/cuisine/cs-1
+		include _templates/cuisine/cs-2
+		
+
+
+block scripts

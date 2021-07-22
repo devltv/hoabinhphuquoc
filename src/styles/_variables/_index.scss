@@ -1,5 +1,4 @@
 $spaceIndex: (
-  
   s24: (
 		default: 24px,
     pm: 18px,
@@ -7,6 +6,12 @@ $spaceIndex: (
     tl: 14px,
     ts: 12px,
 	),
+  s32: (
+    default: 32px,
+    ps: 28px,
+    tl: 18px,
+    mx: 12px
+  ),
 
   s34: (
 		default: 34px,
@@ -28,7 +33,9 @@ $spaceIndex: (
 
   s42: (
 		default: 42px,
-		
+		pm: 38px,
+    tl: 32px,
+    ml: 28px
 	),
   s44: (
 		default: 44px,
@@ -41,12 +48,15 @@ $spaceIndex: (
   s72: (
 		default: 72px,
     pm: 45px,
+    tx: 38px,
+    mm: 28px
 	),
   s88: (
 		default: 88px,
 	),
 
 );
+//section,padding,margin
 $spaceIndex3: (
  
     s48:(
@@ -63,6 +73,7 @@ $spaceIndex4: (
   ),
   s12: (
     default: 12px,
+    mx: 4px,
   ),
   s16: (
     default: 16px,
@@ -77,53 +88,95 @@ $spaceIndex4: (
     default: 40px,
     ps: 38px,
     tx: 36px,
-    tm: 28px,
+    tm: 24px,
     ts: 24px,
    
  ),
-   s80: (
-      default: 80px,
-      pm: 72px,
-      tx: 68px,
-      tm: 54px,
-      ts: 48px,
-       
+    sLeftRightContentBox: (
+      default: 32px,
+      tx: 28px,
+      ts: 24px,
+      mx: 18px,
+      ms: 6px,
+    ),
+   s70: (
+      default: 70px,
+      pm: 56px,
+      ts: 36px,
+ 
    ),
    s104: (
      default: 104px,
      pl: 78px,
      pm: 76px,
      ps: 64px,
-     tx: 78px,
-     tm: 56px,
-    
-     
-     
+     tx: 18px,
+     tm: 18px,
+     mx: 20px,
+     ms: 18px,
      
    ),
 );
+$spaceIndex6:(
+    s88:(
+      default: 88px,
+      pl: 80px,
+      pm: 72px,
+      ps: 64px,
+    ),
+    s80:(
+      default: 80px,
+      pl: 76px,
+      pm: 72px,
+      ps: 64px,
+    ),
+    s56:(
+      default: 56px,
+      pl: 52,
+      pm: 46px,
+      ps: 28px,
+      
+    ),
+);
+//height
 $blockIndex: (
+  imgIndex2:(
+    default: 295px,
+    pm: 245px,
+    tx: 200px,
+    mx: 145px
+  ),
   imgIndex3: (
 		default: 454px,
-    pm: 400px,
+    pm: 420px,
     ps: 380px,
-    tm: 360px,
-    ts: 310px,
+
+    tx: 320px,
+    tm: 420px,
+    ts: 380px,
+
     mx: 280px,
     ml: 240px,
 
 	),
   imgIndex4:(
     default: 757px,
+    pm: 728px,
+    ps: 700px,
+    tx: 620px,
+    tm: 560px,
+    mx: 480px,
   ),
+
   boxIndex4:(
     default: 618px,
-    pm: 600px,
-    ps: 580px,
-    tx: 550px,
-    tl: 500px,
-    tm: 480px,
-
+    pm: 580px,
+    tx: 500px,
+    tl: 480px,
+    tm: 460px,
+    mx: 420px,
+    ml: 380px,
+    mm: 360px,
   ),
   boxImgIndex4:(
     default: 45px,
@@ -131,12 +184,19 @@ $blockIndex: (
   boxRighrIndex4:(
     default: 120px,
     pm: 118px,
-    ps: 114px,
-    tx: 108px,
-    tl: 98px,
-    tm: 94px,
+    tx: 98px,
+    tm: 90px,
+    mx: 70px
   ),
-  
+  boxIndex6:(
+    default: 610px,
+    pl: 580px,
+    pm: 550px,
+  ),
+  imgIndex6:(
+    default: 630px,
+    
+  ),
 );
 @mixin spaceIndex($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spaceIndex, #{$key}){
@@ -212,6 +272,30 @@ $blockIndex: (
 }
 @mixin spaceIndex4($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spaceIndex4, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spaceIndex6($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceIndex6, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;

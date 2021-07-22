@@ -1,0 +1,15 @@
+.endow-1{
+  .title-primary {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include space(s48, margin-top);
+    @include space(s48, margin-bottom);
+  }
+
+  .box-pagination{
+    @include space(s60, margin-top);
+    @include space(s60, margin-bottom);
+  }
+}

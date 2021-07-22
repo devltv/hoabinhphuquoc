@@ -28,6 +28,56 @@ $serviceBox: (
 	),
 );
 
+
+$spaceService2: (
+  title: (
+    default: 36px, 
+    tl: 24px, 
+  ),
+  desc:(
+    default: 70px,
+    pm: 56px,
+    tl: 24px,
+  ),
+);
+
+$spaceService3: (
+  bottomImg:(
+    default: 16px,
+  ),
+  topListLogo: (
+    default: 36px,
+  ),
+  bottomShopTitle: (
+    default: 70px,
+    pm: 56px,
+    ts: 36px,
+  ),
+);
+
+$spaceService4: (
+  bottomTitle: (
+    default: 36px,
+  ),
+  bottomDesc: (
+    default: 60px,
+    pm: 48px,
+    ts: 24px,
+  ),
+
+  bottomImg:(
+    default: 140px,
+    pl: 120px,
+    tx: 90px,
+    tm: 64px,
+    mx: 36px,
+  ),
+);
+
+$spaceService5: (
+  
+);
+
 $blockService: (
 	tourContentService: (
 		default: 624px,
@@ -47,11 +97,120 @@ $blockService: (
 		mx: 36px,
 		ml: 32px,
 	),
-);
+  imgCarService:(
+    default: 353px,
+    pl: 320px,
+    pm: 300px,
+    ps: 240px,
+    ts: 200px,
+  ),
 
+  imgShopService: (
+    default: 777px,
+    pl: 640px,
+    pm: 620px,
+    ps: 560px,
+    ts: 420px,
+    ml: 380px,
+    mm: 320px,
+  ),
+  imgKaService: (
+    default: 590px,
+    pl: 540px,
+    pm: 520px,
+    ps: 480px,
+    tx: 420px,
+    ml: 380px,
+    mm: 320px,
+  ),
+
+  imgSpaService:(
+    default: 510px,
+    pl: 480px,
+    tm: 420px,
+    mx: 400px,
+    mm: 380px,
+    ms: 300px,
+    sx: 250px,
+  ),
+);
 
 @mixin serviceBox($key, $name, $side: '-1'){
   @each $idx, $val in map-get($serviceBox, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin spaceService2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceService2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin spaceService3($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceService3, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spaceService4($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceService4, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
