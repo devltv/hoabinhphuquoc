@@ -27,7 +27,13 @@ function common(){
 
   fetchData;
 }
-
+var swiper2 = new Swiper('.home-swiper-2', {
+	slidesPerView: 1,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+});
 // function Layout
 function layout(){
   header();
