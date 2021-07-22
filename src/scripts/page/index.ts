@@ -47,7 +47,6 @@ function swiperIndex3() {
   if (document.getElementById('index3')) {
     new Swiper(`.index-endow .active .endow--swiper`, {
       slidesPerView: 1,
-
       navigation: {
         nextEl: `.index-endow .active .swiper-button-next`,
         prevEl: `.index-endow .active .swiper-button-prev`,
@@ -175,9 +174,11 @@ function index6(){
       slidesPerView: 3,
       centeredSlides: true,
        spaceBetween: 0,
+       centeredSlidesBounds: true,
+       
       // slidesPerGroup: 3,
       loop: true,
-      loopFillGroupWithBlank: true,
+      // loopFillGroupWithBlank: true,
       // pagination: {
       //   el: ".swiper-pagination",
       //   clickable: true,
