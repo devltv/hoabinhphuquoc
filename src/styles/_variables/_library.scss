@@ -19,8 +19,8 @@ $libraryBox: (
     ),
     p-r-32:(
         default: 32px,
-        pm: 12px,
-        ps: 4% ,
+        pm: 22px,
+        // ps: 20px ,
         mm: 7px ,
     ),
     p63: (
@@ -69,14 +69,45 @@ $blockLibrary: (
   library-video-top: (
 		default: 502px,
 		pl: 402px,
-		// pm: 304px,
-		// tx: 244px,
-		// // tl: 220px,
-    // tm: 224px,
+		pm: 382px,
+		tx: 302px,
+		tl: 282px,
+    tm: 402px,
+    ts: 304px,
+    ml: 204px, 
+    mm: 164px,
+    // mm: 100%,
+	),
+  library-video-top-big: (
+		default: 813px,
+		pl: 713px,
+		pm: 613px,
+		tx: 60%,
+    tm: 100%,
+	),
+  library-video-top-small: (
+		default: 502px,
+		pl: 412px,
+		pm: 352px,
+		tx: 37%,
+		// tl: 220px,
+    // tm: 100%,
     // ts: 204px,
     // mx: 164px,
     // mm: 100%,
 	),
+  library-video-bottom: (
+    default: 228px,
+		// pl: 402px,
+		pm: 188px,
+		tx: 168px,
+		tl: 158px,
+    tm: 148px,
+    ts: 128px,
+    mx: 108px,
+    ml: 88px, 
+    ms: 54px,
+  )
 );
 
 
