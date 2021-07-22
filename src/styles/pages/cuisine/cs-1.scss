@@ -9,7 +9,8 @@
             @include space(s48, margin-bottom);
         }
         &__section{
-            @include blockCuisine(sectionCuisine1,height);
+            // @include blockCuisine(sectionCuisine1,height);
+            
         }
         &__section{
             .content{
@@ -17,7 +18,7 @@
                 @include rp(tm){
                     justify-content: center;
                 }
-                @include blockCuisine(sectionCuisine1,height);
+                // @include blockCuisine(sectionCuisine1,height);
                 &__left{
                     width: 50%;
                     @include rp(tm){
@@ -30,8 +31,12 @@
                     }
                 }
                 &__img{
+
                     position: relative;
                     max-width: 100%;
+                    @include rp(tm){
+                        height: auto;
+                    }
                     @include blockCuisine(sectionCuisine1,height);
                     @include rp(tm){
                         width: 80%;
