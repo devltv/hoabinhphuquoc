@@ -12,4 +12,40 @@
     @include space(s60, margin-top);
     @include space(s60, margin-bottom);
   }
+
+  .endow__slide{
+
+    .slide-item{
+      &__img{
+        
+      }
+
+      &__title{
+        
+
+        &>*{
+          @include family--second;
+
+          @include uppercase;
+          @include title(s26);
+        }
+      }
+      &__bottom{
+        width: 100%;
+        border-top: 1px solid map-get($color, base);
+
+        @include endowSlide(s20, padding-top);
+        @include endowSlide(s20, margin-top);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &--desc{
+          color: map-get($color, base);
+        }
+      }
+    }
+  }
 }

@@ -292,12 +292,11 @@
           line-height: 1.4;
         }
       }
-      &__bottom {
-        .endow-box__more {
-          svg {
-            margin-left: 8px;
-          }
-        }
+    }
+
+    .endow-box__more {
+      svg {
+        margin-left: 8px;
       }
     }
   }

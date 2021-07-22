@@ -67,7 +67,7 @@ function hiddenNextPrev(objClass:any, itemActive: number, totalPage:number){
   // Không cho click vào button Next or Prev nếu active gần nó
   if (totalPage === 1){
     itemPrev.classList.add('btn-hidden');
-    itemPrev.classList.remove('btn-hidden');
+    itemNext.classList.add('btn-hidden');
   }
   else if (itemActive === 1){
     itemPrev.classList.add('btn-hidden');

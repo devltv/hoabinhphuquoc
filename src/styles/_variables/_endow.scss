@@ -1,0 +1,68 @@
+$endowSlide: (
+  s20:(
+    default: 20px,
+    pm: 18px,
+    tl: 16px,
+    mx: 12px,
+  ),
+);
+
+$blockEndow: (
+  imgEndow1: (
+    default: 315px,
+    pm: 280px,
+    tl: 250px,
+    mx: 220px,
+  ),
+);
+
+@mixin blockEndow($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockEndow, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin endowSlide($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($endowSlide, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
