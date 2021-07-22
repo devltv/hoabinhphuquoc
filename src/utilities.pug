@@ -1,14 +1,14 @@
 extends _templates/_layout/_layout.pug
 
 block var
-	- let title = 'Page | Service';
+	- let title = 'Page | Utilities';
 	//- - let bodyClass = 'index-page';
 	- let banner = false;
 	
 	- let bannerSub = false;
-	- let titleBannerSub = "Trang chủ";
+	- let titleBannerSub = "Tiện ích";
 	- let imgBannerSub = "./assets/images/page/service/banner.png";
-	- let breadcrumbBanner = [["Trang chủ", ""], ["Trang chủ", "active"]];
+	- let breadcrumbBanner = [["Trang chủ", ""], ["Tiện ích", "active"]];
 	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
 
 //- block loading
@@ -16,11 +16,7 @@ block var
 //- block banner,breadcrumb
 block main
 	div(id="servicePage")
-		include _templates/service/s-1.pug
-		include _templates/service/s-2.pug
-		include _templates/service/s-3.pug
-		include _templates/service/s-4.pug
-		include _templates/service/s-5.pug
-		include _templates/service/s-6.pug
+		include _templates/utilities/u-1.pug
+		include _templates/utilities/u-2.pug
 
 block scripts

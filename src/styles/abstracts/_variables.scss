@@ -87,6 +87,7 @@ $sizes: (
 	s24: 2.4rem,
 	// SUB TITLE
 	s26: 2.6rem,
+	s31: 3.1rem,
 	s36: 3.6rem,
 	// banner Resort
 	s40: 4rem,
@@ -164,7 +165,6 @@ $block: (
 	titleBackground: (
 		default: 250px,
 	),
-
 );
 
 // Cách sử dụng: @include space(s134, margin, 20px); --> sử dụng biến s12
@@ -221,6 +221,12 @@ $space: (
 
 	s72: (
 		default: 72px,
+	),
+
+	s90:(
+		default: 90px,
+		tx: 72px,
+		mx: 60px,
 	),
 
 	// Khoảng cách 2 section
@@ -280,3 +286,5 @@ $serviceBox: (
 @import "../_variables/index";
 @import "../_variables/service";
 @import "../_variables/intro";
+@import "../_variables/utilities";
+@import "../_variables/wedding";

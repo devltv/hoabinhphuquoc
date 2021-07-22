@@ -13,9 +13,10 @@ import * as fetchData from "./components/fetchData";
 
 // Layout
 import {header} from "./layout/header";
-import index from "./page/index";
 
 // Page
+import index from "./page/index";
+import {service} from "./page/service";
 
 
 ///////////////////////////////////////////////////////////////
@@ -24,7 +25,13 @@ function common(){
 
   fetchData;
 }
-
+var swiper2 = new Swiper('.home-swiper-2', {
+	slidesPerView: 1,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+});
 // function Layout
 function layout(){
   header();
@@ -33,6 +40,7 @@ function layout(){
 // function Page
 function page(){
   index.index();
+  service();
 }
 
 ////////////////////////////////////////////////////////////////
