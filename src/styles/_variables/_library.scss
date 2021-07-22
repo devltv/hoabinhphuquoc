@@ -2,80 +2,112 @@
 
 
 $libraryBox: (
-  s90: (
-		default: 90px,
-		pl: 11%,
-		tl: 13%,
-		mx: 11%,
-	),
-	m-t-90: (
-    default: 90px,
-		pl: 82px ,
-		pm: 54px ,
-		ps: 44px,
-    mm: 20px ,
-  ),
-  m-b-15:(
-    default: 15px,
-		pm: 12px,
-		ps: 4% ,
-    mm: 7px ,
-  ),
-  p63: (
-		default: 63px 0,
-		pl: 42px 0,
-		pm: 34px 0,
-		ps: 8% 0,
-    mm: 20px 0,
-	),
-  p8: (
-		default: 8px 0,
-		pl: 6px 0,
-		pm: 4px 0,
-		// ps: 4% 0,
-	),
-  p15: (
-		default: 0 15px,
-		pl: 0 10px,
-		pm: 0 8px,
-		ps: 0 4% ,
-	),
-  p35: (
-		default: 35px 0,
-		pl: 25px 0,
-		pm: 25px 0,
-		ps: 4% 0 ,
-	),
-  m-b-70:(
-    default: 70px,
-		pl: 60px,
-		pm: 50px,
-		ps: 40px,
-    tl: 35px,
-    ml: 25px,
-  ),
-  m70:(
-    default: 70px auto,
-		pl: 60px auto,
-		pm: 50px auto,
-		ps: 35px auto,
-    mm: 20px auto,
-  )
+  
+    m-t-90: (
+      default: 90px,
+        pl: 82px ,
+        pm: 54px ,
+        ps: 44px,
+      mm: 20px ,
+    ),
+    m-t-53: (
+      default: 53px,
+        pl: 43px ,
+        pm: 33px ,
+        ps: 23px,
+        mm: 13px ,
+    ),
+    p-r-32:(
+        default: 32px,
+        pm: 22px,
+        // ps: 20px ,
+        mm: 7px ,
+    ),
+    p63: (
+        default: 63px 0,
+        pl: 42px 0,
+        pm: 34px 0,
+        ps: 8% 0,
+        mm: 20px 0,
+        ),
+    
+    p30: (
+        default: 30px 0,
+        pl: 20px 0,
+        pm: 20px 0,
+        ps: 3% 0 ,
+        ),
+    m-b-60:(
+        default: 60px,
+        pl: 50px,
+        pm: 40px,
+        ps: 30px,
+        tl: 25px,
+        ml: 15px,
+    ),
+    m70:(
+        default: 70px auto,
+        pl: 60px auto,
+        pm: 50px auto,
+        ps: 35px auto,
+        mm: 20px auto,
+    )
 );
 
 $blockLibrary: (
 	library-1: (
-		default: 434px,
-		pl: 384px,
-		pm: 304px,
-		tx: 244px,
-		// tl: 220px,
-    tm: 224px,
-    ts: 204px,
-    mx: 164px,
-    mm: 100%,
+		default: 324px,
+		pl: 100%,
+		// pm: 304px,
+		// tx: 244px,
+		// // tl: 220px,
+    // tm: 224px,
+    // ts: 204px,
+    // mx: 164px,
+    // mm: 100%,
 	),
- 
+  library-video-top: (
+		default: 502px,
+		pl: 402px,
+		pm: 382px,
+		tx: 302px,
+		tl: 282px,
+    tm: 402px,
+    ts: 304px,
+    ml: 204px, 
+    mm: 164px,
+    // mm: 100%,
+	),
+  library-video-top-big: (
+		default: 813px,
+		pl: 713px,
+		pm: 613px,
+		tx: 60%,
+    tm: 100%,
+	),
+  library-video-top-small: (
+		default: 502px,
+		pl: 412px,
+		pm: 352px,
+		tx: 37%,
+		// tl: 220px,
+    // tm: 100%,
+    // ts: 204px,
+    // mx: 164px,
+    // mm: 100%,
+	),
+  library-video-bottom: (
+    default: 228px,
+		// pl: 402px,
+		pm: 188px,
+		tx: 168px,
+		tl: 158px,
+    tm: 148px,
+    ts: 128px,
+    mx: 108px,
+    ml: 88px, 
+    ms: 54px,
+  )
 );
 
 
@@ -105,7 +137,7 @@ $blockLibrary: (
 }
 
 @mixin blockLibrary($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($blocklibrary, #{$key}){
+  @each $idx, $val in map-get($blockLibrary, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
