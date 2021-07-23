@@ -94,5 +94,15 @@
   
   li + li{
     margin-left: 36px;
+
+    @include rp(pm){
+      margin-left: 28px;
+    }
+    @include rp(tl){
+      margin-left: 24px;
+    }
+    @include rp(mx){
+      margin-left: 18px;
+    }
   }
 }

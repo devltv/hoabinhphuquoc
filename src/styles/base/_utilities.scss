@@ -208,7 +208,7 @@
       }
     }
     &--desc {
-      @include size(s45);
+      @include title(s45);
 
       @include rp(tm) {
         font-size: 4rem;
@@ -247,10 +247,6 @@
       padding: 0 !important;
     }
     position: relative;
-
-    @include rp(tx) {
-      padding: 0 50px;
-    }
     
     .endow-box {
       position: relative;
@@ -279,6 +275,7 @@
           }
           font-weight: bold;
           color: map-get($color, main);
+          
         }
       }
       &__desc {

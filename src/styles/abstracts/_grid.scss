@@ -169,6 +169,7 @@ $flex: (
 			max-width: $value;
 			padding-right: 12px;
 			padding-left: 12px;
+			padding-top: auto;
 	
 			&:nth-of-type(n + #{$idx + 1}){
 				padding-top: 24px;
@@ -188,7 +189,8 @@ $flex: (
 					max-width: $value;
 					padding-right: 12px;
 					padding-left: 12px;
-			
+					padding-top: auto;
+
 					&:nth-of-type(n + #{$idx + 1}){
 						padding-top: 24px;
 					}
@@ -198,25 +200,26 @@ $flex: (
 	}
 }
 
-@each $m, $size in $media{
-	@each $idx, $value in $flex {
-		@media (max-width: $size){
-			.table-row.table-column-#{$idx}-#{$m}{
-				&>*{
-					// -ms-flex: 0 0 25%;
-					flex: 0 0 $value;
-					max-width: $value;
-					padding-right: 12px;
-					padding-left: 12px;
+// @each $m, $size in $media{
+// 	@each $idx, $value in $flex {
+// 		@media (max-width: $size){
+// 			.table-row.table-column-#{$idx}-#{$m}{
+// 				&>*{
+// 					// -ms-flex: 0 0 25%;
+// 					flex: 0 0 $value;
+// 					max-width: $value;
+// 					padding-right: 12px;
+// 					padding-left: 12px;
+// 					padding-top: auto;
 			
-					&:nth-of-type(n + #{$idx + 1}){
-						padding-top: 24px;
-					}
-				}
-			}
-		}
-	}
-}
+// 					&:nth-of-type(n + #{$idx + 1}){
+// 						padding-top: 24px;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 
 

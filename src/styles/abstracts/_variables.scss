@@ -125,6 +125,7 @@ $title: (
 	),
 	s45: (
 		default: 4.5rem,
+		pm: 4.2rem,
 		tx: 4rem,
 		mx: 3.8rem,
 	),
@@ -138,7 +139,8 @@ $title: (
 	),
 	s26: (
 		default: 2.6rem,
-		ts: 2.4rem,
+		pm: 2.4rem,
+		ts: 2.2rem,
 		ml: 2rem,
 	),
 	s21: (
@@ -344,4 +346,5 @@ $serviceBox: (
 @import "../_variables/cuisine";
 @import "../_variables/utilities";
 @import "../_variables/library";
+@import "../_variables/endow";
 
