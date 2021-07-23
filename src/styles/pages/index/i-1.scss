@@ -1,11 +1,87 @@
-// img{
-//   // width: 100%;
-//   // @include block(boxIndex, padding, 12px);
-//   width: 100%;
-//   @include block(boxIndex, height);
-//   // padding: 1080px;
-//   // height: map-get(map-get($block, banner), pl);
-//   @media(max-width: map-get($media, tx)){
-    
-//   }
-// }
+.index{
+    .index-intro{
+        @include spaceIndex1(s130,margin-top);
+        @include spaceIndex1(s130,margin-bottom);
+        .content{
+            position: relative;
+            &__left{
+                @include spaceIndex1(s140,padding-top);
+                @include spaceIndex1(s120,padding-bottom);
+                @include spaceIndex1(s110,padding-left);
+                // @include spaceIndex1(s110,padding-right);
+                box-shadow: 0px 3px 6px rgba(#000, .16);
+                position: relative;
+                &::after{
+                    position: absolute;
+                    top: 30px;
+                    left: 30px;
+                    right: 30px;
+                    bottom: 30px;
+                    content: "";
+                    border:  1px solid map-get($color, main );
+                }
+            }
+            &__title{
+                @include spaceIndex1(s16,margin-bottom);
+                &>*{
+                    @include size(s26);
+                    @include bold;
+                    color: map-get($color, base );
+                }
+            }
+            &__titleSub{
+                @include spaceIndex1(s40,margin-bottom);
+                &>*{
+                    @include family--primary;
+                    @include title(s51);
+                    @include rp(pm){
+                       font-size: 48px;
+                    }
+                    color: map-get($color, main);
+                    font-weight: bold;
+                    
+                }
+            }
+            &__desc{
+                width: 60%;
+                @include spaceIndex1(s50,margin-bottom);
+                @include p-line-clamp(6);
+                &>*{
+                    @include title(s18);
+                    color: map-get($color, base );
+                    line-height: 1.6;
+                }
+                    
+            }
+            &__more{
+                svg{
+                    margin-left: 8px;
+                }
+
+            }
+            &__right{
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                @include rp(pm){
+                    left: 55%;
+                }
+                @include rp(ps){
+                    left: 55%;
+                }
+            }
+            &__img{
+                @include blockIndex(wimgIndex1,width);
+                @include blockIndex(himgIndex1,height);
+            }
+            &__slide{
+                position: relative;
+                .swiper-pagination{
+                    position: absolute;
+                    right: 10%;
+                    bottom: -5%;
+                }
+            }
+        }
+    }
+}
