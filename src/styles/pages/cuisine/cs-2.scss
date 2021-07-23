@@ -1,5 +1,5 @@
 .cuisine{
-    .cuisine-breakfast{
+    .cuisine-buffer{
         @include spaceCuisine2(s170,margin-top);
         @include spaceCuisine2(s170,margin-bottom);
         // @include blockCuisine(sectionCuisine2,height);
@@ -27,6 +27,13 @@
                     order: 1;
                     justify-content: flex-start;
                     @include spaceCuisine2(s16,margin-bottom);
+                    padding-top: 32px;
+                    @include rp(mx){
+                        padding-top: 28px;
+                    }
+                    @include rp(sx){
+                        padding-top: 24px;
+                    }
                 }
             }
             &__right{
@@ -35,6 +42,13 @@
                     order: 2;
                     width: 80%;
                     margin: auto;
+                    padding-bottom: 32px;
+                    @include rp(mx){
+                        padding-bottom: 28px;
+                    }
+                    @include rp(sx){
+                        padding-bottom: 24px;
+                    }
                  }
             }
             &__img{
@@ -55,7 +69,7 @@
                     position: absolute;
                     top: 120%;
                     right: 0%;
-                    width: 30%;
+                    width: 25%;
                     height: 6px;
                     content: "";
                     background: map-get($color, underline );
@@ -80,6 +94,7 @@
             &__desc{
                 @include spaceCuisine2(s16,margin-bottom);
                 width: 100%;
+                text-align: right;
                 @include rp(tm){
                     text-align: left;
                    
