@@ -78,7 +78,7 @@
         right: calc(-20px - #{$wh});
       }
       @media (max-width: map-get($media, ps)){
-        right: calc(-10px - #{$wh});
+        right: calc(-16px - #{$wh});
       }
       @media (max-width: map-get($media, tl)){
         right: 0;
@@ -99,7 +99,7 @@
         left: calc(-20px - #{$wh});
       }
       @media (max-width: map-get($media, ps)){
-        left: calc(-10px - #{$wh});
+        left: calc(-16px - #{$wh});
       }
       @media (max-width: map-get($media, tl)){
         left: 0;

@@ -48,10 +48,14 @@
       }
     }
 
+    cursor: pointer;
+    user-select: none;
 
     &.active{
       color: map-get($color, bulletTextActive);
       text-decoration: underline;
+
+      cursor: initial;
     }
   }
   li.next,
@@ -78,6 +82,7 @@
 
     &.btn-hidden{
       background-color: map-get($color, bulletBgHidden);
+      cursor: initial;
     }
   }
 
@@ -89,5 +94,15 @@
   
   li + li{
     margin-left: 36px;
+
+    @include rp(pm){
+      margin-left: 28px;
+    }
+    @include rp(tl){
+      margin-left: 24px;
+    }
+    @include rp(mx){
+      margin-left: 18px;
+    }
   }
 }

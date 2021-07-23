@@ -46,6 +46,9 @@ $color: (
 	bg-cuisineOverlay: rgba(#ECECEC,0.4),
 	// utilities bg
 	bg-utilities-2: rgba(#EEEEEE, 0.75),
+
+	// footer
+	footer-bg: #F8F8F8,
 );
 
 $letterSpacing: (
@@ -126,6 +129,7 @@ $title: (
 	),
 	s45: (
 		default: 4.5rem,
+		pm: 4.2rem,
 		tx: 4rem,
 		mx: 3.8rem,
 	),
@@ -139,7 +143,8 @@ $title: (
 	),
 	s26: (
 		default: 2.6rem,
-		ts: 2.4rem,
+		pm: 2.4rem,
+		ts: 2.2rem,
 		ml: 2rem,
 	),
 	s21: (
@@ -338,6 +343,9 @@ $serviceBox: (
 		tl: 12px
 	),
 );
+
+
+@import "../_variables/footer";
 @import "../_variables/header";
 @import "../_variables/index";
 @import "../_variables/service";
@@ -345,4 +353,5 @@ $serviceBox: (
 @import "../_variables/cuisine";
 @import "../_variables/utilities";
 @import "../_variables/library";
-
+@import "../_variables/endow";
+@import "../_variables/wedding";

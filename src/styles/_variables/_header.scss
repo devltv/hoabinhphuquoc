@@ -1,11 +1,29 @@
-
 $spaceHeader: (
-	
+	s42: (
+    default: 42px,
+    pl: 28px,
+    pm: 14px,
+  ),
 );
 
 $blockHeader: (
 	top: (
     default: 60px,
+    ps: 52px,
+    tl: 48px,
+    ts: 42px,
+  ),
+  main: (
+    default: 123px,
+    ps: 110px,
+    tl: 90px,
+    ts: 80px,
+    ml: 72px,
+  ),
+  logoWidth: (
+    defalut: 186px,
+    pl: 172px,
+    pm: 150px,
   ),
 );
 
