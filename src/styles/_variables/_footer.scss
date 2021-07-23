@@ -1,0 +1,196 @@
+// service
+
+
+$footerBox: (
+  
+    f-s-30:(
+        default: 3rem,
+        pl: 82px ,
+        pm: 54px ,
+        ps: 44px,
+        mm: 20px ,
+    ),
+    m-t-90: (
+        default: 90px,
+        pl: 82px ,
+        pm: 54px ,
+        ps: 44px,
+        mm: 20px ,
+    ),
+    m-b-35: (
+      default: 35px,
+        // pl: 43px ,
+        // pm: 33px ,
+        // ps: 23px,
+        // mm: 13px ,
+    ),
+    m-b-20: (
+      default: 20px,
+        // pl: 43px ,
+        // pm: 33px ,
+        // ps: 23px,
+        // mm: 13px ,
+    ),
+    m-r-20: (
+      default: 20px,
+        // pl: 43px ,
+        // pm: 33px ,
+        // ps: 23px,
+        // mm: 13px ,
+    ),
+    m-t-35: (
+      default: 35px,
+        // pl: 43px ,
+        // pm: 33px ,
+        // ps: 23px,
+        // mm: 13px ,
+    ),
+    p-r-32:(
+        default: 32px,
+        pm: 22px,
+        // ps: 20px ,
+        mm: 7px ,
+    ),
+    p85 : (
+        default: 85px 0,
+        pl: 75px 0,
+        pm: 65px 0,
+        ps: 5% 0,
+        mm: 20px 0,
+    ),
+    p22 : (
+        default: 22px,
+        // pl: 75px 0,
+        // pm: 65px 0,
+        // ps: 5% 0,
+        // mm: 20px 0,
+    ),
+    p58 : (
+        default: 0 58px ,
+        // pl: 75px 0,
+        // pm: 65px 0,
+        // ps: 5% 0,
+        // mm: 20px 0,
+        ),
+    p-r-80: (
+        default: 80px ,
+        pl: 70px,
+        pm: 60px,
+        ps: 3% 0 ,
+    ),
+    p-l-100: (
+        default: 100px ,
+        pl: 70px,
+        pm: 60px,
+        ps: 3% 0 ,
+    ),
+   
+   
+);
+
+$blockFooter: (
+	footer-1: (
+		default: 324px,
+		pl: 100%,
+		// pm: 304px,
+		// tx: 244px,
+		// // tl: 220px,
+    // tm: 224px,
+    // ts: 204px,
+    // mx: 164px,
+    // mm: 100%,
+	),
+  footer-video-top: (
+		default: 502px,
+		pl: 402px,
+		pm: 382px,
+		tx: 302px,
+		tl: 282px,
+    tm: 402px,
+    ts: 304px,
+    ml: 204px, 
+    mm: 164px,
+    // mm: 100%,
+	),
+  footer-video-top-big: (
+		default: 813px,
+		pl: 713px,
+		pm: 613px,
+		tx: 60%,
+    tm: 100%,
+	),
+  footer-video-top-small: (
+		default: 502px,
+		pl: 412px,
+		pm: 352px,
+		tx: 37%,
+		// tl: 220px,
+    // tm: 100%,
+    // ts: 204px,
+    // mx: 164px,
+    // mm: 100%,
+	),
+  footer-video-bottom: (
+    default: 228px,
+		// pl: 402px,
+		pm: 188px,
+		tx: 168px,
+		tl: 158px,
+    tm: 148px,
+    ts: 128px,
+    mx: 108px,
+    ml: 88px, 
+    ms: 54px,
+  )
+);
+
+
+@mixin footerBox($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($footerBox, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockFooter($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockFooter, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

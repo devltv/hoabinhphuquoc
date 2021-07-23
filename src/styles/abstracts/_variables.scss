@@ -46,6 +46,9 @@ $color: (
 	bg-cuisineOverlay: rgba(#ECECEC,0.4),
 	// utilities bg
 	bg-utilities-2: rgba(#EEEEEE, 0.75),
+
+	// footer
+	footer-bg: #F8F8F8,
 );
 
 $letterSpacing: (
@@ -340,6 +343,9 @@ $serviceBox: (
 		tl: 12px
 	),
 );
+
+
+@import "../_variables/footer";
 @import "../_variables/header";
 @import "../_variables/index";
 @import "../_variables/service";

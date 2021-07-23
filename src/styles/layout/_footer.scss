@@ -1,0 +1,132 @@
+#footer{
+    @include footerBox(p85, padding);
+    background: map-get($color, footer-bg );
+    .footer_wrapper{
+        @include footerBox(p58, padding);
+        margin: auto;
+        .footer__more{
+            &--title{
+                @include footerBox(m-b-20, margin-bottom);
+                @include family--second;
+                font-weight: bold; 
+                text-transform: uppercase;
+                color: map-get($color, base );
+            }
+        }
+        .footer-1{
+            margin-right: auto;
+            @include footerBox(p-r-80, padding-right);
+            .items{
+                @include footerBox(m-b-35, margin-bottom);
+                list-style-type: none;
+                a{
+                    @include size(s15);
+                    text-transform: uppercase;
+                    color: map-get($color, base );
+                    @include family--second;
+                    font-weight: bold; 
+                    cursor: pointer;
+                }
+            }
+            &__link{
+                display: flex;
+                justify-content: space-between;
+            }
+            &__policy{
+                @include footerBox(m-t-35, margin-top);
+                .policy{
+                    width: 170px;
+                    height: 100%;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .footer-2,
+        .footer-3{
+            &__title{
+                @include footerBox(m-b-35, margin-bottom);
+                @include family--primary;
+                font-weight: bold; 
+                text-transform: uppercase;
+                @include footerBox(f-s-30, font-size);
+               color: map-get($color, main );
+            }
+        }
+        .footer-2{
+            display: flex;
+            flex-direction: column;
+            &__infor{
+                &--items{
+                    width: 100%;
+                    @include footerBox(m-b-35, margin-bottom);
+                    display: flex;
+                    color: map-get($color, base );
+                    img{
+                        @include footerBox(m-r-20, margin-right);
+                        width: 19px;
+                    }
+                }
+            }
+            .footer__more{
+                margin-top: auto;
+                &--pic{
+                    img{
+                        width: 36px;
+                        margin-right: 7px;
+                    }
+                    display: flex;
+                }
+            }
+        }
+        .footer-3{
+            display: flex;
+            flex-direction: column;
+            @include footerBox(p-l-100, padding-left);
+            &__form{
+                &--input{
+                    @include footerBox(p22, padding);
+                    width: 100%;
+                    background: map-get($color, mainBg );
+                    margin-bottom: 7px;
+                    input{
+                        width: 100%;
+                        background: none;
+                        border: none;
+                        border-bottom: solid 1px map-get($color,base );
+                    }
+                }
+                .btn-submit{
+                    width: 92px;
+                    height: 31px;
+                    background: none;
+                    border: none;
+                    background: map-get($color, base-2 );
+                    @include size(s15);
+                    transition: 0.3s ease-in-out;
+                    &:hover{
+                        background: map-get($color, baseBold );
+                    }
+                }
+            }
+            &__pay{
+                margin-top: auto;
+                .footer__more:not(:last-child){
+                    @include footerBox(m-b-35, margin-bottom);
+                }
+                .footer__more{
+                    &--pic{
+                        display: flex;
+                        img{
+                            margin-right: 7px;
+                            width: 58px;
+                        }
+                        .one-pay{
+                            width: 79px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
