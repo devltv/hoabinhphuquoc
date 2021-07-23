@@ -8,10 +8,10 @@
             @include space(s48, margin-top);
             @include space(s48, margin-bottom);
         }
-        &__section{
-            // @include blockCuisine(sectionCuisine1,height);
+        // &__section{
+        //     // @include blockCuisine(sectionCuisine1,height);
             
-        }
+        // }
         &__section{
             .content{
                 display: flex;
@@ -156,11 +156,11 @@
                     }
                    
                 }
-                &__icons{
-                    // width: 100%;
-                    // height: 96px;
+                // &__icons{
+                //     // width: 100%;
+                //     // height: 96px;
                     
-                }
+                // }
                 &__list{
                     width: 100%;
                     @include blockCuisine(listCuisine1,height);

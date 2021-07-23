@@ -1,4 +1,12 @@
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+}
+
 .header {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+
   &-top {
     @include blockHeader(top, height);
     background-color: map-get($color, main);
@@ -31,12 +39,23 @@
             & > * {
               &:not(:first-child) {
                 margin-left: 12px;
+
+                @include rp(tl) {
+                  margin-left: 4px;
+                }
               }
               font-size: 1.5rem;
+              @include rp(tl) {
+                font-size: 1.3rem;
+              }
             }
 
             &:not(:first-child) {
               padding-left: 16px;
+              @include rp(tl) {
+                padding-left: 8px;
+              }
+
               position: relative;
 
               &::after {
@@ -49,13 +68,30 @@
                 width: 1px;
 
                 background-color: map-get($color, mainBg);
+
+                @include rp(ml){
+                  width: 0;
+                  opacity: 0;
+                  visibility: hidden;
+                  height: 0;
+                  display: none;
+                }
               }
             }
             &:not(:last-child) {
               padding-right: 16px;
+              @include rp(tl) {
+                padding-right: 8px;
+              }
             }
 
             &-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            &-span {
               display: flex;
               justify-content: center;
               align-items: center;
@@ -67,6 +103,13 @@
             //   }
             // }
           }
+
+          &__phone,
+          &__email {
+            @include rp(ml) {
+              display: none;
+            }
+          }
         }
 
         span,
@@ -76,10 +119,16 @@
 
         &-order {
           margin-left: 36px;
+          @include rp(tl) {
+            margin-left: 18px;
+          }
 
           svg,
           img {
             margin-left: 6px;
+            @include rp(tl) {
+              margin-left: 4px;
+            }
           }
 
           &__link {
@@ -90,6 +139,14 @@
             max-height: 100%;
 
             @include uppercase;
+
+            font-size: 1.8rem;
+            @include rp(tl) {
+              font-size: 1.6rem;
+            }
+            @include rp(ts) {
+              font-size: 1.4rem;
+            }
           }
         }
       }
@@ -106,6 +163,10 @@
       justify-content: space-between;
       align-items: center;
       height: 100%;
+
+      @include rp(tl){
+        position: initial;
+      }
     }
 
     &__logo {
@@ -115,6 +176,7 @@
       height: 100%;
       img {
         object-fit: contain;
+        object-position: left;
       }
     }
 
@@ -134,26 +196,31 @@
           @include size(s18);
           color: map-get($color, main);
           white-space: nowrap;
+
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 50%;
+            width: 0%;
+            opacity: 0;
+            height: 3px;
+            background-color: map-get($color, underline);
+            transition: 0.3s all ease;
+          }
         }
 
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          top: calc(100% + 6px);
-          left: 50%;
-          width: 0%;
-          opacity: 0;
-          height: 3px;
-          background-color: map-get($color, underline);
-          transition: 0.3s all ease;
-        }
+
 
         &.active {
-          &::after {
-            width: 100%;
-            left: 0%;
-            opacity: 1;
+          &>*{
+            &::after {
+              width: 100%;
+              left: 0%;
+              opacity: 1;
+            }
           }
         }
 
@@ -164,13 +231,69 @@
             opacity: 1;
           }
         }
+
+        @include rp(ps) {
+          // margin: 12px 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 12px 0px;
+          
+          & > * {
+            display: block;
+            padding-bottom: 4px;
+            &::after {
+              top: calc(100% - 3px);
+            }
+          }
+          &:not(:first-child){
+            border-top: 1px solid rgba(0, 0, 0, 0.16);
+          }
+        }
       }
       &-item + &-item {
         @include spaceHeader(s42, margin-left);
+
+        @include rp(ps) {
+          margin-left: 0;
+        }
       }
 
       @include rp(ps) {
+        position: absolute;
+        top: calc(100% - 1px);
+        right: 0;
+
+        height: auto;
+        
+        // display: flex;
+        justify-content: initial;
+        align-items: center;
+        flex-direction: column;
+
         display: none;
+
+        &.active{
+          display: inherit;
+          animation: fadeInUp .16s ease forwards;
+        }
+
+        min-width: 300px;
+        @include rp(sl){
+          min-width: 100%;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        background-color: map-get($color, mainBg);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+
+        max-height: calc(100vh - 320px);
+        overflow-y: auto;
+      }
+
+      @include rp(ml){
+        width: 100%;
       }
     }
 
@@ -187,15 +310,20 @@
 
       cursor: pointer;
 
+      @include rp(ps) {
+        display: inherit;
+      }
+
       &-border {
         width: 80%;
         height: 2px;
         border-radius: 1px;
         background-color: map-get($color, main);
-        transition: .3s all ease;
+        transition: 0.3s all ease;
 
         position: relative;
-        &::before, &::after{
+        &::before,
+        &::after {
           content: "";
           position: absolute;
           top: -12px;
@@ -206,28 +334,32 @@
           height: 2px;
           background-color: map-get($color, main);
 
-          transition: .3s all ease;
+          transition: 0.3s all ease;
         }
 
-        &::after{
+        &::after {
           top: initial;
-          bottom: -12px;  
+          bottom: -12px;
         }
       }
-      
-      &.active{
-        .header-main__button-border{
+      display: none;
+      &.show {
+        display: inherit;
+      }
+      &.active {
+        .header-main__button-border {
           height: 0;
 
-          &::before,&::after{
+          &::before,
+          &::after {
             top: 50%;
             bottom: initial;
             width: 100%;
           }
-          &::before{
+          &::before {
             transform: translateY(-50%) rotate(45deg);
           }
-          &::after{
+          &::after {
             transform: translateY(-50%) rotate(-45deg);
           }
         }
