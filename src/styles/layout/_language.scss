@@ -1,0 +1,125 @@
+
+.language {
+  &-active {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    user-select: none;
+
+    &.active{
+      .language-icon{
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &-icon{
+    svg{
+      transition: .3s all ease;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+
+    &__img {
+      width: 28px;
+      height: 20px;
+
+      img {
+        object-fit: contain;
+      }
+    }
+    &__code {
+      margin-left: 8px;
+      user-select: none;
+    }
+  }
+
+  &-icon {
+    margin-left: 8px;
+  }
+
+  position: relative;
+
+  &-list {
+    display: none;
+    &.active {
+      display: block;
+    }
+
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 4px);
+    left: 0px;
+    width: 100%;
+
+    padding-left: 4px;
+    padding-right: 4px;
+
+    list-style-type: none;
+    background-color: map-get($color, mainBg);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.16);
+
+    max-height: 100px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    &__item {
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+
+      user-select: none;
+      cursor: pointer;
+
+      .language-content__code {
+        span {
+          color: map-get($color, main) !important;
+        }
+      }
+
+      .language-content__img {
+        width: 28px;
+        height: 20px;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid rgba(map-get($color, base), 0.3);
+      }
+
+      &.active {
+        display: none;
+      }
+    }
+  }
+}
