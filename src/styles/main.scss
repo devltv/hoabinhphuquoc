@@ -1,5 +1,4 @@
 @import "abstracts/variables"; 
-
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/grid";
@@ -27,7 +26,9 @@
 // page
 @import "pages/index/style";
 @import "pages/service/style";
+@import "pages/wedding/style";
 @import "pages/cuisine/style";
 @import "pages/utilities/style";
 @import "pages/library/style";
 @import "pages/endow/style";
+@import "pages/utilities/style";

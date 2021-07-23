@@ -1,0 +1,114 @@
+
+$spacewedding2:(
+  s84:(
+    default:84px,
+  ),
+  s120:(
+    default:120px,
+  ),
+  s268:(
+    default:268px,
+  ),
+  s820:(
+    default:820px,
+    ps:610px,
+  ),
+);
+$sizewedding2:(
+  s51:(
+    default:51px,
+    ps:45px,
+  ),
+  s26:(
+    default:26px,
+  ),
+);
+$blockwedding2:(
+  s784:(
+    default:748px,
+  ),
+  s543:(
+    default:543px,
+  ),
+  s50:(
+    default:50px,
+    ps:15px,
+  ),
+  s24:(
+    default:24px 0,
+    ps:18px 0,
+  ),
+);
+@mixin spacewedding2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spacewedding2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin sizewedding2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($sizewedding2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin blockwedding2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockwedding2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
