@@ -3,6 +3,7 @@ function index1(){
   if (document.getElementById('index1')) {
     new Swiper(`.index-intro  .content-intro--swiper`, {
       slidesPerView: 1,
+      spaceBetween: 0,
       loop: true,
       pagination: {
           el: ".swiper-pagination",
