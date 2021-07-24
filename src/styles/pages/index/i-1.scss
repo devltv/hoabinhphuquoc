@@ -4,13 +4,16 @@
         @include spaceIndex1(s130,margin-bottom);
         .content{
             position: relative;
+            height: auto;
             &__left{
                 @include spaceIndex1(s140,padding-top);
                 @include spaceIndex1(s120,padding-bottom);
                 @include spaceIndex1(s110,padding-left);
+                @include spaceIndex1(s110,padding-right);
                 // @include spaceIndex1(s110,padding-right);
                 box-shadow: 0px 3px 6px rgba(#000, .16);
                 position: relative;
+                background: map-get($color, mainBg );
                 &::after{
                     position: absolute;
                     top: 30px;
@@ -20,23 +23,47 @@
                     content: "";
                     border:  1px solid map-get($color, main );
                 }
+               
             }
             &__title{
                 @include spaceIndex1(s16,margin-bottom);
+              
                 &>*{
                     @include size(s26);
+                    @include rp(pm){
+                        font-size: 24px;
+                     }
+                     @include rp(tx){
+                        font-size: 20px;
+                     }
+                     @include rp(ml){
+                        font-size: 18px;
+                     }
                     @include bold;
                     color: map-get($color, base );
                 }
             }
             &__titleSub{
                 @include spaceIndex1(s40,margin-bottom);
+                
                 &>*{
                     @include family--primary;
                     @include title(s51);
                     @include rp(pm){
-                       font-size: 48px;
+                       font-size: 44px;
                     }
+                    @include rp(tx){
+                        font-size: 32px;
+                    }
+                     @include rp(tl){
+                        font-size: 31px;
+                     }
+                     @include rp(ml){
+                        font-size: 29px;
+                     }
+                     @include rp(ms){
+                        font-size: 27px;
+                     }
                     color: map-get($color, main);
                     font-weight: bold;
                     
@@ -44,10 +71,16 @@
             }
             &__desc{
                 width: 60%;
+                @include rp(tm){
+                    width: 100%
+                 }
                 @include spaceIndex1(s50,margin-bottom);
                 @include p-line-clamp(6);
                 &>*{
                     @include title(s18);
+                    @include rp(tx){
+                        font-size: 15px;
+                     }
                     color: map-get($color, base );
                     line-height: 1.6;
                 }
@@ -61,14 +94,20 @@
             }
             &__right{
                 position: absolute;
-                top: 10%;
+                top: 50%;
                 left: 50%;
-                @include rp(pm){
-                    left: 55%;
+                transform: translateY(-50%);
+                @include rp(tm){
+                    position: relative;
+                    top: 0%;
+                    left: 0%;
+                    transform: translate(0);
+                    margin-top: 16px;
+                    
                 }
-                @include rp(ps){
-                    left: 55%;
-                }
+                // @include rp(ps){
+                //     left: 55%;
+                // }
             }
             &__img{
                 @include blockIndex(wimgIndex1,width);
@@ -80,6 +119,15 @@
                     position: absolute;
                     right: 10%;
                     bottom: -5%;
+                }
+                @include rp(tm){
+                    .swiper-pagination{
+                        position: absolute;
+                        right: 50%;
+                        bottom: -10%;
+                        transform: translateY(-50%);
+                    }
+                    
                 }
             }
         }
