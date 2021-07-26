@@ -1,68 +1,93 @@
 $spaceIndex: (
   s24: (
-		default: 24px,
+    default: 24px,
     pm: 18px,
     tx: 16px,
     tl: 14px,
     ts: 12px,
-	),
+  ),
   s32: (
     default: 32px,
     ps: 28px,
     tl: 18px,
-    mx: 12px
+    mx: 12px,
   ),
-
   s34: (
-		default: 34px,
-		ps: 32px,
-		tx: 24px,
-		mx: 18px,
-	),
+    default: 34px,
+    ps: 32px,
+    tx: 24px,
+    mx: 18px,
+  ),
   s34-2: (
-		default: 34px,
-		pm: 30px,
+    default: 34px,
+    pm: 30px,
     tx: 25px,
     tl: 20px,
     ts: 18px,
-		
-	),
+  ),
   s36: (
     default: 36px,
   ),
-
   s42: (
-		default: 42px,
-		pm: 38px,
+    default: 42px,
+    pm: 38px,
     tl: 32px,
-    ml: 28px
-	),
+    ml: 28px,
+  ),
   s44: (
-		default: 44px,
-		
-	),
+    default: 44px,
+  ),
   s50: (
-		default: 50px,
-	),
-
+    default: 50px,
+  ),
   s72: (
-		default: 72px,
+    default: 72px,
     pm: 45px,
     tx: 38px,
-    mm: 28px
-	),
+    mm: 28px,
+  ),
   s88: (
-		default: 88px,
-	),
-
+    default: 88px,
+  ),
 );
 //section,padding,margin
+$spaceIndex1: (
+  s16: (
+    default: 16px,
+  ),
+  s40: (
+    default: 40px,
+    pm: 24px,
+  ),
+  s50: (
+    default: 50px,
+    pm: 28px,
+  ),
+  s110: (
+    default: 110px,
+    pl: 70px,
+  ),
+  s120: (
+    default: 120px,
+    pl: 100px,
+    pm: 90px,
+    ps: 80px,
+  ),
+  s130: (
+    default: 130px,
+  ),
+  s140: (
+    default: 140px,
+    pl: 120px,
+    ps: 100px,
+  ),
+);
 $spaceIndex3: (
-    s48:(
-        default: 48px,
-        pm: 36px,
-        tx: 4px,
-    ),
+  s48: (
+    default: 48px,
+    pm: 36px,
+    tx: 4px,
+  ),
 );
 $spaceIndex4: (
   s2: (
@@ -78,88 +103,90 @@ $spaceIndex4: (
   s16: (
     default: 16px,
   ),
-   s20: (
-      default: 20px,
-   ),
-   s24: (
-      default: 24px,
-   ),
-   s40: (
+  s20: (
+    default: 20px,
+  ),
+  s24: (
+    default: 24px,
+  ),
+  s40: (
     default: 40px,
     ps: 38px,
     tx: 36px,
     tm: 24px,
     ts: 24px,
-   
- ),
-    sLeftRightContentBox: (
-      default: 32px,
-      tx: 28px,
-      ts: 24px,
-      mx: 18px,
-      ms: 6px,
-    ),
-   s70: (
-      default: 70px,
-      pm: 56px,
-      ts: 36px,
- 
-   ),
-   s104: (
-     default: 104px,
-     pl: 78px,
-     pm: 76px,
-     ps: 64px,
-     tx: 18px,
-     tm: 18px,
-     mx: 20px,
-     ms: 18px,
-     
-   ),
+  ),
+  sLeftRightContentBox: (
+    default: 32px,
+    tx: 28px,
+    ts: 24px,
+    mx: 18px,
+    ms: 6px,
+  ),
+  s70: (
+    default: 70px,
+    pm: 56px,
+    ts: 36px,
+  ),
+  s104: (
+    default: 104px,
+    pl: 78px,
+    pm: 76px,
+    ps: 64px,
+    tx: 18px,
+    tm: 18px,
+    mx: 20px,
+    ms: 18px,
+  ),
 );
-$spaceIndex6:(
-    s88:(
-      default: 88px,
-      pl: 80px,
-      pm: 72px,
-      ps: 64px,
-    ),
-    s80:(
-      default: 80px,
-      pl: 76px,
-      pm: 72px,
-      ps: 64px,
-    ),
-    s56:(
-      default: 56px,
-      pl: 52,
-      pm: 46px,
-      ps: 28px,
-      
-    ),
+$spaceIndex6: (
+  s88: (
+    default: 88px,
+    pl: 80px,
+    pm: 72px,
+    ps: 64px,
+  ),
+  s80: (
+    default: 80px,
+    pl: 76px,
+    pm: 72px,
+    ps: 64px,
+  ),
+  s56: (
+    default: 56px,
+    pl: 52,
+    pm: 46px,
+    ps: 28px,
+  ),
 );
 //height
 $blockIndex: (
-  imgIndex2:(
+  wimgIndex1: (
+    default: 100%,
+  ),
+  himgIndex1: (
+    default: 530px,
+    pl: 500px,
+    pm: 420px,
+    tx: 370px,
+  ),
+  imgIndex2: (
     default: 295px,
     pm: 245px,
     tx: 200px,
-    mx: 145px
+    mx: 145px,
   ),
   imgIndex3: (
-		default: 454px,
+    default: 454px,
     pm: 420px,
     ps: 380px,
-
     tx: 320px,
     tm: 420px,
     ts: 380px,
-
     mx: 280px,
     ml: 240px,
-
-	),
-  imgIndex4:(
+  ),
+  imgIndex4: (
     default: 757px,
     pm: 728px,
     ps: 700px,
@@ -167,8 +194,7 @@ $blockIndex: (
     tm: 560px,
     mx: 480px,
   ),
-
-  boxIndex4:(
+  boxIndex4: (
     default: 618px,
     pm: 580px,
     tx: 500px,
@@ -178,140 +204,146 @@ $blockIndex: (
     ml: 380px,
     mm: 360px,
   ),
-  boxImgIndex4:(
+  boxImgIndex4: (
     default: 45px,
   ),
-  boxRighrIndex4:(
+  boxRighrIndex4: (
     default: 120px,
     pm: 118px,
     tx: 98px,
     tm: 90px,
-    mx: 70px
+    mx: 70px,
   ),
-  boxIndex6:(
+  boxIndex6: (
     default: 610px,
     pl: 580px,
     pm: 550px,
   ),
-  imgIndex6:(
+  imgIndex6: (
     default: 630px,
-    
   ),
+  
 );
-@mixin spaceIndex($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($spaceIndex, #{$key}){
-    @if $side == '-1'{
-      @if $idx == default{
+@mixin spaceIndex($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($spaceIndex, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
         #{$name}: $val;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val;
         }
       }
-    }
-    @else{
-      @if $idx == default{
+    } @else {
+      @if $idx == default {
         #{$name}: $val $side;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val $side;
         }
       }
     }
   }
 }
-@mixin blockIndex($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($blockIndex, #{$key}){
-    @if $side == '-1'{
-      @if $idx == default{
+@mixin blockIndex($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($blockIndex, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
         #{$name}: $val;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val;
         }
       }
-    }
-    @else{
-      @if $idx == default{
+    } @else {
+      @if $idx == default {
         #{$name}: $val $side;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val $side;
         }
       }
     }
   }
 }
-@mixin spaceIndex3($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($spaceIndex3, #{$key}){
-    @if $side == '-1'{
-      @if $idx == default{
+@mixin spaceIndex1($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($spaceIndex1, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
         #{$name}: $val;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val;
         }
       }
-    }
-    @else{
-      @if $idx == default{
+    } @else {
+      @if $idx == default {
         #{$name}: $val $side;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val $side;
         }
       }
     }
   }
 }
-@mixin spaceIndex4($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($spaceIndex4, #{$key}){
-    @if $side == '-1'{
-      @if $idx == default{
+@mixin spaceIndex3($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($spaceIndex3, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
         #{$name}: $val;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val;
         }
       }
-    }
-    @else{
-      @if $idx == default{
+    } @else {
+      @if $idx == default {
         #{$name}: $val $side;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val $side;
         }
       }
     }
   }
 }
-@mixin spaceIndex6($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($spaceIndex6, #{$key}){
-    @if $side == '-1'{
-      @if $idx == default{
+@mixin spaceIndex4($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($spaceIndex4, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
         #{$name}: $val;
-      }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val;
         }
       }
-    }
-    @else{
-      @if $idx == default{
+    } @else {
+      @if $idx == default {
         #{$name}: $val $side;
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
+          #{$name}: $val $side;
+        }
       }
-      @else{
-        @media (max-width: map-get($media, $idx)){
+    }
+  }
+}
+@mixin spaceIndex6($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($spaceIndex6, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
+        #{$name}: $val;
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
+          #{$name}: $val;
+        }
+      }
+    } @else {
+      @if $idx == default {
+        #{$name}: $val $side;
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
           #{$name}: $val $side;
         }
       }

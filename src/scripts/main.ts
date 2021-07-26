@@ -18,7 +18,7 @@ import {header} from "./layout/header";
 // Page
 import index from "./page/index";
 import {service} from "./page/service";
-import library from "./page/library";
+// import library from "./page/library";
 import endow from "./page/endow";
 
 
@@ -45,7 +45,7 @@ function layout(){
 function page(){
   index.index();
   service();
-  library.library();
+  // library.library();
   endow.endow();
 }
 

@@ -1,5 +1,17 @@
 declare var Swiper: any;
-
+function index1(){
+  if (document.getElementById('index1')) {
+    new Swiper(`.index-intro  .content-intro--swiper`, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      pagination: {
+          el: ".swiper-pagination",
+          
+        },
+    });
+  }
+}
 function index2() {
   if (document.getElementById('index2')) {
     new Swiper(".index-restroom .index-restroom--swiper", {
@@ -211,6 +223,7 @@ function index6(){
 
 export default {
   index: function () {
+    index1();
     index2();
     toggleIndex3();
     toggleIndex4();
