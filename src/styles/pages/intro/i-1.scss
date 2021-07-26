@@ -1,0 +1,126 @@
+#intro-1__wrapper{
+    @include spaceIntro(p142, padding);
+    .intro-1__section{
+        // position: relative;
+        display: flex;
+        align-items: center;
+        &--image{
+            position: relative;
+            .swiper-pagination{
+                bottom: -25px;
+                display: flex;
+                justify-content: flex-end;
+                right: 0;
+                .swiper-pagination-bullet{
+                    margin-left: 15px;
+                    
+                }
+            }
+            @include blockIntro-1(Intro-1, height);
+            .intro-1{
+                position: unset;
+                height: 100%;
+            }
+            .swiper-wrapper{
+                height: 100%;
+                .swiper-slide{
+                    display: flex;
+                    justify-content: space-between;
+                    .image-small{
+                        // width: 100%;
+                        // height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        &__pic{
+                            @include blockIntro-1(Intro-2, height);
+                            @include blockIntro-1(Intro-2, width);
+                            &:not(:last-child){
+                                position: relative;
+                                &::after{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    content: "";
+                                    background: map-get($color, intro-overlay );
+                                }
+                                &::before{
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 80%;
+                                    height: 80%;
+                                    content: "";
+                                    background: none;
+                                    border: solid 1px map-get($color, mainBg );
+                                    z-index: 1;
+                                }
+                            }
+                        }
+                        
+                    }
+                    .image-big{
+                        height: 100%;
+                        
+                        &__pic{
+                            @include blockIntro-1(Intro-3, width);
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &--text{
+            @include spaceIntro(p-l-53, padding-left);
+            &-headtitle{
+                text-transform: uppercase;
+                @include spaceIntro(s20, margin-bottom);
+                @include size(s26);
+                font-weight: bold;
+                color: map-get($color, base );
+            }
+            &-title{
+                @include spaceIntro(m-b-60, margin-bottom);
+                @include size(s51);
+                a{
+
+                    color: map-get($color, main );
+                }
+                @include rp(pm){
+                    font-size: 4.0rem;
+                }
+                @include rp(ps){
+                    font-size: 3.6rem;
+                }
+                @include rp(tx){
+                    font-size: 3.2rem;
+                }
+                @include rp(tl){
+                    font-size: 3rem;
+                }
+                @include rp(ts){
+                    font-size: 2.8rem;
+                }
+                @include rp(mm){
+                    font-size: 3rem;
+                }
+                @include rp(sl){
+                    font-size: 2.4rem;
+                }
+                @include family--primary;
+                font-weight: bold;
+                color: map-get($color, main );
+            }
+            &-decs{
+                // @include spaceIntro(m-b-60, margin-bottom);
+                color: map-get($color, base );
+                p{
+                    @include spaceIntro(s20, margin-bottom);
+                }
+            }
+        }
+    }
+}

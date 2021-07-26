@@ -1,0 +1,129 @@
+#intro-3__wrapper{
+    .tour-title{
+        width: 100%;
+        text-align: center;
+        // @include utilitiesBox(s90, margin-top);
+        
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
+    }
+    .text-infor{
+        &__time{
+            color: map-get($color,dateTime );
+            @include spaceIntro(m-r-10, margin-bottom);
+        }
+        &__title{
+            @include size(s26);
+            color: map-get($color,breadcrumb );
+            @include spaceIntro(s30, margin-bottom);
+            @include family--second;
+            font-weight: bold;
+        }
+        &__decs{
+            @include spaceIntro(s30, padding-top);
+            @include spaceIntro(s20, margin-bottom);
+        }
+        &__more{
+            a{
+                svg{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .intro-3__section{
+        &--nav{
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            background: map-get($color, intro-bg-2 );
+            @include family--second;
+            font-weight: bold;
+            @include spaceIntro(p14, padding);
+            @include spaceIntro(m-b-90, margin-bottom);
+            &-items{
+                @include size(s26);
+                color: map-get($color, bulletText );
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+                &:hover{
+                    color: map-get($color,main );
+                }
+            }
+            .active{
+                color: map-get($color,main );
+            }
+        }
+        &--content{
+            .active{
+                display: block;
+            }
+            &-items{
+                display: none;
+                .content-intro{
+                    margin: auto;
+                    &__image{
+                        width: 100%;
+                        @include blockIntro-3(Intro-intro, height);
+                        @include spaceIntro(m-b-90, margin-bottom);
+                        position: relative;
+                        &--overlay{
+                            background: map-get($color, boxOverlayActive );
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            @include spaceIntro(Intro-overlay, padding);
+                            @include blockIntro-3(Intro-overlay, width);
+                            .text-infor{
+                                &__time{
+                                    color: map-get($color,dateTime );
+                                }
+                                &__title{
+                                    color: map-get($color,mainBg );
+                                }
+                                &__decs{
+                                    color: map-get($color,dateTime );
+                                }
+                                &__more{
+                                    a{
+                                        color: map-get($color,dateTime );
+                                        path{
+                                            fill: map-get($color,dateTime );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .content-news{
+                    margin: auto;
+                    
+                    &__items{
+                        @include spaceIntro(p-r-72, margin-bottom);
+                        // margin-right: auto;
+                        width: calc(100% / 3);
+                        padding: 0 10px;
+                        &:nth-child(3n +1) {
+                            padding-right: 10px;
+                            padding-left: 0px;
+                        }
+                        &:nth-child(3n) {
+                            padding-left: 10px;
+                            padding-right: 0px;
+                        }
+                        &:last-child{
+                            justify-self: flex-start;
+                        }
+                        .text-infor{
+                            &__image{
+                                width: 100%;
+                                @include blockIntro-3(Intro-4, height);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
