@@ -1,0 +1,146 @@
+$spaceForum: (
+  s56: (
+    default: 56px,
+    pl: 48px,
+    pm: 32px,
+    tx: 28px,
+    tl: 20px,
+  ),
+  s42: (
+    default: 42px,
+    pm: 36px,
+    ts: 28px,
+  ),
+  s30: (
+    default: 30px,
+    pm: 28px,
+    ts: 24px,
+  ),
+  s25: (
+    default: 25px,
+    pm: 22px,
+    ts: 20px,
+  ),
+  s18: (
+    default: 18px,
+    pm: 12px,
+    tx: 8px,
+    ts: 6px,
+  ),
+
+  s12: (
+    default: 12px,
+    mx: 10px,
+    ml: 8px,
+    mm: 6px,  
+  ),
+);
+
+$spaceForum2: (
+  s38: (
+    default: 38px,
+    pm: 32px,
+    ts: 28px,
+  ),
+);
+
+$blockForum: (
+	imgForum1: (
+    default: 364px,
+    pm: 320px,
+    tx: 280px,
+    tm: 260px,
+    ts: 240px,
+    mx: 260px,
+    ml: 240px,
+    mm: 220px,
+  ),
+
+  shelf:(
+    default: 15%,
+    pm: 18%,
+    ps: 15%,
+    tx: 20%,
+    tl: 18%,
+    tm: 22%,
+    mx: 15%,
+    ml: 18%,
+    mm: 20%,
+  ),
+);
+
+@mixin blockForum($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockForum, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin spaceForum2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceForum2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin spaceForum($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceForum, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

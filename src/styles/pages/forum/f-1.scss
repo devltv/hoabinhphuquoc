@@ -1,0 +1,134 @@
+.forum{
+  &-lobby{
+    &__title{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @include space(s48, margin-top);
+      @include space(s48, margin-bottom);
+    }
+
+    &__wrapper{
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__img{
+      @include rp(mx){
+        order: 2;
+        margin-top: 24px;
+      }
+      @include rp(ml){
+        margin-top: 18px;
+      }
+      @include rp(mm){
+        margin-top: 12px;
+      }
+
+      &-shelf{
+        &-top,&-bottom{
+          z-index: -1;
+          position: absolute;
+          background-color: white;
+          border: 1px solid map-get($color, main);
+
+          &::after{
+            content: "";
+            position: absolute;
+            box-shadow: 0 3px 6px rgba(0,0,0,.16);
+          }
+        }
+
+        &-top{
+          top: 0;
+          left: 0;
+
+          // width: 10%;
+          @include blockForum(shelf, width);
+
+          height: 100%;
+
+          &::after{
+            right: 0px;
+            @include spaceForum(s12, top);
+            @include spaceForum(s12, left);
+            @include spaceForum(s12, bottom);
+          }
+        }
+
+        &-bottom{
+          bottom: 0;
+          right: 0;
+
+          @include blockForum(shelf, width);
+          height: 60%;
+
+          &::after{
+            left: 0px;
+
+            @include spaceForum(s12, top);
+            @include spaceForum(s12, right);
+            @include spaceForum(s12, bottom);
+          }
+        }
+      }
+
+      &--inner{
+        position: relative;
+
+        // height: 364px;
+        @include blockForum(imgForum1, height);
+
+        @include spaceForum(s30, padding-top);
+        @include spaceForum(s30, padding-bottom);
+
+        @include spaceForum(s25, padding-right);
+        @include spaceForum(s25, padding-left);
+
+
+      }
+    }
+
+    &__content{
+      // padding-left: 42px;
+      @include spaceForum(s42, padding-left);
+      @include spaceForum(s30, padding-top);
+
+
+      @include rp(mx){
+        order: 1;
+        padding-left: 0;
+        padding-top: 0;
+      }
+
+      &-sub{
+        &>*{
+          @include uppercase;
+          @include bold;
+          @include title(s26);
+          color: map-get($color, base);
+        }
+        // margin-bottom: 18px;
+        @include spaceForum(s18, margin-bottom);
+      }
+      &-title{
+        &>*{
+          @include bold;
+          @include title(s51);
+          @include family--primary;
+          color: map-get($color, main);
+        }
+      }
+      &-desc{
+        // margin-top: 56px;
+        @include spaceForum(s56, margin-top);
+
+        &>*{
+          letter-spacing: .08rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}

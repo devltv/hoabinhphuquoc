@@ -1,0 +1,47 @@
+.forum{
+  &-zoom{
+    @include space(s90, margin-top);
+    &-option{
+      text-align: center;
+
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      &__item{
+        cursor: pointer;
+        user-select: none;
+
+        display: inline-block;
+        &>*{
+          @include uppercase;
+          @include title(s26);
+          @include bold;
+
+          line-height: 1.4;
+        }
+        &:not(:first-child){
+          border-left: 1px solid map-get($color, base);
+          @include spaceForum2(s38, padding-left);
+        }
+
+        &:not(:last-child){
+          @include spaceForum2(s38, padding-right);
+        }
+
+        &.active{
+          color: map-get($color, main);
+        }
+      }
+    }
+
+    &__wrapper{
+      @include space(s60, margin-top);
+      display: flex;
+    }
+    &__content{
+      
+    }
+  }
+
+}
