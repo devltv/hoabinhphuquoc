@@ -1,20 +1,107 @@
 
-$blockIntro: (
-	bannerIntro: (
-    // -> màn hình 1920
-		default: 501px, 
-    pl: 301px,
+$spaceIntro: (
+  p-l-53: (
+    default: 53px ,
+  ),
+  
+	p142: (
+    default: 142px 0,
+
+  ), 
+  p154: (
+    default: 154px 0,
+
+  ), 
+  m-r-10: (
+    default: 10px,
+
+  ), 
+  p14: (
+    default: 14px 0,
+
+  ), 
+  s20: (
+    default: 20px,
+
+  ), 
+  s30: (
+    default: 30px,
+
+  ), 
+  m-b-60: (
+    default: 60px,
+  ),
+  m-b-90: (
+    default: 90px,
+  ),
+  p-r-72:(
+    default: 72px,
+  ),
+  m-b-35:(
+    default: 35px,
+  ),
+  Intro-overlay: (
+		default: 67px 67px 67px 42px ,
+    pl: 353px,
 	),
 );
 
-$spaceIntro: (
-	s26: (
-    default: 26px,
+$blockIntro-1: (
+	Intro-1: (
+    // -> màn hình 1920
+		default: 775px ,
+    pl: 685px,
+    pm: 100%,
+    // tx: 505px,
+    // tl: 455px
+	),
+  Intro-2: (
+		default: 373px ,
+    pl: 323px,
+	),
+ 
+);
 
-  ),
-  s10: (
-    default: 10px,
-  )
+$blockIntro-2: (
+	Intro-1: (
+    // -> màn hình 1920
+		default: 317px ,
+    pl: 685px,
+    pm: 100%,
+    // tx: 505px,
+    // tl: 455px
+	),
+);
+
+$blockIntro-3: (
+	Intro-intro: (
+    // -> màn hình 1920
+		default: 667px ,
+    pl: 685px,
+    pm: 100%,
+    // tx: 505px,
+    // tl: 455px
+	),
+  Intro-intro-overlay: (
+    // -> màn hình 1920
+		default: 380px ,
+    pl: 685px,
+    pm: 100%,
+    // tx: 505px,
+    // tl: 455px
+	),
+  Intro-overlay: (
+		default: 500px ,
+    pl: 353px,
+	),
+  Intro-3: (
+		default: 500px ,
+    pl: 353px,
+	),
+  Intro-4: (
+		default: 324px ,
+    pl: 353px,
+	),
 );
 
 @mixin spaceIntro($key, $name, $side: '-1'){
@@ -42,8 +129,58 @@ $spaceIntro: (
   }
 }
 
-@mixin blockIntro($key, $name, $side: '-1'){
-  @each $idx, $val in map-get($blockIntro, #{$key}){
+@mixin blockIntro-1($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIntro-1, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockIntro-2($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIntro-2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockIntro-3($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIntro-3, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;

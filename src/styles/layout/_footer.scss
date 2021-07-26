@@ -123,6 +123,7 @@
                 }
                 &--input{
                     @include footerBox(p22, padding);
+                    max-width: 350px;
                     width: 100%;
                     background: map-get($color, mainBg );
                     margin-bottom: 7px;
