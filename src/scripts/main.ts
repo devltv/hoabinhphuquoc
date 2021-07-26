@@ -13,7 +13,7 @@ import * as fetchData from "./components/fetchData";
 
 // Layout
 import {header} from "./layout/header";
-import {language} from "./layout/language";
+// import {language} from "./layout/language";
 
 // Page
 import index from "./page/index";
@@ -38,7 +38,7 @@ var swiper2 = new Swiper('.home-swiper-2', {
 // function Layout
 function layout(){
   header();
-  language();
+  // language();
 }
 
 // function Page

@@ -8,12 +8,17 @@
 
     &.active{
       .language-icon{
-        transform: rotate(180deg);
+        svg{
+          transform: rotate(180deg);
+        }
       }
     }
   }
+
   &-icon{
-    transition: .3s all ease;
+    svg{
+      transition: .16s all ease;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
