@@ -1,0 +1,84 @@
+$blockRest: (
+  heightImgRest1: (
+    default: 262px,
+  ),
+);
+
+$spaceRest: (
+  content: (
+    default: 30px,
+    pl: 26px,
+    ts: 16px,
+  ),
+  contentItem: (
+    default: 24px,
+    pl: 18px,
+    ts: 12px,
+  ),
+  descItem: (
+    default: 8px 0,
+  ),
+  descIconList: (
+    default: 40px,
+    pm: 32px,
+    tx: 28px,
+    ms: 12px,
+  ),
+  descLine: (
+    default: 8px,
+  ),
+
+  pagination: (
+    default: 72px,
+  ),
+);
+
+@mixin spaceRest($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceRest, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockRest($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockRest, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

@@ -20,6 +20,8 @@ import index from "./page/index";
 import {service} from "./page/service";
 // import library from "./page/library";
 import endow from "./page/endow";
+import {forum} from "./page/forum";
+import {restroom} from "./page/restroom";
 import {intro} from "./page/intro";
 // import { interpolate } from "gsap/all";
 
@@ -49,6 +51,8 @@ function page(){
   service();
   // library.library();
   endow.endow();
+  forum();
+  restroom();
   intro();
 }
 

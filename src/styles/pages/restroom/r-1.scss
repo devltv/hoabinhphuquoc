@@ -1,0 +1,143 @@
+.restroom-1{
+  .restroom{
+    &__title{
+      width: 100%;
+      text-align: center;
+      
+      @include space(s90, margin-top);
+      @include space(s48, margin-bottom);
+    }
+    &-box{
+      &-list{
+        @include rp(ps){
+          justify-content: center;
+        }
+      }
+      &__item{
+        max-width: 416px;
+        .box{
+          box-shadow: 0 3px 6px rgba(0,0,0,.16);
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+          &__img{
+            // height: 262px;
+            @include blockRest(heightImgRest1, height);
+          }
+          &__content{
+            flex: 1;
+            // padding: 30px;
+            // height: 325px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            overflow: hidden;
+            @include spaceRest(content, padding);
+            
+            &>*{
+              &:not(:first-child){
+                // margin-top: 24px;
+                @include spaceRest(contentItem, margin-top);
+              }
+            }
+          }
+          &__title{
+            flex: 1;
+
+            &>*{
+              @include family--primary;
+              @include bold;
+              color: map-get($color, main);
+              @include p-line-clamp(2);
+              
+              @include title(s41);
+              // min-height: 98px;
+              // @include rp(pl){
+              //   min-height: 90px;
+              // }
+            }
+          }
+          &-desc{
+            &>*{
+              // padding: 8px 0;
+              @include spaceRest(descItem, padding);
+
+            }
+
+            .box-desc-icons{
+              &>*:not(:first-child){
+                padding-left: 0;
+                // margin-left: 40px;
+                @include spaceRest(descIconList, margin-left);
+
+                &::after{
+                  display: none;
+                }
+              }
+            }
+
+            ul{
+              list-style-type: none;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              // justify-content: space-between;
+
+              li{
+                display: flex;
+                align-items: center;
+
+                img + img{
+                  margin-left: 4px;
+                }
+              }
+            }
+
+            ul>li{
+              &:not(:first-child){
+                // margin-left: 8px;
+                // padding-left: 8px;
+                @include spaceRest(descLine, margin-left);
+                @include spaceRest(descLine, padding-left);
+
+                // border-left: 1px solid map-get($color, baseBold);
+              
+                position: relative;
+
+                &::after{
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 100%;
+                  width: 1px;
+                  // background-color: map-get($color, baseBold);
+                  border-left: 1px solid map-get($color, baseBold);
+                }
+              }
+            }
+
+            ul>li img{
+              width: initial;
+              height: initial;
+            }  
+          }
+
+          &-bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .box-pagination{
+      // margin-top: 72px;
+      @include spaceRest(pagination, margin-top);
+    }
+  }
+}

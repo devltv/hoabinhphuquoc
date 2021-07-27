@@ -139,8 +139,10 @@ $title: (
 	),
 	s41: (
 		default: 4.1rem,
-		tx: 3.8rem,
-		mx: 3.6rem,
+		pl: 3.8rem,
+		tx: 3.6rem,
+		mx: 3.5rem,
+		ms: 2.8rem,
 	),
 	s31: (
 		default: 3.1rem,
@@ -360,3 +362,4 @@ $serviceBox: (
 @import "../_variables/endow";
 @import "../_variables/wedding.scss";
 @import "../_variables/forum";
+@import "../_variables/restroom";

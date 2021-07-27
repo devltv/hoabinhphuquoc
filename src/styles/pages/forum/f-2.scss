@@ -1,12 +1,15 @@
 .forum{
   &-zoom{
     @include space(s90, margin-top);
+    @include space(s90, margin-bottom);
+
     &-option{
       text-align: center;
 
       max-width: 100%;
       overflow-x: auto;
       white-space: nowrap;
+      padding-bottom: 18px;
 
       &__item{
         cursor: pointer;
@@ -29,6 +32,7 @@
           @include spaceForum2(s38, padding-right);
         }
 
+        transition: .16s all ease;
         &.active{
           color: map-get($color, main);
         }
@@ -36,12 +40,325 @@
     }
 
     &__wrapper{
-      @include space(s60, margin-top);
-      display: flex;
-    }
-    &__content{
-      
+      @include space(s48, margin-top);
+
+      .zoom{
+        &-left{
+          width: 69%;
+          margin-right: 1%;
+          margin-right: initial;
+          @include rp(tx){
+            width: 59%;
+          }
+          
+          display: inline-block;
+        }
+
+        &-right{
+          display: inline-block;
+          margin-left: 1%;
+          width: 29%;
+          @include rp(tx){
+            width: 39%;
+          }
+
+        }
+
+        &-imgs{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          // height: 360px;
+          @include blockForum(heightImgs, height);
+  
+          &__left{
+            height: 100%;
+            @include rp(ts){
+              width: 69%;
+            }
+            @include rp(ml){
+              width: 79%;
+            }
+
+            .swiper-slide{
+              img{
+                transition: .2s all ease;
+                &.scale{
+                  transform: scale(3);
+                }
+                cursor: zoom-in;
+              }
+            }
+
+            .swiper-button{
+              &-next,
+              &-prev{
+                width: 43px;
+                height: 43px;
+                @media (max-width: map-get($media, tl)){
+                  $wh: 36px;
+                  width: $wh;
+                  height: $wh;
+                }
+          
+                @media (max-width: map-get($media, mx)){
+                  $wh: 30px;
+                  width: $wh;
+                  height: $wh;
+                }
+
+                border-radius: 1000px;
+                background-color: map-get($color, buttonSwiper-2);
+              
+                svg{
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  width: 12px;
+                  @include rp(tl){
+                    width: 8px;
+                  }
+                }
+              }
+
+              &-next{
+                left: calc(50% + 32px);
+                bottom: 16px;
+                top: auto;
+                right: auto;
+                transform: translateX(-50%);
+
+                &::after{
+                  content: "";
+                }
+              }
+              &-prev{
+                left: calc(50% - 32px);
+                bottom: 16px;
+                top: auto;
+                right: auto;
+                transform: translateX(-50%);
+                svg{
+                  transform: rotate(180deg);
+                }
+                &::after{
+                  content: "";
+                }
+              }
+            }
+          }  
+          &__right{
+            height: 100%;
+            @include rp(ts){
+              width: 29%;
+            }
+            @include rp(ml){
+              width: 19%;
+            }
+            .swiper-slide{
+              position: relative;
+  
+              &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                opacity: .3;
+                transition: .16s all ease;
+              }
+              &.active{
+                &::after{
+                  opacity: 0;
+                }
+              }
+            }
+            // .active{
+              
+            // }
+          }
+  
+          &__img{
+            height: 100%;
+          }
+        }
+  
+        &-content{
+          // margin-top: 30px;
+          @include spaceForum2(s38, margin-top);
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          &__left{
+            @include rp(ts){
+              width: 100%;
+            }
+          }
+          &__right{
+            @include rp(ts){
+              width: 100%;
+              margin-left: initial;
+            }
+          }
+  
+          &__title{
+            &-list{
+              display: flex;
+              max-width: 100%;
+              overflow: auto;
+              
+              // border-bottom: 1px solid map-get($color, base);
+              // position: relative;
+              // &::after{
+              //   content:"";
+              //   bottom: 1px;
+              //   left: 0;
+              //   background-color: map-get($color, base);
+              //   width: 100%;
+              //   height: 1px;
+              // }
+            }
+            &-item{
+              padding-bottom: 12px;
+              cursor: pointer;
+  
+              &:not(:first-child){
+                // margin-left: 72px;
+                @include spaceForum2(s72, margin-left);
+              }
+              &>*{
+                @include bold;
+                @include title(s26);
+                color: map-get($color, main);
+              }
+              position: relative;
+              &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0%;
+                opacity: 0;
+                height: 4px;
+                background-color: map-get($color, main);
+                transition: .16s all ease;
+              }
+  
+              &.active{
+                &::after{
+                  width: 100%;
+                  opacity: 1;
+                  // border-bottom: 4px solid map-get($color, main);
+                }
+              }
+            }
+          }
+  
+          &__desc{
+            margin-top: 32px;
+            &>*{
+              line-height: 1.6;
+  
+              display: none;
+              &.active{
+                display: block;
+                animation: fadeInRightUp .5s ease forwards;
+              }
+            }
+          }
+          &__units{
+            @include rp(ts){
+              margin-top: 16px;
+            }
+            padding: 16px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+
+            background-color: map-get($color, footer-bg);
+
+            &>*{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              flex-wrap: wrap;
+  
+              &>*{
+                &:not(:first-child){
+                  margin-left: 12px;
+                }
+              }
+  
+              &:not(:first-child){
+                @include spaceForum2(s24, margin-top);
+                @include spaceForum2(s24, padding-top);
+  
+                border-top: 1px solid rgba(map-get($color, base), .3);
+              }
+            }
+            .unit-item{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              &>*{
+                &:not(:first-child){
+                  margin-top: 4px;
+                }
+              }
+  
+              &--big{
+                .unit-item__title{
+                  @include regular;
+                  &>*{
+                    @include title(s18);
+                    @include regular;
+                  }
+                }
+                .unit-item__desc{
+                  &>*{
+                    @include bold;
+                    @include title(s26);
+                  }
+                }
+              }
+              &--normal{
+                .unit-item__title{
+                  @include bold;
+                  &>*{
+                    @include title(s18);
+                    @include bold;
+                  }
+                }
+                .unit-item__desc{
+                  &>*{
+                    @include regular;
+                    @include title(s18);
+                  }
+                }
+              }
+              &__icon{
+                height: 42px;
+                @include blockForum(iconUnitHeight, height);
+                img{
+                  object-fit: contain;
+                }
+              }
+            }
+          }
+        }
+        display: none;
+
+        &.active{
+          display: inherit;
+          animation: fadeInUp .3s ease forwards;
+        }
+      }
+
     }
   }
-
 }

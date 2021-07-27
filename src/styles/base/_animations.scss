@@ -8,6 +8,18 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
+@keyframes fadeInRightUp {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+		transform: translate3d(5px, 20px, 0);
+	}
+	100% {
+		visibility: visible;
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
 
 
 // @keyframes Start {

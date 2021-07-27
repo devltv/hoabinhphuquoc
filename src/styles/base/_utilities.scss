@@ -18,11 +18,24 @@
 
 }
 .btn-link--more{
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   color: map-get($color, main );
   padding: 8px 0px;
+  
   @include size(s15);
   
+  svg{
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: map-get($media, mx)){
+      margin-left: 4px;
+    }
+  }
 }
 
 .title-primary{

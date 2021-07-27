@@ -37,10 +37,20 @@ $spaceForum: (
 );
 
 $spaceForum2: (
+  s72: (
+    default: 72px,
+    pm: 56px,
+    tl: 36px,
+    ts: 32px,
+  ),
   s38: (
     default: 38px,
-    pm: 32px,
-    ts: 28px,
+    pm: 28px,
+    tl: 24px,
+    ts: 16px,
+  ),
+  s24: (
+    default: 24px,
   ),
 );
 
@@ -67,6 +77,21 @@ $blockForum: (
     ml: 18%,
     mm: 20%,
   ),
+
+  heightImgs:(
+    default: 380px,
+    tx: 360px,
+    tl: 320px,
+    ts: 300px,
+    ml: 240px,
+  ),
+
+  iconUnitHeight: (
+    default: 42px,
+  ),
+  // iconUnitWidth: (
+  //   default: px,
+  // ),
 );
 
 @mixin blockForum($key, $name, $side: '-1'){

@@ -75,6 +75,7 @@
 		"@fancyapps/ui": "^4.0.0-alpha.4",
 		"axios": "^0.21.1",
 		"gsap": "^3.7.0",
+		"lazysizes": "^5.3.2",
 		"swiper": "^6.7.5"
 	},
 	"prettier": {
