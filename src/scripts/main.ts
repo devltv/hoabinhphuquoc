@@ -20,6 +20,7 @@ import index from "./page/index";
 import {service} from "./page/service";
 // import library from "./page/library";
 import endow from "./page/endow";
+import {forum} from "./page/forum";
 
 
 ///////////////////////////////////////////////////////////////
@@ -47,6 +48,7 @@ function page(){
   service();
   // library.library();
   endow.endow();
+  forum();
 }
 
 ////////////////////////////////////////////////////////////////

@@ -1,0 +1,21 @@
+{
+  "fonts": [
+      "src/fonts/**"
+  ],
+  "js": [
+      "node_modules/swiper/swiper-bundle.js",
+      "node_modules/swiper/swiper-bundle.min.js",
+
+      "node_modules/@fancyapps/ui/dist/fancybox.umd.js",
+      
+      "node_modules/gsap/dist/gsap.min.js",
+
+      "node_modules/axios/dist/axios.min.js"
+  ],
+  "css": [
+      "node_modules/swiper/swiper-bundle.css",
+      "node_modules/swiper/swiper-bundle.min.css",
+      
+      "node_modules/@fancyapps/ui/dist/fancybox.css"
+  ]
+}

@@ -3,20 +3,270 @@ section#forum-2
     .container
       .forum-zoom 
         .forum-zoom-option
-          .forum-zoom-option__item.active
+          .forum-zoom-option__item.active(data-title="Phòng họp lớn")
             h4 Phòng họp lớn
-          .forum-zoom-option__item
+          .forum-zoom-option__item(data-title="Phòng họp trung")
             h4 Phòng họp trung
-          .forum-zoom-option__item
+          .forum-zoom-option__item(data-title="Phòng họp nhỏ")
             h4 Phòng họp nhỏ
-        .forum-zoom__wrapper.column-10.margin-auto
-          .zoom-imgs
-            .zoom-imgs__left.zoom-left
-            .zoom-imgs__right.zoom-right
-          .zoom-content 
-            .zoom-content__left.zoom-left
-            .zoom-content__right.zoom-right
+        .forum-zoom__wrapper.column-10.margin-auto.column-12-pm
+          .zoom(data-title="Phòng họp lớn")
+            .zoom-imgs
+              .zoom-imgs__left.zoom-left.swiper-container
+                .swiper-wrapper
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                .swiper-button-next
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                    <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.412)">
+                      <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1704.223 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1709.143 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                  </svg>
 
+                .swiper-button-prev
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                    <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.411)">
+                      <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                  </svg>
 
+              .zoom-imgs__right.zoom-right.swiper-container(thumbsSlider="")
+                .swiper-wrapper
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                    
+            .zoom-content 
+              .zoom-content__left.zoom-left
+                .zoom-content__title-list 
+                  .zoom-content__title-item.active(data-title="Giới thiệu")
+                    h4 Giới thiệu
+                  .zoom-content__title-item(data-title="Tiện ích")
+                    h4 Tiện ích
+                .zoom-content__desc
+                  .zoom-content__desc-item(data-title="Giới thiệu")
+                    p Nằm ở lầu 2 của nhà hàng Hòa Bình, được thiết kế hiện đại và linh hoạt cho nhiều loại sự kiện từ hội nghị, gala đến tiệc cưới. Với sức chứa tối đa 500 khách, nhà hàng Hòa Bình tự hào sở hữu phòng họp lớn nhất tại trung tâm thị trấn Dương Đông. Với đội ngũ nhân viên chuyên nghiệp, tư vấn và hỗ trợ nhiệt tình, nhất định sẽ mang đến sự hài lòng và giúp cho sự kiện của quý khách thành công như mong đợi.
+                  .zoom-content__desc-item(data-title="Tiện ích")
+                    p Nằm ở lầu 2 của nhà hàng Hòa Bình, được thiết kế hiện đại và linh hoạt cho nhiều loại sự kiện từ hội nghị, gala đến tiệc cưới. Với sức chứa tối đa 500 khách, nhà hàng Hòa Bình tự hào sở hữu phòng họp lớn nhất tại trung tâm thị trấn Dương Đông. Với đội ngũ nhân viên chuyên nghiệp, tư vấn và hỗ trợ nhiệt tình, nhất định sẽ mang đến sự hài lòng và giúp cho sự kiện của quý khách thành công như mong đợi....
+              .zoom-content__right.zoom-right
+                .zoom-content__units
+                  .unit-item--big
+                    .unit-item
+                      .unit-item__icon
+                        img.lazyload(data-src="./assets/icons/dientich.png", alt="Diện tích")
+                      .unit-item__title
+                        h5 Diện tích
+                      .unit-item__desc  
+                        span 60 m2                
+                    .unit-item
+                      .unit-item__icon
+                        img.lazyload(data-src="./assets/icons/kichco.png", alt="Kích cỡ")
+                      .unit-item__title
+                        h5 Kích cỡ
+                      .unit-item__desc
+                        span 30mx20mx3.8m 
+                  .unit-item--normal                 
+                    .unit-item
+                      .unit-item__title
+                        h5 Lớp học
+                      .unit-item__desc
+                        span 400 khách        
+                    .unit-item
+                      .unit-item__title
+                        h5 Chữ U
+                      .unit-item__desc
+                        span 350 khách
+                    .unit-item
+                      .unit-item__title
+                        h5 Rạp hát
+                      .unit-item__desc 
+                        span 500 khách         
+          .zoom(data-title="Phòng họp trung")
+            .zoom-imgs
+              .zoom-imgs__left.zoom-left.swiper-container
+                .swiper-wrapper
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                .swiper-button-next
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                    <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.412)">
+                      <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1704.223 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1709.143 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                  </svg>
 
+                .swiper-button-prev
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                    <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.411)">
+                      <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                  </svg>
+
+              .zoom-imgs__right.zoom-right.swiper-container(thumbsSlider="")
+                .swiper-wrapper
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                    
+            .zoom-content 
+              .zoom-content__left.zoom-left
+                .zoom-content__title-list 
+                  .zoom-content__title-item.active(data-title="Giới thiệu")
+                    h4 Giới thiệu
+                  .zoom-content__title-item(data-title="Tiện ích")
+                    h4 Tiện ích
+                .zoom-content__desc
+                  .zoom-content__desc-item(data-title="Giới thiệu")
+                    p Nằm ở lầu 2 của nhà hàng Hòa Bình, được thiết kế hiện đại và linh hoạt cho nhiều loại sự kiện từ hội nghị, gala đến tiệc cưới. Với sức chứa tối đa 500 khách, nhà hàng Hòa Bình tự hào sở hữu phòng họp lớn nhất tại trung tâm thị trấn Dương Đông. Với đội ngũ nhân viên chuyên nghiệp, tư vấn và hỗ trợ nhiệt tình, nhất định sẽ mang đến sự hài lòng và giúp cho sự kiện của quý khách thành công như mong đợi.
+                  .zoom-content__desc-item(data-title="Tiện ích")
+                    p Nằm ở lầu 2 của nhà hàng Hòa Bình, được thiết kế hiện đại và linh hoạt cho nhiều loại sự kiện từ hội nghị, gala đến tiệc cưới. Với sức chứa tối đa 500 khách, nhà hàng Hòa Bình tự hào sở hữu phòng họp lớn nhất tại trung tâm thị trấn Dương Đông. Với đội ngũ nhân viên chuyên nghiệp, tư vấn và hỗ trợ nhiệt tình, nhất định sẽ mang đến sự hài lòng và giúp cho sự kiện của quý khách thành công như mong đợi....
+              .zoom-content__right.zoom-right
+                .zoom-content__units
+                  .unit-item--big
+                    .unit-item
+                      .unit-item__icon
+                        img.lazyload(data-src="./assets/icons/dientich.png", alt="Diện tích")
+                      .unit-item__title
+                        h5 Diện tích
+                      .unit-item__desc  
+                        span 60 m2                
+                    .unit-item
+                      .unit-item__icon
+                        img.lazyload(data-src="./assets/icons/kichco.png", alt="Kích cỡ")
+                      .unit-item__title
+                        h5 Kích cỡ
+                      .unit-item__desc
+                        span 30mx20mx3.8m 
+                  .unit-item--normal                 
+                    .unit-item
+                      .unit-item__title
+                        h5 Lớp học
+                      .unit-item__desc
+                        span 400 khách        
+                    .unit-item
+                      .unit-item__title
+                        h5 Chữ U
+                      .unit-item__desc
+                        span 350 khách
+                    .unit-item
+                      .unit-item__title
+                        h5 Rạp hát
+                      .unit-item__desc 
+                        span 500 khách         
+          .zoom(data-title="Phòng họp nhỏ")
+            .zoom-imgs
+              .zoom-imgs__left.zoom-left.swiper-container
+                .swiper-wrapper
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                .swiper-button-next
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                    <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.412)">
+                      <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1704.223 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1709.143 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                  </svg>
+
+                .swiper-button-prev
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                    <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.411)">
+                      <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                  </svg>
+
+              .zoom-imgs__right.zoom-right.swiper-container(thumbsSlider="")
+                .swiper-wrapper
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                  .swiper-slide
+                    .zoom-imgs__img
+                      img.lazyload(data-src="./assets/images/page/forum/1.png", alt="forum slide 1")
+                    
+            .zoom-content 
+              .zoom-content__left.zoom-left
+                .zoom-content__title-list 
+                  .zoom-content__title-item.active(data-title="Giới thiệu")
+                    h4 Giới thiệu
+                  .zoom-content__title-item(data-title="Tiện ích")
+                    h4 Tiện ích
+                .zoom-content__desc
+                  .zoom-content__desc-item(data-title="Giới thiệu")
+                    p Nằm ở lầu 2 của nhà hàng Hòa Bình, được thiết kế hiện đại và linh hoạt cho nhiều loại sự kiện từ hội nghị, gala đến tiệc cưới. Với sức chứa tối đa 500 khách, nhà hàng Hòa Bình tự hào sở hữu phòng họp lớn nhất tại trung tâm thị trấn Dương Đông. Với đội ngũ nhân viên chuyên nghiệp, tư vấn và hỗ trợ nhiệt tình, nhất định sẽ mang đến sự hài lòng và giúp cho sự kiện của quý khách thành công như mong đợi.
+                  .zoom-content__desc-item(data-title="Tiện ích")
+                    p Nằm ở lầu 2 của nhà hàng Hòa Bình, được thiết kế hiện đại và linh hoạt cho nhiều loại sự kiện từ hội nghị, gala đến tiệc cưới. Với sức chứa tối đa 500 khách, nhà hàng Hòa Bình tự hào sở hữu phòng họp lớn nhất tại trung tâm thị trấn Dương Đông. Với đội ngũ nhân viên chuyên nghiệp, tư vấn và hỗ trợ nhiệt tình, nhất định sẽ mang đến sự hài lòng và giúp cho sự kiện của quý khách thành công như mong đợi....
+              .zoom-content__right.zoom-right
+                .zoom-content__units
+                  .unit-item--big
+                    .unit-item
+                      .unit-item__icon
+                        img.lazyload(data-src="./assets/icons/dientich.png", alt="Diện tích")
+                      .unit-item__title
+                        h5 Diện tích
+                      .unit-item__desc  
+                        span 60 m2                
+                    .unit-item
+                      .unit-item__icon
+                        img.lazyload(data-src="./assets/icons/kichco.png", alt="Kích cỡ")
+                      .unit-item__title
+                        h5 Kích cỡ
+                      .unit-item__desc
+                        span 30mx20mx3.8m 
+                  .unit-item--normal                 
+                    .unit-item
+                      .unit-item__title
+                        h5 Lớp học
+                      .unit-item__desc
+                        span 400 khách        
+                    .unit-item
+                      .unit-item__title
+                        h5 Chữ U
+                      .unit-item__desc
+                        span 350 khách
+                    .unit-item
+                      .unit-item__title
+                        h5 Rạp hát
+                      .unit-item__desc 
+                        span 500 khách         
+          
 

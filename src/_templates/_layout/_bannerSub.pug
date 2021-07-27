@@ -1,12 +1,12 @@
 if bannerSub
   - var attributes = {};
-  - attributes.src = imgBannerSub;
+  - attributes["data-src"] = imgBannerSub;
 
   section#bannerSub
     .banner-sub
       .overlay-banner
       .banner-sub__img
-        img(alt="banner sub")&attributes(attributes)
+        img.lazyload(alt="banner sub")&attributes(attributes)
       .banner-sub-content.container
         .banner-sub-content__title
           h2 #{titleBannerSub} 

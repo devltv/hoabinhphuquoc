@@ -7,7 +7,7 @@ if banner
     .banner
       .banner--overlay
       .banner-img 
-        img(src="#{imgBanner}" alt="banner")&attributes(attributes)
+        img.lazyload(data-src="#{imgBanner}" alt="banner")&attributes(attributes)
       .banner-content.overlay.container
         .banner-content__title
           h2.banner-content__title--size.uppercase #{titleBanner} 

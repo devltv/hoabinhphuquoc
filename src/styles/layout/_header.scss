@@ -171,6 +171,7 @@
 
     &__logo {
       // width: 186px;
+      display: block;
       @include blockHeader(logoWidth, width);
 
       height: 100%;
@@ -315,6 +316,7 @@
       }
 
       &-border {
+
         width: 80%;
         height: 2px;
         border-radius: 1px;
@@ -349,6 +351,7 @@
       &.active {
         .header-main__button-border {
           height: 0;
+          background-color: transparent;
 
           &::before,
           &::after {
