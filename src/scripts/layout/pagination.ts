@@ -1,3 +1,4 @@
+import { header } from "./header";
 
 // Khởi tạo pagination với class ul.pagination, với box list
 function pagination (options: any) {
@@ -10,9 +11,9 @@ function pagination (options: any) {
     return;
   }
 
-  var scrollTop = "";
-  if (options.scroolToId){
-    scrollTop = options.scroolToId;
+  var scrollTop = {};
+  if (options.scroll){
+    scrollTop = options.scroll;
   }
 
   paginationCreate(pages, totalBox, 1, totalPage, options.itemPages, scrollTop);
@@ -32,7 +33,7 @@ function activeBox(totalBox:any, liActive: number, itemPages:number){
   })
 }
 
-function paginationCreate(objClass:any, totalBox:any, liActive:number, totalPage: number, itemPages: number, scrollTop:string = ""){
+function paginationCreate(objClass:any, totalBox:any, liActive:number, totalPage: number, itemPages: number, scrollTop: any = {}){
   // Math.ceil(totalBox.length / 5)
 
   objClass.innerHTML = createPagination(totalPage, liActive);
@@ -83,7 +84,7 @@ function hiddenNextPrev(objClass:any, itemActive: number, totalPage:number){
   }
 }
 
-function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:number, scrollTop:string = ""){
+function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:number, scrollTop:any = {}){
   let liBtns = objClass.getElementsByTagName('li');
 
   let itemActive: number;
@@ -126,15 +127,43 @@ function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:nu
       paginationCreate(objClass,totalBox, itemActive, totalPage, itemPages, scrollTop);
       activeBox(totalBox, itemActive, itemPages);
 
-      var idTop = document.getElementById(scrollTop);
-      if (idTop){
-        window.scrollTo({
-          top: idTop.offsetTop,
-          left: 0,
-          behavior: "smooth"
-        });
+      console.log(scrollTop);
+      if (scrollTop){
+        scrollToTop(scrollTop.id, scrollTop.header);
       }
     }
+  }
+}
+
+function scrollToTop(strId:string, queryHeader: string = ""){
+  console.log(strId, queryHeader);
+  if (document.getElementById(strId)){
+    var topFeatured = 0;
+    var featuredItem = <HTMLElement>document.getElementById(strId);
+    
+    if (featuredItem){
+      var parentFeatured = <HTMLElement> featuredItem.offsetParent;
+      var count = 0;
+      while(parentFeatured.nodeName !== "BODY" && count < 100){
+        topFeatured += parentFeatured.offsetTop;
+        parentFeatured = <HTMLElement> parentFeatured.offsetParent;
+        count++;
+      }
+      topFeatured += featuredItem.offsetTop;
+    }
+    
+    // Trừ đi thanh Header
+    var hHeader = document.querySelector(queryHeader);
+    if (hHeader){
+      topFeatured -= hHeader.clientHeight;
+    }
+
+    console.log(topFeatured)
+    window.scrollTo({
+      top: topFeatured,
+      left: 0,
+      behavior: "smooth"
+    });
   }
 }
 

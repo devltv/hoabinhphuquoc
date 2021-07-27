@@ -163,6 +163,7 @@ $flex: (
 
 @each $idx, $value in $flex {
   .table-column-#{$idx}{
+		margin-top: -24px;
 		&>*{
 			// -ms-flex: 0 0 25%;
 			flex: 0 0 $value;
@@ -171,11 +172,11 @@ $flex: (
 			padding-left: 12px;
 			padding-top: auto;
 	
-			&:nth-of-type(n + #{$idx + 1}){
-				padding-top: 24px;
-			}
+			// &:nth-of-type(n + #{$idx + 1}){
+			padding-top: 24px;
+			// }
 		}
-  }	
+  }
 }
 
 // foreach jsa 

@@ -21,6 +21,7 @@ import {service} from "./page/service";
 // import library from "./page/library";
 import endow from "./page/endow";
 import {forum} from "./page/forum";
+import {restroom} from "./page/restroom";
 
 
 ///////////////////////////////////////////////////////////////
@@ -49,6 +50,7 @@ function page(){
   // library.library();
   endow.endow();
   forum();
+  restroom();
 }
 
 ////////////////////////////////////////////////////////////////

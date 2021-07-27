@@ -210,7 +210,17 @@
               display: flex;
               max-width: 100%;
               overflow: auto;
-              border-bottom: 1px solid map-get($color, base);
+              
+              // border-bottom: 1px solid map-get($color, base);
+              // position: relative;
+              // &::after{
+              //   content:"";
+              //   bottom: 1px;
+              //   left: 0;
+              //   background-color: map-get($color, base);
+              //   width: 100%;
+              //   height: 1px;
+              // }
             }
             &-item{
               padding-bottom: 12px;
