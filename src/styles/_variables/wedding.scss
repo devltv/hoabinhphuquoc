@@ -14,6 +14,35 @@ $spacewedding2:(
     ps:610px,
   ),
 );
+$spacewedding3:(
+    s104:(
+      default: 104px,
+      pl: 84px,
+      pm: 64px,
+      tx: 54px,
+      tl: 44px,
+      tm: 36px,
+      ts: 20px,
+      mx: 16px,
+      ml: 12px,
+      mm: 8px,
+      ms: 4px,
+      
+    ),
+    s140:(
+      default: 140px,
+      pl: 120px,
+      pm: 100px,
+      tx: 90px,
+      tl: 80px,
+      tm: 72px,
+      ts: 52px,
+      ml: 48px,
+      mm: 40px,
+      ms: 32px,
+      
+    ),
+);
 $sizewedding2:(
   s51:(
     default:51px,
@@ -66,6 +95,30 @@ $blockwedding2:(
 
 @mixin sizewedding2($key, $name, $side: '-1'){
   @each $idx, $val in map-get($sizewedding2, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spacewedding3($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spacewedding3, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
