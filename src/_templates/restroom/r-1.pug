@@ -4,7 +4,7 @@ section#restroom-1
       .restroom__title.title-primary 
         h2.title-shadow TiêuChuẩn4* 
         h2.title-content Tiện Nghi 
-      .restroom-box
+      .restroom-box.hidden
         .container
           .restroom-box--container.column-10.column-12-pm.margin-auto#restroomListBox
             .restroom-box-list.table-row.table-column-3.between.table-column-2-tx.table-column-1-mx
@@ -734,5 +734,76 @@ section#restroom-1
               
               
             ul.box-pagination
-            
-            
+      .restroom-popup--overlay     
+        .restroom-popup.show
+          .popup 
+            .popup-close 
+            .popup-wrapper 
+              .container
+                .popup-wrapper--bg.column-10.column-12-ps
+                  .popup-wrapper__imgs.column-7.column-12-tl
+                    .popup-wrapper__imgs-swiper.swiper-container
+                      .swiper-wrapper
+                        .swiper-slide
+                          .popup-wrapper__imgs-slide
+                            img.lazyload(data-src="./assets/images/page/restroom/popup1.png", alt="restroom slide 1")
+                        .swiper-slide
+                          .popup-wrapper__imgs-slide
+                            img.lazyload(data-src="./assets/images/page/restroom/popup2.png", alt="restroom slide 2")
+                        .swiper-slide
+                          .popup-wrapper__imgs-slide
+                            img.lazyload(data-src="./assets/images/page/restroom/popup3.png", alt="restroom slide 3")
+                      .swiper-button-next
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                          <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.412)">
+                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1704.223 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1709.143 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                          </g>
+                        </svg>
+
+                      .swiper-button-prev
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                          <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.411)">
+                            <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                          </g>
+                        </svg>
+                    .popup-wrapper__imgs-thumbs.swiper-container(thumbsSlider="") 
+                      .swiper-wrapper
+                        .swiper-slide
+                          .popup-wrapper__imgs-slide
+                            img.lazyload(data-src="./assets/images/page/restroom/popup1.png", alt="restroom slide 1")
+                        .swiper-slide
+                          .popup-wrapper__imgs-slide
+                            img.lazyload(data-src="./assets/images/page/restroom/popup2.png", alt="restroom slide 2")
+                        .swiper-slide
+                          .popup-wrapper__imgs-slide
+                            img.lazyload(data-src="./assets/images/page/restroom/popup3.png", alt="restroom slide 3")
+                      //- .swiper-button-next
+                      //-   <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                      //-     <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.412)">
+                      //-       <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1704.223 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      //-       <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-1709.143 -2416.143)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      //-     </g>
+                      //-   </svg>
+                      //- .swiper-button-prev
+                      //-   <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="13.247" viewBox="0 0 12.15 13.247">
+                      //-     <g id="Group_4724" data-name="Group 4724" transform="translate(1.414 1.411)">
+                      //-       <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      //-       <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                      //-     </g>
+                      //-   </svg>
+                  .popup-wrapper__content.column-5.column-12-tl
+                    .popup-wrapper__content-item
+                      h2 Superior sea view
+                      p Trải đều từ tầng 2 đến tầng 5 của tòa nhà hướng biển và hướng vườn, có thể lựa chọn 01 giường đôi lớn hoặc 2 giường đơn nhỏ, nội thất hiện đại và đầy đủ tiện nghi, Superior sea view phù hợp cho du khách tìm kiếm phòng hạng sang và một không gian thư giãn thoải mải khi đón nhận gió biển nhẹ nhàng từ thềm ban công của mình. 
+                      a.btn-link--booking(href="./") Đặt phòng
+                    
+                    .popup-wrapper__content-item
+                      h2 TIỆN ÍCH
+                      ul 
+                        li Ban công hướng biển và hướng vườn
+                        li TV truyền hình cáp
+                        li Bàn làm việc, trang điểm
+                    
+                    
