@@ -15,33 +15,44 @@ $spacewedding2:(
   ),
 );
 $spacewedding3:(
+    s32: (
+      default: 32px,
+      pm: 28px, 
+      tx: 20px,
+      tl: 16px,
+      ts: 12px,
+      mx: 10px,
+    ),
+    s72:(
+      default: 72px,
+       pl: 64px,
+       pm: 48px,
+       ps: 40px,
+       tx: 32px,
+       tl: 28px,
+       tm: 24px,
+       ts: 18px,
+       mx: 14px,
+       mm: 10px,
+      // ms: 32px,
+      
+    ),
     s104:(
       default: 104px,
-      pl: 84px,
-      pm: 64px,
-      tx: 54px,
+      pl: 96px,
+      pm: 72px,
+      px: 64px,
+      tx: 56px,
       tl: 44px,
-      tm: 36px,
-      ts: 20px,
-      mx: 16px,
-      ml: 12px,
-      mm: 8px,
-      ms: 4px,
+      tm: 30px,
+      ts: 22px,
+      mx: 18px,
+      ml: 14px,
+      // mm: 8px,
+      // ms: 4px,
       
     ),
-    s140:(
-      default: 140px,
-      pl: 120px,
-      pm: 100px,
-      tx: 90px,
-      tl: 80px,
-      tm: 72px,
-      ts: 52px,
-      ml: 48px,
-      mm: 40px,
-      ms: 32px,
-      
-    ),
+    
 );
 $sizewedding2:(
   s51:(
