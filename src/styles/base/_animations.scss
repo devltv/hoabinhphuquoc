@@ -21,6 +21,17 @@
 	}
 }
 
+@keyframes scaleZoom {
+	0% {
+		opacity: 0;
+		transform: rotate(15deg) scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(0) scale(1);
+	}
+}
+
 
 // @keyframes Start {
 // 	from {
