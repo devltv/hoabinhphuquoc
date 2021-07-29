@@ -7,11 +7,12 @@ function index1(){
       loop: true,
       pagination: {
           el: ".swiper-pagination",
-          
+
         },
     });
   }
 }
+
 function index2() {
   if (document.getElementById('index2')) {
     new Swiper(".index-restroom .index-restroom--swiper", {
@@ -53,6 +54,39 @@ function index2() {
         }
       }
     });
+
+    // localStorage.setItem('box', '3');
+    // localStorage.setItem('url', '/restroom/box-3');
+
+    var moreLinks = document.querySelectorAll('#index2 .restroom-box .btn-link--more');
+    moreLinks.forEach(function(link){
+      link.addEventListener('click', function(e){
+        var hr = link.getAttribute('data-href');
+        localStorage.setItem('url', `${hr}`);
+
+        var valueItem = "";
+        var tmpItem = link;
+        var count = 0;
+        if (!tmpItem.getAttribute('data-box')){
+          do{
+            tmpItem = tmpItem.parentElement;
+            ++count;
+          }while(!tmpItem.getAttribute('data-box') && count < 100);
+        }
+
+        valueItem = tmpItem.getAttribute('data-box')
+        if (!valueItem){
+          console.log('Not found data-box!!');
+          e.preventDefault();
+          return false;
+        }
+
+        localStorage.setItem('box', `${valueItem}`);
+
+        console.log(valueItem, hr);
+        return true;
+      })
+    })
   }
 }
 function swiperIndex3() {
@@ -187,7 +221,7 @@ function index6(){
       centeredSlides: true,
        spaceBetween: 0,
        centeredSlidesBounds: true,
-       
+
       // slidesPerGroup: 3,
       loop: true,
       // loopFillGroupWithBlank: true,
