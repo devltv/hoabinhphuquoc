@@ -236,6 +236,31 @@ function index6(){
         prevEl: ".swiper-button-prev",
       },
       breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        541: {
+          slidesPerView: 1.5,
+          spaceBetween: 0,
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1281: {
+          slidesPerView: 2.5,
+          spaceBetween: 0,
+          
+        },
+        1441: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+        1681: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        }
       },
       on: {
         init: function () {
