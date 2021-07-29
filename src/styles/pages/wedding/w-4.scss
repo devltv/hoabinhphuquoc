@@ -3,10 +3,10 @@
         background: map-get($color, intro-bg-2 );
         .wedding__list{
             padding: 108px 0;
-            .card-margin{
+            .content{
                 box-shadow: 0px 3px 6px rgba(#000, .16);
                 background: map-get($color, mainBg );
-                width: 30%;
+                
             }
             .content-before{
                 position: relative;
