@@ -1,0 +1,82 @@
+$popup: (
+  imgSwiper: (
+    default: 538px,
+    pl: 460px,
+    pm: 380px,
+    tx: 360px,
+    tl: 480px,
+    tm: 420px,
+    ts: 400px,
+    mx: 340px,
+    ml: 280px,
+    mm: 240px,
+  ),
+  imgThumbs: (
+    default: 184px,
+    pl: 144px,
+    pm: 120px,
+    tx: 114px,
+    tl: 160px,
+    tm: 144px,
+    ts: 120px,
+    mx: 100px,
+    ml: 90px,
+    mm: 70px,
+  ),
+  contentPopup: (
+    default: 0 28px,
+    pm: 0 18px,
+    tl: 0,
+  ),
+  contentUlPopup:(
+    default: 28px,
+    pm: 18px,
+  ),
+  liPopup: (
+    default: 12px,
+    pm: 10px,
+    tl: 8px,
+    mx: 4px,
+  ),
+
+  itemPopup: (
+    default: 24px,
+    pm: 20px,
+    tl: 16px,
+    mx: 12px,
+  ),
+
+  serviceContent: (
+    default: 0 56px,
+    pm: 0 48px,
+    tl: 0 36px,
+    mx: 0 24px,
+    ml: 0,
+  ),
+
+);
+
+@mixin popup($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($popup, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}

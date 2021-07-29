@@ -1,16 +1,17 @@
 section#service-1 
   .service-1
+    input(type="hidden" id="checkUrl" data-close="/service.html" data-url="" data-box="")
     .container 
       .tour-title.title-primary
         h2.title-shadow TổChứcTour
         h2.title-content Tổ Chức Tour
       .tour-content.table-row.between.no-between-mx
         .tour-content--container.column-10.column-12-tx.table-row.between.table-column-3
-          .tour-content-card
+          .tour-content-card(data-box="1")
             .tour-content__img 
               img.lazyload(data-src="./assets/images/page/service/tour1.png" alt="tour 1")
             .tour-content__box
-              .box-item 
+              .box-item
                 .box-item-icons
                   .box-item-icons__img
                     img.lazyload(data-src="./assets/icons/tour1.png", alt="Tổ Chức Tour 1")
@@ -26,13 +27,13 @@ section#service-1
                       p Thời gian: 
                         span 12:00 - 21:00
                   .box-item-content__more
-                    a(href="") Xem thêm
+                    a.box-item-content__more-link(href="/service/tour-1") Xem thêm
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9">
                         <path id="Polygon_2" data-name="Polygon 2" d="M4.5,0,9,6H0Z" transform="translate(6) rotate(90)" fill="#fff"/>
                       </svg>
-          .tour-content-card.tour-content-card--defalt
+          .tour-content-card.tour-content-card--defalt(data-box="2")
             .tour-content__box
-              .box-item 
+              .box-item
                 .box-item-icons
                   .box-item-icons__img
                     img.lazyload(data-src="./assets/icons/tour1.png", alt="Tour kết hợp 1")
@@ -51,15 +52,15 @@ section#service-1
                       p Thời gian: 
                         span 12:00 - 21:00
                   .box-item-content__more
-                    a(href="") Xem thêm
+                    a.box-item-content__more-link(href="/service/tour-2") Xem thêm
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9">
                         <path id="Polygon_2" data-name="Polygon 2" d="M4.5,0,9,6H0Z" transform="translate(6) rotate(90)" fill="#fff"/>
                       </svg>
-          .tour-content-card
+          .tour-content-card(data-box="3")
             .tour-content__img 
               img.lazyload(data-src="./assets/images/page/service/tour2.png" alt="tour 2")
             .tour-content__box
-              .box-item 
+              .box-item
                 .box-item-icons
                   .box-item-icons__img
                     img.lazyload(data-src="./assets/icons/tour3.png", alt="Tour câu mực ngắm hoàng hôn 1")
@@ -74,9 +75,27 @@ section#service-1
                       p Thời gian: 
                         span 17:00 - 21:00
                   .box-item-content__more
-                    a(href="") Xem thêm
+                    a.box-item-content__more-link(href="/service/tour-3") Xem thêm
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9">
                         <path id="Polygon_2" data-name="Polygon 2" d="M4.5,0,9,6H0Z" transform="translate(6) rotate(90)" fill="#fff"/>
                       </svg>
       
-
+      .service-popup--overlay
+        .service-popup
+          .popup 
+            .popup-close 
+            .popup-wrapper 
+              .container
+                .popup-wrapper--bg.column-8.column-10-ps.column-12-tl
+                  .popup-wrapper__tour
+                    h3 Tour câu mực ngắm hoàng hôn
+                    p Tour trên biển 3: Câu mực đêm, ngắm hoàng hôn 17h00 – 21h00
+                    p * 17h00: xe và HDV đón Quý khách tại khách sạn.
+                    p * Đến bến cảng, lên tàu, ngắm cảnh hoàng hôn tuyệt đẹp làm say đắm lòng người tại Đảo Ngọc. 
+                    p * Quý khách thử tài câu mực - trải nghiệm hình thức câu mực lon với mồi câu tôm giả dạ quang và tận hưởng không khí gió biển trong lành sẽ để lại cho du khách những kỉ niệm khó quên.
+                    p * Mực của Quý khách câu sẽ được chế biến theo yêu cầu.
+                    p * Thưởng thức ăn tối trên tàu.
+                    p * 20h30: tàu đưa Quý khách về cảng
+                    p * 21h00: trở về khách sạn, kết thúc chương trình tour
+                    p Chú ý­­: vào mùa mưa từ tháng 5 đến tháng 11, tàu xuất phát từ Bãi Sao hoặc An Thới và không có hoàng hôn.
+                    

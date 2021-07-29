@@ -122,7 +122,10 @@ function closePopup(){
   var close = document.querySelector('#restroom-1 .restroom-popup .popup-close')
     
   var inpRest = document.getElementById('checkUrl');
-  var closeData = inpRest.getAttribute('data-close');
+  var closeData = "";
+  if (inpRest){
+    closeData = inpRest.getAttribute('data-close');
+  }
     
   if (close){
     close.addEventListener('click', function(e : any){
@@ -271,7 +274,20 @@ function popupRest(id: any = null){
 
 function loadRestroom(){
   if(document.getElementById('restroom-1')){
+    var option = {
+      checkUrl: 'checkUrl',
+      pageSection: 'restroom-1',
+      links: '#restroom-1 .restroom-box__item .box-bottom__more .btn-link--more',
+      popup: '.restroom-popup--overlay',
+      popupInner: '#restroom-1 .restroom-popup .popup',
+    };
+
     var inpRest = document.getElementById('checkUrl');
+
+    if (!inpRest){
+      popupRest();
+      return;
+    }
 
     window.addEventListener('popstate', function(e){
       if (e.state !== null){

@@ -6,17 +6,21 @@ function pagination (options: any) {
 
   var pages = <HTMLElement>document.querySelector(`${options.queryClassPagination}`);
   var totalBox = document.querySelectorAll(options.listBox);
+
   var totalPage = Math.ceil(totalBox.length / options.itemPages);
   if (!pages || !totalBox){
     return;
   }
 
-  var scrollTop = {};
-  if (options.scroll){
-    scrollTop = options.scroll;
+  var scrollTop = options.scroll;
+  
+  if (scrollTop){
+    paginationCreate(pages, totalBox, 1, totalPage, options.itemPages, scrollTop);
+  }
+  else{
+    paginationCreate(pages, totalBox, 1, totalPage, options.itemPages);
   }
 
-  paginationCreate(pages, totalBox, 1, totalPage, options.itemPages, scrollTop);
   activeBox(totalBox, 1, options.itemPages);
 }
 
@@ -33,7 +37,7 @@ function activeBox(totalBox:any, liActive: number, itemPages:number){
   })
 }
 
-function paginationCreate(objClass:any, totalBox:any, liActive:number, totalPage: number, itemPages: number, scrollTop: any = {}){
+function paginationCreate(objClass:any, totalBox:any, liActive:number, totalPage: number, itemPages: number, scrollTop: any = null){
   // Math.ceil(totalBox.length / 5)
 
   objClass.innerHTML = createPagination(totalPage, liActive);
@@ -45,7 +49,12 @@ function paginationCreate(objClass:any, totalBox:any, liActive:number, totalPage
   changeIcon(objClass, "prev", strIcon);
 
   // click button
-  clickButton(objClass, totalBox, totalPage, itemPages, scrollTop);
+  if (scrollTop){
+    clickButton(objClass, totalBox, totalPage, itemPages, scrollTop);
+  }
+  else{
+    clickButton(objClass, totalBox, totalPage, itemPages);
+  }
 }
 
 function hiddenNextPrev(objClass:any, itemActive: number, totalPage:number){
@@ -84,7 +93,7 @@ function hiddenNextPrev(objClass:any, itemActive: number, totalPage:number){
   }
 }
 
-function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:number, scrollTop:any = {}){
+function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:number, scrollTop:any = null){
   let liBtns = objClass.getElementsByTagName('li');
 
   let itemActive: number;
@@ -127,7 +136,6 @@ function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:nu
       paginationCreate(objClass,totalBox, itemActive, totalPage, itemPages, scrollTop);
       activeBox(totalBox, itemActive, itemPages);
 
-      console.log(scrollTop);
       if (scrollTop){
         scrollToTop(scrollTop.id, scrollTop.header);
       }
@@ -136,7 +144,6 @@ function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:nu
 }
 
 function scrollToTop(strId:string, queryHeader: string = ""){
-  console.log(strId, queryHeader);
   if (document.getElementById(strId)){
     var topFeatured = 0;
     var featuredItem = <HTMLElement>document.getElementById(strId);
@@ -158,7 +165,6 @@ function scrollToTop(strId:string, queryHeader: string = ""){
       topFeatured -= hHeader.clientHeight;
     }
 
-    console.log(topFeatured)
     window.scrollTo({
       top: topFeatured,
       left: 0,
