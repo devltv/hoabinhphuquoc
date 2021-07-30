@@ -18,7 +18,7 @@ import {header} from "./layout/header";
 // Page
 import index from "./page/index";
 import {service} from "./page/service";
-// import library from "./page/library";
+import {library} from "./page/library";
 import endow from "./page/endow";
 import {intro} from "./page/intro";
 // import { interpolate } from "gsap/all";
@@ -50,6 +50,7 @@ function page(){
   // library.library();
   endow.endow();
   intro();
+  library();
 }
 
 ////////////////////////////////////////////////////////////////

@@ -53,6 +53,10 @@ $color: (
 	// intro
 	intro-overlay: rgba(#004A8F, 0.65),
 	intro-bg-2: #eeeeee,
+	intro-bg-5: #FBFBFB,
+
+	// intro-infor
+	infor-text: #848484
 );
 
 $letterSpacing: (
@@ -360,3 +364,4 @@ $serviceBox: (
 @import "../_variables/endow";
 @import "../_variables/wedding.scss";
 @import "../_variables/forum";
+@import "../_variables/intro-infor";

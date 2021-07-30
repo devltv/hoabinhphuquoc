@@ -1,0 +1,96 @@
+#intro-infor__wrapper{
+    @include spaceIntro-Infor(p110, padding);
+    .intro-infor__section{
+        // display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        @include rp(tm){
+            flex-direction: column;
+        }
+        .infor-wrapper{
+            @include rp(tx){
+                flex: 0 0 70%;
+                width: 70%;
+            }
+            @include rp(tm){
+               width: 100%;
+            }
+            @include spaceIntro-Infor(s64, padding-right);
+            &__time{
+                color: map-get($color,dateTime );
+                @include spaceIntro-Infor(p14, margin-bottom);
+              
+            }
+            &__title{
+                @include spaceIntro-Infor(m-b-50, margin-bottom);
+                @include title(s51);
+                @include family--primary;
+                font-weight: bold;
+                color: map-get($color, main );
+            }
+
+            &__decs{
+                .image,
+                .decs p{
+                    @include spaceIntro-Infor(m-b-50, margin-bottom);
+                }
+            }
+        }
+        .infor-news{
+            @include rp(tx){
+                flex: 0 0 30%;
+                width: 30%;
+            }
+            
+            @include spaceIntro-Infor(s25, padding-left);
+            &__items{
+                @include spaceIntro-Infor(s30, padding);
+                border-bottom: solid 1px rgba(map-get($color, base),0.6);
+
+                @media (min-width: 901px) {
+                    &:first-child{
+                        padding-top: 0;
+                    }
+                }
+                
+                &:last-child{
+                    border-bottom: unset ;
+                }
+                &--time{
+                    
+                    color: map-get($color,dateTime );
+                    @include spaceIntro-Infor(p14, margin-bottom);
+                }
+                &--title{
+                    @include spaceIntro-Infor(p14, margin-bottom);
+                    a{
+                        @include  p-line-clamp(2);
+                        @include title(s26);
+                        color: map-get($color, infor-text );
+                        font-weight: bold;
+                    }
+                }
+                &--more{
+                    a{
+                        padding: 0;
+                        svg{
+                            margin-left: 5px;
+                        }
+                    }
+                    
+                }
+            }
+            @include rp(tm){
+                display: flex;
+                overflow: scroll;
+                flex: 0 0 100%;
+                width: 100%;
+                &__items{
+                    border-bottom: unset;
+                    @include spaceIntro-Infor(s20, margin-right);
+                }
+            }
+        }
+    }
+}
