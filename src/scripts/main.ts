@@ -18,7 +18,7 @@ import {header} from "./layout/header";
 // Page
 import index from "./page/index";
 import {service} from "./page/service";
-// import library from "./page/library";
+import {library} from "./page/library";
 import endow from "./page/endow";
 import {forum} from "./page/forum";
 import {restroom} from "./page/restroom";
@@ -57,6 +57,7 @@ function page(){
   restroom();
   intro();
   wedding();
+  library();
 }
 
 ////////////////////////////////////////////////////////////////

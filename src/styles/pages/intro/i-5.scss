@@ -1,0 +1,190 @@
+#intro-5__wrapper{
+    @include spaceIntro(p-r-72, margin-bottom);
+    .tour-title{
+        width: 100%;
+        text-align: center;
+        // @include utilitiesBox(s90, margin-top);
+        
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
+    }
+    .intro-5__section{
+        .nav-custom{
+            position: relative;
+            .swiper-pagination{
+                bottom: -40px;
+                .swiper-pagination-bullet{
+                    @include rp(ml){
+                        margin-left: 5px;
+                    }
+                }
+                @include rp(ml){
+                    bottom: -20px;
+                }
+            }
+            .intro-5{
+                position: unset;
+                @include blockIntro-5(Intro-1, height);
+                .swiper-slide{
+                    width: 100%;
+                    height: 100%;
+                    .job{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        
+                        &__bg{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: -1;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &__content{
+                            @include spaceIntro(s40, padding);
+                            background: rgba(map-get($color, main), 0.8);
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                            align-items: center;
+                            justify-content: center;
+                            &--decs{
+                                @include rp(ml){
+                                    @include  p-line-clamp(6);
+                                }
+                            }
+                            &--icon,
+                            &--name,
+                            &--decs{
+                                
+                                @include spaceIntro(s35, margin-bottom)
+                            }
+                            &--icon{
+                                @include blockIntro-5(Intro-Icon, height);
+                                @include blockIntro-5(Intro-Icon, width);
+                                img{
+                                    object-fit: contain;
+                                }
+                            }
+                            &--name{
+                                text-transform: uppercase;
+                                position: relative;
+                                @include title(s26);
+                                font-weight: bold;
+                                color: map-get($color, mainBg );
+                                &::after{
+                                    position: absolute;
+                                    bottom: -15px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    content: "";
+                                    height: 5px;
+                                    width: 60%;
+                                    background:  map-get($color, mainBg );
+                                }
+                            }
+                            &--more{
+                                a{
+                                    svg{
+                                        margin-left: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(2n +2){
+                        
+                        .job{
+                            &__content{
+                                @include spaceIntro(s40, padding);
+                                background: map-get($color, intro-bg-5);
+                                &--name{
+                                    color: map-get($color, main );
+                                    &::after{
+                                        background: map-get($color, underline );
+                                    }
+                                }
+                            }
+                        }
+                        @media (max-width: 1024px) and (min-width:641px) {
+                            .job{
+                                &__content{
+                                    background: rgba(map-get($color, main), 0.8);
+                                    &--name{
+                                        color: map-get($color, mainBg );
+                                        &::after{
+                                            background: map-get($color, mainBg );
+                                        }
+                                    }
+                                    &--decs{
+                                        color: map-get($color, mainBg );
+                                    }
+                                    &--more{
+                                        a{
+                                            color: map-get($color, mainBg );
+                                            path{
+                                                fill: map-get($color, mainBg );
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                            
+                        
+                    }
+                    &:nth-child(2n +1){
+                        .job{
+                            &__content{
+                                &--decs{
+                                    color: map-get($color, mainBg );
+                                }
+                                &--more{
+                                    a{
+                                        color: map-get($color, mainBg );
+                                        path{
+                                            fill: map-get($color, mainBg );
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        @media (max-width: 1024px) and (min-width: 641px) {
+                            .job{
+                                &__content{
+                                    background: map-get($color, intro-bg-5);
+                                    &--name{
+                                        color: map-get($color, main );
+                                        &::after{
+                                            background: map-get($color, underline );
+                                        }
+                                    }
+                                    &--decs{
+                                        color: map-get($color, textInput );
+                                    }
+                                    &--more{
+                                        a{
+                                            color: map-get($color, main );
+                                            path{
+                                                fill: map-get($color, main );
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            
+                        }
+                    }
+                    //
+                   
+                }
+            }
+        }
+    }
+}

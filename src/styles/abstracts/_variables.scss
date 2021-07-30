@@ -62,6 +62,10 @@ $color: (
 	track: #F1F1F1,
 	thumb: #70707070,
 	thumbHover: #707070,
+	intro-bg-5: #FBFBFB,
+
+	// intro-infor
+	infor-text: #848484
 );
 
 $letterSpacing: (
@@ -373,3 +377,4 @@ $serviceBox: (
 @import "../_variables/forum";
 @import "../_variables/restroom";
 @import "../_variables/popup";
+@import "../_variables/intro-infor";
