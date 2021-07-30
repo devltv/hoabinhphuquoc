@@ -68,7 +68,31 @@ header#header
                     <line id="Line_38" data-name="Line 38" x2="10.75" transform="translate(1784.75 31)" fill="none" stroke="#ed1c24" stroke-linecap="round" stroke-width="2"/>
                   </g>
                 </svg>
-              .content-order__popup 
+              .content-order__popup
+                .content-order__popup-overlay
+                .content-order__popup-wrapper
+                  .close 
+                  .content-popup
+                    .content-popup__title
+                      h4 Tạo đặt phòng 
+                    .content-popup-form
+                      form(id="bookingForm")
+                        .group-input
+                          label.label-input(for="receiveOrder")
+                            span Nhận phòng *
+                          .input-date
+                            input(type="date" id="receiveOrder")
+                            //- img(src="./assets/icons/date.png", alt="date")
+                            .input-border
+                        .group-input
+                          label.label-input(for="payOrder")
+                            span Trả phòng *
+                          .input-date
+                            input(type="date" id="payOrder")
+                            //- img(src="./assets/icons/date.png", alt="date")
+                            .input-border
+
+
                 
     .header-main
       .container
