@@ -142,21 +142,26 @@ $spaceIndex4: (
 $spaceIndex6: (
   s88: (
     default: 88px,
-    pl: 80px,
-    pm: 72px,
-    ps: 64px,
+    pl: 64px,
+    pm: 56px,
+    ps: 48px,
+    
   ),
   s80: (
     default: 80px,
-    pl: 76px,
-    pm: 72px,
-    ps: 64px,
+    pl: 72px,
+    pm: 56px,
+    ps: 48px,
+    
   ),
   s56: (
     default: 56px,
-    pl: 52,
-    pm: 46px,
-    ps: 28px,
+    pl: 48px,
+    pm: 38px,
+    ps: 34px,
+    
+
+
   ),
 );
 //height
@@ -218,9 +223,18 @@ $blockIndex: (
     default: 610px,
     pl: 580px,
     pm: 550px,
+    tx: 500px,
+    tm: 450px,
+    ts: 400px,
+
   ),
   imgIndex6: (
-    default: 630px,
+    default: 600px,
+    pl: 580px,
+    pm: 550px,
+    tx: 500px,
+    tm: 450px,
+    ts: 400px,
   ),
   
 );

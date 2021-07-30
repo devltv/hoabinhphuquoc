@@ -68,9 +68,6 @@
                 .content__infor {
                     position: absolute;
                     top: 90%;
-                    @include rp(pl){
-                        top: 85%;
-                    }
                     left: 50%;
                     z-index: 1;
                     transform: translateX(-50%);
@@ -82,6 +79,18 @@
                         & > * {
                             @include family--primary;
                             @include size(s21);
+                            @include rp(tx){
+                                font-size: 18px;
+                            }
+                            @include rp(tl){
+                                font-size: 16px;
+                            }
+                            @include rp(tm){
+                                font-size: 14px;
+                            }
+                            @include rp(ts){
+                                font-size: 12px;
+                            }
                             font-weight: bold;
                             color: map-get($color, mainBg);
                             text-align: center;
@@ -107,32 +116,30 @@
             }
             .content__infor {
                 position: absolute;
-                top: 15%;
-                left: 10%;
-                right: 10%;
-                bottom: 10%;
-                @include rp(pl){
-                    top: 10%;
-                    left: 8%;
-                    right: 8%;
-                    bottom: 12%;
-                }
-                @include rp(pm){
-                    top: 9%;
-                    bottom: 16%;
-                }
-
+                top: 10%;
+                left: 8%;
+                right: 8%;
+                bottom: 8%;
                 z-index: 1;
                 transform: translateX(0%);
                 background: map-get($color, boxOverlayActive);
                 @include spaceIndex6(s88, padding-top);
-                @include spaceIndex6(s88, padding-bottom);
+                // @include spaceIndex6(s88, padding-bottom);
                 @include spaceIndex6(s56, padding-left);
                 @include spaceIndex6(s56, padding-right);
                 &--title {
                     & > * {
                         @include spaceIndex6(s80, margin-bottom);
                         @include size(s31);
+                        @include rp(tx){
+                            font-size: 24px;
+                        }
+                        @include rp(tm){
+                            font-size: 22px;
+                        }
+                        @include rp(ts){
+                            font-size: 20px;
+                        }
                         @include family--primary;
                         font-weight: bold;
                         color: map-get($color, mainBg);
@@ -153,6 +160,12 @@
                 &--desc {
                     display: block;
                     @include size(s18);
+                    @include rp(tx){
+                        font-size: 16px;
+                    }
+                    @include rp(ts){
+                        font-size: 14px;
+                    }
                     color: map-get($color, mainBg);
                     line-height: 1.4;
                     text-align: center;

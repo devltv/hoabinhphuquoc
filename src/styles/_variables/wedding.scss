@@ -57,21 +57,25 @@ $spacewedding3:(
 $spacewedding4:(
   s16:(
     default: 16px,
+    pm: 12px,
+    tx: 8px,
   ),
   s20:(
     default: 20px,
   ),
   s32:(
     default: 32px,
+    pm: 28px,
   ),
   s40:(
     default: 40px,
   ),
   s80:(
     default: 80px,
-  ),
-  s160:(
-    default:160px,
+    tx: 72px,
+    ts: 64px,
+    mx: 56px,
+    mm: 48px,
   ),
   leftList:(
     default: 20px,
@@ -90,6 +94,14 @@ $blockwedding2:(
   s784:(
     default:748px,
   ),
+  hBoxWedding4:(
+    default: 520px,
+    tx: 450px,
+    ts: 420px,
+    mx: 380px,
+    ml: 350px,
+    
+  ), 
   s543:(
     default:543px,
   ),

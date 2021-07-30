@@ -7,12 +7,14 @@
                 box-shadow: 0px 3px 6px rgba(#000, .16);
                 background: map-get($color, mainBg );
                 // width: 30%;
+                @include rp(ml){
+                    margin: 0 32px;
+                }
                 
             }
             .content-before{
                 width: 100%;
                 position: relative;
-                background: red;
                 &::before, &::after{
                     position: absolute;
                     content: "";
@@ -54,6 +56,9 @@
                     &>*{
                         color: map-get($color, mainBg );
                         @include size(s58);
+                        @include rp(mx){
+                            font-size: 46px;
+                        }
                         @include bold;
                         
                     }
@@ -150,7 +155,9 @@
             .wedding__card{
                 // margin:  8px 8px;
                 height: 100%;
-                min-height: 520px;
+                // min-height: 520px;
+                @include blockwedding2(hBoxWedding4, min-height);
+                
                 position: relative;
                 transform-style: preserve-3d;
                 display: flex;
