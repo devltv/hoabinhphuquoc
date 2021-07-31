@@ -121,7 +121,10 @@
                 right: 8%;
                 bottom: 8%;
                 z-index: 1;
+
                 transform: translateX(0%);
+                display: flex;
+                flex-direction: column;
                 background: map-get($color, boxOverlayActive);
                 @include spaceIndex6(s88, padding-top);
                 // @include spaceIndex6(s88, padding-bottom);
@@ -159,10 +162,9 @@
                 }
                 &--desc {
                     display: block;
+                    overflow-y: auto;
+                    flex: 1;
                     @include size(s18);
-                    @include rp(tx){
-                        font-size: 16px;
-                    }
                     @include rp(ts){
                         font-size: 14px;
                     }
