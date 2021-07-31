@@ -2,11 +2,13 @@
 $spaceIntro: (
   p-l-53: (
     default: 53px ,
+    tm: 0,
   ),
   
 	p142: (
     default: 142px 0,
-
+    pm: 122px 0,
+    tm: 62px 0,
   ), 
   p154: (
     default: 154px 0,
@@ -18,32 +20,71 @@ $spaceIntro: (
   ), 
   p14: (
     default: 14px 0,
+    ts: 10px 0,
 
   ), 
   s20: (
     default: 20px,
-
+    pm: 15px,
+    tl: 5px,
   ), 
   s30: (
     default: 30px,
-
+    pm: 20px,
+    ms: 10px,
+    
+  ), 
+  s40: (
+    default: 0 40px ,
+    ml: 0 30px,
+    ms:  0 20px
   ), 
   m-b-60: (
     default: 60px,
+    pm: 50px,
+    tl: 40px,
+    ml: 20px,
+    // xs: 10px
   ),
   m-b-90: (
     default: 90px,
+    pm: 70px,
+    tl: 60px,
+    ml: 30px
   ),
   p-r-72:(
     default: 72px,
+    pm: 62px,
+    tl: 52px,
+    ts: 32px,
+    ml: 22px
   ),
   m-b-35:(
     default: 35px,
+    ts: 25px,
+    ml:0,
+  ),
+  s35:(
+    default: 35px,
+    ts: 25px,
+    ml:0 10px,
   ),
   Intro-overlay: (
 		default: 67px 67px 67px 42px ,
-    pl: 353px,
+    pm: 47px 47px 47px 37px,
+    ml: 27px 27px 27px 17px,
 	),
+
+  p40-55:(
+    default: 40px 55px ,
+    tx: 25px 35px,
+    tl: 15px 25px,
+  ),
+  s45:(
+    default: 45px ,
+    pl: 40px,
+    tx: 25px,
+  )
 );
 
 $blockIntro-1: (
@@ -51,36 +92,56 @@ $blockIntro-1: (
     // -> màn hình 1920
 		default: 775px ,
     pl: 685px,
-    pm: 100%,
-    // tx: 505px,
-    // tl: 455px
+    pm: 45vw,
+    tm: 75vw,
 	),
   Intro-2: (
 		default: 373px ,
     pl: 323px,
+    pm: 100%,
 	),
- 
+  Intro-3: (
+		default: 373px ,
+    pl: 323px,
+    // pm: 49%,
+	),
 );
 
 $blockIntro-2: (
 	Intro-1: (
     // -> màn hình 1920
 		default: 317px ,
-    pl: 685px,
-    pm: 100%,
-    // tx: 505px,
-    // tl: 455px
+    pl: 277px,
+    pm: 227px,
+    tx: 207px,
+    tl: 40vw,
+    ml: 237px,
+    mm: 207px,
+    ms: 187px,
 	),
 );
 
 $blockIntro-3: (
+
+  Intro-nav:(
+    pm: 20%,
+    tm: 25%,
+    ml: 30%,
+    mm: 50%
+  ),
+  Intro-nav-flex:(
+    pm: 0 0 20%,
+    tm: 0 0 25%,
+    ml: 0 0 30%,
+    mm: unset
+  ),
 	Intro-intro: (
     // -> màn hình 1920
 		default: 667px ,
-    pl: 685px,
-    pm: 100%,
-    // tx: 505px,
-    // tl: 455px
+    pl: 607px,
+    pm: 527px,
+    ml: 405px,
+    mm: 355px
 	),
   Intro-intro-overlay: (
     // -> màn hình 1920
@@ -92,7 +153,8 @@ $blockIntro-3: (
 	),
   Intro-overlay: (
 		default: 500px ,
-    pl: 353px,
+    pl: 40%,
+    pm: 50%
 	),
   Intro-3: (
 		default: 500px ,
@@ -100,8 +162,49 @@ $blockIntro-3: (
 	),
   Intro-4: (
 		default: 324px ,
-    pl: 353px,
+    pm: 224px,
+    ts:164px,
+    ml: 30vw,
 	),
+);
+
+$blockIntro-4: (
+	Intro-1: (
+    // -> màn hình 1920
+		default: 716px ,
+    pl: 605px,
+    ps: 42vw,
+    ts: 55vw,
+    mm: 300px
+	),
+  Intro-center: (
+    // -> màn hình 1920
+		default: 812px ,
+    pl: 785px,
+    pm: 705px,
+    ps: 45vw,
+    ts: 50vw,
+    ms: 200px
+	),
+);
+
+$blockIntro-5: (
+	Intro-1: (
+    // -> màn hình 1920
+		default: 709px ,
+    pl: 685px,
+    pm: 45vw,
+    tl: 505px,
+    mx: 455px,
+    mm: 375px,
+    ms: 325px
+	),
+  Intro-Icon:(
+    default: 90px ,
+    // pl: 70,
+    pm: 5vw,
+    mx: 8vw
+  )
 );
 
 @mixin spaceIntro($key, $name, $side: '-1'){
@@ -181,6 +284,58 @@ $blockIntro-3: (
 
 @mixin blockIntro-3($key, $name, $side: '-1'){
   @each $idx, $val in map-get($blockIntro-3, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin blockIntro-4($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIntro-4, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin blockIntro-5($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockIntro-5, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;

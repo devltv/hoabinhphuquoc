@@ -1,0 +1,117 @@
+
+$spaceIntro-Infor: (
+    
+    p110:(
+        default: 110px 0,
+        pm: 90px 0,
+        tl: 70px 0 ,
+        ml: 40px 0,
+    ),
+    p14: (
+      default: 14px ,
+      ps: 10px,
+      tm: 8px,
+    ), 
+    s20: (
+      default: 20px,
+  
+    ), 
+    s25: (
+        default: 25px,
+        tm: 0
+      ), 
+    s30: (
+      default: 30px 0,
+      ps: 28px 0,
+      tx: 22px 0,
+    ), 
+    m-b-30: (
+      default: 30px ,
+
+    ), 
+    m-b-50: (
+      default: 50px ,
+      tx: 40px,
+      tm: 30px,
+    ), 
+    s64: (
+      default: 64px,
+      pm: 54px,
+      tx: 44px,
+      tm: 0,
+    ),
+    m-b-90: (
+      default: 90px,
+    ),
+    
+  );
+  
+  $blockIntro-Infor-1: (
+      Intro-1: (
+      // -> màn hình 1920
+          default: 775px ,
+      pl: 685px,
+      pm: 100%,
+      // tx: 505px,
+      // tl: 455px
+      ),
+    Intro-2: (
+          default: 373px ,
+      pl: 323px,
+      ),
+   
+  );
+  
+ 
+  
+  @mixin spaceIntro-Infor($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($spaceIntro-Infor, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
+  
+  @mixin blockIntro-Infor-1($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($blockIntro-Infor-1, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
+  
+ 

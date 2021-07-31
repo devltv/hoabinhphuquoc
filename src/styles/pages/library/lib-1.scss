@@ -14,11 +14,39 @@
                         display: flex;
                         width: 100%;
                         flex-wrap: wrap;
-                        justify-content: space-between;
+                        // justify-content: space-between;
                         @include libraryBox(p30, padding);
                         &--image{
+                            @include libraryBox(p10, padding);
+                            &:nth-child(3n +1) {
+                                padding-right: 10px;
+                                padding-left: 0px;
+                                @include rp(ts){
+                                    padding: 0 10px;
+                                }
+                            }
+                            &:nth-child(3n) {
+                                padding-left: 10px;
+                                padding-right: 0px;
+                                
+                            }
+                            @include rp(ts){
+                                &:nth-child(2n + 1) {
+                                    padding-left: 0;
+                                    padding-right: 10px;
+                                    
+                                }
+                                &:nth-child(2n + 2) {
+                                    padding-left: 10px;
+                                    padding-right: 0;
+                                    
+                                }
+                            }
                             transition: 0.3s ease-in-out;
-                            width: 32.5%;
+                            width: calc(100% / 3);
+                            @include rp(ts){
+                                width: 50%;
+                            }
                             margin-top: 10px;
                             @include blockLibrary(library-1, height);
                         }
@@ -87,28 +115,8 @@
                     font-weight: bold; 
                     @include libraryBox(p-r-32, padding-right);
                     display: inline-block;
-                    @include size(s51);
-                    @include rp(pm){
-                        font-size: 4.0rem;
-                    }
-                    @include rp(ps){
-                        font-size: 3.6rem;
-                    }
-                    @include rp(tx){
-                        font-size: 3.2rem;
-                    }
-                    @include rp(tl){
-                        font-size: 3rem;
-                    }
-                    @include rp(ts){
-                        font-size: 2.8rem;
-                    }
-                    @include rp(mm){
-                        font-size: 3rem;
-                    }
-                    @include rp(sl){
-                        font-size: 2.4rem;
-                    }
+                    @include title(s51);
+                    
                 }
                 &::after{
                     content: "";

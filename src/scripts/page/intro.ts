@@ -25,11 +25,58 @@ function intro2() {
         el: ".swiper-pagination",
         clickable: true,
       },
-  
+      speed: 1200,
+      autoplay: {
+        delay: 2500,
+       
+      },
     });
   }
 }
 
+function intro4() {
+  if (document.getElementById('intro-4__wrapper')) {
+    new Swiper(".intro-4", {
+      slidesPerView: 3,
+      centeredSlides: true,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      initialSlide: 1,
+      
+    });
+  }
+}
+
+
+function intro5() {
+  if (document.getElementById('intro-5__wrapper')) {
+    new Swiper(".intro-5", {
+      slidesPerView: 2,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: true,
+      speed: 1200,
+      // autoplay: {
+      //   delay: 2500,
+       
+      // },
+      breakpoints: {
+        641: {
+          slidesPerView: 3,
+        },
+        1025: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
+}
 function changeContent(){
   var introChange = document.querySelector("#intro-3__wrapper")
   if(introChange){
@@ -43,11 +90,13 @@ function changeContent(){
       element.classList.add("active")
       var data_toggle = element.getAttribute("data-active")
       console.log(data_toggle)
+      var activeitemcontent = introChange.querySelector(".intro-3__section--content .intro-3__section--content-items.active")
+      activeitemcontent.classList.remove("active")
       nav_content.forEach(function (element){
             var items = element.getAttribute("data-active") 
+            
             if(items === data_toggle){
-             var activeitemcontent = introChange.querySelector(".intro-3__section--content .active")
-             activeitemcontent.classList.remove("active")
+             
              element.classList.add("active")
             }
          })
@@ -79,6 +128,8 @@ function intropagintion(){
 export const intro = function(){
     intro1();
     intro2();
+    intro4();
+    intro5();
     changeContent()
     intropagintion()
   }

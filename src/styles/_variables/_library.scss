@@ -51,20 +51,29 @@ $libraryBox: (
         pm: 50px auto,
         ps: 35px auto,
         mm: 20px auto,
+    ),
+    p10:(
+      default: 0 10px,
+        // pl: 60px auto,
+        // pm: 50px auto,
+        // ps: 35px auto,
+        // mm: 20px auto,
     )
 );
 
 $blockLibrary: (
 	library-1: (
 		default: 324px,
-		pl: 100%,
-		// pm: 304px,
-		// tx: 244px,
+		pl: 17vw,
+		// pm: 7vw,
+		// tx: 7vw,
 		// // tl: 220px,
     // tm: 224px,
-    // ts: 204px,
-    // mx: 164px,
-    // mm: 100%,
+    ts: 204px,
+    mx: 164px,
+    ml: 124px,
+    mm: 104px,
+    sx: 84px
 	),
   library-video-top: (
 		default: 502px,
