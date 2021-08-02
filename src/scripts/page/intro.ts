@@ -130,6 +130,6 @@ export const intro = function(){
     intro2();
     intro4();
     intro5();
-    changeContent()
-    intropagintion()
+    changeContent();
+    intropagintion();
   }
