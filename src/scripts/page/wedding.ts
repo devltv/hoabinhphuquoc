@@ -8,14 +8,14 @@ function swipperWedding2(){
       // slidesPerGroup: 3,
       loop: true,
       // loopFillGroupWithBlank: true,
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
-      navigation: {
-        nextEl: ".index-restroom .swiper-button-next",
-        prevEl: ".index-restroom .swiper-button-prev",
+      pagination: {
+        el: ".swiper-pagination",
+        // clickable: true,
       },
+      // navigation: {
+      //   nextEl: ".index-restroom .swiper-button-next",
+      //   prevEl: ".index-restroom .swiper-button-prev",
+      // },
       breakpoints: {
       }
     });
