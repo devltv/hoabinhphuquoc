@@ -76,24 +76,113 @@ header#header
                     .content-popup__title
                       h4 Tạo đặt phòng 
                     .content-popup-form
-                      form(id="bookingForm")
-                        .group-input
-                          label.label-input(for="receiveOrder")
-                            span Nhận phòng *
-                          .input-date
-                            input(type="date" id="receiveOrder")
-                            //- img(src="./assets/icons/date.png", alt="date")
-                            .input-border
-                        .group-input
-                          label.label-input(for="payOrder")
-                            span Trả phòng *
-                          .input-date
-                            input(type="date" id="payOrder")
-                            //- img(src="./assets/icons/date.png", alt="date")
-                            .input-border
-
-
-                
+                      form(id="orderForm" method="POST" action="./order-header" enctype="application/json;charset=UTF-8")
+                        .order-text
+                          .group-input
+                            label.label-input(for="receiveOrder")
+                              span Nhận phòng *
+                            .input-content
+                              input(type="text" id="receiveOrder" autoComplete="off")
+                              .input-content__img
+                                img(src="./assets/icons/date.png", alt="date")
+                              .input-content__border
+                        .order-text
+                          .group-input
+                            label.label-input(for="payOrder")
+                              span Trả phòng *
+                            .input-content
+                              input(type="text" id="payOrder" autoComplete="off")
+                              .input-content__img
+                                img(src="./assets/icons/date.png", alt="date")
+                              .input-content__border
+                        .order-option 
+                          .order-option-item
+                            .group-input
+                              label
+                                span Số phòng *
+                              .input-content
+                                .input-content__value#optRoom
+                                  span 1
+                                .input-content__img
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20.698" height="11.41" viewBox="0 0 20.698 11.41">
+                                    <path id="Path_10603" data-name="Path 10603" d="M4137.432-883.392l9.819,9.819,9.818-9.819" transform="translate(-4136.902 883.922)" fill="none" stroke="#707070" stroke-width="1.5"/>
+                                  </svg>
+                                .input-content__border
+                            .group-option-list
+                              .group-option-item(data-value="1")
+                                span 1
+                              .group-option-item(data-value="2")
+                                span 2
+                              .group-option-item.active(data-value="3")
+                                span 3
+                              .group-option-item(data-value="4")
+                                span 4
+                              .group-option-item(data-value="4")
+                                span 4
+                              .group-option-item(data-value="4")
+                                span 4
+                          .order-option-item
+                            .group-input
+                              label
+                                span Người lớn *
+                              .input-content
+                                .input-content__value#optAdult
+                                  span 1
+                                .input-content__img
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20.698" height="11.41" viewBox="0 0 20.698 11.41">
+                                    <path id="Path_10603" data-name="Path 10603" d="M4137.432-883.392l9.819,9.819,9.818-9.819" transform="translate(-4136.902 883.922)" fill="none" stroke="#707070" stroke-width="1.5"/>
+                                  </svg>
+                                .input-content__border
+                            .group-option-list
+                              .group-option-item.active(data-value="1")
+                                span 1
+                              .group-option-item(data-value="2")
+                                span 2
+                              .group-option-item(data-value="3")
+                                span 3
+                              .group-option-item(data-value="4")
+                                span 4
+                              .group-option-item(data-value="4")
+                                span 4
+                              .group-option-item(data-value="4")
+                                span 4
+                          .order-option-item
+                            .group-input
+                              label
+                                span Trẻ em *
+                              .input-content
+                                .input-content__value#optChild 
+                                  span 1
+                                .input-content__img
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20.698" height="11.41" viewBox="0 0 20.698 11.41">
+                                    <path id="Path_10603" data-name="Path 10603" d="M4137.432-883.392l9.819,9.819,9.818-9.819" transform="translate(-4136.902 883.922)" fill="none" stroke="#707070" stroke-width="1.5"/>
+                                  </svg>
+                                .input-content__border
+                            .group-option-list
+                              .group-option-item.active(data-value="1")
+                                span 1
+                              .group-option-item(data-value="2")
+                                span 2
+                              .group-option-item(data-value="3")
+                                span 3
+                              .group-option-item(data-value="4")
+                                span 4
+                              .group-option-item(data-value="4")
+                                span 4
+                              .group-option-item(data-value="4")
+                                span 4
+                        .order-text
+                          .group-input
+                            label.label-input(for="saleId")
+                              span Mã khuyến mãi
+                            .input-content
+                              input(type="text" id="saleId")
+                              //- img(src="./assets/icons/date.png", alt="date")
+                              .input-content__border
+                        .infor-order
+                          //- | Đặt phòng thành công
+                        .order-btn
+                          button#submitOrder Đặt phòng
     .header-main
       .container
         a(href="./").header-main__logo

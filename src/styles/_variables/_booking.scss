@@ -1,0 +1,58 @@
+$spaceBooking: (
+
+);
+
+$blockBooking: (
+
+);
+
+@mixin blockBooking($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockBooking, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin spaceBooking($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spaceBooking, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
