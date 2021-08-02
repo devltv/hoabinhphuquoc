@@ -1,9 +1,15 @@
 #intro-2__wrapper{
     @include spaceIntro(p142, padding);
     background: map-get($color, intro-bg-2 );
+    .container{
+        @include rp(tx){
+            flex:  0 0 100%;
+            width: 100%;
+        }
+    }
     .intro-2__section{
         position: relative;
-        @include blockIntro-2(Intro-1,height);
+        
         .swiper-pagination{
             bottom: -25px;
             display: flex;
@@ -13,7 +19,12 @@
                 margin-left: 15px;
                 
             }
-        }
+            .swiper-pagination-bullet{
+                @include rp(ml){
+                    margin-left: 10px;
+                }
+            }
+        } 
         .intro-2{
             height: 100%;
             position: unset;
@@ -23,51 +34,85 @@
             margin: auto;
             display: flex;
             align-items: center;
-            justify-content: center
+            justify-content: center;
+            @include rp(tl){
+                flex-direction: column;
+                
+            }
         }
+        
         &--image{
+           
             @include spaceIntro(p-r-72,padding-right);
+            @include blockIntro-2(Intro-1,height);
             .image{
                 height: 100%;
                 width: 100%;
             }
+            @include rp(tl){
+                position: relative;
+                flex: unset;
+                width: 90%;
+                // height: 55vw;
+                padding: 0;
+            }
         }
         &--text{
+            @include rp(tl){
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 90.5%;
+                height: 101%;
+                background: map-get($color, bg-utilities-2 );
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 5vw;
+            }
             &-title{
                 text-transform: uppercase;
                 @include spaceIntro(m-b-35, margin-bottom);
-                @include size(s26);
+                @include title(s26);
                 a{
                     color: map-get($color, main );
                 }
-                @include rp(pm){
-                    font-size: 4.0rem;
-                }
-                @include rp(ps){
-                    font-size: 3.6rem;
-                }
-                @include rp(tx){
-                    font-size: 3.2rem;
-                }
-                @include rp(tl){
-                    font-size: 3rem;
-                }
-                @include rp(ts){
-                    font-size: 2.8rem;
-                }
-                @include rp(mm){
-                    font-size: 3rem;
-                }
-                @include rp(sl){
-                    font-size: 2.4rem;
-                }
+                // @include rp(pm){
+                //     font-size: 1.3vw;
+                // }
                 @include family--second;
                 font-weight: bold;
                 color: map-get($color, main );
             }
+           
             &-decs{
                 @include p-line-clamp(7);
                 color: map-get($color, base );
+                @include rp(pm){
+                    @include p-line-clamp(4);
+                }
+                @include rp(ml){
+                    display: none;
+                }
+                // @include rp(ps){
+                //     font-size: 3.6rem;
+                // }
+                // @include rp(tx){
+                //     font-size: 3.2rem;
+                // }
+                // @include rp(tl){
+                //     font-size: 3rem;
+                // }
+                // @include rp(ts){
+                //     font-size: 2.8rem;
+                // }
+                // @include rp(mm){
+                //     font-size: 3rem;
+                // }
+                // @include rp(sl){
+                //     font-size: 2.4rem;
+                // }
             }
         }
     }

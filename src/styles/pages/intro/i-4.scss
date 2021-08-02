@@ -1,0 +1,171 @@
+#intro-4__wrapper{
+    @include spaceIntro(p-r-72, margin-top);
+    @include spaceIntro(p-r-72, margin-bottom);
+    .tour-title{
+        width: 100%;
+        text-align: center;
+        // @include utilitiesBox(s90, margin-top);
+        
+        @include space(s90, margin-top);
+        @include space(s48, margin-bottom);
+    }
+    .intro-4__section{
+        .nav-custom {
+            position: relative;
+            .swiper-pagination{
+                bottom: -40px;
+                .swiper-pagination-bullet{
+                    margin-left: 15px;
+                }
+                .swiper-pagination-bullet{
+                    margin-left: 15px;
+                    @include rp(ml){
+                        margin-left: 10px;
+                    }
+                }
+                @include rp(ml){
+                    bottom: -30px;
+                }
+            }
+           
+        }
+        .intro-4{
+            position: unset;
+            @include blockIntro-4(Intro-1, height);
+            .swiper-wrapper{
+                align-items: center;
+                justify-content: center;
+                .swiper-slide{
+                    transition: height 0.3s ease-in-out;
+                    
+                    .section{
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+
+                        &::after{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 50%;
+                            background: linear-gradient(rgba(#FFFFFF, 0.1),rgba(#000000, 0.9) );
+                            content: "";
+                            z-index: 1;
+                        }
+                        &__img-section{
+                            height: 100%;
+                            width: 100%;
+                        }
+                        .title{
+                            position: relative;
+                            @include title(s51);
+                            @include spaceIntro(s45, margin-bottom);
+                            @include family--primary;
+                            font-weight: bold;
+                            color: map-get($color, mainBg );
+                            &::after{
+                                position: absolute;
+                                bottom: -15px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                content: "";
+                                height: 6px;
+                                @include rp(tl){
+                                    height: 5px;
+                                    bottom: -10px;
+                                    width: 80px;
+                                }
+                                width: 122px;
+                                background: red;
+                            }
+                        }
+                        &__title-section{
+                            width: 100%;
+                            text-align: center;
+                            position: absolute;
+                            z-index: 2;
+                            @include spaceIntro(p-r-72, bottom);
+                            
+                        }
+                        &__content-section{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            // height: 50%;
+                            text-align: center;
+                            background: map-get($color, mainBg );
+                            z-index: 2;
+                            box-shadow: 0 3px 6px rgba(0,0,0,.16);
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            @include spaceIntro(p40-55, padding);
+                            .title{
+                                color: map-get($color, main );
+                            }
+                            .decs{
+                                @include  p-line-clamp(5);
+                                @include spaceIntro(m-r-10, margin-bottom);
+                                @include rp(tl){
+                                    @include  p-line-clamp(4);
+                                }
+                                @include rp(ml){
+                                    @include  p-line-clamp(2);
+                                }
+                            }
+                            .btn-link--more{
+                                svg{
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                .swiper-slide-active{
+                    @include blockIntro-4(Intro-center, width, !important);
+                    height: 99%;
+                    .section{
+                        &__title-section{
+                            display: none;
+                        }
+                    }
+                }
+                .swiper-slide-next,
+                .swiper-slide-prev{
+                    height: 90%;
+                    .section{
+                        @include rp(ml){
+                            &__title-section{
+                                display: none;
+                            }
+                        }
+                        &__content-section{
+                            display: none;
+                        }
+                    }
+                }
+                @include rp(pm){
+                    .swiper-slide-next{
+                        .section{
+                            &__title-section{
+                                transform: translate(-10%);
+                            }
+                        }
+                    }
+                    .swiper-slide-prev{
+                        .section{
+                            &__title-section{
+                                transform: translate(10%);
+                            }
+                        }
+                    }
+                }
+                
+            }
+           
+        }
+    }
+}

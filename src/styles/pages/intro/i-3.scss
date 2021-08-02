@@ -13,7 +13,7 @@
             @include spaceIntro(m-r-10, margin-bottom);
         }
         &__title{
-            @include size(s26);
+            @include title(s26);
             color: map-get($color,breadcrumb );
             @include spaceIntro(s30, margin-bottom);
             @include family--second;
@@ -22,6 +22,8 @@
         &__decs{
             @include spaceIntro(s30, padding-top);
             @include spaceIntro(s20, margin-bottom);
+            @include  p-line-clamp(4);
+           
         }
         &__more{
             a{
@@ -41,8 +43,10 @@
             font-weight: bold;
             @include spaceIntro(p14, padding);
             @include spaceIntro(m-b-90, margin-bottom);
+            @include blockIntro-3(Intro-nav, width);
+            @include blockIntro-3(Intro-nav-flex, flex);
             &-items{
-                @include size(s26);
+                @include title(s26);
                 color: map-get($color, bulletText );
                 cursor: pointer;
                 transition: 0.2s ease-in-out;
@@ -55,12 +59,17 @@
             }
         }
         &--content{
+            
             .active{
                 display: block;
             }
             &-items{
                 display: none;
                 .content-intro{
+                    @include rp(tx){
+                        width: 100%;
+                        flex: 0 0 100%;
+                    }
                     margin: auto;
                     &__image{
                         width: 100%;
@@ -83,6 +92,9 @@
                                 }
                                 &__decs{
                                     color: map-get($color,dateTime );
+                                    @include rp(mm){
+                                        display: none;
+                                     }
                                 }
                                 &__more{
                                     a{
@@ -93,32 +105,70 @@
                                     }
                                 }
                             }
+                            
                         }
                     }
                 }
                 .content-news{
+                    @include rp(tx){
+                        width: 100%;
+                        flex: 0 0 100%;
+                    }
                     margin: auto;
                     
                     &__items{
                         @include spaceIntro(p-r-72, margin-bottom);
                         // margin-right: auto;
                         width: calc(100% / 3);
+                        @include rp(ts){
+                            width: calc(100% / 2);
+                        }
                         padding: 0 10px;
+                        cursor: pointer;
+                        &:hover{
+                            .text-infor{
+                                &__image{
+                                
+                                   img{
+                                       transform: scale(1.15) rotate(5deg);
+                                   }
+                                }
+                            }
+                        }
                         &:nth-child(3n +1) {
+                            
                             padding-right: 10px;
                             padding-left: 0px;
+                            @include rp(ts){
+                                padding: 0 10px;
+                            }
                         }
                         &:nth-child(3n) {
                             padding-left: 10px;
                             padding-right: 0px;
+                            @include rp(ts){
+                                padding: 0 10px;
+                            }
                         }
                         &:last-child{
                             justify-self: flex-start;
                         }
                         .text-infor{
                             &__image{
+                                overflow: hidden;
+                                img{
+                                    transition: 0.3s ease-in-out;
+                                }
                                 width: 100%;
                                 @include blockIntro-3(Intro-4, height);
+                            }
+                            &__title{
+                                @include  p-line-clamp(2);
+                            }
+                            &__decs{
+                                @include rp(ml){
+                                    @include  p-line-clamp(3);
+                                }
                             }
                         }
                     }

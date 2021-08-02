@@ -66,6 +66,10 @@ $color: (
 	// infor
 	error: #ED4337,
 	success: #28a745,
+	
+	// intro-infor
+	intro-bg-5: #FBFBFB,
+	infor-text: #848484
 );
 
 $letterSpacing: (
@@ -377,4 +381,5 @@ $serviceBox: (
 @import "../_variables/forum";
 @import "../_variables/restroom";
 @import "../_variables/popup";
+@import "../_variables/intro-infor";
 @import "../_variables/booking";
