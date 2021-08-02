@@ -28,7 +28,7 @@ $color: (
 	textShadow: rgba(#bcbcbc, 0.3),
 	// Đoạn text lớn đằng sau title
 	boxOverlayActive: rgba(#000, 0.7),
-	boxOverlay: rgba(#000, 0.3),
+	boxOverlay: rgba(#000, 0.16),
 	boxLightOverlay: rgba(#ffffff, 0.95),
 	boxVideoOverlay: rgba(#707070, 0.7),
 	iconMain: #004a8f,
@@ -62,6 +62,10 @@ $color: (
 	track: #F1F1F1,
 	thumb: #70707070,
 	thumbHover: #707070,
+
+	// infor
+	error: #ED4337,
+	success: #28a745,
 );
 
 $letterSpacing: (
@@ -373,3 +377,4 @@ $serviceBox: (
 @import "../_variables/forum";
 @import "../_variables/restroom";
 @import "../_variables/popup";
+@import "../_variables/booking";

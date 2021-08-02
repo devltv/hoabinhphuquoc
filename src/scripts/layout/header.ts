@@ -1,3 +1,5 @@
+declare var $ : any;
+
 function toggleHamberger() {
   if (document.getElementById('header')) {
     var header = document.querySelector('.header');
@@ -57,9 +59,13 @@ function handleActiveHeader() {
     document.addEventListener('click', function (e) {
       activeHamberger(e);
       activeLanguage(e);
+      activeOrder(e);
+      activeOptionOrder(e);
     })
     toggleHamberger();
     toggleLanguage();
+    toggleOrder();
+    listOptionOrder();
 
     // resize window
     var btnHam = document.querySelector('.header-main__button');
@@ -163,6 +169,284 @@ function activeLanguage(evt: any) {
 }
 
 
+function activeOrder(evt: any) {
+  var link = document.querySelector('.header .content-order .content-order__link');
+  var popup = document.querySelector('.header .content-order .content-order__popup');
+
+  if (popup) {
+    var evtTarget = evt.target;
+    // Kiem tra co click vao btnHam ko? Neu co thi ko lam gi` ca
+    do {
+      if (evtTarget == popup) {
+        return;
+      }
+      else if (evtTarget == link) {
+        return;
+      }
+      evtTarget = evtTarget.parentNode;
+    } while (evtTarget);
+
+    // Neu ko thi se remove class active
+    link.classList.remove('active');
+    popup.classList.remove('active');
+  }
+}
+
+function activeValueOpt(){
+  let links = document.querySelectorAll('.content-order__popup.active .order-option-item');
+
+  links.forEach(function(link){
+    let item = link.getElementsByClassName('group-option-item');
+    let optList = link.getElementsByClassName('group-option-list');
+    let gpInput = link.getElementsByClassName('input-content__value');
+    
+    for (let i = 0; i < item.length; i++){
+    
+      if(item[i].classList.contains('active')){
+        let val = item[i].getAttribute('data-value');
+        let htmlItem = item[i].innerHTML;
+  
+        gpInput[0].innerHTML = htmlItem;
+        gpInput[0].setAttribute('data-value', `${val}`);
+      }
+    }
+    
+    for (let i = 0; i < item.length; i++){
+      let evtItem = item[i];
+
+      evtItem.addEventListener('click', function(e){
+        e.preventDefault();
+        let val = this.getAttribute('data-value');
+        let htmlItem = this.innerHTML;
+
+        // add html vào đúng chỗ, và tắt option list
+        gpInput[0].innerHTML = htmlItem;
+        gpInput[0].setAttribute('data-value', `${val}`);
+        optList[0].classList.remove('active');  
+
+        // active item đó
+        let tmpItems = link.getElementsByClassName('group-option-item');
+        for(var num = 0; num < tmpItems.length; num++){
+          tmpItems[num].classList.remove('active');
+        }
+        this.classList.add('active');
+      })
+    }
+    
+  })
+}
+
+function toggleOrder() {
+  if (document.getElementById('header')) {
+    var link = document.querySelector('.header .header-top__content .content-order__link');
+
+    var popup = document.querySelector('.header .header-top__content .content-order__popup');
+    var overlay = document.querySelector('.header .header-top__content .content-order__popup-overlay');
+    var close = document.querySelector('.header .header-top__content .content-order__popup .close');
+
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.classList.add('active');
+
+      activeValueOpt();
+
+    })
+
+    overlay.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.classList.remove('active');
+    })
+
+    close.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.classList.remove('active');
+    })
+  }
+}
+
+function activeOptionOrder(evt: any) {
+  var links = document.querySelectorAll('.content-order__popup .order-option-item');
+  var flag = false;
+  links.forEach(function(item){
+    var evtTarget = <HTMLElement> evt.target;
+    var listOptions = item.getElementsByClassName('group-option-list');
+    var content = item.getElementsByClassName('input-content');
+
+    do {
+      if (evtTarget === listOptions[0]) {
+        console.log(2);
+        return;
+      }
+      else if (evtTarget === content[0]){
+        return;
+      }
+
+      evtTarget = <HTMLElement> evtTarget.parentNode;
+    } while (evtTarget);
+
+    listOptions[0].classList.remove('active');
+  })
+}
+
+function listOptionOrder() {
+  var listOptions = document.querySelectorAll('.header .content-order__popup .order-option-item');
+  listOptions.forEach(function (opt) {
+
+    var valOpt = opt.getElementsByClassName('input-content');
+    var listOpt = opt.getElementsByClassName('group-option-list');
+
+    for (var i = 0; i < valOpt.length; i++) {
+      valOpt[i].addEventListener('click', function (e) {
+
+        listOpt[0].classList.add('active');
+      })
+    }
+  })
+}
+
+
+
+function dateTimePickerOrder(){
+  $('#receiveOrder').datetimepicker({
+    timepicker:false,
+    format: 'd/m/Y',
+  });
+  $('#payOrder').datetimepicker({
+    timepicker:false,
+    format: 'd/m/Y',
+  });
+}
+
+function changeInputError(inp : any){
+  var infor = document.querySelector('#orderForm .infor-order');
+  inp.addEventListener('focus', function(){
+    this.classList.remove('error');
+    infor.classList.remove('error');
+    infor.classList.remove('success');
+    infor.innerHTML = "";
+  })
+}
+
+function checkInputValue(inp: any){
+  if (inp){
+    var tmpInp = <HTMLInputElement> inp;
+    if (!tmpInp.value){
+      tmpInp.classList.add('error');
+      return false;
+    }
+    return true;
+  }
+  return false;
+}
+
+function checkOptionValue(opt:any){
+  var valOpt = opt.getAttribute('data-value');
+  if (valOpt){
+    return true;
+  }
+  opt.classList.add('error');
+  return false;
+}
+
+function checkAllVale(inps:any = null, opts :any = null){
+  if (inps){
+    var check = inps.find(function(inp:any){
+      return !checkInputValue(inp);
+    });
+    if (check){
+      return false;
+    }
+  }
+
+  if (opts){
+    var check = opts.find(function(opt:any){
+      return !checkOptionValue(opt);
+    });
+    if (check){
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function submit(method: string, action: string, content: string = null, dataOpt: any = null){
+  var xhttp = new XMLHttpRequest();
+  
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log('submit form successed!');
+      return;
+    }
+    else {
+      console.log('submit form failed!');
+      console.log(dataOpt);
+    }
+  };
+
+  if (content){     
+    xhttp.open(`${method}`, `${action}`, true);
+    xhttp.setRequestHeader("Content-Type", `${content}`);
+
+    if(dataOpt){
+      xhttp.send(JSON.stringify(dataOpt));
+    }
+    else{
+      xhttp.send();
+    }
+  }
+  else{
+    xhttp.open(`${method}`, `${action}`, true);
+    if(dataOpt){
+      xhttp.send(JSON.stringify(dataOpt));
+    }
+    else{
+      xhttp.send();
+    }
+  }
+}
+
+function submitOrder(){
+  var idSm = document.getElementById('submitOrder');
+  if (idSm){
+    idSm.addEventListener('click', function(e){
+      e.preventDefault();
+
+      var receive = <HTMLInputElement> document.getElementById('receiveOrder');
+      var pay = <HTMLInputElement> document.getElementById('payOrder');
+      var optRoom = document.getElementById('optRoom');
+      var optAdult = document.getElementById('optAdult');
+      var optChild = document.getElementById('optChild');
+      var sale = <HTMLInputElement> document.getElementById('saleId');
+
+      changeInputError(receive);
+      changeInputError(pay);
+      
+      if (!checkAllVale([receive, pay])){
+        return false;
+      }
+
+      var dtOpt = {
+        receive: receive.value,
+        pay: pay.value,
+        room: optRoom.getAttribute('data-value'),
+        adult: optAdult.getAttribute('data-value'),
+        child: optChild.getAttribute('data-value'),
+        sale: sale.value
+      }
+
+      var form = document.getElementById('orderForm');
+      var method = form.getAttribute('method');
+      var action = form.getAttribute('action');
+      var contentType = form.getAttribute('enctype');
+
+      submit(method, action, contentType, dtOpt);
+    })
+  }
+}
+
 export const header = function () {
   handleActiveHeader();
+  dateTimePickerOrder();
+  submitOrder();
 }

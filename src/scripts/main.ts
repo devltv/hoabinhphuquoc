@@ -3,7 +3,7 @@
 // https://greensock.com/
 // https://swiperjs.com/get-started
 declare var Swiper : any;
-
+declare var $ : any;
 import axios from "axios";
 
 
@@ -24,6 +24,7 @@ import {forum} from "./page/forum";
 import {restroom} from "./page/restroom";
 import {wedding} from "./page/wedding";
 import {intro} from "./page/intro";
+import {booking} from "./page/booking";
 
 // import { interpolate } from "gsap/all";
 
@@ -57,6 +58,7 @@ function page(){
   restroom();
   intro();
   wedding();
+  booking();
 }
 
 ////////////////////////////////////////////////////////////////
