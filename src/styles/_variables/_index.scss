@@ -164,6 +164,29 @@ $spaceIndex6: (
 
   ),
 );
+
+$spaceIndex5: (
+  s190: (
+    default: 190px,
+    pl: 64px,
+    pm: 56px,
+    ps: 48px,
+    
+  ),
+  s40:(
+    default: 40px,
+    pl: 40px,
+    pm: 40px,
+    ps: 40px,
+  ),
+  s20:(
+    default: 20px,
+    pl: 15px,
+    pm: 15px,
+    ps: 15px,
+  )
+  
+);
 //height
 $blockIndex: (
   wimgIndex1: (
@@ -237,6 +260,14 @@ $blockIndex: (
     ts: 400px,
   ),
   
+  mapIndex:(
+    efault: 700px,
+    pl: 680px,
+    pm: 550px,
+    tx: 500px,
+    tm: 450px,
+    ts: 400px,
+  )
 );
 @mixin spaceIndex($key, $name, $side: "-1") {
   @each $idx, $val in map-get($spaceIndex, #{$key}) {
@@ -343,6 +374,29 @@ $blockIndex: (
     }
   }
 }
+
+@mixin spaceIndex5($key, $name, $side: "-1") {
+  @each $idx, $val in map-get($spaceIndex5, #{$key}) {
+    @if $side == "-1" {
+      @if $idx == default {
+        #{$name}: $val;
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
+          #{$name}: $val;
+        }
+      }
+    } @else {
+      @if $idx == default {
+        #{$name}: $val $side;
+      } @else {
+        @media (max-width: map-get($media, $idx)) {
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
 @mixin spaceIndex6($key, $name, $side: "-1") {
   @each $idx, $val in map-get($spaceIndex6, #{$key}) {
     @if $side == "-1" {
