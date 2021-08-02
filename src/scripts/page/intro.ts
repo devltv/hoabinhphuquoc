@@ -109,16 +109,16 @@ function intropagintion(){
   // if(document.getElementById('library-1')){
       var options ={
           queryClassPagination: "#intro-3__wrapper #intro-1 .box-pagination",
-          listBox:"#intro-3__wrapper #intro-1 .content-news",
-          itemPages: 1,
+          listBox:"#intro-3__wrapper #intro-1 .content-news__items",
+          itemPages: 6,
 
       }
       pagination.pagination(options)
 
       var options ={
         queryClassPagination: "#intro-3__wrapper #intro-2 .box-pagination",
-        listBox:"#intro-3__wrapper #intro-2 .content-news",
-        itemPages: 1,
+        listBox:"#intro-3__wrapper #intro-2 .content-news__items",
+        itemPages: 6,
 
     }
     pagination.pagination(options)
