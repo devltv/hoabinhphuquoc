@@ -25,14 +25,13 @@ import {restroom} from "./page/restroom";
 import {wedding} from "./page/wedding";
 import {intro} from "./page/intro";
 import {booking} from "./page/booking";
+import {cuisine} from "./page/cuisine";
 
 // import { interpolate } from "gsap/all";
-
 
 ///////////////////////////////////////////////////////////////
 // function Common
 function common(){
-
   fetchData;
 }
 var swiper2 = new Swiper('.home-swiper-2', {
@@ -58,11 +57,9 @@ function page(){
   restroom();
   intro();
   wedding();
-<<<<<<< HEAD
   booking();
-=======
   library();
->>>>>>> 1bd7e979379503a793cebf33f537f798dcd16198
+  cuisine();
 }
 
 ////////////////////////////////////////////////////////////////
@@ -71,5 +68,4 @@ document.addEventListener("DOMContentLoaded", function(){
   layout();
   page();
 });
-
 

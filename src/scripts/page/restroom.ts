@@ -126,7 +126,7 @@ function closePopup(){
   if (inpRest){
     closeData = inpRest.getAttribute('data-close');
   }
-    
+  
   if (close){
     close.addEventListener('click', function(e : any){
       e.preventDefault();
@@ -147,6 +147,8 @@ function popupRest(id: any = null){
     var body = document.querySelector('body');
     var popupContent = document.querySelector('#restroom-1 .restroom-popup .popup');
     
+    var urlAjax = './popup-restroom';
+
     if(localStorage.getItem('box') && localStorage.getItem('url')){
       var boxLocal = localStorage.getItem('box');
       var urlLocal = localStorage.getItem('url');
@@ -178,7 +180,7 @@ function popupRest(id: any = null){
           console.log('popup failed!');
         }
       };
-      xhttp.open("GET", `./popup-restroom/${localStorage.getItem('box')}`, true);
+      xhttp.open("GET", `${urlAjax}/${localStorage.getItem('box')}`, true);
       xhttp.send();
     }
     else if (id){
@@ -205,7 +207,7 @@ function popupRest(id: any = null){
           console.log('popup failed!');
         }
       };
-      xhttp.open("GET", `./popup-restroom/${id}`, true);
+      xhttp.open("GET", `${urlAjax}/${id}`, true);
       xhttp.send();
     }
     else{
@@ -265,7 +267,7 @@ function popupRest(id: any = null){
             console.log('popup failed!');
           }
         };
-        xhttp.open("GET", `./popup-restroom/${valueItem}`, true);
+        xhttp.open("GET", `${urlAjax}/${valueItem}`, true);
         xhttp.send();
       })
     })

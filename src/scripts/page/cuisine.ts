@@ -1,9 +1,56 @@
-declare var Swiper: any;
+function scrollToTop(strId:string, queryHeader: string = ""){
+  if (document.querySelector(strId)){
+    // lấy div có id string
+    var featuredItem = <HTMLElement>document.querySelector(strId);
+    // khai báo top = 0 mặc định đầu tiên
+    var topFeatured = 0;
+
+    // tính top đó trong html có vị trí bao nhiêu
+    if (featuredItem){
+      var parentFeatured = <HTMLElement> featuredItem.offsetParent;
+      var count = 0;
+      while(parentFeatured.nodeName !== "BODY" && count < 100){
+        topFeatured += parentFeatured.offsetTop;
+        parentFeatured = <HTMLElement> parentFeatured.offsetParent;
+        count++;
+      }
+      topFeatured += featuredItem.offsetTop;
+    }
+    
+    // Trừ đi thanh Header
+    var hHeader = document.querySelector(queryHeader);
+    if (hHeader){
+      topFeatured -= hHeader.clientHeight;
+    }
+
+    window.scrollTo({
+      top: topFeatured,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+}
+
+function scroll(){
+  var link = document.querySelectorAll('.cuisine-kitchen .content__items a');
+  if (link){
+    link.forEach(function(item){
+
+      item.addEventListener('click', function(e){
+        e.preventDefault();
+
+        var idScroll = this.getAttribute('href');
+
+        scrollToTop(`${idScroll}`, '#header');
+      })
+    })
+  }
+}
 
 function closePopup(){
-  var popup = document.querySelector('.service-popup--overlay');
+  var popup = document.querySelector('.cuisine-popup--overlay');
   var body = document.querySelector('body');
-  var close = document.querySelector('#service-1 .service-popup .popup-close')
+  var close = document.querySelector('#cuisine2 .cuisine-popup .popup-close')
     
   var inpRest = document.getElementById('checkUrl');
   var closeData = "";
@@ -25,13 +72,14 @@ function closePopup(){
 }
 
 function popupRest(id: any = null){
-  if (document.getElementById('service-1')){
-    var itemLinkPopups = document.querySelectorAll('#service-1 .tour-content .box-item .box-item-content__more-link');
-    var popup = document.querySelector('.service-popup--overlay');
-    var body = document.querySelector('body');
-    var popupContent = document.querySelector('#service-1 .service-popup .popup');
+  if (document.getElementById('cuisine2')){
+    var itemLinkPopups = document.querySelectorAll('#cuisine2 .cuisine-wrapper .content__more .btn-link--more');
     
-    var urlAjax = './popup-service';
+    var popup = document.querySelector('.cuisine-popup--overlay');
+    var body = document.querySelector('body');
+    var popupContent = document.querySelector('#cuisine2 .cuisine-popup .popup');
+    
+    var urlAjax = './popup-cuisine';
 
     if(localStorage.getItem('box') && localStorage.getItem('url')){
       var boxLocal = localStorage.getItem('box');
@@ -159,16 +207,15 @@ function popupRest(id: any = null){
 }
 
 
-
 function loadRestroom(){
-  if(document.getElementById('service-1')){
+  if(document.getElementById('cuisine2')){
     var inpRest = document.getElementById('checkUrl');
-    
+
     if (!inpRest){
       popupRest();
       return;
     }
-    
+
     window.addEventListener('popstate', function(e){
       if (e.state !== null){
         selectedBox(e.state.id);
@@ -196,53 +243,7 @@ function selectedBox(id: any){
   popupRest(id);
 }
 
-function service4() {
-  if (document.getElementById('service-4')) {
-    new Swiper(".imgs-swiper", {
-      slidesPerView: 3,
-      spaceBetween: 18,
-      // slidesPerGroup: 3,
-      // loop: true,
-      // loopFillGroupWithBlank: true,
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 8,
-        },
-        541: {
-          slidesPerView: 1.25,
-          spaceBetween: 8,
-        },
-        769: {
-          slidesPerView: 2,
-          spaceBetween: 8,
-        },
-        1281: {
-          slidesPerView: 2,
-          spaceBetween: 12,
-        },
-        1441: {
-          slidesPerView: 3,
-          spaceBetween: 18
-        },
-        1681: {
-          slidesPerView: 3,
-          spaceBetween: 18
-        }
-      }
-    });
-  }
-}
-
-export const service = function(){
+export const cuisine = function(){
+  scroll();
   loadRestroom();
-  service4();
 }

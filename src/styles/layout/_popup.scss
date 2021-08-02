@@ -7,9 +7,9 @@
 
   height: 100vh;
   max-height: 1080px;
-  overflow-y: auto;
+  overflow-y: hidden;
 
-  background-color: map-get($color, main);
+  background-color: map-get($color, bgPopup);
  
 
   display: flex;
@@ -17,7 +17,6 @@
   align-items: center;
 
   position: absolute;
-
 
   &--overlay{
     position: fixed;
@@ -110,6 +109,7 @@
         display: flex;
         justify-content: center;
         flex-direction: row;
+        z-index: 1;
 
         @include rp(tl){
           flex-direction: column;
@@ -589,7 +589,80 @@
       }
 
       // cuisine
+      &__cuisine{
+        overflow: auto;
 
+        h1, h2, h3, h4, h5, h6{
+          color: map-get($color, main);
+          @include bold;
+          @include family--primary;
+        }
+
+        h3{
+          @include title(s41);
+
+          padding-top: 32px;
+          padding-bottom: 32px;
+
+          @include rp(tl){
+            padding-top: 24px;
+            padding-bottom: 24px;
+          }
+          @include rp(mx){
+            padding-top: 18px;
+            padding-bottom: 18px;
+          }
+
+          text-align: center;
+        }
+
+        img{
+          display: block;
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+
+        p{
+          line-height: 1.6;
+          letter-spacing: .12rem;
+        }
+
+        &::-webkit-scrollbar {
+          width: 13px;
+
+          @include rp(tx){
+            width: 8px;
+          }
+          @include rp(mx){
+            width: 6px;
+          }
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: map-get($color, track); 
+        }
+         
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: map-get($color, thumb);
+          border-radius: 8px;
+          @include rp(tx){
+            border-radius: 3px;
+          }
+          @include rp(mx){
+            border-radius: 2px;
+          }
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: map-get($color, thumbHover); 
+        }
+
+
+      }
     }
   }
 }

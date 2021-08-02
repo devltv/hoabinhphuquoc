@@ -189,6 +189,8 @@ function activeOrder(evt: any) {
     // Neu ko thi se remove class active
     link.classList.remove('active');
     popup.classList.remove('active');
+    var body = document.querySelector('body');
+    body.style.overflow = "";
   }
 }
 
@@ -229,6 +231,7 @@ function activeValueOpt(){
         for(var num = 0; num < tmpItems.length; num++){
           tmpItems[num].classList.remove('active');
         }
+
         this.classList.add('active');
       })
     }
@@ -243,23 +246,26 @@ function toggleOrder() {
     var popup = document.querySelector('.header .header-top__content .content-order__popup');
     var overlay = document.querySelector('.header .header-top__content .content-order__popup-overlay');
     var close = document.querySelector('.header .header-top__content .content-order__popup .close');
-
+    var body = document.querySelector('body');
     link.addEventListener('click', function (e) {
       e.preventDefault();
       popup.classList.add('active');
-
+      
+      body.style.overflow = "hidden";
       activeValueOpt();
-
     })
 
     overlay.addEventListener('click', function (e) {
       e.preventDefault();
+      
       popup.classList.remove('active');
+      body.style.overflow = "";
     })
 
     close.addEventListener('click', function (e) {
       e.preventDefault();
       popup.classList.remove('active');
+      body.style.overflow = "";
     })
   }
 }
@@ -303,7 +309,6 @@ function listOptionOrder() {
     }
   })
 }
-
 
 
 function dateTimePickerOrder(){
