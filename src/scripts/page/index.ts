@@ -282,6 +282,18 @@ function index6(){
   }
 }
 
+function closeMapInfor(){
+  const btn = document.querySelector("#index5 .map__wrapper--btnclose")
+  if(btn){
+    btn.addEventListener('click',()=>{
+      const mapInfor = document.querySelector("#index5 .map__wrapper--infor")
+      const btnRotate = btn.querySelector("svg")
+      btnRotate.classList.toggle('active')
+      mapInfor.classList.toggle('active')
+    })
+}
+}
+
 export default {
   index: function () {
     index1();
@@ -289,5 +301,6 @@ export default {
     toggleIndex3();
     toggleIndex4();
     index6();
+    closeMapInfor();
   }
 }
