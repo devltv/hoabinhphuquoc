@@ -8,6 +8,7 @@ function getYtb() {
       var srcImg = item.getAttribute('data-url');
       var altImg = item.getAttribute('data-alt');
       var play = item.getAttribute('data-play');
+      var dtHref = item.getAttribute('data-href');
 
       if (altImg) {
         item.innerHTML = `<img class="lazyload" src="https://img.youtube.com/vi/${srcImg}/maxresdefault.jpg" alt="${altImg}" />`;
@@ -17,7 +18,7 @@ function getYtb() {
       }
 
       if (play){
-        item.innerHTML += `<img class="lazyload play" src="${play}" alt="play" />`;
+        item.innerHTML += `<a class="play-link" href="${dtHref}"><img class="lazyload play-img" src="${play}" alt="play" /></a>`;
       }
     })
   }
