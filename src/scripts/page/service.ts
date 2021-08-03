@@ -171,9 +171,16 @@ function loadRestroom(){
     
     window.addEventListener('popstate', function(e){
       if (e.state !== null){
-        selectedBox(e.state.id);
+        var url = location.pathname;
+        window.location.replace(`${url}`)
       }
     })
+    
+    // window.addEventListener('popstate', function(e){
+    //   if (e.state !== null){
+    //     selectedBox(e.state.id);
+    //   }
+    // })
     
     var close = inpRest.getAttribute('data-close');
     var val = inpRest.getAttribute('data-url');
