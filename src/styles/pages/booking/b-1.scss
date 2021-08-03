@@ -1,10 +1,11 @@
 .booking{
-  margin-top: 120px;
+  // margin-top: 120px;
+  @include spaceBooking(s120, margin-top);
+
   &-container{
     display: flex;
     justify-content: center;
     align-items: center;
-
 
   }
   &-step{
@@ -15,12 +16,18 @@
     overflow: auto;
     margin: auto;
 
-    padding-bottom: 50px;
+    margin-top: -18px;
+    margin-left: -18px;
+    margin-right: -18px;
+
+    // padding-bottom: 50px;
+    @include spaceBooking(s50, padding-bottom);
+
     border-bottom: 1px solid map-get($color, main);
     &>*{
-      &:not(:first-child){
-        margin-left: 36px;
-      }
+      margin-top: 18px;
+      margin-left: 18px;
+      margin-right: 18px;
     }
 
     &__item{
@@ -43,6 +50,12 @@
       &-number{
         width: 48px;
         height: 48px;
+
+        @include rp(ts){
+          width: 36px;
+          height: 36px;
+        }
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,12 +70,11 @@
         @include title(s26);
         @include regular;
         color: map-get($color, baseBold);
+        white-space: nowrap;
       }
 
       &.active{
         .booking-step__item-number{
-          width: 48px;
-          height: 48px;
           background-color: map-get($color, main);
           color: white;
         }
@@ -75,8 +87,14 @@
   }
 
   &-form{
-    margin-top: 90px;
-    margin-bottom: 90px;
+    // margin-top: 90px;
+    // margin-bottom: 90px;
+    @include spaceBooking(s90, margin-top);
+    @include spaceBooking(s90, margin-bottom);
+
+    @include rp(mx){
+      width: 100%;
+    }
     // booking info
     .form-step{
       max-width: 812px;
@@ -85,9 +103,21 @@
       &__item{
         &:not(:first-child){
           margin-top: 42px;
+          @include rp(ts){
+            margin-top: 36px;
+          }
+          @include rp(ml){
+            margin-top: 24px;
+          }
         }
         &>*:not(:first-child){
           margin-top: 24px;
+          @include rp(ts){
+            margin-top: 18px;
+          }
+          @include rp(ml){
+            margin-top: 12px;
+          }
         }
         &-input{
           position: relative;

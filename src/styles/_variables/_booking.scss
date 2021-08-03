@@ -1,5 +1,23 @@
 $spaceBooking: (
+  s120: (
+    default: 120px,
+    pm: 90px,
+    ts: 72px,
+    mx: 64px
+  ),
+  s90: (
+    default: 90px,
+    pm: 64px,
+    ts: 56px,
+    mx: 48px,
 
+  ),
+  s50: (
+    default: 50px,
+    pm: 48px,
+    ts: 36px,
+  
+  ),
 );
 
 $blockBooking: (
