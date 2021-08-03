@@ -105,8 +105,16 @@ $spacewedding4:(
     ps: 68px,
     tx: 48px,
   ),
+  
 );
-
+$spacewedding5:(
+  s64:(
+    default: 64px,
+  ),
+  s80:(
+    default: 80px,
+  ),
+);
 $blockwedding2:(
   s784:(
     default:748px,
@@ -224,6 +232,30 @@ $blockwedding2:(
 }
 @mixin spacewedding4($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spacewedding4, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spacewedding5($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spacewedding5, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
