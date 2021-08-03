@@ -1,6 +1,8 @@
 .restroom-popup,
 .service-popup,
-.cuisine-popup{
+.cuisine-popup,
+.image-popup,
+.video-popup{
   width: 100%;
   max-width: 1924px;
   overflow-x: hidden;
@@ -223,11 +225,12 @@
           }
         }
         &-thumbs{
-          margin-top: 12px;
           // height: 184px;
           @include popup(imgThumbs, height);
 
           position: relative;
+          margin-top: 12px;
+          // height: 30%;
 
           .swiper-slide{
             position: relative;
@@ -663,6 +666,207 @@
 
 
       }
+
+      // image library
+      &__image{
+        overflow: auto;
+        max-height: 100%;
+
+
+        @include rp(tl){
+          max-height: initial;
+          overflow-y: initial;
+        }
+
+        &-swiper{
+          // height: 538px;
+          @include popup(imgSwiper, height);
+
+          .swiper-slide{
+            img{
+              transition: .2s all ease;
+              &.scale{
+                transform: scale(3);
+              }
+              cursor: zoom-in;
+            }
+          }
+    
+          .swiper-button{
+            &-next,
+            &-prev{
+              width: 43px;
+              height: 43px;
+              @media (max-width: map-get($media, tl)){
+                $wh: 36px;
+                width: $wh;
+                height: $wh;
+              }
+        
+              @media (max-width: map-get($media, mx)){
+                $wh: 30px;
+                width: $wh;
+                height: $wh;
+              }
+    
+              border-radius: 1000px;
+              background-color: map-get($color, buttonSwiper-2);
+            
+              svg{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                width: 12px;
+                @include rp(tl){
+                  width: 8px;
+                }
+              }
+            }
+    
+            &-next{
+              left: calc(50% + 32px);
+              bottom: 16px;
+              top: auto;
+              right: auto;
+              transform: translateX(-50%);
+    
+              &::after{
+                content: "";
+              }
+            }
+            &-prev{
+              left: calc(50% - 32px);
+              bottom: 16px;
+              top: auto;
+              right: auto;
+              transform: translateX(-50%);
+              svg{
+                transform: rotate(180deg);
+              }
+              &::after{
+                content: "";
+              }
+            }
+        
+          }
+        }
+        &-thumbs{
+          position: relative;
+          margin-top: 12px;
+
+          // height: 184px;
+          @include popup(imgThumbs, height);
+
+          .swiper-slide{
+            position: relative;
+    
+            &::after{
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: #FFF;
+              opacity: .5;
+              transition: .16s all ease;
+            }
+            &.active{
+              &::after{
+                opacity: 0;
+              }
+            }
+          }
+
+          .swiper-button{
+            &-next,
+            &-prev{
+              width: 43px;
+              height: 100%;
+              @media (max-width: map-get($media, tl)){
+                $wh: 36px;
+                width: $wh;
+                // height: $wh;
+              }
+        
+              @media (max-width: map-get($media, mx)){
+                $wh: 30px;
+                width: $wh;
+                // height: $wh;
+              }
+    
+              // border-radius: 1000px;
+              background-color: map-get($color, buttonSwiper-2);
+            
+              svg{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                width: 12px;
+                @include rp(tl){
+                  width: 8px;
+                }
+              }
+            }
+    
+            &-next{
+              left: auto;
+              bottom: auto;
+              right: 0;
+              top: 0;
+    
+              transform: none;
+              margin: 0;
+              &::after{
+                content: "";
+              }
+            }
+            &-prev{
+              left: 0;
+              top: 0;
+              right: auto;
+              bottom: auto;
+              transform: none;
+              margin: 0;
+
+
+              svg{
+                transform: rotate(180deg);
+              }
+              &::after{
+                content: "";
+              }
+            }
+        
+          }
+        }
+        &-slide{
+          height: 100%;
+        }
+      }
+
+      // video library
+      &__video{
+        width: 100%;
+        height: 100%;
+      }
     }
+  }
+}
+
+.image-popup{
+  .popup-wrapper--bg{
+    min-height: auto !important;
+  }
+}
+
+.video-popup{
+  .popup-wrapper--bg{
+    @media (min-height: 800px) {
+      height: 70%;
+    }
+    height: 60%;
   }
 }

@@ -1,103 +1,225 @@
-.wedding-container{
-    .wedding-content{
-        display: flex;
-        @include spacewedding2 (s84, margin-top);
-        margin-left: auto;
-        justify-content: flex-end;
-        &__left{
-            @include blockwedding2(s50,margin-top);
-            @include blockwedding2(s50,padding-left);
-            @include rp(ps){
-              @include blockwedding2(s50,margin-top);
-              @include blockwedding2(s50,padding-left);
+.wedding2 {
+    .wedding-banquetHall {
+        @include spacewedding2(s80, margin-top);
+        @include spacewedding2(s80, margin-bottom);
+        .content {
+            display: flex;
+            @include rp(tm){
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
-            &--list{
-                list-style-type: none;
-                
-                .items{
-                    position: relative;
-                    @include spacewedding2 (s268,width);
-                    border-bottom: 1px solid gray;
-                    &:last-child{
-                      border: none;
-                    }
-                    .title{
-                        @include blockwedding2(s24,padding);
-                        @include sizewedding2(s26,font-size);
-                        font-weight: 800;
-                        color:map-get($color,iconMain);
-                        
-                    }
-                    .decs{
-                        display: none;
-                    }
-                    
-                    &:hover{
-                        @include blockwedding2 (s543,width);
-                        border-bottom: none;
-                        .title{
-                            position: relative;
-                            @include blockwedding2(s24,margin);
-                            @include sizewedding2(s51,font-size); 
-                            border: none;
-                            &::after{
-                                position: absolute;
-                                bottom: 0;
-                                left: 5px;
-                                content: "";
-                                @include spacewedding2(s120,width);
-                                border: 4px solid red;
-                            }
-                        }
-                        .decs{
-                            line-height: 1.8;
-                            @include rp(ps){
-                              line-height: 1.4;
-                            }
-                            display: block;
-                        }
-                    }       
+            &__left {
+                width: 50%;
+                @include rp(tm){
+                    width: 80%;
+                }
+                @include spacewedding2(s140, padding-left);
+                @include spacewedding2(s140, padding-right);
+            }
+            &__right {
+                width: 50%;
+                @include rp(tm){
+                    width: 80%;
                 }
             }
+            &__title {
+                @include spacewedding2(s70, margin-top);
+                @include spacewedding2(s70, margin-bottom);
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 100%;
+                    left: 0;
+                    width: 30%;
+                    height: 6px;
+                    background: map-get($color, underline);
+                }
+                & > * {
+                    @include size(s51);
+                    @include rp(tm){
+                        font-size: 4.6rem;
+                    }
+                    @include family--primary;
+                    @include bold;
+                    color: map-get($color, main);
+                }
+            }
+            &__desc {
+                & > * {
+                    @include size(s18);
+                    @include rp(pm){
+                        font-size: 1.6rem;
+                    }
+                    line-height: 1.4;
+                    color: map-get($color, base);
+                }
+            }
+            &__list {
+                list-style-type: none;
+                @include rp(tm){
+                    display: flex;
+                    justify-content: space-between;
+                 }
+                 
+            }
+            &__items {
+                @include spacewedding2(s48, margin-top);
+                @include spacewedding2(s48, margin-bottom);
+                position: relative;
+                &:not(:first-child):after {
+                    position: absolute;
+                    content: "";
+                    top: -100%;
+                    @include rp(tx){
+                        top: -50%;
+                    }
+                    @include rp(tm){
+                        
+                        width: 0;
+                        height: 0;
+                     }
+                    left: 0;
+                    width: 40%;
+                    height: 1px;
+                    background: map-get($color, base);
+                }
+                & > * {
+                    @include size(s26);
+                    @include rp(tm){
+                        font-size: 2.2rem;
+                    }
+                    @include rp(ml){
+                        font-size: 2rem;
+                    }
+                    @include rp(mm){
+                        font-size: 1.8rem;
+                    }
+                    @include bold;
+                    color: map-get($color, base);
+                }
+            }
+            &__img{
+                @include blockwedding2(wImgWedding2,width);
+                @include blockwedding2(hImgWedding2,height);
+            }
+            // &__silde{
+            //     display: none;
+            // }
         }
-        &__right{
-            display: flex;
-            &--list{
-
-                .nav-custom{
-                  position: relative;
-                  .swiper-wrapper{
-                      padding: 10px 0;
-                      .swiper-slide{
-                          position: relative;
-                          .slide{
-                              @include spacewedding2(s820,width);
-                              @include rp(ps){
-                                @include spacewedding2(s820,width);
-                              }
-                              position: relative;
-                              z-index: 3;
-                              height: 100%;
-                              display: flex;
-                              flex-direction: column;
-                              align-items: center;
-                              justify-content: space-evenly;
-                              .img-wrapper{
-                                  border-radius: 50%;
-                                  display: flex;
-                                  align-items: center;
-                                  justify-content: center;
-                                  img{
-                                      object-fit: cover;
-                                  }
-                              }
-                          }
-                      }
-                  }
-                  .w3-left, .w3-right, .w3-badge {cursor:pointer}
-                  .w3-badge {height:13px;width:13px;padding:0}
-              } 
+        .swiper-pagination{
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+        }
+        .active {
+            & > * {
+                color: map-get($color, main);
             }
         }
-    }    
+    }
 }
+
+// .wedding-container {
+//     .wedding-content {
+//         display: flex;
+//         @include spacewedding2(s84, margin-top);
+//         margin-left: auto;
+//         justify-content: flex-end;
+//         &__left {
+//             @include blockwedding2(s50, margin-top);
+//             @include blockwedding2(s50, padding-left);
+//             @include rp(ps) {
+//                 @include blockwedding2(s50, margin-top);
+//                 @include blockwedding2(s50, padding-left);
+//             }
+//             &--title {
+//                 position: relative;
+//                 border: none;
+//                 &::after {
+//                     position: absolute;
+//                     bottom: 0;
+//                     left: 5px;
+//                     content: "";
+//                     @include spacewedding2(s120, width);
+//                     border: 4px solid red;
+//                 }
+//                 &>*{
+//                     @include size(s51);
+//                     @include family--primary;
+//                     @include bold;
+//                     color: map-get($color, main );
+//                 }
+//             }
+//             &--list {
+//                 list-style-type: none;
+
+//                 .items {
+//                     position: relative;
+//                     @include spacewedding2(s268, width);
+//                     border-bottom: 1px solid gray;
+//                     &:last-child {
+//                         border: none;
+//                     }
+//                     .title {
+//                         @include blockwedding2(s24, padding);
+//                         @include sizewedding2(s26, font-size);
+//                         font-weight: 800;
+//                         color: map-get($color, iconMain);
+//                     }
+//                     .decs {
+//                         display: none;
+//                     }
+
+//                 }
+//             }
+//         }
+//         &__right {
+//             display: flex;
+//             &--list {
+//                 .nav-custom {
+//                     position: relative;
+//                     .swiper-wrapper {
+//                         padding: 10px 0;
+//                         .swiper-slide {
+//                             position: relative;
+//                             .slide {
+//                                 @include spacewedding2(s820, width);
+//                                 @include rp(ps) {
+//                                     @include spacewedding2(s820, width);
+//                                 }
+//                                 position: relative;
+//                                 z-index: 3;
+//                                 height: 100%;
+//                                 display: flex;
+//                                 flex-direction: column;
+//                                 align-items: center;
+//                                 justify-content: space-evenly;
+//                                 .img-wrapper {
+//                                     border-radius: 50%;
+//                                     display: flex;
+//                                     align-items: center;
+//                                     justify-content: center;
+//                                     img {
+//                                         object-fit: cover;
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                     .w3-left,
+//                     .w3-right,
+//                     .w3-badge {
+//                         cursor: pointer;
+//                     }
+//                     .w3-badge {
+//                         height: 13px;
+//                         width: 13px;
+//                         padding: 0;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
