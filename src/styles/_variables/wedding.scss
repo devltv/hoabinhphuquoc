@@ -1,17 +1,33 @@
 
 $spacewedding2:(
-  s84:(
-    default:84px,
+  s48:(
+    default: 48px,
+    pl: 40px,
+    pm: 32px,
+    tx: 24px,
+    ts: 20px,
+    mx: 16px,
+    
   ),
-  s120:(
-    default:120px,
+  s70:(
+    default: 70px,
+    pl: 56px,
+    pm: 48px,
+    tx: 40px,
+    ts: 32px,
+    mx: 28px,
+    
+    
   ),
-  s268:(
-    default:268px,
+  s80:(
+    default:80px,
   ),
-  s820:(
-    default:820px,
-    ps:610px,
+  s140:(
+    default:140px,
+    pl: 100px,
+    pm: 80px,
+    tx: 70px,
+    tm: 0,
   ),
 );
 $spacewedding3:(
@@ -81,15 +97,7 @@ $spacewedding4:(
     default: 20px,
   ),
 );
-$sizewedding2:(
-  s51:(
-    default:51px,
-    ps:45px,
-  ),
-  s26:(
-    default:26px,
-  ),
-);
+
 $blockwedding2:(
   s784:(
     default:748px,
@@ -102,6 +110,23 @@ $blockwedding2:(
     ml: 350px,
     
   ), 
+  wImgWedding2:(
+    default: 820px,
+    pl: 700px,
+    pm: 600px,
+    tx: 480px,
+    tm: 100%,
+  ),
+  hImgWedding2:(
+    default: 750px,
+    pl: 680px,
+    pm: 630px,
+    tx: 580px,
+    ts: 500px,
+    mx: 450px,
+    ml: 400px,
+    mm: 350px,
+  ),
   s543:(
     default:543px,
   ),

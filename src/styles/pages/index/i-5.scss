@@ -1,11 +1,86 @@
-.index5{
-    .index-map{
-        &__content{
+#index5{
+    @include spaceIndex5(s190, margin-top);
+    .map__wrapper{
+        position: relative;
+        overflow: hidden;
+        &--map{
             width: 100%;
+            height: 700px;
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
         }
-        &__layout{
-            .iframe{
-               
+        &--btnclose{
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 100%;
+            background-color: map-get($color, base );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .active{
+                transform: rotate(180deg);
+            }
+            svg{
+                transition: 0.5s ease-in-out;
+            }
+            path{
+                stroke:  map-get($color, mainBg );;
+            }
+        }
+        &--infor.active{
+            right: 40px;
+        }
+        &--infor{
+            transition: 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            right: -700px;
+            width: 636px;
+            height: 100%;
+            background-color: map-get($color, boxVideoOverlay );
+            padding: 15px;
+            .pic__infor{
+                width: 100%;
+                height: 100%;
+                .image__map{
+                    height: 55%;
+                }
+                .introduce-text{
+                    @include spaceIndex5(s40,padding);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-content: center;
+                    height: 45%;
+                    background-color: map-get($color, mainBg );
+                    &--title{
+                        @include title(s41);
+                        @include family--primary;
+                        font-weight: bold;
+                        color: map-get($color, main );
+                    }
+                    &--infor{
+                        .infor--item{
+                            &:not(:last-child){
+                                @include spaceIndex5(s20,margin-bottom);
+                            }
+                            
+                            .item{
+                                display: flex;
+                                img{
+                                    margin-right: 15px;
+                                    width: 19px;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
             }
         }
     }
