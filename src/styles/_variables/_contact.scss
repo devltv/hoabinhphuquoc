@@ -1,0 +1,117 @@
+// service
+
+
+$contactBox: (
+  
+    
+    
+    
+    s30: (
+        default: 30px ,
+        pl: 20px ,
+        pm: 20px ,
+        // ps: 3% ,
+        ),
+    s40: (
+        default: 40px ,
+        pl: 30px ,
+        pm: 20px ,
+        // ps: 3% ,
+    ),
+    s60:(
+        default: 60px 0,
+        pl: 50px 0,
+        pm: 40px 0,
+        ps: 30px 0,
+        tl: 25px 0,
+        ml: 15px 0,
+    ),
+    s70:(
+        default: 70px auto,
+        pl: 60px auto,
+        pm: 50px auto,
+        ps: 35px auto,
+    ),
+    s18:(
+      default:18px,
+        // pl: ,
+        // pm: ,
+        // ps: ,
+        // mm: ,
+    )
+);
+
+$blockContact: (
+
+    contact-1: (
+        default: 585px,
+        pm: 485px,
+        tx: 405px,
+        tl: 385px,
+        tm: 405px,
+        ts: 305px,
+    ),
+    contact-icon:(
+        default: 64px,
+        pm: 54px,
+        tl: 44px,
+        tm: 34px,
+    ),
+    contact-input:(
+        default: 59px,
+        
+        tm: 49px,
+    )
+ 
+);
+
+
+@mixin contactBox($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($contactBox, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+
+@mixin blockContact($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($blockContact, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
