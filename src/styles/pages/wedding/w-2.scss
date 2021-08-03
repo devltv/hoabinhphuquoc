@@ -11,10 +11,14 @@
             }
             &__left {
                 width: 50%;
+                
                 @include rp(tm){
                     width: 80%;
                 }
                 @include spacewedding2(s140, padding-left);
+                @include rp(tx){
+                    padding-left: 0px,
+                }
                 @include spacewedding2(s140, padding-right);
             }
             &__right {
@@ -66,7 +70,9 @@
             }
             &__items {
                 @include spacewedding2(s48, margin-top);
-                @include spacewedding2(s48, margin-bottom);
+                @include rp(tm){
+                    margin-bottom: 16px;
+                }
                 position: relative;
                 &:not(:first-child):after {
                     position: absolute;
