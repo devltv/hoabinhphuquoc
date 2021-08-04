@@ -163,7 +163,7 @@
                 // }
                 &__list{
                     width: 100%;
-                    @include blockCuisine(listCuisine1,height);
+                    // @include blockCuisine(listCuisine1,height);
                 
                     list-style-type: none;
                     display: flex;
@@ -173,11 +173,23 @@
                 &__items{
                     a{
                         display: block;
-                    }
-                    img{
-                        object-fit: contain;
+                        transition: .16s all linear;
+                        padding: 12px;
+                        border-radius: 400px;
+                        
                         @include blockCuisine(ImgIcons,width);
                         @include blockCuisine(ImgIcons,height);
+
+                        &:hover{
+                            transform: scale(1.05);
+                            transform-origin: center;
+                            
+                            background-color: rgba(map-get($color, base), .3);
+                        }
+                    }
+                    img{
+                        pointer-events: none;
+                        object-fit: contain;
                     }
                 }
             }

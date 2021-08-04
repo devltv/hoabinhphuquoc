@@ -9,14 +9,17 @@
         .image__section{
             &--image{
                 .box-list{
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    // justify-content: space-between;
+                    @include libraryBox(p30, padding);
                     
                     &__items{
-                        display: flex;
-                        width: 100%;
-                        flex-wrap: wrap;
-                        // justify-content: space-between;
-                        @include libraryBox(p30, padding);
                         &--image{
+                            display: block;
+                            cursor: pointer;
+
                             @include libraryBox(p10, padding);
                             &:nth-child(3n +1) {
                                 padding-right: 10px;
@@ -42,10 +45,25 @@
                                     
                                 }
                             }
+
+                            @include rp(ms){
+                                &:nth-child(2n + 1) {
+                                    padding-left: 0;
+                                    padding-right: 0px;
+                                }
+                                &:nth-child(2n + 2) {
+                                    padding-left: 0px;
+                                    padding-right: 0;
+                                    
+                                }
+                            }
                             transition: 0.3s ease-in-out;
                             width: calc(100% / 3);
                             @include rp(ts){
                                 width: 50%;
+                            }
+                            @include rp(ms){
+                                width: 100%;
                             }
                             margin-top: 10px;
                             @include blockLibrary(library-1, height);
@@ -57,44 +75,115 @@
         .video__section{
             &--video{
                 .box-list{
+                    @include libraryBox(p30, padding);
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    row-gap: 12px;
+                    column-gap: 24px;
+
+                    @include rp(mx){
+                        column-gap: 12px;
+                    }
+                    @include rp(ml){
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    @include rp(ms){
+                        grid-template-columns: 1fr;
+                    }
+
+                    &>*{
+                        display: block;
+                        &:nth-of-type(6n + 1){
+                            grid-column: 1 / span 2;
+                            grid-row: 1 / span 2;
+                            @include rp(ml){
+                                grid-column: auto;
+                                grid-row: auto;
+                            }
+                        }
+                    }
+
                     &__items{
-                        @include libraryBox(p30, padding);
-                        &--top{
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            @include rp(tm){
-                                flex-direction: column
-                            }
-                            @include blockLibrary(library-video-top, height);
-                            &-big{
-                                @include blockLibrary(library-video-top-big, width);
-                                height: 100%;
-                            }
-                            &-small{
-                                @include blockLibrary(library-video-top-small, width);
-                                height: 100%;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                                @include rp(tm){
-                                    display: none;
-                                }
-                                iframe{
-                                    height: 49%;
-                                }
-                            }
-                        }
-                        &--bottom{
-                            @include libraryBox(m-t-53, margin-top);
-                            display: flex;
-                            justify-content: space-between;
-                            @include blockLibrary(library-video-bottom, height);
+                        position: relative;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
                             width: 100%;
-                            iframe{
-                                width: 32%;
+                            height: 100%;
+                            background-color: rgba(map-get($color, base),.3);
+                        }
+                        .play{
+                            &-link{
+                                display: block;
+                                cursor: pointer;
+                                
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: 1;
+                            }
+                            &-img{
+                                width: 83px;
+                                height: 83px;
+    
+                                @include rp(ps){
+                                    width: 64px;
+                                    height: 64px;
+                                }
+                                @include rp(tm){
+                                    width: 48px;
+                                    height: 48px;
+                                }
+    
+                                object-fit: contain;
+                                // cursor: pointer;
+                                pointer-events: none;
                             }
                         }
+
+
+                        // @include libraryBox(p30, padding);
+
+                        // &--top{
+                        //     display: flex;
+                        //     align-items: center;
+                        //     justify-content: space-between;
+                        //     @include rp(tm){
+                        //         flex-direction: column
+                        //     }
+                        //     @include blockLibrary(library-video-top, height);
+                        //     &-big{
+                        //         @include blockLibrary(library-video-top-big, width);
+                        //         height: 100%;
+                        //     }
+                        //     &-small{
+                        //         @include blockLibrary(library-video-top-small, width);
+                        //         height: 100%;
+                        //         display: flex;
+                        //         flex-direction: column;
+                        //         justify-content: space-between;
+                        //         @include rp(tm){
+                        //             display: none;
+                        //         }
+                        //         iframe{
+                        //             height: 49%;
+                        //         }
+                        //     }
+                        // }
+                        // &--bottom{
+                        //     @include libraryBox(m-t-53, margin-top);
+                        //     display: flex;
+                        //     justify-content: space-between;
+                        //     @include blockLibrary(library-video-bottom, height);
+                        //     width: 100%;
+                        //     iframe{
+                        //         width: 32%;
+                        //     }
+                        // }
                     }
                 }
             }

@@ -226,10 +226,12 @@
         }
 
         &:hover {
-          &::after {
-            width: 100%;
-            left: 0%;
-            opacity: 1;
+          &>*{
+            &::after {
+              width: 100%;
+              left: 0%;
+              opacity: 1;
+            }
           }
         }
 
@@ -378,6 +380,9 @@
   top: 0;
   right: 0;
   min-width: 676px;
+  @include rp(ts){
+    min-width: 100%;
+  }
   height: 100%;
   transform: translateX(100%);
   transition: .2s all ease-in-out;
@@ -405,14 +410,19 @@
   &-wrapper{
     width: 100%;
     height: 100%;
+    overflow: auto;
     background-color: #F7F8F7;
 
     position: relative;
 
     .close{
       position: absolute;
-      top: 42px;
-      right: 42px;
+
+      top: 36px;
+      @include rp(ts){
+        top: 24px;
+      }
+      right: 36px;
 
       width: 42px;
       height: 42px;
@@ -469,7 +479,12 @@
       }
 
       &__title{
-        padding: 42px;
+        padding: 36px;
+        @include rp(ts){
+          padding: 24px 36px;
+        }
+        line-height: 42px;
+
         position: relative;
 
         &>*{
@@ -493,8 +508,17 @@
       }
       &-form{
         margin-top: 60px;
+        margin-bottom: 60px;
+        @include rp(ps){
+          margin-top: 48px;
+          margin-bottom: 48px;
+        }
+        @include rp(ts){
+          margin-top: 36px;
+          margin-bottom: 36px;
+        }
 
-        padding: 0 42px;
+        padding: 0 36px;
 
         form{
           &>*{
@@ -508,6 +532,9 @@
           display: flex;
           flex-direction: column;
           height: 86px;
+          @include rp(ts){
+            height: 72px;
+          }
           padding: 12px;
           background-color: white;
           border: 1px solid map-get($color, base);
@@ -597,7 +624,7 @@
           justify-content: flex-start;
           flex-wrap: wrap;
 
-          margin-top: -12px;
+          margin-top: 0px !important;
           margin-left: -12px;
           margin-right: -12px;
           margin-bottom: 0;
@@ -605,6 +632,15 @@
           &-item{
             width: 33.3333%;
             padding: 12px 12px 0 12px;
+
+            @include rp(ml){
+              min-width: 50%;
+              flex: 1;
+            }
+            @include rp(ms){
+              min-width: 100%;
+              flex: 1;
+            }
 
             .input-content{
               &__value{
@@ -679,6 +715,9 @@
 
         .order-btn{
           margin-top: 42px !important;
+          @include rp(ts){
+            margin-top: 36px !important;
+          }
 
           display: flex;
           justify-content: center;

@@ -1,125 +1,125 @@
-.cuisine {
-    .cuisine-cafe {
-        @include spaceCuisine3(s170, margin-top);
-        @include spaceCuisine3(s170, margin-bottom);
-        // @include blockCuisine(sectionCuisine2,height);
-        position: relative;
-        .overlay-cuisine {
-            top: 5%;
-            left: 0%;
-            height: 90%;
-        }
+// .cuisine {
+//     .cuisine-cafe {
+//         @include spaceCuisine3(s170, margin-top);
+//         @include spaceCuisine3(s170, margin-bottom);
+//         // @include blockCuisine(sectionCuisine2,height);
+//         position: relative;
+//         .overlay-cuisine {
+//             top: 5%;
+//             left: 0%;
+//             height: 90%;
+//         }
 
-        .content {
-            // @include blockCuisine(sectionCuisine2,height);
+//         .content {
+//             // @include blockCuisine(sectionCuisine2,height);
 
-            &__left {
-                width: 40%;
-                @include spaceCuisine3(sLeft, padding-left);
-                margin: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-end;
-                order: 2;
-                @include rp(tm) {
-                    width: 80%;
-                    order: 1;
-                    justify-content: flex-start;
-                    @include spaceCuisine2(s16, margin-bottom);
-                    padding-top: 32px;
-                    @include rp(mx) {
-                        padding-top: 28px;
-                    }
-                    @include rp(sx) {
-                        padding-top: 24px;
-                    }
-                }
-            }
-            &__right {
-                width: 60%;
-                order: 1;
-                @include rp(tm) {
-                    order: 2;
-                    width: 80%;
-                    margin: auto;
-                    padding-bottom: 32px;
-                    @include rp(mx) {
-                        padding-bottom: 28px;
-                    }
-                    @include rp(sx) {
-                        padding-bottom: 24px;
-                    }
-                }
-            }
-            &__img {
-                @include blockCuisine(wimgCuisine3, width);
-                @include blockCuisine(himgCuisine3, height);
-            }
-            &__title {
-                width: 100%;
-                text-align: left;
-                @include rp(tm) {
-                    text-align: left;
-                }
-                @include spaceCuisine3(s70, margin-bottom);
-                position: relative;
-                &::after {
-                    position: absolute;
-                    top: 120%;
-                    left: 0%;
-                    width: 25%;
-                    height: 6px;
-                    content: "";
-                    background: map-get($color, underline);
-                    @include rp(tm) {
-                        left: 0%;
-                    }
-                }
-                & > * {
-                    @include size(s51);
-                    @include rp(tx) {
-                        font-size: 50px;
-                    }
-                    @include rp(tl) {
-                        font-size: 48px;
-                    }
-                    @include rp(sx) {
-                        font-size: 46px;
-                    }
-                    @include bold;
-                    @include family--primary;
-                    color: map-get($color, main);
-                }
-            }
-            &__desc {
-                @include spaceCuisine3(s16, margin-bottom);
-                width: 100%;
-                text-align: left;
-                @include rp(tm) {
-                    text-align: left;
-                }
-                & > * {
-                    @include size(s18);
-                    @include rp(tx) {
-                        font-size: 17px;
-                    }
-                    color: map-get($color, base);
-                    line-height: 1.6;
-                    @include rp(pm) {
-                        @include p-line-clamp(5);
-                    }
-                }
-            }
-            &__more {
-                width: 100%;
-                text-align: left;
-                @include rp(tm) {
-                    text-align: left;
-                }
-                svg {
-                    margin-left: 8px;
-                }
-            }
-        }
-    }
-}
+//             &__left {
+//                 width: 40%;
+//                 @include spaceCuisine3(sLeft, padding-left);
+//                 margin: auto;
+//                 display: flex;
+//                 flex-wrap: wrap;
+//                 justify-content: flex-end;
+//                 order: 2;
+//                 @include rp(tm) {
+//                     width: 80%;
+//                     order: 1;
+//                     justify-content: flex-start;
+//                     @include spaceCuisine2(s16, margin-bottom);
+//                     padding-top: 32px;
+//                     @include rp(mx) {
+//                         padding-top: 28px;
+//                     }
+//                     @include rp(sx) {
+//                         padding-top: 24px;
+//                     }
+//                 }
+//             }
+//             &__right {
+//                 width: 60%;
+//                 order: 1;
+//                 @include rp(tm) {
+//                     order: 2;
+//                     width: 80%;
+//                     margin: auto;
+//                     padding-bottom: 32px;
+//                     @include rp(mx) {
+//                         padding-bottom: 28px;
+//                     }
+//                     @include rp(sx) {
+//                         padding-bottom: 24px;
+//                     }
+//                 }
+//             }
+//             &__img {
+//                 @include blockCuisine(wimgCuisine3, width);
+//                 @include blockCuisine(himgCuisine3, height);
+//             }
+//             &__title {
+//                 width: 100%;
+//                 text-align: left;
+//                 @include rp(tm) {
+//                     text-align: left;
+//                 }
+//                 @include spaceCuisine3(s70, margin-bottom);
+//                 position: relative;
+//                 &::after {
+//                     position: absolute;
+//                     top: 120%;
+//                     left: 0%;
+//                     width: 25%;
+//                     height: 6px;
+//                     content: "";
+//                     background: map-get($color, underline);
+//                     @include rp(tm) {
+//                         left: 0%;
+//                     }
+//                 }
+//                 & > * {
+//                     @include size(s51);
+//                     @include rp(tx) {
+//                         font-size: 50px;
+//                     }
+//                     @include rp(tl) {
+//                         font-size: 48px;
+//                     }
+//                     @include rp(sx) {
+//                         font-size: 46px;
+//                     }
+//                     @include bold;
+//                     @include family--primary;
+//                     color: map-get($color, main);
+//                 }
+//             }
+//             &__desc {
+//                 @include spaceCuisine3(s16, margin-bottom);
+//                 width: 100%;
+//                 text-align: left;
+//                 @include rp(tm) {
+//                     text-align: left;
+//                 }
+//                 & > * {
+//                     @include size(s18);
+//                     @include rp(tx) {
+//                         font-size: 17px;
+//                     }
+//                     color: map-get($color, base);
+//                     line-height: 1.6;
+//                     @include rp(pm) {
+//                         @include p-line-clamp(5);
+//                     }
+//                 }
+//             }
+//             &__more {
+//                 width: 100%;
+//                 text-align: left;
+//                 @include rp(tm) {
+//                     text-align: left;
+//                 }
+//                 svg {
+//                     margin-left: 8px;
+//                 }
+//             }
+//         }
+//     }
+// }

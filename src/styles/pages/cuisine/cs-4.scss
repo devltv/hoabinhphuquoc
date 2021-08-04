@@ -1,128 +1,128 @@
-.cuisine{
-    .cuisine-rice{
-        @include spaceCuisine2(s170,margin-top);
-        @include spaceCuisine2(s170,margin-bottom);
-        // @include blockCuisine(sectionCuisine2,height);
-        position: relative;
-        .overlay-cuisine{
-            top: 5%;
-            left: 0%;
-            height: 90%
+// .cuisine{
+//     .cuisine-rice{
+//         @include spaceCuisine2(s170,margin-top);
+//         @include spaceCuisine2(s170,margin-bottom);
+//         // @include blockCuisine(sectionCuisine2,height);
+//         position: relative;
+//         .overlay-cuisine{
+//             top: 5%;
+//             left: 0%;
+//             height: 90%
             
-        }
+//         }
         
-        .content{
-            // @include blockCuisine(sectionCuisine2,height);
+//         .content{
+//             // @include blockCuisine(sectionCuisine2,height);
            
-            &__left{
-                width: 38%;
-                @include spaceCuisine2(sLeft,padding-right);
-                margin: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-end;
+//             &__left{
+//                 width: 38%;
+//                 @include spaceCuisine2(sLeft,padding-right);
+//                 margin: auto;
+//                 display: flex;
+//                 flex-wrap: wrap;
+//                 justify-content: flex-end;
 
-                @include rp(tm){
-                    width: 80%;
-                    order: 1;
-                    justify-content: flex-start;
-                    @include spaceCuisine2(s16,margin-bottom);
-                    padding-top: 32px;
-                    @include rp(mx){
-                        padding-top: 28px;
-                    }
-                    @include rp(sx){
-                        padding-top: 24px;
-                    }
-                }
-            }
-            &__right{
-                width: 62%;
-                @include rp(tm){
-                    order: 2;
-                    width: 80%;
-                    margin: auto;
-                    padding-bottom: 32px;
-                    @include rp(mx){
-                        padding-bottom: 28px;
-                    }
-                    @include rp(sx){
-                        padding-bottom: 24px;
-                    }
-                 }
-            }
-            &__img{
-                @include blockCuisine(wimgCuisine2,width);
-                @include blockCuisine(himgCuisine2,height);
+//                 @include rp(tm){
+//                     width: 80%;
+//                     order: 1;
+//                     justify-content: flex-start;
+//                     @include spaceCuisine2(s16,margin-bottom);
+//                     padding-top: 32px;
+//                     @include rp(mx){
+//                         padding-top: 28px;
+//                     }
+//                     @include rp(sx){
+//                         padding-top: 24px;
+//                     }
+//                 }
+//             }
+//             &__right{
+//                 width: 62%;
+//                 @include rp(tm){
+//                     order: 2;
+//                     width: 80%;
+//                     margin: auto;
+//                     padding-bottom: 32px;
+//                     @include rp(mx){
+//                         padding-bottom: 28px;
+//                     }
+//                     @include rp(sx){
+//                         padding-bottom: 24px;
+//                     }
+//                  }
+//             }
+//             &__img{
+//                 @include blockCuisine(wimgCuisine2,width);
+//                 @include blockCuisine(himgCuisine2,height);
                 
-            }
-            &__title{
-                width: 100%;
-                text-align: right;
-                @include rp(tm){
-                    text-align: left;
+//             }
+//             &__title{
+//                 width: 100%;
+//                 text-align: right;
+//                 @include rp(tm){
+//                     text-align: left;
                    
-                }
-                @include spaceCuisine2(s70,margin-bottom);
-                position: relative;
-                &::after{
-                    position: absolute;
-                    top: 120%;
-                    right: 0%;
-                    width: 25%;
-                    height: 6px;
-                    content: "";
-                    background: map-get($color, underline );
-                    @include rp(tm){
-                        left: 0%;
+//                 }
+//                 @include spaceCuisine2(s70,margin-bottom);
+//                 position: relative;
+//                 &::after{
+//                     position: absolute;
+//                     top: 120%;
+//                     right: 0%;
+//                     width: 25%;
+//                     height: 6px;
+//                     content: "";
+//                     background: map-get($color, underline );
+//                     @include rp(tm){
+//                         left: 0%;
                        
-                    }
-                }
-                &>*{
-                    @include size(s51);
-                    @include rp(tx){
-                        font-size: 50px;
-                    }
-                    @include rp(sx){
-                        font-size: 46px;
-                    }
-                    @include bold;
-                    @include family--primary;
-                    color: map-get($color, main );
-                }
-            }
-            &__desc{
-                @include spaceCuisine2(s16,margin-bottom);
-                width: 100%;
-                text-align: right;
-                @include rp(tm){
-                    text-align: left;
+//                     }
+//                 }
+//                 &>*{
+//                     @include size(s51);
+//                     @include rp(tx){
+//                         font-size: 50px;
+//                     }
+//                     @include rp(sx){
+//                         font-size: 46px;
+//                     }
+//                     @include bold;
+//                     @include family--primary;
+//                     color: map-get($color, main );
+//                 }
+//             }
+//             &__desc{
+//                 @include spaceCuisine2(s16,margin-bottom);
+//                 width: 100%;
+//                 text-align: right;
+//                 @include rp(tm){
+//                     text-align: left;
                    
-                }
-                &>*{
-                    @include size(s18);
-                    @include rp(tx){
-                        font-size: 17px;
-                    }
-                    color: map-get($color, base );
-                    line-height: 1.6;
-                    @include rp(pm){
-                        @include p-line-clamp(5);
-                    }
+//                 }
+//                 &>*{
+//                     @include size(s18);
+//                     @include rp(tx){
+//                         font-size: 17px;
+//                     }
+//                     color: map-get($color, base );
+//                     line-height: 1.6;
+//                     @include rp(pm){
+//                         @include p-line-clamp(5);
+//                     }
                     
-                }
-            }
-            &__more{
-                width: 100%;
-                text-align: right;
-                @include rp(tm){
-                    text-align: left;
+//                 }
+//             }
+//             &__more{
+//                 width: 100%;
+//                 text-align: right;
+//                 @include rp(tm){
+//                     text-align: left;
                    
-                }
-                svg{
-                    margin-left: 8px;
-                }
-            }
-        }
-    }
-}
+//                 }
+//                 svg{
+//                     margin-left: 8px;
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -19,6 +19,10 @@
 
 .path-restroom{
   position: absolute;
+  width: 100%;
+  height: 60%;
+  bottom: 0;
+  left: 0;
   &::after{
     content: "";
     position: absolute;
@@ -27,7 +31,7 @@
     width: 100%;
     height: 100%;
 
-    //background-image: url('../assets/icons/Path.png');
+    background-image: url('../assets/icons/Path2.png');
   }
 }
 .overlay-gradient{
