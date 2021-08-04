@@ -105,8 +105,24 @@ $spacewedding4:(
     ps: 68px,
     tx: 48px,
   ),
+  
 );
-
+$spacewedding5:(
+  s64:(
+    default: 64px,
+    pl: 60px,
+    pm: 50px,
+    ps: 48px,
+    tx: 32px,
+  ),
+  s80:(
+    default: 80px,
+    pl: 60px,
+    pm: 50px,
+    ps: 40px,
+    tx: 32px,
+  ),
+);
 $blockwedding2:(
   s784:(
     default:748px,
@@ -136,6 +152,21 @@ $blockwedding2:(
     mx: 450px,
     ml: 400px,
     mm: 350px,
+  ),
+  widthImgWedding5:(
+    default: 630px,
+   
+  ),
+  heightImgWedding5:(
+    default: 430px,
+    pl: 360px,
+    pm: 320px,
+    ps: 295px,
+    tx: 220px,
+    tl: 180px,
+    tm: 160px,
+    ts: 120px,
+    mx: 100px,
   ),
   s543:(
     default:543px,
@@ -224,6 +255,30 @@ $blockwedding2:(
 }
 @mixin spacewedding4($key, $name, $side: '-1'){
   @each $idx, $val in map-get($spacewedding4, #{$key}){
+    @if $side == '-1'{
+      @if $idx == default{
+        #{$name}: $val;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val;
+        }
+      }
+    }
+    @else{
+      @if $idx == default{
+        #{$name}: $val $side;
+      }
+      @else{
+        @media (max-width: map-get($media, $idx)){
+          #{$name}: $val $side;
+        }
+      }
+    }
+  }
+}
+@mixin spacewedding5($key, $name, $side: '-1'){
+  @each $idx, $val in map-get($spacewedding5, #{$key}){
     @if $side == '-1'{
       @if $idx == default{
         #{$name}: $val;
