@@ -52,7 +52,7 @@
                     height: 55%;
                 }
                 .introduce-text{
-                    overflow: scroll;
+                    // overflow-y: scroll;
                     @include spaceIndex5(s40,padding);
                     display: flex;
                     flex-direction: column;
