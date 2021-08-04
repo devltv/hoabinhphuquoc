@@ -155,8 +155,6 @@ function closePopup() {
   var inpRest = document.getElementById('checkUrl');
   var inpRestVideo = document.getElementById('checkUrlVideo');
   var closeData = "";
-
-
   
   if (inpRest) {
     closeData = inpRest.getAttribute('data-close');
@@ -183,18 +181,6 @@ function closePopup() {
       })
     })
   }
-
-  // if (closeVideo){
-  //   closeVideo.addEventListener('click', function(e : any){
-  //     e.preventDefault();
-  //     popupVideo.classList.remove('show');
-  //     body.style.overflow = "auto";
-
-  //     if (closeData){
-  //       history.pushState({id: null}, 'default state', closeData);
-  //     }
-  //   })
-  // }
 }
 
 
@@ -205,7 +191,7 @@ function popupImage(id: any = null) {
 
     var body = document.querySelector('body');
 
-    var popupContent = document.querySelector('#library-1__wrapper .image-popup .popup');
+    var popupContent = document.querySelector('#library-1__wrapper .image-popup .popup .popup-wrapper--bg');
     var urlAjax = './popup-image';
 
     if (id) {
@@ -220,7 +206,6 @@ function popupImage(id: any = null) {
             swiperRest();
           }
 
-          closePopup();
           return;
         }
         else {
@@ -238,7 +223,6 @@ function popupImage(id: any = null) {
     else {
       popup.classList.remove('show');
       body.style.overflow = "auto";
-      closePopup();
   
       itemLinkPopups.forEach(function (item) {
         item.addEventListener('click', function (e) {
@@ -275,8 +259,6 @@ function popupImage(id: any = null) {
               if (popup.classList.contains('show')) {
                 swiperRest();
               }
-  
-              closePopup();
   
               return;
             }
@@ -321,8 +303,6 @@ function popupVideo(id: any = null) {
 
     // var popupContent = document.querySelector('#library-1__wrapper .video-popup .popup');
     // var urlAjax = './popup-video';
-    
-    closePopup();
 
     if (id) {
       popupContentVideo(id);
@@ -429,8 +409,7 @@ function loadRestroom() {
     })
 
     if (inpRest) {
-      var popup = inpRest.getAttribute('data-popup')
-      var close = inpRest.getAttribute('data-close');
+      var popup = inpRest.getAttribute('data-popup');
       var val = inpRest.getAttribute('data-url');
       var id = inpRest.getAttribute('data-box');
 
@@ -451,6 +430,9 @@ function loadRestroom() {
         }
       }
     }
+
+    closePopup();
+    
     popupImage();
     popupVideo();
   }
@@ -458,9 +440,9 @@ function loadRestroom() {
 
 
 
-function selectedBox(id: any) {
-  popupImage(id);
-}
+// function selectedBox(id: any) {
+//   popupImage(id);
+// }
 
 
 export const library = function () {

@@ -11,10 +11,12 @@
                 content: "";
                 height: 100%;
                 width: 80%;
+                @include rp(tx){
+                    width: 95%;
+                }
                 transform: translateX(-50%);
                 background: map-get($color, intro-bg-2 );
                 z-index: -1;
-                
             }
         }
         .title-primary{
@@ -25,19 +27,39 @@
 
         .content-top{
             &__desc{
+                // @include rp(ts){
+                //     padding: 0 30px;
+                // }
                 &>*{
                     @include size(s18);
+                    @include rp(tx){
+                        font-size: 1.6rem;
+                    }
+                    @include rp(tm){
+                        font-size: 1.4rem;
+                    }
+                    @include rp(mx){
+                        font-size: 1.2rem;
+                    }
                     line-height: 1.6;
                     color: map-get($color, base);
                 }
             }
         }
         .content-midle{
-            display: flex;
-            justify-content: space-between;
+            @extend .container;
+            @media (min-width: 1281px){
+                width: 100%;
+            }
+            display: flex;  
+            justify-content: center;
             @include spacewedding5(s64,padding-top);
             @include spacewedding5(s64,padding-bottom);
             &__img{
+                &:nth-child(2n){
+                    margin: 0 12px;
+                }
+                @include blockwedding2(heightImgWedding5,height);
                 position: relative;
                 &::after{
                     position: absolute;
@@ -61,10 +83,12 @@
                 }
                 }
             }
-            @include rp(ps){
-            }
+          
         }
         .content-bottom{
+            // @include rp(ts){
+            //     padding: 0 30px;
+            // }
             &--flex{
                 display: flex;
                 flex-direction: row;
@@ -74,8 +98,26 @@
             }
             &__title{
                 padding-bottom: 32px;
+                @include rp(pm){
+                    padding-bottom: 24px;
+                }
+                @include rp(ps){
+                    padding-bottom: 20px;
+                }
+                @include rp(tx){
+                    padding-bottom: 16px;
+                }
                 &>*{
                     @include size(s26);
+                    @include rp(tx){
+                        font-size: 2.4rem;
+                    }
+                    @include rp(tm){
+                        font-size: 2.4rem;
+                    }
+                    @include rp(mx){
+                        font-size: 2rem;
+                    }
                     @include bold;
                     color: map-get($color, main );
                 }
@@ -85,14 +127,35 @@
                 display: flex;
                 align-items: center;
                 padding-top: 16px;
-                
+                   
+                // padding-left: 16px;
+                // padding-right: 16px;
+                // margin: -8px;
+                &>*{
+                    @include size(s18);
+                    @include rp(tx){
+                        font-size: 1.6rem;
+                    }
+                    @include rp(tm){
+                        font-size: 1.4rem;
+                    }
+                    @include rp(mx){
+                        font-size: 1.2rem;
+                    }
+                    color: map-get($color, base);
+                }
                 &--img{
                     padding-right: 16px;
+                    
                     img{
-                        
+                        width: 24px;
+                        height: 24px;
                         object-fit: contain;
                     }
                     
+                }
+                &--desc{
+                    flex: 1;
                 }
             }
             &__more{
@@ -103,6 +166,9 @@
                 padding: 12px;
                 &>*{
                     @include size(s18);
+                    @include rp(tx){
+                        font-size: 1.6rem;
+                    }
                     color: map-get($color, mainBg);
                 }
             }
