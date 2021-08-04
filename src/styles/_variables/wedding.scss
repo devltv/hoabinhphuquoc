@@ -110,9 +110,17 @@ $spacewedding4:(
 $spacewedding5:(
   s64:(
     default: 64px,
+    pl: 60px,
+    pm: 50px,
+    ps: 48px,
+    tx: 32px,
   ),
   s80:(
     default: 80px,
+    pl: 60px,
+    pm: 50px,
+    ps: 40px,
+    tx: 32px,
   ),
 );
 $blockwedding2:(
@@ -144,6 +152,21 @@ $blockwedding2:(
     mx: 450px,
     ml: 400px,
     mm: 350px,
+  ),
+  widthImgWedding5:(
+    default: 630px,
+   
+  ),
+  heightImgWedding5:(
+    default: 430px,
+    pl: 360px,
+    pm: 320px,
+    ps: 295px,
+    tx: 220px,
+    tl: 180px,
+    tm: 160px,
+    ts: 120px,
+    mx: 100px,
   ),
   s543:(
     default:543px,
