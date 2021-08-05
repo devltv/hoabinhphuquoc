@@ -2,7 +2,9 @@
 .service-popup,
 .cuisine-popup,
 .image-popup,
-.video-popup{
+.video-popup,
+.travel-popup,
+.job-popup{
   width: 100%;
   max-width: 1924px;
   overflow-x: hidden;
@@ -47,12 +49,14 @@
     width: 100%;
     height: 100%;
     &-close{
+
       position: absolute;
       right: 0;
       top: 0;
       background-color: map-get($color, close-popup);
       z-index: 100;
-
+      
+      cursor: pointer;
       width: 46px;
       height: 46px;
       border-bottom-left-radius: 10px;
@@ -852,6 +856,469 @@
         width: 100%;
         height: 100%;
       }
+
+      // travel introduction
+      &__travel{
+        width: 100%;
+        // height: 100%;
+        align-self: stretch;
+
+        .travel{
+          width: 100%;
+          height: 100%;
+          padding: 48px;
+          @include rp(ps){
+            padding: 32px;
+          }
+          @include rp(tx){
+            padding: 24px;
+          }
+          @include rp(tx){
+            padding: 24px;
+          }
+          @include rp(ts){
+            padding: 16px;
+          }
+          @include rp(mx){
+            padding: 8px;
+          }
+          @include rp(mm){
+            padding: 0px;
+          }
+
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          @include rp(ts){
+            justify-content: flex-start;
+          }
+          flex-wrap: wrap;
+          
+          @include rp(ts){
+            max-height: 100%;
+            overflow: auto;
+            
+            &::-webkit-scrollbar {
+              width: 13px;
+    
+              @include rp(tx){
+                width: 8px;
+              }
+              @include rp(mx){
+                width: 6px;
+              }
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+              background: map-get($color, track); 
+            }
+             
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+              background: map-get($color, thumb);
+              border-radius: 8px;
+              @include rp(tx){
+                border-radius: 3px;
+              }
+              @include rp(mx){
+                border-radius: 2px;
+              }
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+              background: map-get($color, thumbHover); 
+            }
+          }
+
+          &-img{
+            width: 48%;
+            @include rp(ts){
+              width: 100%;
+            }
+
+            position: sticky;
+            top: 0;
+            align-self: stretch;
+
+            @include rp(tl){
+              position: initial;
+              top: auto;
+              align-self: initial;
+            }
+
+            img{
+              height: auto;
+              @include rp(ts){
+                height: inherit;
+              }
+            }
+          }
+          &-content{
+            width: 48%;
+            height: 100%;
+            overflow: auto;
+
+            @include rp(ts){
+              width: 100%;
+              height: auto;
+              overflow: visible;
+            }
+
+            margin-top: 0;
+            @include rp(ts){
+              margin-top: 36px;
+            }
+            @include rp(mm){
+              margin-top: 24px;
+            }
+
+            &::-webkit-scrollbar {
+              width: 13px;
+    
+              @include rp(tx){
+                width: 8px;
+              }
+              @include rp(mx){
+                width: 6px;
+              }
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+              background: map-get($color, track); 
+            }
+             
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+              background: map-get($color, thumb);
+              border-radius: 8px;
+              @include rp(tx){
+                border-radius: 3px;
+              }
+              @include rp(mx){
+                border-radius: 2px;
+              }
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+              background: map-get($color, thumbHover); 
+            }
+
+            &>*:not(:first-child){
+              margin-top: 45px;
+
+              @include rp(tx){
+                margin-top: 36px;
+              }
+              @include rp(mx){
+                margin-top: 24px;
+              }
+            }
+
+            &__item{
+              
+              &-title{
+                display: flex;
+                align-items: center;
+
+                padding: 4px 8px 4px 16px;
+
+                @include rp(ts){
+                  padding: 4px 12px 4px 12px;
+                }
+                background-color: map-get($color, intro-bg-2);
+
+                &>*:first-child{
+                  flex: 1;
+                  @include bold;
+                  @include title(s26);
+                  color: map-get($color, main);
+                }
+
+                img{
+                  width: 16px;
+                  height: 16px;
+                  object-fit: contain;
+                }
+              }
+              &-desc{
+                padding: 0px 8px 0px 16px;
+                @include rp(ts){
+                  padding: 0 12px 0 12px;
+                }
+                margin-top: 24px;
+
+                @include rp(tx){
+                  margin-top: 16px;
+                }
+                @include rp(mx){
+                  margin-top: 12px;
+                }
+                display: none;
+                &>*{
+                  height: 0;
+                  transition: .3s all ease-in-out;
+                }
+              }
+
+              &.active{
+                .travel-content__item-desc{
+                  display: block;
+                  &>*{
+                    transform-origin: top;
+                    height: auto;
+                    animation: goHeight .16s ease-in-out;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__job{
+        width: 100%;
+        height: 100%;
+
+        .job{
+          width: 100%;
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+
+          @include rp(ts){
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+              width: 13px;
+    
+              @include rp(tx){
+                width: 8px;
+              }
+              @include rp(mx){
+                width: 6px;
+              }
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+              background: map-get($color, track); 
+            }
+             
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+              background: map-get($color, thumb);
+              border-radius: 8px;
+              @include rp(tx){
+                border-radius: 3px;
+              }
+              @include rp(mx){
+                border-radius: 2px;
+              }
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+              background: map-get($color, thumbHover); 
+            }
+          }
+
+          &__title{
+            margin-bottom: 40px;
+            @include rp(ps){
+              margin-bottom: 32px;
+            }
+            &>*{
+              color: map-get($color, main);
+              @include bold;
+              @include family--primary;
+              @include title(s41);
+              text-align: center;
+            }
+          }
+
+          &-wrapper{
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+
+            @include rp(ts){
+              overflow: initial;
+            }
+
+            @include rp(ts){
+              flex-direction: column;
+            }
+          }
+
+          &-options{
+            max-width: 30%;
+            padding-right: 10%;
+            padding-top: 36px;
+            
+            @include rp(ts){
+              max-width: 100%;
+              padding-right: 0;
+              
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              align-items: center;
+
+              padding-top: 0;
+
+            }
+            
+            padding-bottom: 40px;
+            @include rp(ts){
+              padding-bottom: 36px;
+
+              margin-top: -8px;
+              margin-left: -8px;
+              margin-bottom: -8px;
+            }
+
+            &>*{
+              cursor: pointer;
+              min-width: 120px;
+              &:hover{
+                &>*{
+                  @include bold;
+                  color: map-get($color, main);
+                }
+              }
+
+              &:not(:first-child){
+                margin-top: 12px;
+
+                @include rp(ts){
+                  margin-top: 0px;
+                }
+              }
+
+              &.active{
+                &>*{
+                  @include bold;
+                  color: map-get($color, main);
+                }
+              }
+
+              &>*{
+                @include title(s26);
+                @include uppercase;
+                @include regular;
+
+                white-space: nowrap;
+
+                @include rp(ts){
+                  padding-top: 8px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                }
+              }
+            }
+
+          }
+          &-content{
+            min-width: 70%;
+            flex: 1;
+            
+            &__item{
+              width: 100%;
+              height: 100%;
+              padding: 36px 12px 40px 40px;
+              @include rp(ts){
+                padding: 24px 12px 24px 24px;
+              }
+              display: none;
+
+              &.active{
+                display: block;
+              }
+
+              overflow: auto;
+  
+              &::-webkit-scrollbar {
+                width: 13px;
+      
+                @include rp(tx){
+                  width: 8px;
+                }
+                @include rp(mx){
+                  width: 6px;
+                }
+              }
+              
+              /* Track */
+              &::-webkit-scrollbar-track {
+                background: map-get($color, track); 
+              }
+              
+              /* Handle */
+              &::-webkit-scrollbar-thumb {
+                background: map-get($color, thumb);
+                border-radius: 8px;
+                @include rp(tx){
+                  border-radius: 3px;
+                }
+                @include rp(mx){
+                  border-radius: 2px;
+                }
+              }
+              
+              /* Handle on hover */
+              &::-webkit-scrollbar-thumb:hover {
+                background: map-get($color, thumbHover); 
+              }
+  
+              @include rp(ts){
+                overflow: initial;
+                &::-webkit-scrollbar {
+                  width: 0;
+                  display: none;
+                }
+              }
+  
+              background-color: white;
+              box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  
+              h1, h2, h3, h4, h5, h6{
+                color: map-get($color, main);
+                @include bold;
+              }
+  
+              h4{
+                @include title(s26);
+  
+                &:first-child{
+                  position: relative;
+                  padding-bottom: 12px;
+  
+                  &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 62px;
+                    height: 5px;
+                    background-color: map-get($color, underline);
+                  }
+                }
+              }
+  
+              p{
+                line-height: 1.6;
+                margin-top: 24px;
+              }
+            }
+          }
+
+        }
+      }
     }
   }
 }
@@ -868,5 +1335,35 @@
       height: 70%;
     }
     height: 60%;
+  }
+}
+.travel-popup{
+  .popup-wrapper--bg{
+    min-height: auto;
+
+    @include rp(tl){
+      overflow-y: initial !important;
+      flex-direction: initial !important;
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+.job-popup{
+  .popup-wrapper--bg{
+    background-color: map-get($color, intro-bg-2);
+
+    @media (min-height: 800px) {
+      height: 70%;
+    }
+    height: 60%;
+
+    padding: 40px 36px 40px 72px;
+    @include rp(ps){
+      padding: 32px 20px 32px 56px;
+    }
+    @include rp(ts){
+      padding: 32px 18px 32px 32px;
+    }
   }
 }

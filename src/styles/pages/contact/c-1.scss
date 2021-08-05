@@ -1,0 +1,82 @@
+#contact-1__wrapper {
+    .title-primary {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include space(s48, margin-top);
+        @include space(s48, margin-bottom);
+    }
+    .contact-1__section{
+        &--infor{
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            transition: .3s ease-in-out;
+            &-items{
+                @include rp(ts){
+                    @include contactBox(s30, margin-bottom);
+                }
+                transition: .3s ease-in-out;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                // justify-content: center;
+                align-items: center;
+                text-align: center;
+                .image{
+                    @include blockContact(contact-icon, height);
+                    @include blockContact(contact-icon, width);
+                    @include contactBox(s30, margin-bottom)
+                }
+            }
+        }
+        &--map{
+            @include contactBox(s70, margin);
+            @include rp(tx){
+                width: 100%;
+                flex: 0 0 100%;
+            }
+            #map{
+                width: 100%;
+                @include blockContact(contact-1, height);
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.gm-ui-hover-effect{
+    display: none !important;
+}
+.gm-style-iw-d{
+    overflow: unset !important;
+}
+.gm-style-iw-c{
+    padding: unset !important;
+    top: 92px !important;
+    left: 126px !important;
+}
+.gm-style-iw-t{
+    &::after{
+        display: none !important;
+    }
+}
+#mapPopup{
+    padding: 5px;
+    width: 100%;
+    .mapPopupImage{
+        max-width: 187px;
+        max-height: 103px;
+        min-width: 100px;
+    }
+    .inforPopup{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: map-get($color, base );
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}

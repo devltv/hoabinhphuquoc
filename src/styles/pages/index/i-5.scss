@@ -5,7 +5,7 @@
         overflow: hidden;
         &--map{
             width: 100%;
-            height: 700px;
+            @include blockIndex(mapIndex, height);
             iframe{
                 width: 100%;
                 height: 100%;
@@ -16,7 +16,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 40px;
+            @include blockIndex(mapBtnIndex, width);
             height: 100%;
             background-color: map-get($color, base );
             display: flex;
@@ -33,17 +33,18 @@
             }
         }
         &--infor.active{
-            right: 40px;
+            @include blockIndex(mapBtnIndex, right);
         }
         &--infor{
             transition: 0.5s ease-in-out;
             position: absolute;
             top: 0;
-            right: -700px;
-            width: 636px;
+            right: -636px;
+            @include blockIndex(mapInforIndex, width);
+            // max-width: 300px;
             height: 100%;
             background-color: map-get($color, boxVideoOverlay );
-            padding: 15px;
+            @include spaceIndex5(s15, padding);
             .pic__infor{
                 width: 100%;
                 height: 100%;
@@ -51,6 +52,7 @@
                     height: 55%;
                 }
                 .introduce-text{
+                    // overflow-y: scroll;
                     @include spaceIndex5(s40,padding);
                     display: flex;
                     flex-direction: column;

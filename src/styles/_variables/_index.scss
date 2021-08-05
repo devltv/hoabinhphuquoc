@@ -179,14 +179,18 @@ $spaceIndex5: (
   s40:(
     default: 40px,
     pl: 40px,
-    pm: 40px,
-    ps: 40px,
+    pm: 30px,
+    ps: 20px,
   ),
   s20:(
     default: 20px,
     pl: 15px,
     pm: 15px,
     ps: 15px,
+  ),
+  s15:(
+    default: 15px,
+   ml: 10px
   )
   
 );
@@ -264,13 +268,34 @@ $blockIndex: (
   ),
   
   mapIndex:(
-    efault: 700px,
-    pl: 680px,
-    pm: 550px,
+    default: 700px,
+    pl: 630px,
+    // pm: 550px,
     tx: 500px,
-    tm: 450px,
-    ts: 400px,
-  )
+    // tm: 450px,
+    // ts: 400px,
+    ml:400px,
+  ),
+  mapInforIndex:(
+    default: 636px,
+    pl: 536px,
+    pm: 40vw,
+    tx: 400px,
+    // tm: 450px,
+    // ts: 400px,
+    ml: calc(100% - 20px),
+
+  ),
+  mapBtnIndex:(
+    default: 40px,
+    // pl: 536px,
+    // pm: 550px,
+    tx: 30px,
+    // // tm: 450px,
+    // // ts: 400px,
+    // ml: 100%,
+    ml: 20px,
+  ),
 );
 @mixin spaceIndex($key, $name, $side: "-1") {
   @each $idx, $val in map-get($spaceIndex, #{$key}) {

@@ -1,0 +1,60 @@
+#contact-2__wrapper{
+    background: map-get($color, iconMainBgActive );
+    .contact-2{
+        @include contactBox(s60, padding);
+        .form{
+            &--title{
+                text-align: center;
+                @include title(s41);
+                @include family--primary;
+                font-weight: bold;
+                color: map-get($color, main );
+                @include contactBox(s40, margin-bottom);
+            }
+            &--input{
+                justify-content: space-between;
+                .col-6{
+                    // flex: 0 0 49%;
+                    width: 49%;
+                }
+                .input{
+                    @include contactBox(s18, margin-bottom);
+                    input{
+                        @include blockContact(contact-input, height);
+                    }
+                    textarea{
+                        height: 223px;
+                        padding-top: 20px;
+                        resize: none;
+                    }
+                    input, textarea{
+                        width: 100%;
+                        border: none;
+                        background: map-get($color, mainBg );
+                        padding-left: 20px;
+                        transition: 0.2s ease-in-out;
+                    }
+                }
+                .input-btn{
+                    width: 100%;
+                    text-align: center;
+                    input{
+                        border: none;
+                        background: map-get($color, main );
+                        color: map-get($color, mainBg );
+                        padding: 7px 10px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        transition: .2s ease-in-out;
+                        &:hover{
+                            background: map-get($color, mainBg );
+                            color: map-get($color, main );
+                        }
+                    }
+                }
+
+            }
+           
+        }
+    }
+}
