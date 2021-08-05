@@ -1,0 +1,66 @@
+$spaceBanner: (
+    
+);
+
+$blockBanner: (
+    heightBanner:(
+        default: 900px,
+        pl: 700px,
+        pm: 630px,
+        ps: 605px,
+        tx: 490px,
+        tl: 405px,
+        tm: 365px,
+        ts: 305px,
+        mx: 250px,
+        mm: 185px,
+    ),
+);
+@mixin blockBanner($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($blockBanner, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
+@mixin spaceBanner($key, $name, $side: '-1'){
+    @each $idx, $val in map-get($spaceBanner, #{$key}){
+      @if $side == '-1'{
+        @if $idx == default{
+          #{$name}: $val;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val;
+          }
+        }
+      }
+      @else{
+        @if $idx == default{
+          #{$name}: $val $side;
+        }
+        @else{
+          @media (max-width: map-get($media, $idx)){
+            #{$name}: $val $side;
+          }
+        }
+      }
+    }
+  }
