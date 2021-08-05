@@ -1,7 +1,7 @@
 .index{
     .index-intro{
-        @include spaceIndex1(s130,margin-top);
-        @include spaceIndex1(s130,margin-bottom);
+        @include spaceIndex1(s130,padding-top);
+        @include spaceIndex1(s130,padding-bottom);
         .content{
             position: relative;
             height: auto;

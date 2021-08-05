@@ -23,8 +23,8 @@ html(lang="en")
 			include _header.pug
 		block banner, bannerSub, breadcrumb
 			include _banner.pug
-			include _bannerSub.pug
-			include _breadcrumb.pug
+			//- include _bannerSub.pug
+			//- include _breadcrumb.pug
 		main
 			block main
 		block footer
@@ -35,7 +35,7 @@ html(lang="en")
 		//- include scripts
 		//- script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')
 		//- script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?&libraries=places&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&callback=initMap")
-		//- script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&callback=initMap")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s")
 		//- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		script(type="text/javascript", src="./js/core.min.js")
 		script(type="text/javascript", src="./js/main.min.js")
