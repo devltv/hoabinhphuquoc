@@ -126,13 +126,13 @@ $blockIntro-3: (
   Intro-nav:(
     pm: 20%,
     tm: 25%,
-    ml: 30%,
+    mx: 30%,
     mm: 50%
   ),
   Intro-nav-flex:(
     pm: 0 0 20%,
     tm: 0 0 25%,
-    ml: 0 0 30%,
+    mx: 0 0 30%,
     mm: unset
   ),
 	Intro-intro: (
@@ -195,9 +195,9 @@ $blockIntro-5: (
     pl: 685px,
     pm: 45vw,
     tl: 505px,
-    mx: 455px,
-    mm: 375px,
-    ms: 325px
+    tm: 405px,
+    mm: 355px,
+    ms: 305px
 	),
   Intro-Icon:(
     default: 90px ,
