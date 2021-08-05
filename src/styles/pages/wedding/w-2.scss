@@ -66,10 +66,15 @@
                     display: flex;
                     justify-content: space-between;
                  }
-                 
+
+                @include spacewedding2(s48, margin-top);
             }
             &__items {
-                @include spacewedding2(s48, margin-top);
+                &:not(:first-child){
+                    margin-top: 10px;
+                    padding-top: 10px;
+                }
+
                 @include rp(tm){
                     margin-bottom: 16px;
                 }
@@ -77,18 +82,20 @@
                 &:not(:first-child):after {
                     position: absolute;
                     content: "";
-                    top: -100%;
-                    @include rp(tx){
-                        top: -50%;
-                    }
+                    top: 0%;
+                    left: 0;
+                    width: 60%;
+                    height: 1px;
+
+                    // @include rp(tx){
+                    //     top: -50%;
+                    // }
                     @include rp(tm){
-                        
                         width: 0;
                         height: 0;
-                     }
-                    left: 0;
-                    width: 40%;
-                    height: 1px;
+                        display: none;
+                        opacity: 0;
+                    }
                     background: map-get($color, base);
                 }
                 & > * {
@@ -104,6 +111,9 @@
                     }
                     @include bold;
                     color: map-get($color, base);
+
+                    cursor: pointer;
+                    user-select: none;
                 }
             }
             &__img{

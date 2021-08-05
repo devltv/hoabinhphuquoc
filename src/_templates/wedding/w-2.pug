@@ -1,5 +1,6 @@
 section#wedding2
     .wedding2
+        input(type="hidden" id="checkUrl" data-close="/wedding.html" data-url="" data-box="")
         .wedding-banquetHall
             .container
                 .content
@@ -10,49 +11,76 @@ section#wedding2
                             .content__desc 
                                 p Tọa lạc tại trung tâm thị trấn Dương Đông, nhà hàng Hòa Bình được đánh giá là một trong những nhà hàng tiệc cưới lớn nhất tại huyện đảo Phú Quốc. Với sảnh tiệc sang trọng, hệ thống âm thanh, ánh sáng hiện đại, nghi lễ cưới ấn tượng, phong cách ẩm thực tinh tế và cung cách phục vụ ân cần, chuyên nghiệp, tất cả là sự kết hợp hoàn hảo để đem lại cho Quý khách những khoảnh khắc hạnh phúc với sự hài lòng tuyệt đối. Với mức giá hợp lý, cùng nhiều khuyến mãi hấp dẫn, sẽ góp phần cho ngày vui của Quý khách thêm trọn vẹn.  
                         ul.content__list
-                            li.content__items.active(data-active="1")
+                            li.content__items.active(data-active="1" data-box="1" href="/wedding/hall-big")
                                 p.content__items--desc Sảnh tiệc lớn
-                            li.content__items(data-active="2")
+                            li.content__items(data-active="2" data-box="2" href="/wedding/hall-medium")
                                 p.content__items--desc Sảnh tiệc trung
-                            li.content__items(data-active="3") 
+                            li.content__items(data-active="3" data-box="3" href="/wedding/hall-small") 
                                 p.content__items--desc Sảnh tiệc nhỏ
                     .content__right
-                        .content__silde.active(data-active="1")
-                                .swiper-container.content--swiper
-                                    .swiper-wrapper
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="1")
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="1")
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="1")
-                                    .swiper-pagination
-                        .content__silde(data-active="2")
-                                .swiper-container.content--swiper
-                                    .swiper-wrapper
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="2")
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="2")
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="2")
-                                    .swiper-pagination
-                        .content__silde(data-active="3")
-                                .swiper-container.content--swiper
-                                    .swiper-wrapper
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="3")
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="3")
-                                        .swiper-slide
-                                            .content__img
-                                                img(src="./assets/images/page/wedding/w-2.png" alt="3")
-                                    .swiper-pagination
+                        .content__silde.active(data-active="1" data-box="1")
+                            .swiper-container.content--swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="assets/images/page/wedding/w-2.png" alt="1")
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="assets/images/page/wedding/w3-img.png" alt="1")
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="assets/images/page/wedding/w-2.png" alt="1")
+                                .swiper-pagination
+                        .content__silde(data-active="2" data-box="2")
+                            .swiper-container.content--swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="../assets/images/page/wedding/w3-img.png" alt="2")
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="../assets/images/page/wedding/w-2.png" alt="2")
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="../assets/images/page/wedding/w-2.png" alt="2")
+                                .swiper-pagination
+                        .content__silde(data-active="3" data-box="3")
+                            .swiper-container.content--swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="../assets/images/page/wedding/w-2.png" alt="3")
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="../assets/images/page/wedding/w-2.png" alt="3")
+                                    .swiper-slide
+                                        .content__img
+                                            img.lazyload(data-src="../assets/images/page/wedding/w-2.png" alt="3")
+                                .swiper-pagination
+
+        
+        .hall-popup--overlay
+            .hall-popup
+                .popup 
+                    .path-hall
+                    .popup-close 
+                    .popup-wrapper 
+                        .container
+                            .popup-wrapper--bg.column-10.column-12-ps
+                                .popup-wrapper__hall 
+                                    .hall-left.column-7.column-12-tl
+                                        img.lazyload(data-src="../assets/images/page/wedding/popup1.png", alt="popup1")
+                                        img.lazyload(data-src="../assets/images/page/wedding/popup2.png", alt="popup2")
+                                        img.lazyload(data-src="../assets/images/page/wedding/popup3.png", alt="popup3")
+                                        img.lazyload(data-src="../assets/images/page/wedding/popup4.png", alt="popup4")
+                                    .hall-right.column-5.column-12-tl
+                                        .hall-right__item
+                                            h2 Sảnh tiệc lớn
+                                            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi 
+
+                                        .hall-right__item
+                                            h3 Liên hệ đặt tiệc
+                                            ul 
+                                                li Lorem ipsum dolor sit amet, consectetuer
+                                                li Lorem ipsum dolor sit amet, consectetuer
+                                                li Lorem ipsum dolor sit amet, consectetuer

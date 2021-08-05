@@ -1,44 +1,46 @@
-.wedding5{
-    .wedding-service{
-        &__content{
-            @include spacewedding5(s80,padding-top);
-            @include spacewedding5(s80,padding-bottom);
+.wedding5 {
+    .wedding-service {
+        &__content {
+            @include spacewedding5(s80, padding-top);
+            @include spacewedding5(s80, padding-bottom);
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 top: 0;
                 left: 50%;
                 content: "";
                 height: 100%;
                 width: 80%;
-                @include rp(tx){
+                @include rp(tx) {
                     width: 95%;
                 }
                 transform: translateX(-50%);
-                background: map-get($color, intro-bg-2 );
+                background: map-get($color, intro-bg-2);
                 z-index: -1;
             }
         }
-        .title-primary{
+        .title-primary {
             display: flex;
             justify-content: center;
-            padding-bottom: 12px;
+            // padding-bottom: 12px;
+            @include space(s90, margin-top);
+            @include space(s48, margin-bottom);
         }
 
-        .content-top{
-            &__desc{
+        .content-top {
+            &__desc {
                 // @include rp(ts){
                 //     padding: 0 30px;
                 // }
-                &>*{
+                & > * {
                     @include size(s18);
-                    @include rp(tx){
+                    @include rp(tx) {
                         font-size: 1.6rem;
                     }
-                    @include rp(tm){
+                    @include rp(tm) {
                         font-size: 1.4rem;
                     }
-                    @include rp(mx){
+                    @include rp(mx) {
                         font-size: 1.2rem;
                     }
                     line-height: 1.6;
@@ -46,130 +48,163 @@
                 }
             }
         }
-        .content-midle{
+        .content-midle {
             @extend .container;
-            @media (min-width: 1281px){
+            @media (min-width: 1281px) {
                 width: 100%;
             }
-            display: flex;  
+
+            display: flex;
             justify-content: center;
-            @include spacewedding5(s64,padding-top);
-            @include spacewedding5(s64,padding-bottom);
-            &__img{
-                &:nth-child(2n){
+            @include spacewedding5(s64, padding-top);
+            @include spacewedding5(s64, padding-bottom);
+            &__img {
+                &:nth-child(2n) {
                     margin: 0 12px;
                 }
-                @include blockwedding2(heightImgWedding5,height);
+                @include blockwedding2(heightImgWedding5, height);
                 position: relative;
-                &::after{
+                &::after {
                     position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
                     height: 100%;
                     content: "";
-                    background: rgba($color: #000000, $alpha: 0.3)
+                    background: rgba($color: #000000, $alpha: 0.3);
                 }
-                &:hover{
+                &:hover {
                     position: relative;
-                &::after{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 0%;
-                    height: 0%;
-                    content: "";
-                    background: rgba($color: #000000, $alpha: 0.3)
-                }
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 0%;
+                        content: "";
+                        background: rgba($color: #000000, $alpha: 0.3);
+                    }
                 }
             }
-          
         }
-        .content-bottom{
+        .content-bottom {
             // @include rp(ts){
             //     padding: 0 30px;
             // }
-            &--flex{
+            &__content{
+                @include rp(tl){
+                    flex: 0 0 83.33333%;
+                    width: 83.33333%;
+                }
+                @include rp(mx){
+                    flex: 0 0 91.66667%;
+                    width: 91.66667%;
+                }
+            }
+            &--flex {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 width: 100%;
-                @include spacewedding5(s80,padding-bottom);
+
+                // @include spacewedding5(s80,padding-bottom);.
+                margin-top: -16px;
+                margin-right: -8px;
+                margin-left: -8px;
             }
-            &__title{
+            &__title {
                 padding-bottom: 32px;
-                @include rp(pm){
+                @include rp(pm) {
                     padding-bottom: 24px;
                 }
-                @include rp(ps){
+                @include rp(ps) {
                     padding-bottom: 20px;
                 }
-                @include rp(tx){
+                @include rp(tx) {
                     padding-bottom: 16px;
                 }
-                &>*{
+                & > * {
                     @include size(s26);
-                    @include rp(tx){
+                    @include rp(tx) {
                         font-size: 2.4rem;
                     }
-                    @include rp(tm){
+                    @include rp(tm) {
                         font-size: 2.4rem;
                     }
-                    @include rp(mx){
+                    @include rp(mx) {
                         font-size: 2rem;
                     }
                     @include bold;
-                    color: map-get($color, main );
+                    color: map-get($color, main);
                 }
             }
-            &__infor{
+            &__infor {
                 width: 50%;
+                padding-top: 16px;
+                padding-left: 8px;
+                padding-right: 8px;
+
+                @include rp(mx){
+                    width: 100%;
+                }
                 display: flex;
                 align-items: center;
-                padding-top: 16px;
-                   
+
                 // padding-left: 16px;
                 // padding-right: 16px;
                 // margin: -8px;
-                &>*{
+                & > * {
                     @include size(s18);
-                    @include rp(tx){
+                    @include rp(tx) {
                         font-size: 1.6rem;
                     }
-                    @include rp(tm){
+                    @include rp(tm) {
                         font-size: 1.4rem;
                     }
-                    @include rp(mx){
+                    @include rp(mx) {
                         font-size: 1.2rem;
                     }
                     color: map-get($color, base);
                 }
-                &--img{
+                &--img {
                     padding-right: 16px;
-                    
-                    img{
+                    @include rp(tx) {
+                        padding-right: 8px;
+                    }
+                    flex-shrink: 0;
+
+                    img {
                         width: 24px;
                         height: 24px;
                         object-fit: contain;
                     }
-                    
                 }
-                &--desc{
+                &--desc {
                     flex: 1;
+                    word-break: break-all;
                 }
             }
-            &__more{
+            &__more {
                 display: flex;
                 justify-content: center;
-                background: map-get($color, main );
-                width: 280px;
-                padding: 12px;
-                &>*{
+                margin-top: 32px;
+                min-width: 220px;
+                max-width: 100%;
+                & > * {
+                    background: map-get($color, main);
+                    
+                    padding: 8px 16px;
+                    @include rp(mx){
+                        padding: 8px 12px;
+                    }
+
                     @include size(s18);
-                    @include rp(tx){
+                    @include rp(tx) {
                         font-size: 1.6rem;
                     }
                     color: map-get($color, mainBg);
+                    @include uppercase;
+                    @include bold;
                 }
             }
         }
