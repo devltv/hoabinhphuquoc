@@ -10,7 +10,7 @@ function initMap() {
     center: { lat: 10.762622, lng: 106.660172 },
     zoom: 8,
   }
-  const map = new google.maps.Map(document.getElementById("map"), options);
+   map = new google.maps.Map(document.getElementById("map"), options);
 
   // var marker = new google.maps.Marker({
   //   position: {
@@ -20,6 +20,3 @@ function initMap() {
   // })
 }
 
-document.addEventListener("load", async () => {
-  initMap()
-});

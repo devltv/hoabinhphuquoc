@@ -92,6 +92,9 @@
                 @include rp(pm){
                     @include p-line-clamp(4);
                 }
+                @include rp(tl){
+                    color: map-get($color, textInput );
+                }
                 @include rp(ml){
                     display: none;
                 }
