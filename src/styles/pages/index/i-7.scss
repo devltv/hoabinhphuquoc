@@ -1,0 +1,283 @@
+.form-footer {
+  @include space(s90, margin-top);
+
+  .container{
+    @include rp(tx){
+      width: 100%;
+    }
+  }
+  
+  $sp: 24px;
+  @include rp(mx){
+    $sp: 12px;
+  }
+
+  &--container {
+    background-color: map-get($color, main);
+
+    padding: 64px 64px 45px 64px;
+
+    @include rp(ts){
+      padding: 45px;
+    }
+    @include rp(mx){
+      padding: 32px;
+    }
+    @include rp(mm){
+      padding: 32px 18px;
+    }
+  }
+
+  &__input {
+    display: flex;
+    @include rp(tx){
+      flex-direction: column;
+    }
+
+    width: 100%;
+
+    & > * {
+      &:not(:first-child) {
+        margin-left: $sp;
+
+        @include rp(tx){
+          margin-left: 0;
+
+          margin-top: $sp;
+        }
+      }
+    }
+
+    label {
+      color: map-get($color, subInput);
+      font-size: 2.2rem;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+
+      background-color: white;
+      padding-left: $sp;
+
+      font-size: 2.2rem;
+    }
+
+    .input {
+      width: 50%;
+      display: flex;
+      
+      @include rp(tx){
+        width: 100%;
+      }
+      
+      @include rp(ml){
+        flex-direction: column;
+      }
+      & > * {
+        flex: 1;
+
+        &:not(:first-child) {
+          margin-left: $sp;
+
+          @include rp(ml){
+            margin-left: 0;
+            margin-top: $sp;
+          }
+        }
+      }
+      .input-content {
+        img {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 10px;
+
+          height: 80%;
+          width: auto;
+
+          pointer-events: none;
+        }
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-content {
+      margin-top: 12px;
+      position: relative;
+      height: 48px;
+    }
+
+    .option {
+      width: 50%;
+      @include rp(tx){
+        width: 100%;
+      }
+      display: flex;
+      @include rp(ml){
+        flex-direction: column;
+      }
+      & > * {
+        flex: 1;
+
+        &:not(:first-child) {
+          margin-left: $sp;
+
+          @include rp(ml){
+            margin-left: 0;
+            margin-top: $sp;
+          }
+        }
+      }
+
+      &-item{
+        position: relative;
+      }
+
+      .input-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__value {
+          background-color: white;
+          flex: 1;
+          height: 100%;
+
+          display: flex;
+          align-items: center;
+          padding-left: $sp;
+
+          font-size: 2.2rem;
+
+          cursor: pointer;
+          user-select: none;
+        }
+        &__img {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 10px;
+
+          width: auto;
+
+          pointer-events: none;
+        }
+      }
+      .group-option {
+        &-list {
+          position: absolute;
+          top: calc(100% + 4px);
+          left: 0;
+          width: 100%;
+          background-color: white;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+
+          // margin: 0 12px;
+
+          overflow: auto;
+          z-index: 11111;
+
+          max-height: 180px;
+          overflow: auto;
+
+          display: none;
+
+          &.active {
+            display: block;
+          }
+        }
+
+        &-item {
+          padding: 12px $sp;
+          cursor: pointer;
+          &.active {
+            color: white;
+            background-color: map-get($color, main);
+            span {
+              color: inherit;
+            }
+            pointer-events: none;
+          }
+
+          transition: 0.16s all ease-in;
+          // &.active:hover{
+          //   // color: white;
+          //   // background-color: rgba(map-get($color, main),.7);
+          //   // span{
+          //   //   color: inherit;
+          //   // }
+          // }
+          &:hover {
+            color: white;
+            background-color: rgba(map-get($color, main), 0.7);
+            span {
+              color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__submit{
+    margin-top: 48px;
+    @include rp(tl){
+      margin-top: 32px;
+    }
+    @include rp(mx){
+      margin-top: 18px;
+    }
+
+    display: flex;
+    justify-content: center;
+    button, input[type="submit"]{
+      border: none;
+      outline: none;
+      background: transparent;
+
+      font-size: 2.2rem;
+      @include bold;
+
+      color: white;
+      @include uppercase;
+      padding: 8px 16px;
+
+      min-width: 216px;
+
+      border: 2px solid white;
+      background-color: transparent;
+
+      transition: .3s all linear;
+
+      &:hover{
+        background-color: white;
+        border: 2px solid map-get($color, main);
+
+        color: map-get($color, main);
+      }
+    }
+  }
+
+  .infor-submit{
+    display: block;
+    font-size: 13px;
+    color: map-get($color, base);
+    &.error{
+      color: map-get($color, error);
+    }
+    &.success{
+      color: map-get($color, success);
+    }
+    span, p{
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+}

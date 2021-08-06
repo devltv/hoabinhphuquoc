@@ -6,7 +6,8 @@
 .travel-popup,
 .job-popup,
 .wedding-popup,
-.hall-popup{
+.hall-popup,
+.total-popup{
   width: 100%;
   max-width: 1924px;
   overflow-x: hidden;
@@ -1847,6 +1848,16 @@
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
       background: map-get($color, thumbHover); 
+    }
+  }
+}
+
+.total-popup{
+  .popup-wrapper--bg{
+    .flex-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

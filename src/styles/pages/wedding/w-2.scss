@@ -71,8 +71,17 @@
             }
             &__items {
                 &:not(:first-child){
-                    margin-top: 10px;
-                    padding-top: 10px;
+                    margin-top: 16px;
+                    padding-top: 16px;
+
+                    @include rp(ps){
+                        margin-top: 12px;
+                        padding-top: 12px;
+                    }
+                    @include rp(tx){
+                        margin-top: 8px;
+                        padding-top: 8px;
+                    }
                 }
 
                 @include rp(tm){
@@ -97,6 +106,7 @@
                         opacity: 0;
                     }
                     background: map-get($color, base);
+                    opacity: .3;
                 }
                 & > * {
                     @include size(s26);

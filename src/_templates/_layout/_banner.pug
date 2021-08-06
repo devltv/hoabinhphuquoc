@@ -1,18 +1,17 @@
-//- if banner
-//-   - var attributes = {};
-//-   - attributes.src = imgBanner;
-//-   - attributes.style = styleBanner;
+if banner
+  - var attributes = {};
+  - attributes["data-src"] = imgBanner;
 
-section#banner
-  .banner
-    .overlay
-    .banner-img 
-      img.lazyload(data-src="./assets/images/layout/banner/HBPQ 1.png" alt="banner")
-    .container
-      .banner-content
-        .banner-content__titleSub
-            h3 welcome to
-        .banner-content__title
-          h2 Hòa Bình Phú Quốc
-        .banner-content__desc
-          p resort
+  section#banner
+    .banner
+      .overlay
+      .banner-img 
+        img.lazyload(alt="banner")&attributes(attributes)
+      .container
+        .banner-content
+          .banner-content__titleSub
+              h3 welcome to
+          .banner-content__title
+            h2 Hòa Bình Phú Quốc
+          .banner-content__desc
+            p resort

@@ -33,6 +33,10 @@
                         background: map-get($color, mainBg );
                         padding-left: 20px;
                         transition: 0.2s ease-in-out;
+
+                        &::placeholder{
+                            @include italic;
+                        }
                     }
                 }
                 .input-btn{

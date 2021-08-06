@@ -4,21 +4,16 @@ block var
 	- let title = 'Page | Contact';
 	//- - let bodyClass = 'index-page';
 	- let banner = false;
-	
-	- let bannerSub = false;
-	- let titleBannerSub = "Liên Hệ";
-	- let imgBannerSub = "./assets/images/page/service/banner.png";
+	- let bannerSub = true;
+	- let titleBannerSub = "Liên hệ";
+	- let imgBannerSub = "./assets/images/layout/banner/contact.png";
 	- let breadcrumbBanner = [["Trang chủ", ""], ["Liên hệ", "active"]];
-	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
-
-//- block loading
-//- 	include _templates/_layout/_loading
-//- block banner,breadcrumb
 
 block main
 	div(id="contactPage")
 		include _templates/contact/c-1.pug
 		include _templates/contact/c-2.pug
+		include _templates/contact/c-3.pug
 		
 //- AIzaSyDrNYxVo-nCBnDbDcenAcfzOzw2TKdSmIY      
 block scripts
