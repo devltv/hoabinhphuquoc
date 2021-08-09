@@ -176,6 +176,7 @@ function popupTotal(id: any = null, url: any = null) {
     if (id) {
       localStorage.setItem('box', '');
       localStorage.setItem('url', '');
+      localStorage.setItem('active', '');
 
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -225,10 +226,6 @@ function popupTotal(id: any = null, url: any = null) {
           }
 
           valueItem = tmpItem.getAttribute('data-box')
-          // if (!valueItem) {
-          //   console.log('Not found data-box!!');
-          //   return;
-          // }
           count = 0;
 
           if (!ajItem.getAttribute('data-url')) {
@@ -279,7 +276,6 @@ function popupTotal(id: any = null, url: any = null) {
   }
 }
 
-
 function loadTotal() {
   if (document.getElementById('endow-1')) {
     var inpRest = document.getElementById('checkUrl');
@@ -291,40 +287,54 @@ function loadTotal() {
       }
     })
 
-    // if (localStorage.getItem('box') && localStorage.getItem('url')) {
-    //   var boxLocal = localStorage.getItem('box');
-    //   var urlLocal = localStorage.getItem('url');
+    if (localStorage.getItem('box') && localStorage.getItem('url')) {
+      var boxLocal = localStorage.getItem('box');
+      var urlLocal = localStorage.getItem('url');
+      var activeLocal = localStorage.getItem('active');
+      
+      var listTitle = document.querySelectorAll('.endow-1 .endow__left--items .endow__left--desc');
 
-    //   history.pushState({ id: boxLocal }, urlLocal, urlLocal);
-    //   popupTotal(boxLocal, urlLocal);
+      listTitle.forEach(function(item){
+        item.classList.remove('active');
+      })
 
-    //   // localStorage.setItem('box', '');
-    //   // localStorage.setItem('url', '');
-    // }
+      listTitle.forEach(function(item){
+        if (activeLocal === item.getAttribute('data-active')){
+          item.classList.add('active');
+        }
+      })
+      
 
-    // else 
+      history.pushState({ id: boxLocal }, urlLocal, urlLocal);
+      popupTotal(boxLocal, urlLocal);
 
-    if (inpRest) {
+      // localStorage.setItem('box', '');
+      // localStorage.setItem('url', '');
+    }
+    else if (inpRest) {
       var val = inpRest.getAttribute('data-url');
       var id = inpRest.getAttribute('data-box');
-      var ajax = inpRest.getAttribute('data-ajax');
-
+      var ajax = inpRest.getAttribute('data-active');
+      
       history.pushState({ id }, val, val);
-
+      
       inpRest.setAttribute('data-box', ``);
       inpRest.setAttribute('data-url', ``);
+      inpRest.setAttribute('data-active', ``);
 
       if (ajax && id) {
         popupTotal(id, ajax);
       }
     }
+
+    toggleEndow1();
     popupTotal();
   }
 }
 
 export default {
   endow: function () {
-    toggleEndow1();
+    // toggleEndow1();
 
     loadTotal();
   }

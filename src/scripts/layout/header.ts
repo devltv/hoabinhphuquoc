@@ -446,6 +446,12 @@ function submitOrder(){
       var contentType = form.getAttribute('enctype');
 
       submit(method, action, contentType, dtOpt);
+
+      //show client
+      var popupHeader = document.querySelector('.content-order__popup');
+      popupHeader.classList.remove('active');
+
+      location.replace(`${action}`);
     })
   }
 }

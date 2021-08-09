@@ -7,6 +7,11 @@
 .margin-auto{
   margin: auto;
 }
+.img-auto{
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
 
 .btn-link--booking{
   display: inline-block;

@@ -1,5 +1,5 @@
 declare var Swiper: any;
-declare var $ : any;
+declare var $: any;
 
 function index1() {
   if (document.getElementById('index1')) {
@@ -87,6 +87,8 @@ function index2() {
 
         localStorage.setItem('box', `${valueItem}`);
 
+        history.pushState({id: null}, hr, hr);
+
         location.replace(dtHr);
         return true;
       })
@@ -162,6 +164,61 @@ function toggleIndex3() {
       })
     })
   }
+}
+
+function linkIndex3() {
+  var moreLinks = document.querySelectorAll('#index3 .endow__content .endow__right .endow__slide .btn-link--more');
+  moreLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var dtHr = link.getAttribute('data-href');
+      var hr = link.getAttribute('href');
+      
+      var valueItem = "";
+      var tmpItem = link;
+      var count = 0;
+      if (!tmpItem.getAttribute('data-box')) {
+        do {
+          tmpItem = tmpItem.parentElement;
+          ++count;
+        } while (!tmpItem.getAttribute('data-box') && count < 100);
+      }
+
+      valueItem = tmpItem.getAttribute('data-box')
+      if (!valueItem) {
+        console.log('Not found data-box!!');
+        e.preventDefault();
+        return false;
+      }
+
+      var tmpItemActive = link;
+      count = 0;
+      var valueItemActive = "";
+
+      if (!tmpItemActive.getAttribute('data-active')) {
+        do {
+          tmpItemActive = tmpItemActive.parentElement;
+          ++count;
+        } while (!tmpItemActive.getAttribute('data-active') && count < 100);
+      }
+
+      valueItemActive = tmpItemActive.getAttribute('data-active')
+      if (!valueItemActive) {
+        console.log('Not found data-active!!');
+        e.preventDefault();
+        return false;
+      }
+
+      localStorage.setItem('url', `${hr}`);
+      localStorage.setItem('box', `${valueItem}`);
+      localStorage.setItem('active', `${valueItemActive}`);
+
+      history.pushState({id: null}, hr, hr);
+
+      location.replace(dtHr);
+      return true;
+    })
+  })
 }
 
 function toggleIndex4() {
@@ -296,23 +353,22 @@ function closeMapInfor() {
   }
 }
 
-
-function dateTimePickerOrder(){
+function dateTimePickerOrder() {
   $('#receiveFooter').datetimepicker({
-    timepicker:false,
+    timepicker: false,
     format: 'd/m/Y',
   });
   $('#payFooter').datetimepicker({
-    timepicker:false,
+    timepicker: false,
     format: 'd/m/Y',
   });
 }
 
-function index7(){
+function index7() {
   var formFooter = document.getElementById('form-footer')
-  
-  if (formFooter){
-    document.addEventListener('click', function (e){
+
+  if (formFooter) {
+    document.addEventListener('click', function (e) {
       activeOptionToggle(e);
     })
     activeOpt();
@@ -325,8 +381,8 @@ function index7(){
 function activeOptionToggle(evt: any) {
   var links = document.querySelectorAll('.form-footer .option .option-item');
 
-  links.forEach(function(item){
-    var evtTarget = <HTMLElement> evt.target;
+  links.forEach(function (item) {
+    var evtTarget = <HTMLElement>evt.target;
     var listOptions = item.getElementsByClassName('group-option-list');
     var content = item.getElementsByClassName('input-content');
 
@@ -334,45 +390,44 @@ function activeOptionToggle(evt: any) {
       if (evtTarget === listOptions[0]) {
         return;
       }
-      else if (evtTarget === content[0]){
+      else if (evtTarget === content[0]) {
         return;
       }
 
-      evtTarget = <HTMLElement> evtTarget.parentNode;
+      evtTarget = <HTMLElement>evtTarget.parentNode;
     } while (evtTarget);
 
     listOptions[0].classList.remove('active');
   })
 }
 
-
-function activeOpt(){
+function activeOpt() {
   var opts = document.querySelectorAll('.form-footer .option .option-item');
-  opts.forEach(function(opt){
+  opts.forEach(function (opt) {
     var list = opt.getElementsByClassName('group-option-list');
     var optItems = opt.getElementsByClassName('group-option-item');
     var valueInput = opt.getElementsByClassName('input-content__value');
-    
-    opt.addEventListener('click', function(){
+
+    opt.addEventListener('click', function () {
       list[0].classList.toggle('active');
     })
 
-    for (let i = 0; i < optItems.length; ++i){
-      if (optItems[i].classList.contains('active')){
+    for (let i = 0; i < optItems.length; ++i) {
+      if (optItems[i].classList.contains('active')) {
         valueInput[0].setAttribute('data-value', optItems[i].getAttribute('data-value'));
         valueInput[0].innerHTML = optItems[i].innerHTML;
       }
     }
 
-    for (let i = 0; i < optItems.length; ++i){
-      optItems[i].addEventListener('click', function(){
+    for (let i = 0; i < optItems.length; ++i) {
+      optItems[i].addEventListener('click', function () {
         // var val = this.getAttribute('data-value');
         // var htmlItem = this.innerHTML;
 
         valueInput[0].setAttribute('data-value', this.getAttribute('data-value'));
         valueInput[0].innerHTML = this.innerHTML;
 
-        for (let tmp = 0; tmp < optItems.length; ++tmp){
+        for (let tmp = 0; tmp < optItems.length; ++tmp) {
           optItems[tmp].classList.remove('active');
         }
         this.classList.add('active');
@@ -382,10 +437,10 @@ function activeOpt(){
   })
 }
 
-function checkInputValue(inp: any){
-  if (inp){
-    var tmpInp = <HTMLInputElement> inp;
-    if (!tmpInp.value){
+function checkInputValue(inp: any) {
+  if (inp) {
+    var tmpInp = <HTMLInputElement>inp;
+    if (!tmpInp.value) {
       tmpInp.classList.add('error');
       return false;
     }
@@ -394,30 +449,30 @@ function checkInputValue(inp: any){
   return false;
 }
 
-function checkOptionValue(opt:any){
+function checkOptionValue(opt: any) {
   var valOpt = opt.getAttribute('data-value');
-  if (valOpt){
+  if (valOpt) {
     return true;
   }
   opt.classList.add('error');
   return false;
 }
 
-function checkAllValue(inps:any = null, opts :any = null){
-  if (inps){
-    var check = inps.find(function(inp:any){
+function checkAllValue(inps: any = null, opts: any = null) {
+  if (inps) {
+    var check = inps.find(function (inp: any) {
       return !checkInputValue(inp);
     });
-    if (check){
+    if (check) {
       return false;
     }
   }
 
-  if (opts){
-    var check = opts.find(function(opt:any){
+  if (opts) {
+    var check = opts.find(function (opt: any) {
       return !checkOptionValue(opt);
     });
-    if (check){
+    if (check) {
       return false;
     }
   }
@@ -425,11 +480,11 @@ function checkAllValue(inps:any = null, opts :any = null){
   return true;
 }
 
-function submit(method: string, action: string, content: string = null, dataOpt: any = null){
-  var info = document.querySelector('#orderFormFooter .infor-submit'); 
-  
+function submit(method: string, action: string, content: string = null, dataOpt: any = null) {
+  var info = document.querySelector('#orderFormFooter .infor-submit');
+
   var xhttp = new XMLHttpRequest();
-  
+
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       console.log('submit form successed!');
@@ -442,38 +497,38 @@ function submit(method: string, action: string, content: string = null, dataOpt:
     }
   };
 
-  if (content){     
+  if (content) {
     xhttp.open(`${method}`, `${action}`, true);
     xhttp.setRequestHeader("Content-Type", `${content}`);
 
-    if(dataOpt){
+    if (dataOpt) {
       xhttp.send(JSON.stringify(dataOpt));
     }
-    else{
+    else {
       xhttp.send();
     }
   }
-  else{
+  else {
     xhttp.open(`${method}`, `${action}`, true);
-    if(dataOpt){
+    if (dataOpt) {
       xhttp.send(JSON.stringify(dataOpt));
     }
-    else{
+    else {
       xhttp.send();
     }
   }
 }
 
-function submitInfo(){
-  var receive =  <HTMLInputElement> document.getElementById('receiveFooter');
-  var pay =  <HTMLInputElement> document.getElementById('payFooter');
+function submitInfo() {
+  var receive = <HTMLInputElement>document.getElementById('receiveFooter');
+  var pay = <HTMLInputElement>document.getElementById('payFooter');
 
   var optRoom = document.getElementById('optRoomFooter');
   var optAdult = document.getElementById('optAdultFooter');
   var optChild = document.getElementById('optchildFooter');
-  
 
-  if (!checkAllValue([receive, pay])){
+
+  if (!checkAllValue([receive, pay])) {
     return false;
   }
 
@@ -486,20 +541,22 @@ function submitInfo(){
   }
 
   var form = document.getElementById('orderFormFooter');
-  if (form){
+  if (form) {
     var method = form.getAttribute('method');
     var action = form.getAttribute('action');
     var contentType = form.getAttribute('enctype');
-  
+
     submit(method, action, contentType, dtOpt);
+
+    location.replace(`${action}`);
   }
 }
 
-function submitFormFooter(){
+function submitFormFooter() {
   var btn = document.getElementById('submitOrderFooter');
-  
-  if (btn){
-    btn.onclick = function(e){
+
+  if (btn) {
+    btn.onclick = function (e) {
       e.preventDefault();
       submitInfo();
     }
@@ -511,6 +568,7 @@ export default {
     index1();
     index2();
     toggleIndex3();
+    linkIndex3();
     toggleIndex4();
     index6();
     closeMapInfor();

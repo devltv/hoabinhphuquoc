@@ -1,14 +1,13 @@
-.booking{
+.booking {
   // margin-top: 120px;
   @include spaceBooking(s120, margin-top);
 
-  &-container{
+  &-container {
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
-  &-step{
+  &-step {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,20 +23,20 @@
     @include spaceBooking(s50, padding-bottom);
 
     border-bottom: 1px solid map-get($color, main);
-    &>*{
+    & > * {
       margin-top: 18px;
       margin-left: 18px;
       margin-right: 18px;
     }
 
-    &__item{
+    &__item {
       display: flex;
       flex-wrap: nowrap;
       flex-direction: row;
       align-items: center;
 
-      &>*{
-        &:not(:first-child){
+      & > * {
+        &:not(:first-child) {
           margin-left: 12px;
         }
       }
@@ -46,12 +45,11 @@
       cursor: default;
       pointer-events: none;
 
-
-      &-number{
+      &-number {
         width: 48px;
         height: 48px;
 
-        @include rp(ts){
+        @include rp(ts) {
           width: 36px;
           height: 36px;
         }
@@ -59,26 +57,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         border-radius: 500px;
         background-color: map-get($color, iconMainBgActive);
         color: map-get($color, baseBold);
         @include title(s26);
         @include bold;
       }
-      &-span{
+      &-span {
         @include title(s26);
         @include regular;
         color: map-get($color, baseBold);
         white-space: nowrap;
       }
 
-      &.active{
-        .booking-step__item-number{
+      &.active {
+        .booking-step__item-number {
           background-color: map-get($color, main);
           color: white;
         }
-        .booking-step__item-span{
+        .booking-step__item-span {
           color: map-get($color, main);
           @include bold;
         }
@@ -86,52 +84,52 @@
     }
   }
 
-  &-form{
+  &-form {
     // margin-top: 90px;
     // margin-bottom: 90px;
     @include spaceBooking(s90, margin-top);
     @include spaceBooking(s90, margin-bottom);
 
-    @include rp(mx){
+    @include rp(mx) {
       width: 100%;
     }
     // booking info
-    .form-step{
+    .form-step {
       max-width: 812px;
       margin: auto;
 
-      &__item{
-        &:not(:first-child){
+      &__item {
+        &:not(:first-child) {
           margin-top: 42px;
-          @include rp(ts){
+          @include rp(ts) {
             margin-top: 36px;
           }
-          @include rp(ml){
+          @include rp(ml) {
             margin-top: 24px;
           }
         }
-        &>*:not(:first-child){
+        & > *:not(:first-child) {
           margin-top: 24px;
-          @include rp(ts){
+          @include rp(ts) {
             margin-top: 18px;
           }
-          @include rp(ml){
+          @include rp(ml) {
             margin-top: 12px;
           }
         }
-        &-input{
+        &-input {
           position: relative;
           max-width: 100%;
           height: 56px;
 
-          input{
+          input {
             width: 100%;
             height: 100%;
 
             padding-left: 24px;
 
             border: 2px solid map-get($color, baseBold);
-            &:focus{
+            &:focus {
               border: 2px solid map-get($color, main);
             }
           }
@@ -139,9 +137,10 @@
           justify-content: center;
           align-items: center;
         }
-        &-img{
+        &-img {
           position: absolute;
-          top: 50%; right: 10px;
+          top: 50%;
+          right: 10px;
           transform: translateY(-50%);
           object-fit: contain;
           margin: 0 !important;
@@ -149,26 +148,27 @@
           height: 36px;
           padding-bottom: 4px;
           pointer-events: none;
-  
-          img{
+
+          img {
             object-fit: contain;
           }
         }
 
-        &-submit{
+        &-submit {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: row;
           flex-wrap: wrap;
 
-          button, input[type="submit"]{
+          button,
+          input[type="submit"] {
             outline: none;
             background: transparent;
             border: none;
             padding: 8px 16px;
             min-width: 120px;
-  
+
             margin: auto;
             background-color: map-get($color, main);
             @include bold;
@@ -181,25 +181,44 @@
     }
 
     // booking select
-    .select{
-      &-info{
-        &__title{
+    .select {
+      $pd1: 150px;
+      @include rp(pl){
+        $pd1: 90px;
+      }
+      @include rp(pm){
+        $pd1: 48px;
+      }
+      @include rp(mx){
+        $pd1: 36px;
+      }
+      @include rp(ml){
+        $pd1: 24px;
+      }
+      @include rp(mm){
+        $pd1: 16px;
+      }
+
+      &-info {
+        &__title {
           text-align: center;
-          &>*{
+          & > * {
             @include title(s51);
             @include bold;
             color: map-get($color, main);
             @include family--primary;
           }
         }
-        &-details{
+        &-details {
           margin-top: 18px;
-          .detail-left{
+          display: flex;
+          justify-content: center;
+          .detail-left {
             background-color: white;
-            box-shadow: 0 3px 6px rgba(0,0,0,.16);
-            
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
             position: relative;
-            &--overlay{
+            &--overlay {
               position: absolute;
               top: 10px;
               left: 10px;
@@ -208,91 +227,104 @@
               border: 1px solid map-get($color, main);
               background-color: transparent;
             }
-  
-            &__info{
+
+            &__info {
               padding: 90px;
+              @include rp(ts){
+                padding: 64px;
+              }
+
+              @include rp(mx){
+                padding: 48px;
+              }
+              @include rp(ml){
+                padding: 36px;
+              }
 
               display: flex;
               flex-direction: column;
               flex-wrap: wrap;
-  
-              &-item{
+
+              &-item {
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
                 align-items: center;
-  
-                img{
+
+                img {
                   align-self: self-start;
 
                   width: 32px;
                   height: 32px;
                   object-fit: contain;
                 }
-                p{
+                p {
                   margin-left: 32px;
+                  @include rp(mx){
+                    margin-left: 16px;
+                  }
                   flex: 1;
                 }
 
-                &:not(:first-child){
+                &:not(:first-child) {
                   margin-top: 40px;
                 }
               }
             }
           }
-          .detail-right{
+
+          .detail-right {
             padding-top: 40px;
             padding-left: 64px;
 
-            &>*{
+            & > * {
               margin-top: 36px;
             }
 
-            &__title{
-              &>*{
+            &__title {
+              & > * {
                 @include regular;
                 padding-bottom: 8px;
                 border-bottom: 1px solid map-get($color, base);
               }
             }
-            &-superior{
-
+            &-superior {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
 
-              &__left{
+              &__left {
                 display: flex;
                 flex-direction: column;
-                &>*{
-                  &:not(:first-child){
+                & > * {
+                  &:not(:first-child) {
                     margin-top: 6px;
                   }
                 }
-                h4{
+                h4 {
                   @include bold;
                   @include title(s26);
                 }
-                &-icons{
-                  &>*{
+                &-icons {
+                  & > * {
                     width: auto;
                     height: 20px;
                     object-fit: contain;
 
-                    &:not(:first-child){
+                    &:not(:first-child) {
                       margin-left: 8px;
                     }
                   }
                 }
               }
-              &__right{
+              &__right {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 flex-wrap: wrap;
                 align-items: center;
 
-                &-option{
+                &-option {
                   display: flex;
                   flex-direction: row;
                   justify-content: flex-end;
@@ -300,40 +332,40 @@
                   align-items: center;
                   width: 100%;
 
-                  &>*{
-                    &:not(:first-child){
+                  & > * {
+                    &:not(:first-child) {
                       margin-left: 24px;
                     }
                   }
 
-                  .option{
+                  .option {
                     position: relative;
 
                     padding: 10px 0;
                     border: 1px solid map-get($color, base);
-                    
+
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
 
                     min-width: 60px;
-                    &-value{
+                    &-value {
                       padding-left: 12px;
                     }
-                    &-icon{
+                    &-icon {
                       position: absolute;
                       top: 50%;
                       right: 8px;
                       transform: translateY(-50%);
                     }
 
-                    &-list{
+                    &-list {
                       position: absolute;
                       top: calc(100% + 2px);
                       left: 0;
 
                       background-color: white;
-                      box-shadow: 0 3px 6px rgba(0,0,0,.16);
+                      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
                       width: 100%;
 
@@ -363,25 +395,25 @@
                         background: #555;
                       }
 
-                      &>*{
+                      & > * {
                         padding: 6px 12px;
-                        &:hover{
-                          background-color: rgba(map-get($color, main), .7);
+                        &:hover {
+                          background-color: rgba(map-get($color, main), 0.7);
                         }
-                        &.active{
+                        &.active {
                           background-color: map-get($color, main);
                         }
                       }
 
-                      &.active{
+                      &.active {
                         display: block;
                       }
                     }
                   }
                 }
-                &-info{
+                &-info {
                   align-self: flex-end;
-                  &>*{
+                  & > * {
                     font-size: 10px;
                     color: map-get($color, error);
                   }
@@ -389,54 +421,735 @@
               }
             }
 
-            &-value{
-              &__item{
+            &-value {
+              &__item {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 flex-wrap: wrap;
-                
-                .value__item{
+
+                .value__item {
                   display: flex;
                   flex-direction: row;
                   align-items: center;
 
-                  &:first-child{
+                  &:first-child {
                     width: 148px;
                   }
 
-                  &:nth-of-type(2n + 1){
+                  &:nth-of-type(2n + 1) {
                     margin-left: 24px;
                   }
 
-                  &>*{
-                    &:not(:first-child){
+                  & > * {
+                    &:not(:first-child) {
                       margin-left: 16px;
                     }
                   }
 
-                  &-icons{
+                  &-icons {
                     display: flex;
-                    &>*{
+                    & > * {
                       width: 18px;
                       height: auto;
                       object-fit: contain;
                     }
                   }
 
-                  &-date{
+                  &-date {
                     display: flex;
                     align-items: center;
 
-                    &>*{
-                      &:not(:first-child){
+                    & > * {
+                      &:not(:first-child) {
                         margin-left: 24px;
                       }
                     }
                   }
 
-                  &-span{
+                  &-span {
                     display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      $mt: 42px;
+      @include rp(tm){
+        $mt: 24px;
+      }
+
+      &-product {
+        margin-top: $mt;
+
+        display: flex;
+        flex-direction: column;
+
+        $sp: 24px;
+        @include rp(mx){
+          $sp: 12px;
+        }      
+        $heightInput: 48px;
+
+        $size: 2.2rem;
+
+        &-toolbar {
+          width: 100%;
+          background-color: map-get($color, main);
+
+          display: flex;
+          flex-direction: row;
+          @include rp(tx){
+            flex-direction: column;
+          }
+          justify-content: center;
+
+          padding: 32px $pd1;
+
+          & > * {
+            &:not(:first-child) {
+              margin-left: $sp;
+              @include rp(tx){
+                margin-left: 0;
+                margin-top: $sp;
+              }
+            }
+          }
+
+          .input {
+            width: 45%;
+            @include rp(tx){
+              width: 100%;
+            }
+            &-date {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: row;
+              @include rp(ml){
+                flex-direction: column;
+              }
+              &>*{
+                &:not(:first-child){
+                  margin-left: $sp;
+                  @include rp(ml){
+                    margin-left: 0;
+                    margin-top: $sp;
+                  }
+                }
+              }
+
+              &__group {
+                position: relative;
+                height: $heightInput;
+
+                width: 100%;
+
+                &-icon {
+                  position: absolute;
+                  top: 50%;
+                  right: 10px;
+                  transform: translateY(-50%);
+
+                  height: 80%;
+                }
+              }
+            }
+          }
+
+          label {
+            color: map-get($color, subInput);
+            font-size: $size;
+          }
+
+          input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            height: 100%;
+      
+            background-color: white;
+            padding-left: $sp;
+      
+            font-size: $size;
+          }
+          
+          .input-content {
+            position: relative;
+            height: $heightInput;
+          }
+
+          .option {
+            width: 55%;
+            @include rp(tx){
+              width: 100%;
+            }
+            display: flex;
+            @include rp(ml){
+              flex-direction: column;
+            }
+
+            & > * {
+              flex: 2;
+      
+              &:not(:first-child) {
+                margin-left: $sp;
+      
+                @include rp(ml){
+                  margin-left: 0;
+                  margin-top: $sp;
+                }
+              }
+
+              &:last-child{
+                flex: 1;
+                @include rp(ml){
+                  flex: 2;
+                }
+              }
+            }
+      
+            &-item{
+              position: relative;
+            }
+      
+            .input-content {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+      
+              &__value {
+                background-color: white;
+                flex: 1;
+                height: 100%;
+      
+                display: flex;
+                align-items: center;
+                padding-left: $sp;
+      
+                font-size: 2.2rem;
+      
+                cursor: pointer;
+                user-select: none;
+
+                &>*{
+                  &:not(:first-child){
+                    margin-left: 4px;
+                  }
+                }
+
+                img{
+                  height: auto;
+                  width: auto;
+                }
+              }
+              &__img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 10px;
+      
+                width: auto;
+      
+                pointer-events: none;
+              }
+            }
+            .group-option {
+              &-list {
+                position: absolute;
+                top: calc(100% + 4px);
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+      
+                // margin: 0 12px;
+      
+                overflow: auto;
+                z-index: 11111;
+      
+                max-height: 180px;
+                overflow: auto;
+      
+                display: none;
+      
+                &.active {
+                  display: block;
+                }
+              }
+      
+              &-item {
+                padding: 12px $sp;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                &>*:not(:first-child){
+                  margin-left: 4px;
+                }
+
+                &.active {
+                  color: white;
+                  background-color: map-get($color, main);
+                  span {
+                    color: inherit;
+                  }
+                  pointer-events: none;
+                }
+      
+                transition: 0.16s all ease-in;
+                // &.active:hover{
+                //   // color: white;
+                //   // background-color: rgba(map-get($color, main),.7);
+                //   // span{
+                //   //   color: inherit;
+                //   // }
+                // }
+                &:hover {
+                  color: white;
+                  background-color: rgba(map-get($color, main), 0.7);
+                  span {
+                    color: inherit;
+                  }
+                }
+
+                img{
+                  width: auto;
+                  height: auto;
+                  object-fit: contain;
+                }
+              }
+            }
+          }
+        }
+
+        &-list{
+          margin-top: $mt;
+
+          display: flex;
+          flex-direction: row;
+
+          @include rp(ts){
+            flex-direction: column;
+          }
+        }
+
+        &-button{
+          order: 2;
+          width: calc(150px - 16px);
+          flex-shrink: 0;
+
+          @include rp(ts){
+            display: flex;
+            flex-direction: row-reverse;
+
+            justify-content: space-between;
+            align-items: center;
+
+            width: 100%;
+
+            .btn-link--booking{
+              align-self: center;
+              display: inline-block;
+            }
+          }
+
+          &>*{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include rp(ts){
+              width: auto;
+            }
+          }
+
+          &__info{
+            display: flex;
+            flex-direction: column;
+
+            .price{
+              @include title(s26);
+            }
+
+            &>*{
+              margin-top: 12px;
+            }
+          }
+        }
+
+        &-info{
+          padding-right: 16px;
+
+          @include rp(ts){
+            padding-right: 0;
+          }
+
+          order: 1;
+          flex: 1;
+
+          &__item{
+            &:not(:first-child){
+              margin-top: 42px;
+            }
+            .room{
+              padding: 36px $pd1;
+
+              background-color: map-get($color, footer-bg);
+              &-info{
+                display: flex;
+                flex-direction: row;
+                @include rp(tm){
+                  flex-direction: column;
+                }
+                // &>*{
+                //   flex: 1;
+                // }
+                &__img{
+                  width: 40%;
+                  @include rp(pm){
+                    width: 45%;
+                  }
+                  padding-right: 1%;
+                  @include rp(tm){
+                    width: 100%;
+                    padding-right: 0;
+                  }
+                }
+                &__content{
+                  flex: 1;
+                  padding-left: 1%;
+                  @include rp(tm){
+                    padding-left: 0;
+                    padding-top: 12px;
+                  }
+                  &-item{
+                    &:not(:first-child){ 
+                      margin-top: 18px;
+                      padding-top: 18px;
+                      border-top: 1px solid rgba(map-get($color, base), .3);
+                    }
+                    &>*{
+                      // padding: 8px 0;
+                      &:not(:first-child){
+                        margin-top: 18px;
+                      }
+                    }
+        
+                    .box-desc-icons{
+                      &>*:not(:first-child){
+                        padding-left: 0;
+                        // margin-left: 40px;
+                        @include spaceRest(descIconList, margin-left);
+        
+                        &::after{
+                          display: none;
+                        }
+                      }
+                    }
+        
+                    ul{
+                      list-style-type: none;
+                      display: flex;
+                      flex-direction: row;
+                      flex-wrap: wrap;
+                      // justify-content: space-between;
+        
+                      li{
+                        display: flex;
+                        align-items: center;
+        
+                        img + img{
+                          margin-left: 4px;
+                        }
+                      }
+                    }
+        
+                    ul>li{
+                      &:not(:first-child){
+                        // margin-left: 8px;
+                        // padding-left: 8px;
+                        @include spaceRest(descLine, margin-left);
+                        @include spaceRest(descLine, padding-left);
+        
+                        // border-left: 1px solid map-get($color, baseBold);
+                      
+                        position: relative;
+        
+                        &::after{
+                          content: "";
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          height: 100%;
+                          width: 1px;
+                          // background-color: map-get($color, baseBold);
+                          border-left: 1px solid map-get($color, baseBold);
+                        }
+                      }
+                    }
+        
+                    ul>li img{
+                      width: initial;
+                      height: initial;
+                    } 
+                  }
+                  &-title{
+                    &>*{
+                      @include title(s41);
+                      color: map-get($color, main);
+                      @include bold;
+                    }
+                  }
+                  &-desc{
+                    margin-top: 28px;
+                  }
+                }
+              }
+
+              &-option{
+                &-item{
+                  display: flex;
+                  flex-direction: row;
+                  @include rp(mx){
+                    flex-direction: column;
+                  }
+                  
+                  padding-top: 36px;
+                  margin-top: 48px;
+                  @include rp(tx){
+                    padding-top: 24px;
+                    margin-top: 24px;
+                  }
+
+                  border-top: 1px solid rgba(map-get($color, base), .3);
+
+                  &__left{
+                    width: 40%;
+                    @include rp(mx){
+                      width: 100%;
+                    }
+                    &-title{
+                      &>*{
+                        @include bold;
+                        @include title(s26);
+                        color: map-get($color, baseBold);
+                      }
+                    }
+                    &-list{
+                      margin-top: 18px;
+
+                      list-style-type: none;
+                      li{
+                        display: flex;
+                        flex-direction: row;
+
+                        .icons{
+                          flex-shrink: 0;
+                          width: 36px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          padding-right: 4px;
+                          img{
+                            width: auto;
+                            height: auto;
+                            object-fit: contain;
+                          }
+                        }
+                        p{
+                          flex: 1;
+                        }
+                      }
+
+                      li + li{
+                        margin-top: 12px;
+                      }
+                    }
+                  }
+
+                  &__right{
+                    padding-left: 12px;
+                    
+                    @include rp(mx){
+                      padding-left: 0;
+                      padding-top: 12px;
+                    }
+
+                    flex: 1;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    &-item{
+                      @include rp(mm){
+                        &:last-child{
+                          width: 100%;
+                          margin-top: 12px;
+                        }
+                      }
+                      .opt-icons{
+                        list-style-type: none;
+
+                        display: flex;
+                        flex-direction: row;
+
+                        li + li{
+                          margin-left: 4px;
+                        }
+                      }
+                      .price{
+                        img{
+                          width: auto;
+                          height: auto;
+                          object-fit: contain;
+
+                          flex-shrink: 0;
+                        }
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        &__percent{
+                          display: flex;
+                          justify-content: center;
+                          align-self: center;
+
+                          padding: 4px 6px;
+                          border: 1px solid map-get($color, percent);
+                        
+                          font-size: 10px;
+                          color: map-get($color, percent);
+
+                          &>*:not(:first-child){
+                            margin-left: 4px;
+                          }
+                        }
+
+                        &__sale{
+                          display: flex;
+                          flex-direction: row;
+                          justify-content: center;
+                          align-items: center;
+                          &>*{
+                            &:not(:first-child){
+                              margin-left: 8px;
+                            }
+                          }
+                          p{
+                            color: map-get($color, baseBold);
+                            text-decoration: line-through;
+                          }
+                        }
+
+                        &__main{
+                          p{
+                            color: map-get($color, main);
+                            @include title(s26);
+                            @include bold;
+                          }
+                        }
+
+                        &__times{
+                          p{
+                            text-align: center;
+                          }
+                        }
+                      }
+
+                      .option{
+                        &-desc{
+                          display: flex;
+                          flex-direction: row;
+                          justify-content: center;
+                          align-items: center;
+                          
+                          &-p{
+                            margin-right: 24px;
+                          }
+                          &-select{
+                            position: relative;
+
+                            .input{
+                              display: flex;
+                              flex-direction: row;
+
+                              padding: 4px 6px;
+                              border: 1px solid map-get($color, base);
+                            
+                              &>*:not(:first-child){
+                                margin-left: 8px;
+                              }
+                            }
+
+                            .group-option{
+                              &-list{
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                background-color: white;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16);
+                              
+                                // padding: 0 6px;
+                  
+                                overflow: auto;
+                                z-index: 11111;
+  
+                                max-height: 120px;
+                                overflow: auto;
+  
+                                display: none;
+  
+                                &.active{
+                                  display: block;
+                                }
+                              }
+
+                              &-item{
+                                padding: 4px 6px;
+                                cursor: pointer;
+                                &.active{
+                                  color: white;
+                                  background-color: map-get($color, main);
+                                  span{
+                                    color: inherit;
+                                  }
+                                  pointer-events: none;
+                                }
+                
+                                transition: .16s all ease-in;
+
+                                &:hover{
+                                  color: white;
+                                  background-color: rgba(map-get($color, main),.7);
+                                  span{
+                                    color: inherit;
+                                  }
+                                }
+                              }
+                            }
+
+                          }
+                        }
+                        &-info{
+                          color: map-get($color, percent);
+                          font-size: 10px;
+
+                          text-align: right;
+                          @include rp(mm){
+                            text-align: center;
+                          }
+                          margin-top: 8px;
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -446,6 +1159,4 @@
       }
     }
   }
-
-  
 }
