@@ -182,7 +182,6 @@ function popupTravel(id: any = null){
     if (id){
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
           if (this.responseText){
             popupContent.innerHTML = this.responseText;
           }
@@ -191,15 +190,7 @@ function popupTravel(id: any = null){
             activeItemOption();
           }
           return;
-        }
-        else {
-          popup.classList.add('show');
-          if (popup.classList.contains('show')){
-            activeItemOption();
-          }
-
-          console.log('popup failed!');
-        }
+     
       };
       xhttp.open("GET", `${urlAjax}/${id}`, true);
       xhttp.send();
