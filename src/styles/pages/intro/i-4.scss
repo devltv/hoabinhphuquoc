@@ -34,7 +34,7 @@
             @include blockIntro-4(Intro-1, height);
             .swiper-wrapper{
                 align-items: center;
-                justify-content: center;
+                // justify-content: center;
                 .swiper-slide{
                     transition: height 0.3s ease-in-out;
                     
@@ -125,7 +125,7 @@
                     
                 }
                 .swiper-slide-active{
-                    @include blockIntro-4(Intro-center, width, !important);
+                    // @include blockIntro-4(Intro-center, width, !important);
                     height: 99%;
                     .section{
                         &__title-section{
@@ -136,6 +136,7 @@
                 .swiper-slide-next,
                 .swiper-slide-prev{
                     height: 90%;
+                    // width: calc(100% /3) !important;
                     .section{
                         @include rp(ml){
                             &__title-section{

@@ -44,8 +44,8 @@ function intro4() {
         el: ".swiper-pagination",
         clickable: true,
       },
-      initialSlide: 1,
-      
+      // initialSlide: 1,
+      loop: true
     });
 
     loadRestroom();
