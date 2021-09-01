@@ -28,7 +28,7 @@ body {
 	@include title(s18);
 	font-weight: 400;
 	line-height: 1.2;
-	color: #000000;
+	color: map-get($color, base);
 	background-color: #ffffff;
 	@include family--second;
 	@include regular;

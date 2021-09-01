@@ -16,8 +16,6 @@ $spacewedding2:(
     tx: 32px,
     ts: 32px,
     mx: 28px,
-    
-    
   ),
   s80:(
     default:80px,
@@ -54,7 +52,12 @@ $spacewedding3:(
        mx: 14px,
        mm: 10px,
       // ms: 32px,
-      
+    ),
+    s80:(
+      default:80px,
+      pm: 60px,
+      ps: 50px,
+      tx: 40px,
     ),
     s104:(
       default: 104px,

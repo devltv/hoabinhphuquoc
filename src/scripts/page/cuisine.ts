@@ -77,7 +77,7 @@ function popupRest(id: any = null){
     
     var popup = document.querySelector('.cuisine-popup--overlay');
     var body = document.querySelector('body');
-    var popupContent = document.querySelector('#cuisine2 .cuisine-popup .popup');
+    var popupContent = document.querySelector('#cuisine2 .cuisine-popup .popup .popup-wrapper--bg');
     
     var urlAjax = './popup-cuisine';
 

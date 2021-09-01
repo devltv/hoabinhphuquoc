@@ -16,26 +16,15 @@ section#booking-1
             .booking-step__item
               span.booking-step__item-number 4
               span.booking-step__item-span Thanh toán
+
         .booking-form.column-10.margin-auto
-          form.form-step#formStep
+          form.form-step#formStep(action="./booking-post" method="GET")
             .form-step__item
               label 1. Chọn ngày đến
               .form-step__item-input
                 input(type="text" id="receiveFormStep" autoComplete="off")
                 .form-step__item-img
                   img(src="./assets/icons/date.png", alt="date")
-                
-              
-              //- .form-step__item-select 
-              //-   span.form-step__item-select--span 
-              //-     | Resort Hòa Bình - Phú Quốc
-              //-   .form-step__item-select--icon 
-              //-     <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
-              //-       <g id="Group_8" data-name="Group 8" transform="translate(2432.072 -1707.523) rotate(90)">
-              //-         <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              //-         <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              //-       </g>
-              //-     </svg>
 
             .form-step__item
               label 2. Chọn ngày đi
@@ -43,6 +32,7 @@ section#booking-1
                 input(type="text" id="payFormStep" autoComplete="off")
                 .form-step__item-img
                   img(src="./assets/icons/date.png", alt="date")
+
             .form-step__item
               .form-step__item-submit
                 button#submitBookingStep(style="submit") Đặt phòng

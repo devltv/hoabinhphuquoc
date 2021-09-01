@@ -73,6 +73,8 @@ $color: (
 
 	// background popup
 	bgPopup: #003F7A,
+
+	percent: #ED1C24,
 );
 
 $letterSpacing: (
@@ -370,7 +372,7 @@ $serviceBox: (
 	),
 );
 
-
+@import "../_variables/banner";
 @import "../_variables/footer";
 @import "../_variables/header";
 @import "../_variables/index";

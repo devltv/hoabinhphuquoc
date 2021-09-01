@@ -1,15 +1,17 @@
 if banner
   - var attributes = {};
-  - attributes.src = imgBanner;
-  - attributes.style = styleBanner;
+  - attributes["data-src"] = imgBanner;
 
   section#banner
     .banner
-      .banner--overlay
+      .overlay
       .banner-img 
-        img.lazyload(data-src="#{imgBanner}" alt="banner")&attributes(attributes)
-      .banner-content.overlay.container
-        .banner-content__title
-          h2.banner-content__title--size.uppercase #{titleBanner} 
-        .banner-content__desc
-          p.banner-content__desc--size #{textBanner}
+        img.lazyload(alt="banner")&attributes(attributes)
+      .container
+        .banner-content
+          .banner-content__titleSub
+              h3 welcome to
+          .banner-content__title
+            h2 Hòa Bình Phú Quốc
+          .banner-content__desc
+            p resort

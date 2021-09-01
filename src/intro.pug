@@ -4,16 +4,10 @@ block var
 	- let title = 'Page | Introduction';
 	//- - let bodyClass = 'index-page';
 	- let banner = false;
-	
-	- let bannerSub = false;
+	- let bannerSub = true;
 	- let titleBannerSub = "Giới Thiệu";
-	- let imgBannerSub = "./assets/images/page/service/banner.png";
+	- let imgBannerSub = "./assets/images/layout/banner/intro.png";
 	- let breadcrumbBanner = [["Trang chủ", ""], ["Giới thiệu", "active"]];
-	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
-
-//- block loading
-//- 	include _templates/_layout/_loading
-//- block banner,breadcrumb
 
 block main
 	div(id="introductionPage")
@@ -23,5 +17,6 @@ block main
 		include _templates/intro/i-3.pug
 		include _templates/intro/i-4.pug
 		include _templates/intro/i-5.pug
+		include _templates/intro/i-6.pug
         
 block scripts

@@ -43,16 +43,19 @@ header#header
                         img(src="./assets/images/layout/header/vi.png", alt="VI")
                       .language-content__code
                         span VI1
+
                     li.language-list__item(data-lang="vi")
                       .language-content__img 
                         img(src="./assets/images/layout/header/vi.png", alt="VI")
                       .language-content__code
                         span VI2
+
                     li.language-list__item(data-lang="vi")
                       .language-content__img 
                         img(src="./assets/images/layout/header/vi.png", alt="VI")
                       .language-content__code
                         span VI3
+
                     li.language-list__item(data-lang="vi")
                       .language-content__img 
                         img(src="./assets/images/layout/header/vi.png", alt="VI")
@@ -76,7 +79,7 @@ header#header
                     .content-popup__title
                       h4 Tạo đặt phòng 
                     .content-popup-form
-                      form(id="orderForm" method="POST" action="./order-header" enctype="application/json;charset=UTF-8")
+                      form(id="orderForm" method="GET" action="./booking-select.html" enctype="application/json;charset=UTF-8")
                         .order-text
                           .group-input
                             label.label-input(for="receiveOrder")
@@ -187,7 +190,7 @@ header#header
       .container
         a(href="./").header-main__logo
             img(src="./assets/icons/logoHeader.png", alt="logo header")
-        ul.header-main__nav
+        ul.header-main__nav          
           li.header-main__nav-item.active
             a(href="./intro.html") Giới thiệu
           li.header-main__nav-item

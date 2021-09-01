@@ -3,16 +3,16 @@ import pagination from "../layout/pagination";
 
 function intro1() {
   if (document.getElementById('intro-1__wrapper')) {
-    new Swiper(".intro-1", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+    // new Swiper(".intro-1", {
+    //   slidesPerView: 1,
+    //   spaceBetween: 10,
+    //   loop: true,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
   
-    });
+    // });
   }
 }
 

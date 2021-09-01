@@ -1,0 +1,95 @@
+section#form-footer
+  .form-footer
+    .container 
+      form.form-footer--container(id="orderFormFooter" method="GET" action="./booking-select.html" enctype="application/json;charset=UTF-8")
+        .form-footer__input
+          .input
+            .form-group 
+              label(for="receiveFooter") Ngày nhận phòng 
+              .input-content
+                input(type="text" id="receiveFooter" autoComplete="off")
+                img(src="./assets/icons/date.png", alt="date")
+            .form-group 
+              label(for="payFooter") Ngày trả phòng 
+              .input-content
+                input(type="text" id="payFooter" autoComplete="off")
+                img(src="./assets/icons/date.png", alt="date")
+          .option 
+            .option-item
+              .group-input
+                label
+                  span Số phòng
+                .input-content
+                  .input-content__value#optRoomFooter
+                    span 1
+                  .input-content__img
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.698" height="11.41" viewBox="0 0 20.698 11.41">
+                      <path id="Path_10603" data-name="Path 10603" d="M4137.432-883.392l9.819,9.819,9.818-9.819" transform="translate(-4136.902 883.922)" fill="none" stroke="#707070" stroke-width="1.5"/>
+                    </svg>
+                  .input-content__border
+              .group-option-list
+                .group-option-item.active(data-value="1")
+                  span 1
+                .group-option-item(data-value="2")
+                  span 2
+                .group-option-item(data-value="3")
+                  span 3
+                .group-option-item(data-value="4")
+                  span 4
+                .group-option-item(data-value="4")
+                  span 4
+                .group-option-item(data-value="4")
+                  span 4
+            .option-item
+              .group-input
+                label
+                  span Người lớn
+                .input-content
+                  .input-content__value#optAdultFooter
+                    span 1
+                  .input-content__img
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.698" height="11.41" viewBox="0 0 20.698 11.41">
+                      <path id="Path_10603" data-name="Path 10603" d="M4137.432-883.392l9.819,9.819,9.818-9.819" transform="translate(-4136.902 883.922)" fill="none" stroke="#707070" stroke-width="1.5"/>
+                    </svg>
+                  .input-content__border
+              .group-option-list
+                .group-option-item.active(data-value="1")
+                  span 1
+                .group-option-item(data-value="2")
+                  span 2
+                .group-option-item(data-value="3")
+                  span 3
+                .group-option-item(data-value="4")
+                  span 4
+                .group-option-item(data-value="4")
+                  span 4
+                .group-option-item(data-value="4")
+                  span 4
+            .option-item
+              .group-input
+                label
+                  span Trẻ em
+                .input-content
+                  .input-content__value#optchildFooter
+                    span 1
+                  .input-content__img
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.698" height="11.41" viewBox="0 0 20.698 11.41">
+                      <path id="Path_10603" data-name="Path 10603" d="M4137.432-883.392l9.819,9.819,9.818-9.819" transform="translate(-4136.902 883.922)" fill="none" stroke="#707070" stroke-width="1.5"/>
+                    </svg>
+                  .input-content__border
+              .group-option-list
+                .group-option-item.active(data-value="1")
+                  span 1
+                .group-option-item(data-value="2")
+                  span 2
+                .group-option-item(data-value="3")
+                  span 3
+                .group-option-item(data-value="4")
+                  span 4
+                .group-option-item(data-value="4")
+                  span 4
+                .group-option-item(data-value="4")
+                  span 4
+        .infor-submit
+        .form-footer__submit
+          button#submitOrderFooter Đặt phòng

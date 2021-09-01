@@ -3,22 +3,17 @@ extends _templates/_layout/_layout.pug
 block var
 	- let title = 'Page | Index';
 	- let bodyClass = 'index-page';
-	- let titleBanner = "Lorem ipsum dolor sit amet";
-	- let textBanner = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.";
-	- let imgBanner = "./assets/images/banner.jpg";
-	//- - let breadcrumbs = ["Tiện ích", "INCOTERMS 2000"];
+	- let banner = false;
+	- let bannerSub = true;
+	- let titleBannerSub = "Ẩm thực";
+	- let imgBannerSub = "./assets/images/layout/banner/cuisine.png";
+	- let breadcrumbBanner = [["Trang chủ", ""], ["Ẩm thực", "active"]];
 
-//- block loading
-//- 	include _templates/_layout/_loading
-//- block banner,breadcrumb
 block main
 	div(id="cuisinePage")
 		include _templates/cuisine/cs-1
 		include _templates/cuisine/cs-2
 		include _templates/cuisine/cs-3
-		include _templates/cuisine/cs-4
-		include _templates/cuisine/cs-5
-		include _templates/cuisine/cs-6
 		
 
 

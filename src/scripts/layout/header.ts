@@ -272,7 +272,6 @@ function toggleOrder() {
 
 function activeOptionOrder(evt: any) {
   var links = document.querySelectorAll('.content-order__popup .order-option-item');
-  var flag = false;
   links.forEach(function(item){
     var evtTarget = <HTMLElement> evt.target;
     var listOptions = item.getElementsByClassName('group-option-list');
@@ -280,7 +279,6 @@ function activeOptionOrder(evt: any) {
 
     do {
       if (evtTarget === listOptions[0]) {
-        console.log(2);
         return;
       }
       else if (evtTarget === content[0]){
@@ -353,7 +351,7 @@ function checkOptionValue(opt:any){
   return false;
 }
 
-function checkAllVale(inps:any = null, opts :any = null){
+function checkAllValue(inps:any = null, opts :any = null){
   if (inps){
     var check = inps.find(function(inp:any){
       return !checkInputValue(inp);
@@ -377,10 +375,12 @@ function checkAllVale(inps:any = null, opts :any = null){
 
 function submit(method: string, action: string, content: string = null, dataOpt: any = null){
   var xhttp = new XMLHttpRequest();
+  var info = document.querySelector('#orderForm .infor-order'); 
   
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       console.log('submit form successed!');
+      // info.innerHTML = this.responseText;
       return;
     }
     else {
@@ -427,7 +427,7 @@ function submitOrder(){
       changeInputError(receive);
       changeInputError(pay);
       
-      if (!checkAllVale([receive, pay])){
+      if (!checkAllValue([receive, pay])){
         return false;
       }
 
@@ -446,6 +446,12 @@ function submitOrder(){
       var contentType = form.getAttribute('enctype');
 
       submit(method, action, contentType, dtOpt);
+
+      //show client
+      var popupHeader = document.querySelector('.content-order__popup');
+      popupHeader.classList.remove('active');
+
+      location.replace(`${action}`);
     })
   }
 }

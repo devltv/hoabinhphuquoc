@@ -75,6 +75,8 @@
                     // width: 80%;
                     // @include blockIndex(inforIndex6,height);
 
+                    transition: .2s all linear;
+
                     &--title {
                         & > * {
                             @include family--primary;

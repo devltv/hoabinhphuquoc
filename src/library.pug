@@ -4,18 +4,14 @@ block var
 	- let title = 'Page | Library';
 	//- - let bodyClass = 'index-page';
 	- let banner = false;
-	
-	- let bannerSub = false;
-	- let titleBannerSub = "Thư Viện";
-	- let imgBannerSub = "./assets/images/page/service/banner.png";
-	- let breadcrumbBanner = [["Trang chủ", ""], ["Tiện ích", "active"]];
-	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
+	- let bannerSub = true;
+	- let titleBannerSub = "Thư viện";
+	- let imgBannerSub = "./assets/images/layout/banner/lib.png";
+	- let breadcrumbBanner = [["Trang chủ", ""], ["Thư viện", "active"]];
 
-//- block loading
-//- 	include _templates/_layout/_loading
-//- block banner,breadcrumb
 block main
 	div(id="libraryPage")
 		include _templates/library/lib-1.pug
+		include _templates/library/lib-2.pug
 
 block scripts

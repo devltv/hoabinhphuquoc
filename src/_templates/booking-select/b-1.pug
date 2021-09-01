@@ -22,85 +22,737 @@ section#booking-1
               .select-info__title
                 h2 Đặt phòng của bạn 
               .select-info-details.table-row
-                .detail-left.column-7
+                .detail-left.column-7.column-8-pm.column-10-tl.column-12-mx
                   .detail-left--overlay 
                   .detail-left__info
                     .detail-left__info-item
-                      img(src="./assets/icons/town.png", alt="hotel")
+                      img.lazyload(data-src="./assets/icons/town.png", alt="hotel")
                       p Hòa Bình Phú Quốc Resort
                     .detail-left__info-item
-                      img(src="./assets/icons/addr.png", alt="map")
+                      img.lazyload(data-src="./assets/icons/addr.png", alt="map")
                       p 71 Trần Hưng Đạo, Khu phố 7, phường Dương Đông, thành phố Phú Quốc, Tỉnh Kiên Giang
                     .detail-left__info-item
-                      img(src="./assets/icons/phone.png", alt="phone")
+                      img.lazyload(data-src="./assets/icons/phone.png", alt="phone")
                       p 84 (0) (2973) 99 6868 - 0941 178 178
 
-                .detail-right.column-5
-                  .detail-right__title
-                    p Phòng đã chọn
-                  .detail-right-superior 
-                    .detail-right-superior__left
-                      h4 Superior
-                      .detail-right-superior__left-icons
-                        img(src="./assets/icons/money.png", alt="money")
-                        img(src="./assets/icons/restaurant.png", alt="restaurant")
-                        img(src="./assets/icons/bus.png", alt="bus")
-                    .detail-right-superior__right
-                      .detail-right-superior__right-option 
-                        span Số phòng
-                        .option
-                          .option-value 
-                            span 1
-                          .option-icon 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
-                              <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
-                                <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                                <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                              </g>
-                            </svg>
-                          .option-list 
-                            .option-list-item(data-value="1")
-                              span 1
-                            .option-list-item(data-value="2")
-                              span 2
-                            .option-list-item(data-value="3")
-                              span 3
-                            .option-list-item(data-value="3")
-                              span 3
-                            .option-list-item(data-value="3")
-                              span 3
-                      .detail-right-superior__right-info 
-                        span Còn 2 phòng trống
+                //- .detail-right.column-5
+                //-   .detail-right__title
+                //-     p Phòng đã chọn
+                //-   .detail-right-superior 
+                //-     .detail-right-superior__left
+                //-       h4 Superior
+                //-       .detail-right-superior__left-icons
+                //-         img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                //-         img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                //-         img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                //-     .detail-right-superior__right
+                //-       .detail-right-superior__right-option 
+                //-         span Số phòng
+                //-         .option
+                //-           .option-value 
+                //-             span 1
+                //-           .option-icon 
+                //-             <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                //-               <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                //-                 <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                //-                 <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                //-               </g>
+                //-             </svg>
+                //-           .option-list 
+                //-             .option-list-item(data-value="1")
+                //-               span 1
+                //-             .option-list-item(data-value="2")
+                //-               span 2
+                //-             .option-list-item(data-value="3")
+                //-               span 3
+                //-             .option-list-item(data-value="3")
+                //-               span 3
+                //-             .option-list-item(data-value="3")
+                //-               span 3
+                //-       .detail-right-superior__right-info 
+                //-         span Còn 2 phòng trống
 
-                  .detail-right-value
-                    .detail-right-value__item
-                      .value__item
-                        span Khách:
-                      .value__item
-                        .value__item-icons
-                          img(src="./assets/icons/adult.png", alt="adult")
-                          img(src="./assets/icons/adult.png", alt="adult")
-                        .value__item-span 
-                          span 2 người lớn
-                      .value__item
-                        .value__item-icons
-                          img(src="./assets/icons/child.png", alt="child")
-                          img(src="./assets/icons/child.png", alt="child")
-                        .value__item-span 
-                          span 2 trẻ em
-                    .detail-right-value__item
-                      .value__item
-                        span Ngày:
-                      .value__item
-                        .value__item-date
-                          span 08/04/2021
-                          img(src="./assets/icons/arrow.png", alt="arrow")
-                          span 30/04/2021
+                //-   .detail-right-value
+                //-     .detail-right-value__item
+                //-       .value__item
+                //-         span Khách:
+                //-       .value__item
+                //-         .value__item-icons
+                //-           img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                //-           img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                //-         .value__item-span 
+                //-           span 2 người lớn
+                //-       .value__item
+                //-         .value__item-icons
+                //-           img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                //-           img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                //-         .value__item-span 
+                //-           span 2 trẻ em
+                //-     .detail-right-value__item
+                //-       .value__item
+                //-         span Ngày:
+                //-       .value__item
+                //-         .value__item-date
+                //-           span 08/04/2021
+                //-           img.lazyload(data-src="./assets/icons/arrow.png", alt="arrow")
+                //-           span 30/04/2021
                     
-                  .detail-right-price
+                //-   .detail-right-price
 
               
-            .select-product 
+            .select-product
+              .select-product-toolbar
+                .input 
+                  .input-date
+                    .input-date__group 
+                      input(type="text" id="dateToolbarStart" autoComplete="off")
+                      .input-date__group-icon
+                        img.lazyload(data-src="./assets/icons/date.png", alt="date")
+                    .input-date__group 
+                      input(type="text" id="dateToolbarEnd" autoComplete="off")
+                      .input-date__group-icon
+                        img.lazyload(data-src="./assets/icons/date.png", alt="date")
+
+                .option
+                  .option-item
+                    .option-item-group 
+                      .input-content
+                        .input-content__value#optRoomFooter
+                          img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                          span 1 người lớn
+                        .input-content__img
+                          <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                            <g id="Group_5655" data-name="Group 5655" transform="translate(11.835 1.414) rotate(90)">
+                              <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                              <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                          </svg>
+                    .group-option-list
+                      .group-option-item(data-value="1")
+                        img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                        span 1 người lớn
+                      .group-option-item.active(data-value="2")
+                        img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                        span 2 người lớn
+                      .group-option-item(data-value="3")
+                        img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                        span 3 người lớn
+                      .group-option-item(data-value="4")
+                        img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                        span 4 người lớn
+                      .group-option-item(data-value="4")
+                        img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                        span 4 người lớn
+                      .group-option-item(data-value="4")
+                        img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                        span 4 người lớn
+                  .option-item
+                    .option-item-group 
+                      .input-content
+                        .input-content__value#optRoomFooter
+                          img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                          span 1 trẻ em
+                        .input-content__img
+                          <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                            <g id="Group_5655" data-name="Group 5655" transform="translate(11.835 1.414) rotate(90)">
+                              <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                              <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                          </svg>
+                    .group-option-list
+                      .group-option-item.active(data-value="1")
+                        img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                        span 1 trẻ em
+                      .group-option-item(data-value="2")
+                        img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                        span 2 trẻ em
+                      .group-option-item(data-value="3")
+                        img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                        span 3 trẻ em
+                      .group-option-item(data-value="4")
+                        img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                        span 4 trẻ em
+                      .group-option-item(data-value="4")
+                        img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                        span 4 trẻ em
+                      .group-option-item(data-value="4")
+                        img.lazyload(data-src="./assets/icons/child.png", alt="child")
+                        span 4 trẻ em
+                  .option-item
+                    .option-item-group 
+                      .input-content
+                        .input-content__value#optRoomFooter
+                          span VND
+                        .input-content__img
+                          <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                            <g id="Group_5655" data-name="Group 5655" transform="translate(11.835 1.414) rotate(90)">
+                              <path id="Path_123" data-name="Path 123" d="M0,0,4.816,5.448,0,10.421" transform="translate(4.92 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                              <path id="Path_124" data-name="Path 124" d="M0,0,4.816,5.448,0,10.421" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                          </svg>
+
+                    .group-option-list
+                      .group-option-item.active(data-value="1")
+                        span VND 1
+                      .group-option-item(data-value="2")
+                        span VND 2
+                      .group-option-item(data-value="3")
+                        span VND 3
+                      .group-option-item(data-value="4")
+                        span VND 4
+                      .group-option-item(data-value="4")
+                        span VND 5
+                      .group-option-item(data-value="4")
+                        span VND 6
+
+              .select-product-list
+                .select-product-button
+                  a.btn-link--booking(href="./booking-info.html") Đặt phòng
+                  .select-product-button__info
+                    p 1 phòng 
+                    p.price 3.000.000đ
+                    p cho 1 đêm
+                
+                .select-product-info
+                  .select-product-info__item
+                    .room 
+                      .room-info 
+                          .room-info__img
+                            img.lazyload(data-src="./assets/images/page/restroom/r-1.png") 
+                          .room-info__content 
+                            .room-info__content-item
+                              .room-info__content-title 
+                                h3 Superior
+                              .room-info__content-desc 
+                                p Lorem ipsum dolor sit amet, consectetuer adipisci ng elit, sed diam nonum my nibh euismod tincidu nt ut laoreet dolore magna aliqua me.
+                            .room-info__content-item
+                              ul.box-desc__info
+                                li 40 m2
+                                li Ban công
+                              ul.box-desc-icons 
+                                li 
+                                  img.lazyload(data-src="./assets/icons/uti3.png", alt="")
+                                li
+                                  ul 
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/view2.png", alt="")
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/view1.png", alt="")
+                                li 
+                                  ul 
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/uti2-double.png", alt="")
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/uti2.png", alt="")
+                                      img.lazyload(data-src="./assets/icons/uti2.png", alt="")
+                              a.btn-link--more(href="javascript:void(0)") Xem tất cả tiện nghi
+                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="11" viewBox="0 0 8 11">
+                                    <path id="Polygon_2" data-name="Polygon 2" d="M5.5,0,11,8H0Z" transform="translate(8) rotate(90)" fill="#004a8f"/>
+                                </svg>
+                      .room-option
+                        .room-option-item
+                          .room-option-item__left
+                             .room-option-item__left-title
+                              h4 Superior
+                             ul.room-option-item__left-list 
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                                p Không hoàn phí khi trả phòng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                                p Bao gồm bữa sáng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                                p Miễn phí xe đưa đón
+
+                          .room-option-item__right 
+                            .room-option-item__right-item
+                              ul.opt-icons
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                            .room-option-item__right-item
+                              .price 
+                                .price__sale
+                                  p 3.000.000đ
+                                  .price__percent 
+                                    img.lazyload(data-src="./assets/icons/percent.png", alt="percent")
+                                    | 45%
+                                .price__main
+                                  p 1.650.000đ
+                                .price__times
+                                  p /đêm
+                            .room-option-item__right-item
+                              .option 
+                                .option-desc
+                                  .option-desc-p
+                                    p Số phòng
+                                  .option-desc-select 
+                                    .input
+                                      .input__value
+                                        span 0
+                                      .input__img
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                                          <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                          </g>
+                                        </svg>
+
+                                    .group-option-list
+                                      .group-option-item(data-value="1")
+                                        span 0
+                                      .group-option-item(data-value="2")
+                                        span 1
+                                      .group-option-item(data-value="2")
+                                        span 2
+                                      .group-option-item.active(data-value="3")
+                                        span 3
+                                      .group-option-item(data-value="4")
+                                        span 4
+                                      .group-option-item(data-value="4")
+                                        span 5
+                                      .group-option-item(data-value="4")
+                                        span 6
+
+                                .option-info
+                                  p Còn 2 phòng trống
+
+                        .room-option-item
+                          .room-option-item__left
+                             .room-option-item__left-title
+                              h4 Superior
+                             ul.room-option-item__left-list 
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                                p Không hoàn phí khi trả phòng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                                p Bao gồm bữa sáng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                                p Miễn phí xe đưa đón
+
+                          .room-option-item__right 
+                            .room-option-item__right-item
+                              ul.opt-icons
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                            .room-option-item__right-item
+                              .price 
+                                .price__sale
+                                  p 3.000.000đ
+                                  .price__percent 
+                                    img.lazyload(data-src="./assets/icons/percent.png", alt="percent")
+                                    | 45%
+                                .price__main
+                                  p 1.650.000đ
+                                .price__times
+                                  p /đêm
+                            .room-option-item__right-item
+                              .option 
+                                .option-desc
+                                  .option-desc-p
+                                    p Số phòng
+                                  .option-desc-select 
+                                    .input
+                                      .input__value
+                                        span 0
+                                      .input__img
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                                          <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                          </g>
+                                        </svg>
+
+                                    .group-option-list
+                                      .group-option-item(data-value="1")
+                                        span 0
+                                      .group-option-item(data-value="2")
+                                        span 1
+                                      .group-option-item(data-value="2")
+                                        span 2
+                                      .group-option-item.active(data-value="3")
+                                        span 3
+                                      .group-option-item(data-value="4")
+                                        span 4
+                                      .group-option-item(data-value="4")
+                                        span 5
+                                      .group-option-item(data-value="4")
+                                        span 6
+
+                                .option-info
+                                  p Còn 2 phòng trống
+                  .select-product-info__item
+                    .room 
+                      .room-info 
+                          .room-info__img
+                            img.lazyload(data-src="./assets/images/page/restroom/r-1.png") 
+                          .room-info__content 
+                            .room-info__content-item
+                              .room-info__content-title 
+                                h3 Superior
+                              .room-info__content-desc 
+                                p Lorem ipsum dolor sit amet, consectetuer adipisci ng elit, sed diam nonum my nibh euismod tincidu nt ut laoreet dolore magna aliqua me.
+                            .room-info__content-item
+                              ul.box-desc__info
+                                li 40 m2
+                                li Ban công
+                              ul.box-desc-icons 
+                                li 
+                                  img.lazyload(data-src="./assets/icons/uti3.png", alt="")
+                                li
+                                  ul 
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/view2.png", alt="")
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/view1.png", alt="")
+                                li 
+                                  ul 
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/uti2-double.png", alt="")
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/uti2.png", alt="")
+                                      img.lazyload(data-src="./assets/icons/uti2.png", alt="")
+                              a.btn-link--more(href="javascript:void(0)") Xem tất cả tiện nghi
+                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="11" viewBox="0 0 8 11">
+                                    <path id="Polygon_2" data-name="Polygon 2" d="M5.5,0,11,8H0Z" transform="translate(8) rotate(90)" fill="#004a8f"/>
+                                </svg>
+                      .room-option
+                        .room-option-item
+                          .room-option-item__left
+                             .room-option-item__left-title
+                              h4 Superior
+                             ul.room-option-item__left-list 
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                                p Không hoàn phí khi trả phòng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                                p Bao gồm bữa sáng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                                p Miễn phí xe đưa đón
+
+                          .room-option-item__right 
+                            .room-option-item__right-item
+                              ul.opt-icons
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                            .room-option-item__right-item
+                              .price 
+                                .price__sale
+                                  p 3.000.000đ
+                                  .price__percent 
+                                    img.lazyload(data-src="./assets/icons/percent.png", alt="percent")
+                                    | 45%
+                                .price__main
+                                  p 1.650.000đ
+                                .price__times
+                                  p /đêm
+                            .room-option-item__right-item
+                              .option 
+                                .option-desc
+                                  .option-desc-p
+                                    p Số phòng
+                                  .option-desc-select 
+                                    .input
+                                      .input__value
+                                        span 0
+                                      .input__img
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                                          <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                          </g>
+                                        </svg>
+
+                                    .group-option-list
+                                      .group-option-item(data-value="1")
+                                        span 0
+                                      .group-option-item(data-value="2")
+                                        span 1
+                                      .group-option-item(data-value="2")
+                                        span 2
+                                      .group-option-item.active(data-value="3")
+                                        span 3
+                                      .group-option-item(data-value="4")
+                                        span 4
+                                      .group-option-item(data-value="4")
+                                        span 5
+                                      .group-option-item(data-value="4")
+                                        span 6
+
+                                .option-info
+                                  p Còn 2 phòng trống
+
+                        .room-option-item
+                          .room-option-item__left
+                             .room-option-item__left-title
+                              h4 Superior
+                             ul.room-option-item__left-list 
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                                p Không hoàn phí khi trả phòng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                                p Bao gồm bữa sáng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                                p Miễn phí xe đưa đón
+
+                          .room-option-item__right 
+                            .room-option-item__right-item
+                              ul.opt-icons
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                            .room-option-item__right-item
+                              .price 
+                                .price__sale
+                                  p 3.000.000đ
+                                  .price__percent 
+                                    img.lazyload(data-src="./assets/icons/percent.png", alt="percent")
+                                    | 45%
+                                .price__main
+                                  p 1.650.000đ
+                                .price__times
+                                  p /đêm
+                            .room-option-item__right-item
+                              .option 
+                                .option-desc
+                                  .option-desc-p
+                                    p Số phòng
+                                  .option-desc-select 
+                                    .input
+                                      .input__value
+                                        span 0
+                                      .input__img
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                                          <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                          </g>
+                                        </svg>
+
+                                    .group-option-list
+                                      .group-option-item(data-value="1")
+                                        span 0
+                                      .group-option-item(data-value="2")
+                                        span 1
+                                      .group-option-item(data-value="2")
+                                        span 2
+                                      .group-option-item.active(data-value="3")
+                                        span 3
+                                      .group-option-item(data-value="4")
+                                        span 4
+                                      .group-option-item(data-value="4")
+                                        span 5
+                                      .group-option-item(data-value="4")
+                                        span 6
+
+                                .option-info
+                                  p Còn 2 phòng trống
+                  .select-product-info__item
+                    .room 
+                      .room-info 
+                          .room-info__img
+                            img.lazyload(data-src="./assets/images/page/restroom/r-1.png") 
+                          .room-info__content 
+                            .room-info__content-item
+                              .room-info__content-title 
+                                h3 Superior
+                              .room-info__content-desc 
+                                p Lorem ipsum dolor sit amet, consectetuer adipisci ng elit, sed diam nonum my nibh euismod tincidu nt ut laoreet dolore magna aliqua me.
+                            .room-info__content-item
+                              ul.box-desc__info
+                                li 40 m2
+                                li Ban công
+                              ul.box-desc-icons 
+                                li 
+                                  img.lazyload(data-src="./assets/icons/uti3.png", alt="")
+                                li
+                                  ul 
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/view2.png", alt="")
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/view1.png", alt="")
+                                li 
+                                  ul 
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/uti2-double.png", alt="")
+                                    li 
+                                      img.lazyload(data-src="./assets/icons/uti2.png", alt="")
+                                      img.lazyload(data-src="./assets/icons/uti2.png", alt="")
+                              a.btn-link--more(href="javascript:void(0)") Xem tất cả tiện nghi
+                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="11" viewBox="0 0 8 11">
+                                    <path id="Polygon_2" data-name="Polygon 2" d="M5.5,0,11,8H0Z" transform="translate(8) rotate(90)" fill="#004a8f"/>
+                                </svg>
+                      .room-option
+                        .room-option-item
+                          .room-option-item__left
+                             .room-option-item__left-title
+                              h4 Superior
+                             ul.room-option-item__left-list 
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                                p Không hoàn phí khi trả phòng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                                p Bao gồm bữa sáng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                                p Miễn phí xe đưa đón
+
+                          .room-option-item__right 
+                            .room-option-item__right-item
+                              ul.opt-icons
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                            .room-option-item__right-item
+                              .price 
+                                .price__sale
+                                  p 3.000.000đ
+                                  .price__percent 
+                                    img.lazyload(data-src="./assets/icons/percent.png", alt="percent")
+                                    | 45%
+                                .price__main
+                                  p 1.650.000đ
+                                .price__times
+                                  p /đêm
+                            .room-option-item__right-item
+                              .option 
+                                .option-desc
+                                  .option-desc-p
+                                    p Số phòng
+                                  .option-desc-select 
+                                    .input
+                                      .input__value
+                                        span 0
+                                      .input__img
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                                          <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                          </g>
+                                        </svg>
+
+                                    .group-option-list
+                                      .group-option-item(data-value="1")
+                                        span 0
+                                      .group-option-item(data-value="2")
+                                        span 1
+                                      .group-option-item(data-value="2")
+                                        span 2
+                                      .group-option-item.active(data-value="3")
+                                        span 3
+                                      .group-option-item(data-value="4")
+                                        span 4
+                                      .group-option-item(data-value="4")
+                                        span 5
+                                      .group-option-item(data-value="4")
+                                        span 6
+
+                                .option-info
+                                  p Còn 2 phòng trống
+
+                        .room-option-item
+                          .room-option-item__left
+                             .room-option-item__left-title
+                              h4 Superior
+                             ul.room-option-item__left-list 
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/money.png", alt="money")
+                                p Không hoàn phí khi trả phòng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/restaurant.png", alt="restaurant")
+                                p Bao gồm bữa sáng
+                              li 
+                                .icons
+                                  img.lazyload(data-src="./assets/icons/bus.png", alt="bus")
+                                p Miễn phí xe đưa đón
+
+                          .room-option-item__right 
+                            .room-option-item__right-item
+                              ul.opt-icons
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                                li
+                                  img.lazyload(data-src="./assets/icons/adult.png", alt="adult")
+                            .room-option-item__right-item
+                              .price 
+                                .price__sale
+                                  p 3.000.000đ
+                                  .price__percent 
+                                    img.lazyload(data-src="./assets/icons/percent.png", alt="percent")
+                                    | 45%
+                                .price__main
+                                  p 1.650.000đ
+                                .price__times
+                                  p /đêm
+                            .room-option-item__right-item
+                              .option 
+                                .option-desc
+                                  .option-desc-p
+                                    p Số phòng
+                                  .option-desc-select 
+                                    .input
+                                      .input__value
+                                        span 0
+                                      .input__img
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.247" height="12.15" viewBox="0 0 13.247 12.15">
+                                          <g id="Group_5696" data-name="Group 5696" transform="translate(2432.072 -1707.523) rotate(90)">
+                                            <path id="Path_123" data-name="Path 123" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(4.714 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path id="Path_124" data-name="Path 124" d="M1709.143,2416.143l4.816,5.448-4.816,4.974" transform="translate(-0.206 4.093)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                          </g>
+                                        </svg>
+
+                                    .group-option-list
+                                      .group-option-item(data-value="1")
+                                        span 0
+                                      .group-option-item(data-value="2")
+                                        span 1
+                                      .group-option-item(data-value="2")
+                                        span 2
+                                      .group-option-item.active(data-value="3")
+                                        span 3
+                                      .group-option-item(data-value="4")
+                                        span 4
+                                      .group-option-item(data-value="4")
+                                        span 5
+                                      .group-option-item(data-value="4")
+                                        span 6
+
+                                .option-info
+                                  p Còn 2 phòng trống
+
+                        
 
                 
 

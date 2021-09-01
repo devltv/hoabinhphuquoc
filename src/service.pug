@@ -4,16 +4,11 @@ block var
 	- let title = 'Page | Service';
 	//- - let bodyClass = 'index-page';
 	- let banner = false;
-	
-	- let bannerSub = false;
-	- let titleBannerSub = "Trang chủ";
-	- let imgBannerSub = "./assets/images/page/service/banner.png";
-	- let breadcrumbBanner = [["Trang chủ", ""], ["Trang chủ", "active"]];
-	//- - let breadcrumbs = ["Trang chủ", "Trang chủ", "Tin tức"];
+	- let bannerSub = true;
+	- let titleBannerSub = "Dịch vụ";
+	- let imgBannerSub = "./assets/images/layout/banner/service.png";
+	- let breadcrumbBanner = [["Trang chủ", ""], ["Dịch vụ", "active"]];
 
-//- block loading
-//- 	include _templates/_layout/_loading
-//- block banner,breadcrumb
 block main
 	div(id="servicePage")
 		include _templates/service/s-1.pug
