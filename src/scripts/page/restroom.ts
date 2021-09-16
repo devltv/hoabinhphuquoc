@@ -151,7 +151,7 @@ function popupRest(id: any = null){
     var body = document.querySelector('body');
     var popupContent = document.querySelector('#restroom-1 .restroom-popup .popup .popup-wrapper--bg');
     
-    var urlAjax = '/popup-restroom';
+    var urlAjax = '/popup-restroom-2';
 
     closePopup();
     

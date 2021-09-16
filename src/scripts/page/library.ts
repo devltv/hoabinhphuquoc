@@ -249,28 +249,29 @@ function popupImage(id: any = null) {
           var xhttp = new XMLHttpRequest();
   
           xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
+            // if (this.readyState == 4 && this.status == 200) {
               if (this.responseText) {
                 popupContent.innerHTML = this.responseText;
+                swiperRest();
               }
   
               body.style.overflow = "hidden";
               popup.classList.add('show');
-              if (popup.classList.contains('show')) {
-                swiperRest();
-              }
+              // if (popup.classList.contains('show')) {
+              //   swiperRest();
+              // }
   
               return;
-            }
-            else {
-              body.style.overflow = "hidden";
-              popup.classList.add('show');
-              if (popup.classList.contains('show')) {
-                swiperRest();
-              }
+            // }
+            // else {
+            //   body.style.overflow = "hidden";
+            //   popup.classList.add('show');
+            //   if (popup.classList.contains('show')) {
+            //     swiperRest();
+            //   }
   
-              console.log('popup failed!');
-            }
+            //   console.log('popup failed!');
+            // }
           };
           xhttp.open("GET", `${urlAjax}/${valueItem}`, true);
           xhttp.send();

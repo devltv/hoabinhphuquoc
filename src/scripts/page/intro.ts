@@ -214,7 +214,7 @@ function popupTravel(id: any = null){
             }while(!tmpItem.getAttribute('data-box') && count < 100);
           }
           
-          valueItem = tmpItem.getAttribute('data-box')
+          valueItem = tmpItem.getAttribute('data-box');
           if (!valueItem){
             console.log('Not found data-box!!');
             return;
@@ -291,7 +291,7 @@ function popupJob(id: any = null){
           }while(!tmpItem.getAttribute('data-box') && count < 100);
         }
         
-        valueItem = tmpItem.getAttribute('data-box')
+        valueItem = tmpItem.getAttribute('data-box');
         if (!valueItem){
           console.log('Not found data-box!!');
           return;
@@ -371,26 +371,41 @@ function intro5() {
   }
 }
 function changeContent(){
-  var introChange = document.querySelector("#intro-3__wrapper")
+  var introChange = document.querySelector("#intro-3__wrapper");
   if(introChange){
-    var nav_items = introChange.querySelectorAll(".intro-3__section--nav .intro-3__section--nav-items")
-    var nav_content = introChange.querySelectorAll(".intro-3__section--content .intro-3__section--content-items")
-    
+    var nav_items = document.querySelectorAll(".intro-3__section--nav .intro-3__section--nav-items")
+    var nav_content = document.querySelectorAll(".intro-3__section--content .intro-3__section--content-items")
+    if(!nav_items ){
+      return
+    }
+    if(!nav_content ){
+      return
+    }
     nav_items.forEach(element => element.addEventListener('click',()=>{
 
-      var activeitem = introChange.querySelector(".intro-3__section--nav .active")
-      activeitem.classList.remove("active")
-      element.classList.add("active")
-      var data_toggle = element.getAttribute("data-active")
-      console.log(data_toggle)
-      var activeitemcontent = introChange.querySelector(".intro-3__section--content .intro-3__section--content-items.active")
-      activeitemcontent.classList.remove("active")
+      var activeitem = document.querySelector(".intro-3__section--nav .active");
+      if(!activeitem ){
+        return
+      }
+      activeitem.classList.remove("active");
+      element.classList.add("active");
+      var data_toggle = element.getAttribute("data-active");
+      if(!data_toggle ){
+        return
+      }
+      var activeitemcontent = document.querySelector(".intro-3__section--content .intro-3__section--content-items.active")
+      if(!activeitemcontent ){
+        return
+      }
+      activeitemcontent.classList.remove("active");
       nav_content.forEach(function (element){
-            var items = element.getAttribute("data-active") 
-            
+            var items = element.getAttribute("data-active") ;
+            if(!items ){
+              return
+            }
             if(items === data_toggle){
              
-             element.classList.add("active")
+             element.classList.add("active");
             }
          })
     }))
@@ -406,7 +421,7 @@ function intropagintion(){
           itemPages: 6,
 
       }
-      pagination.pagination(options)
+      pagination.pagination(options);
 
       var options ={
         queryClassPagination: "#intro-3__wrapper #intro-2 .box-pagination",
@@ -414,7 +429,7 @@ function intropagintion(){
         itemPages: 6,
 
     }
-    pagination.pagination(options)
+    pagination.pagination(options);
   // }
 }
 
