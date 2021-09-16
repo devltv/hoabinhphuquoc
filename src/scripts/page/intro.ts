@@ -177,27 +177,27 @@ function popupTravel(id: any = null){
     var body = document.querySelector('body');
     var popupContent = document.querySelector('#intro-4__wrapper .travel-popup .popup .popup-wrapper--bg');
     
-    var urlAjax = './popup-travel-intro';
+    var urlAjax = '/popup-travel-intro';
     
-    if (id){
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-          if (this.responseText){
-            popupContent.innerHTML = this.responseText;
-          }
-          popup.classList.add('show');
-          if (popup.classList.contains('show')){
-            activeItemOption();
-          }
-          return;
+    // if (id){
+    //   var xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //       if (this.responseText){
+    //         popupContent.innerHTML = this.responseText;
+    //       }
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')){
+    //         activeItemOption();
+    //       }
+    //       return;
      
-      };
-      xhttp.open("GET", `${urlAjax}/${id}`, true);
-      xhttp.send();
-    }
-    else{
-      popup.classList.remove('show');
-      body.style.overflow = "auto";
+    //   };
+    //   xhttp.open("GET", `${urlAjax}/${id}`, true);
+    //   xhttp.send();
+    // }
+    // else{
+      // popup.classList.remove('show');
+      // body.style.overflow = "auto";
 
       itemLinkPopups.forEach(function(item){
         item.addEventListener('click', function(e){
@@ -252,7 +252,7 @@ function popupTravel(id: any = null){
           xhttp.send();
         })
       })
-    }
+    // }
   }
 }
 
@@ -273,8 +273,8 @@ function popupJob(id: any = null){
     //   }
     // }
     // else{
-    popup.classList.remove('show');
-    body.style.overflow = "auto";
+    // popup.classList.remove('show');
+    // body.style.overflow = "auto";
 
     itemLinkPopups.forEach(function(item){
       item.addEventListener('click', function(e){
@@ -314,28 +314,28 @@ function popupJob(id: any = null){
 
 function loadRestroom(){
   if(document.getElementById('intro-4__wrapper')){
-    var inpRest = document.getElementById('checkUrl');
+    // var inpRest = document.getElementById('checkUrl');
 
-    window.addEventListener('popstate', function(e){
-      if (e.state !== null){
-        var url = location.pathname;
-        window.location.replace(`${url}`)
-      }
-    })
+    // window.addEventListener('popstate', function(e){
+    //   if (e.state !== null){
+    //     var url = location.pathname;
+    //     window.location.replace(`${url}`)
+    //   }
+    // })
     
-    if (inpRest) {
-      var val = inpRest.getAttribute('data-url');
-      var id = inpRest.getAttribute('data-box');
+    // if (inpRest) {
+    //   var val = inpRest.getAttribute('data-url');
+    //   var id = inpRest.getAttribute('data-box');
 
-      history.pushState({ id }, val, val);
+    //   history.pushState({ id }, val, val);
 
-      inpRest.setAttribute('data-box', `${id}`);
-      inpRest.setAttribute('data-url', `${val}`);
+    //   inpRest.setAttribute('data-box', `${id}`);
+    //   inpRest.setAttribute('data-url', `${val}`);
 
-      if (val && id) {
-        popupTravel(id);
-      }
-    }
+    //   if (val && id) {
+    //     popupTravel(id);
+    //   }
+    // }
 
     closePopup();
     closePopupJob();

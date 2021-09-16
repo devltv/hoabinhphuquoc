@@ -166,31 +166,31 @@ function popupHall(id: any = null){
     var body = document.querySelector('body');
     var popupContent = document.querySelector('#wedding2 .hall-popup .popup .popup-wrapper--bg');
     
-    var urlAjax = './popup-hall-wedding';
+    var urlAjax = '/popup-hall-wedding';
     
-    if (id){
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText){
-            popupContent.innerHTML = this.responseText;
-          }
-          popup.classList.add('show');
+    // if (id){
+    //   var xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       if (this.responseText){
+    //         popupContent.innerHTML = this.responseText;
+    //       }
+    //       popup.classList.add('show');
 
-          return;
-        }
-        else {
-          popup.classList.add('show');
+    //       return;
+    //     }
+    //     else {
+    //       popup.classList.add('show');
 
-          console.log('popup failed!');
-        }
-      };
-      xhttp.open("GET", `${urlAjax}/${id}`, true);
-      xhttp.send();
-    }
-    else{
-      popup.classList.remove('show');
-      body.style.overflow = "auto";
+    //       console.log('popup failed!');
+    //     }
+    //   };
+    //   xhttp.open("GET", `${urlAjax}/${id}`, true);
+    //   xhttp.send();
+    // }
+    // else{
+    //   popup.classList.remove('show');
+    //   body.style.overflow = "auto";
 
       itemLinkPopups.forEach(function(item){
         console.log(1)
@@ -240,7 +240,7 @@ function popupHall(id: any = null){
           xhttp.send();
         })
       })
-    }
+    // }
   }
 }
 

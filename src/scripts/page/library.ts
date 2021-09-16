@@ -192,37 +192,37 @@ function popupImage(id: any = null) {
     var body = document.querySelector('body');
 
     var popupContent = document.querySelector('#library-1__wrapper .image-popup .popup .popup-wrapper--bg');
-    var urlAjax = './popup-image';
+    var urlAjax = '/popup-image';
 
-    if (id) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText) {
-            popupContent.innerHTML = this.responseText;
-          }
-          popup.classList.add('show');
-          if (popup.classList.contains('show')) {
-            swiperRest();
-          }
+    // if (id) {
+    //   var xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       if (this.responseText) {
+    //         popupContent.innerHTML = this.responseText;
+    //       }
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')) {
+    //         swiperRest();
+    //       }
 
-          return;
-        }
-        else {
-          popup.classList.add('show');
-          if (popup.classList.contains('show')) {
-            swiperRest();
-          }
+    //       return;
+    //     }
+    //     else {
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')) {
+    //         swiperRest();
+    //       }
 
-          console.log('popup failed!');
-        }
-      };
-      xhttp.open("GET", `${urlAjax}/${id}`, true);
-      xhttp.send();
-    }
-    else {
-      popup.classList.remove('show');
-      body.style.overflow = "auto";
+    //       console.log('popup failed!');
+    //     }
+    //   };
+    //   xhttp.open("GET", `${urlAjax}/${id}`, true);
+    //   xhttp.send();
+    // }
+    // else {
+    //   popup.classList.remove('show');
+    //   body.style.overflow = "auto";
   
       itemLinkPopups.forEach(function (item) {
         item.addEventListener('click', function (e) {
@@ -276,7 +276,7 @@ function popupImage(id: any = null) {
           xhttp.send();
         })
       })
-    }
+    // }
 
   }
 }
@@ -304,39 +304,39 @@ function popupVideo(id: any = null) {
     // var popupContent = document.querySelector('#library-1__wrapper .video-popup .popup');
     // var urlAjax = './popup-video';
 
-    if (id) {
-      popupContentVideo(id);
-      popup.classList.add('show');
+    // if (id) {
+    //   popupContentVideo(id);
+    //   popup.classList.add('show');
 
-      // var xhttp = new XMLHttpRequest();
-      // xhttp.onreadystatechange = function () {
-      //   if (this.readyState == 4 && this.status == 200) {
-      //     if (this.responseText) {
-      //       popupContent.innerHTML = this.responseText;
-      //     }
-      //     popup.classList.add('show');
-      //     // if (popup.classList.contains('show')){
-      //     //   swiperRest();
-      //     // }
+    //   // var xhttp = new XMLHttpRequest();
+    //   // xhttp.onreadystatechange = function () {
+    //   //   if (this.readyState == 4 && this.status == 200) {
+    //   //     if (this.responseText) {
+    //   //       popupContent.innerHTML = this.responseText;
+    //   //     }
+    //   //     popup.classList.add('show');
+    //   //     // if (popup.classList.contains('show')){
+    //   //     //   swiperRest();
+    //   //     // }
 
-      //     closePopup();
-      //     return;
-      //   }
-      //   else {
-      //     popup.classList.add('show');
-      //     // if (popup.classList.contains('show')){
-      //     //   swiperRest();
-      //     // }
+    //   //     closePopup();
+    //   //     return;
+    //   //   }
+    //   //   else {
+    //   //     popup.classList.add('show');
+    //   //     // if (popup.classList.contains('show')){
+    //   //     //   swiperRest();
+    //   //     // }
 
-      //     console.log('popup failed!');
-      //   }
-      // };
-      // xhttp.open("GET", `${urlAjax}/${id}`, true);
-      // xhttp.send();
-    }
-    else {
-      popup.classList.remove('show');
-      body.style.overflow = "auto";
+    //   //     console.log('popup failed!');
+    //   //   }
+    //   // };
+    //   // xhttp.open("GET", `${urlAjax}/${id}`, true);
+    //   // xhttp.send();
+    // }
+    // else {
+      // popup.classList.remove('show');
+      // body.style.overflow = "auto";
       
 
       itemLinkPopups.forEach(function (item) {
@@ -389,7 +389,7 @@ function popupVideo(id: any = null) {
           // xhttp.send();
         })
       })
-    }
+    // }
   }
 }
 

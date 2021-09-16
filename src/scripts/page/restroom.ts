@@ -151,43 +151,43 @@ function popupRest(id: any = null){
     var body = document.querySelector('body');
     var popupContent = document.querySelector('#restroom-1 .restroom-popup .popup .popup-wrapper--bg');
     
-    var urlAjax = './popup-restroom';
+    var urlAjax = '/popup-restroom';
 
     closePopup();
     
-    if (id){
+    // if (id){
       
-      localStorage.setItem('box', '');
-      localStorage.setItem('url', '');
+    //   localStorage.setItem('box', '');
+    //   localStorage.setItem('url', '');
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText){
-            popupContent.innerHTML = this.responseText;
-          }
-          popup.classList.add('show');
-          if (popup.classList.contains('show')){
-            swiperRest();
-          }
+    //   var xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       if (this.responseText){
+    //         popupContent.innerHTML = this.responseText;
+    //       }
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')){
+    //         swiperRest();
+    //       }
 
-          return;
-        }
-        else {
-          popup.classList.add('show');
-          if (popup.classList.contains('show')){
-            swiperRest();
-          }
+    //       return;
+    //     }
+    //     else {
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')){
+    //         swiperRest();
+    //       }
 
-          console.log('popup failed!');
-        }
-      };
-      xhttp.open("GET", `${urlAjax}/${id}`, true);
-      xhttp.send();
-    }
-    else{
-      popup.classList.remove('show');
-      body.style.overflow = "auto";
+    //       console.log('popup failed!');
+    //     }
+    //   };
+    //   xhttp.open("GET", `${urlAjax}/${id}`, true);
+    //   xhttp.send();
+    // }
+    // else{
+    //   popup.classList.remove('show');
+    //   body.style.overflow = "auto";
 
       itemLinkPopups.forEach(function(item){
         item.addEventListener('click', function(e){
@@ -241,7 +241,7 @@ function popupRest(id: any = null){
           xhttp.send();
         })
       })
-    }
+    // }
   }
 }
 

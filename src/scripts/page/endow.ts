@@ -173,39 +173,39 @@ function popupTotal(id: any = null, url: any = null) {
 
     closePopup();
 
-    if (id) {
-      localStorage.setItem('box', '');
-      localStorage.setItem('url', '');
-      localStorage.setItem('active', '');
+    // if (id) {
+    //   localStorage.setItem('box', '');
+    //   localStorage.setItem('url', '');
+    //   localStorage.setItem('active', '');
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText) {
-            popupContent.innerHTML = this.responseText;
-          }
-          popup.classList.add('show');
-          if (popup.classList.contains('show')) {
-            swiperRest();
-          }
+    //   var xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       if (this.responseText) {
+    //         popupContent.innerHTML = this.responseText;
+    //       }
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')) {
+    //         swiperRest();
+    //       }
 
-          return;
-        }
-        else {
-          popup.classList.add('show');
-          if (popup.classList.contains('show')) {
-            swiperRest();
-          }
+    //       return;
+    //     }
+    //     else {
+    //       popup.classList.add('show');
+    //       if (popup.classList.contains('show')) {
+    //         swiperRest();
+    //       }
 
-          console.log('popup failed!');
-        }
-      };
-      xhttp.open("GET", `${url}/${id}`, true);
-      xhttp.send();
-    }
-    else {
-      popup.classList.remove('show');
-      body.style.overflow = "auto";
+    //       console.log('popup failed!');
+    //     }
+    //   };
+    //   xhttp.open("GET", `${url}/${id}`, true);
+    //   xhttp.send();
+    // }
+    // else {
+    //   popup.classList.remove('show');
+    //   body.style.overflow = "auto";
 
       itemLinkPopups.forEach(function (item) {
         item.addEventListener('click', function (e) {
@@ -272,7 +272,7 @@ function popupTotal(id: any = null, url: any = null) {
           }
         })
       })
-    }
+    // }
   }
 }
 
