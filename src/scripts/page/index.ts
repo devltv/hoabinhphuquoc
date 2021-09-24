@@ -7,6 +7,7 @@ function index1() {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,
+      autoplay: true,
       pagination: {
         el: ".swiper-pagination",
 
