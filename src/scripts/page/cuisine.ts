@@ -211,11 +211,6 @@ function loadRestroom(){
   if(document.getElementById('cuisine2')){
     var inpRest = document.getElementById('checkUrl');
 
-    if (!inpRest){
-      popupRest();
-      return;
-    }
-
     window.addEventListener('popstate', function(e){
       if (e.state !== null){
         var url = location.pathname;
@@ -233,7 +228,7 @@ function loadRestroom(){
     var val = inpRest.getAttribute('data-url');
     var id = inpRest.getAttribute('data-box');
 
-    history.pushState({id: null}, 'default state', close);
+    // history.pushState({id: null}, 'default state', close);
     
     if (inpRest){
       if (id && val && val){
@@ -243,6 +238,8 @@ function loadRestroom(){
       }
       selectedBox(id);
     }
+
+    popupRest();
   }
 }
 

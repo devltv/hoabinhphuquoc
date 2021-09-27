@@ -218,21 +218,18 @@ function popupRest(id: any = null){
               if (this.responseText){
                 popupContent.innerHTML = this.responseText;
               }
-
+              
               body.style.overflow = "hidden";
               popup.classList.add('show');
-              if (popup.classList.contains('show')){
-                swiperRest();
-              }
+
+              swiperRest();
 
               return;
             }
             else {
               body.style.overflow = "hidden";
               popup.classList.add('show');
-              if (popup.classList.contains('show')){
-                swiperRest();
-              }
+              swiperRest();
 
               console.log('popup failed!');
             }
@@ -287,5 +284,6 @@ function loadRestroom(){
 
 export const restroom = function (){
   rest1();
+  swiperRest();
   loadRestroom();
 }

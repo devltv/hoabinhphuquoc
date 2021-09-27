@@ -60,9 +60,8 @@ function page(){
   intro();
   wedding();
   booking();
-  library();
   cuisine();
-  
+  library();
 }
 
 ////////////////////////////////////////////////////////////////

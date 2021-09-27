@@ -25,6 +25,11 @@
 
   position: absolute;
 
+  .swiper-wrapper,
+  .swiper-container{
+    width: 100%;
+  }
+
   &--overlay{
     position: fixed;
     top: 0;
@@ -679,6 +684,11 @@
       &__image{
         overflow: auto;
         max-height: 100%;
+
+        display: none;
+        &.active{
+          display: block;
+        }
 
 
         @include rp(tl){

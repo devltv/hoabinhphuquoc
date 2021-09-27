@@ -170,52 +170,52 @@ function linkIndex3() {
   var moreLinks = document.querySelectorAll('#index3 .endow__content .endow__right .endow__slide .btn-link--more');
   moreLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var dtHr = link.getAttribute('data-href');
-      var hr = link.getAttribute('href');
+      // e.preventDefault();
+      // var dtHr = link.getAttribute('data-href');
+      // var hr = link.getAttribute('href');
       
-      var valueItem = "";
-      var tmpItem = link;
-      var count = 0;
-      if (!tmpItem.getAttribute('data-box')) {
-        do {
-          tmpItem = tmpItem.parentElement;
-          ++count;
-        } while (!tmpItem.getAttribute('data-box') && count < 100);
-      }
+      // var valueItem = "";
+      // var tmpItem = link;
+      // var count = 0;
+      // if (!tmpItem.getAttribute('data-box')) {
+      //   do {
+      //     tmpItem = tmpItem.parentElement;
+      //     ++count;
+      //   } while (!tmpItem.getAttribute('data-box') && count < 100);
+      // }
 
-      valueItem = tmpItem.getAttribute('data-box')
-      if (!valueItem) {
-        console.log('Not found data-box!!');
-        e.preventDefault();
-        return false;
-      }
+      // valueItem = tmpItem.getAttribute('data-box')
+      // if (!valueItem) {
+      //   console.log('Not found data-box!!');
+      //   e.preventDefault();
+      //   return false;
+      // }
 
-      var tmpItemActive = link;
-      count = 0;
-      var valueItemActive = "";
+      // var tmpItemActive = link;
+      // count = 0;
+      // var valueItemActive = "";
 
-      if (!tmpItemActive.getAttribute('data-active')) {
-        do {
-          tmpItemActive = tmpItemActive.parentElement;
-          ++count;
-        } while (!tmpItemActive.getAttribute('data-active') && count < 100);
-      }
+      // if (!tmpItemActive.getAttribute('data-active')) {
+      //   do {
+      //     tmpItemActive = tmpItemActive.parentElement;
+      //     ++count;
+      //   } while (!tmpItemActive.getAttribute('data-active') && count < 100);
+      // }
 
-      valueItemActive = tmpItemActive.getAttribute('data-active')
-      if (!valueItemActive) {
-        console.log('Not found data-active!!');
-        e.preventDefault();
-        return false;
-      }
+      // valueItemActive = tmpItemActive.getAttribute('data-active')
+      // if (!valueItemActive) {
+      //   console.log('Not found data-active!!');
+      //   e.preventDefault();
+      //   return false;
+      // }
 
-      localStorage.setItem('url', `${hr}`);
-      localStorage.setItem('box', `${valueItem}`);
-      localStorage.setItem('active', `${valueItemActive}`);
+      // localStorage.setItem('url', `${hr}`);
+      // localStorage.setItem('box', `${valueItem}`);
+      // localStorage.setItem('active', `${valueItemActive}`);
 
-      history.pushState({id: null}, hr, hr);
+      // history.pushState({id: null}, hr, hr);
 
-      location.replace(dtHr);
+      // location.replace(dtHr);
       return true;
     })
   })

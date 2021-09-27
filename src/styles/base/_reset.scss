@@ -32,6 +32,11 @@ body {
 	background-color: #ffffff;
 	@include family--second;
 	@include regular;
+
+	&.hidden{
+		height: 100vh;
+		overflow: hidden;
+	}
 }
 
 main,

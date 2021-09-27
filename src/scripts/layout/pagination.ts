@@ -5,6 +5,11 @@ function pagination (options: any) {
   // queryPagination: string, queryBox: string
 
   var pages = <HTMLElement>document.querySelector(`${options.queryClassPagination}`);
+  if (options.totalResult){
+    paginationCreate(pages, null, 1, options.totalResult, options.itemPages, scrollTop);
+    return;
+  }
+  
   var totalBox = document.querySelectorAll(options.listBox);
 
   var totalPage = Math.ceil(totalBox.length / options.itemPages);
@@ -134,7 +139,9 @@ function clickButton(objClass:any, totalBox:any, totalPage: number, itemPages:nu
 
       hiddenNextPrev(objClass, itemActive, totalPage);
       paginationCreate(objClass,totalBox, itemActive, totalPage, itemPages, scrollTop);
-      activeBox(totalBox, itemActive, itemPages);
+      if (totalBox){
+        activeBox(totalBox, itemActive, itemPages);
+      }
 
       if (scrollTop){
         scrollToTop(scrollTop.id, scrollTop.header);

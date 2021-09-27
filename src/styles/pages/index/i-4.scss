@@ -32,7 +32,8 @@
                 position: relative;
 
                 @include blockIndex(imgIndex4, height);
-                background: map-get($color, main);
+                // background: map-get($color, main);
+                background-color: #003F7A;
 
                 @include rp(tx){
                     display: none;

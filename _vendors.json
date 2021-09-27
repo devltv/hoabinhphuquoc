@@ -4,7 +4,6 @@
     ],
     "js": [
         "node_modules/jquery/dist/jquery.min.js",      
-        "node_modules/swiper/swiper-bundle.js",
         "node_modules/swiper/swiper-bundle.min.js",
 
         "node_modules/@fancyapps/ui/dist/fancybox.umd.js",
@@ -12,7 +11,7 @@
         "node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"
     ],
     "css": [
-        "node_modules/swiper/swiper-bundle.css",
+
         "node_modules/swiper/swiper-bundle.min.css",
         
         "node_modules/@fancyapps/ui/dist/fancybox.css",

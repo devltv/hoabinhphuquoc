@@ -232,18 +232,14 @@ function popupTravel(id: any = null){
   
               body.style.overflow = "hidden";
               popup.classList.add('show');
-              if (popup.classList.contains('show')){
-                activeItemOption();
-              }
+              activeItemOption();
   
               return;
             }
             else {
               body.style.overflow = "hidden";
               popup.classList.add('show');
-              if (popup.classList.contains('show')){
-                activeItemOption();
-              }
+              activeItemOption();
   
               console.log('popup failed!');
             }
@@ -346,6 +342,8 @@ function loadRestroom(){
 
 function intro5() {
   if (document.getElementById('intro-5__wrapper')) {
+    var in5 = document.getElementById('intro-5__wrapper');
+    console.log(in5);
     new Swiper(".intro-5", {
       slidesPerView: 2,
       spaceBetween: 0,
@@ -357,15 +355,15 @@ function intro5() {
       speed: 1200,
       // autoplay: {
       //   delay: 2500,
-       
       // },
+      
       breakpoints: {
         641: {
           slidesPerView: 3,
         },
         1025: {
-          slidesPerView: 4,
-        },
+          slidesPerView: 4
+        }
       },
     });
   }
@@ -375,10 +373,7 @@ function changeContent(){
   if(introChange){
     var nav_items = document.querySelectorAll(".intro-3__section--nav .intro-3__section--nav-items")
     var nav_content = document.querySelectorAll(".intro-3__section--content .intro-3__section--content-items")
-    if(!nav_items ){
-      return
-    }
-    if(!nav_content ){
+    if(!nav_items || nav_content){
       return
     }
     nav_items.forEach(element => element.addEventListener('click',()=>{
@@ -414,7 +409,7 @@ function changeContent(){
 }
 
 function intropagintion(){
-  // if(document.getElementById('library-1')){
+  if(document.getElementById('intro-3__wrapper')){
       var options ={
           queryClassPagination: "#intro-3__wrapper #intro-1 .box-pagination",
           listBox:"#intro-3__wrapper #intro-1 .content-news__items",
@@ -430,7 +425,7 @@ function intropagintion(){
 
     }
     pagination.pagination(options);
-  // }
+  }
 }
 
 export const intro = function(){
