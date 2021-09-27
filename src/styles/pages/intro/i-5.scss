@@ -59,7 +59,9 @@
                             &--icon,
                             &--name,
                             &--decs{
-                                
+                                p{
+                                    text-align: justify;
+                                }
                                 @include spaceIntro(s35, margin-bottom)
                             }
                             &--icon{

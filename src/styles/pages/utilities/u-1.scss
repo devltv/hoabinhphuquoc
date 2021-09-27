@@ -89,6 +89,10 @@
                 }
                 &__text{
                     @include utilitiesBox(p63, padding);
+                    p{
+                        line-height: 1.6;
+                        text-align: justify;
+                      }
                 }
                 
                

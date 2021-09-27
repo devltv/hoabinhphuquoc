@@ -50,15 +50,23 @@
                 height: 100%;
                 .image__map{
                     height: 55%;
+                    @include rp(tx){
+                        height: 45%;
+                    }
+                   
                 }
                 .introduce-text{
                     // overflow-y: scroll;
                     @include spaceIndex5(s40,padding);
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
+                    
                     align-content: center;
                     height: 45%;
+                    @include rp(tx){
+                        height: 55%;
+                    }
+                    
                     background-color: map-get($color, mainBg );
                     &--title{
                         @include title(s41);
@@ -67,6 +75,11 @@
                         color: map-get($color, main );
                     }
                     &--infor{
+                        @include spaceIndex5(s40,margin-top );
+                        
+                        &>*{
+                            line-height: 1.4;
+                        }
                         .infor--item{
                             &:not(:last-child){
                                 @include spaceIndex5(s20,margin-bottom);

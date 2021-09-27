@@ -89,6 +89,9 @@
             &-decs{
                 @include p-line-clamp(7);
                 color: map-get($color, base );
+                p{
+                    text-align: justify;
+                }
                 @include rp(pm){
                     @include p-line-clamp(4);
                 }

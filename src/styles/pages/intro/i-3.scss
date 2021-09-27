@@ -23,6 +23,9 @@
             @include spaceIntro(s30, padding-top);
             @include spaceIntro(s20, margin-bottom);
             @include  p-line-clamp(4);
+            p{
+                text-align: justify;
+            }
            
         }
         &__more{

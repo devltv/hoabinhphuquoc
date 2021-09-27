@@ -30,6 +30,10 @@
             &__text{
                 color: map-get($color, base);
                 margin: auto;
+                p{
+                    line-height: 1.6;
+                    text-align: justify;
+                  }
                 @include utilitiesBox(p35, padding);
                 @include rp(ps){
                     font-size: 1.6rem;
@@ -87,6 +91,12 @@
                 }
                 
                 margin-left: auto;
+                &--decs{
+                    p{
+                        text-align: justify;
+                        line-height: 1.4;
+                    }
+                }
                 &--title{
                     @include utilitiesBox(m-b-70, margin-bottom);
                     position: relative;

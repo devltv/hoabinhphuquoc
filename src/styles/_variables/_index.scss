@@ -75,6 +75,8 @@ $spaceIndex1: (
   ),
   s130: (
     default: 130px,
+    pm: 100px,
+    tm: 70px,
   ),
   s140: (
     default: 140px,
@@ -178,9 +180,11 @@ $spaceIndex5: (
   ),
   s40:(
     default: 40px,
-    pl: 40px,
-    pm: 30px,
+    pl: 30px,
+    // pm: 30px,
     ps: 20px,
+    ts: 15px,
+    mm: 10px,
   ),
   s20:(
     default: 20px,

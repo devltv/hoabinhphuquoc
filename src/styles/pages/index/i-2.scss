@@ -68,9 +68,9 @@
       $spaceButtonSwiper: 36px;
       padding: 0 $spaceButtonSwiper;
     }
-    @include rp(mm){
-      padding: 0;
-    }
+    // @include rp(mm){
+    //   padding: 0;
+    // }
 
     .swiper-button-next{
       right: calc(-#{$spaceButtonSwiper} - #{$wh});
@@ -90,7 +90,7 @@
         right: 0px;
       }
       @include rp(ml){
-        right: 10px;
+        right: 0px;
       }
     }
     .swiper-button-prev{
@@ -108,7 +108,7 @@
         left: 0;
       }
       @include rp(ml){
-        left: 10px;
+        left: 0px;
       }
     }
     & .restroom-box {
@@ -137,7 +137,7 @@
           padding: 18px 20px;
         }
         @media (max-width: map-get($media, mm)){
-          padding: 18px 8px;
+          padding: 18px 18px;
         }
       }
       &__title {
@@ -154,7 +154,7 @@
         &--size {
           // @include size(s41);
           @include title(s41);
-
+          @include family--primary;
           @include p-line-clamp(1);
 
           line-height: 1.4;
@@ -167,6 +167,8 @@
         &>*{
           @include size(s18);
           @include p-line-clamp(4);
+          text-align: justify;
+          line-height: 1.4;
         }
         
       }

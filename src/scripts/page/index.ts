@@ -8,6 +8,7 @@ function index1() {
       spaceBetween: 0,
       loop: true,
       autoplay: true,
+      deplay: 1500,
       pagination: {
         el: ".swiper-pagination",
 
@@ -282,7 +283,7 @@ function index6() {
       slidesPerView: 3,
       centeredSlides: true,
       spaceBetween: 0,
-      centeredSlidesBounds: true,
+      
 
       // slidesPerGroup: 3,
       loop: true,
