@@ -106,6 +106,9 @@
                                 color: map-get($color, main );
                             }
                             .decs{
+                                p{
+                                    text-align: justify;
+                                }
                                 @include  p-line-clamp(5);
                                 @include spaceIntro(m-r-10, margin-bottom);
                                 @include rp(tl){

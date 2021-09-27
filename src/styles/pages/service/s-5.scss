@@ -13,5 +13,13 @@
         @include spaceService3(bottomShopTitle, margin-top);
       }
     }
+    .box{
+      &__desc{
+        p{
+          line-height: 1.6;
+          text-align: justify;
+        }
+      }
+    }
   }
 }

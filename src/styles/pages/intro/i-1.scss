@@ -143,6 +143,8 @@
                 color: map-get($color, base );
                 p{
                     @include spaceIntro(s20, margin-bottom);
+                    text-align: justify;
+                    line-height: 1.4;
                 }
             }
             @include rp(tm){

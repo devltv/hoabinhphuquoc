@@ -1082,6 +1082,7 @@
                 .travel-content__item-desc{
                   display: block;
                   &>*{
+                    text-align: justify;
                     transform-origin: top;
                     height: auto;
                     animation: goHeight .16s ease-in-out;
