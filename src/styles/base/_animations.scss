@@ -11,13 +11,29 @@
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		transform: translate3d(0, 100px, 0);
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
 	}
 	100% {
 		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	}	
 }
+
+@keyframes fadeRightTo {
+	0% {
+		opacity: 0;
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
+	}
+	100% {
+		opacity: 1;
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+
+	}
+	
+}
+
 @keyframes fadeInRightUp {
 	0% {
 		opacity: 0;

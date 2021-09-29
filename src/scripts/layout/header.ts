@@ -4,11 +4,16 @@ function toggleHamberger() {
   if (document.getElementById('header')) {
     var header = document.querySelector('.header');
     var ham = document.querySelector('.header-main__button');
-    var nav = <HTMLElement>document.querySelector('.header-main__nav');
-
+    var nav = <HTMLElement>document.querySelector('.header-main__navMobile');
+    // console.log(window.innerWidth);
     ham.addEventListener('click', function () {
       nav.style.maxHeight = `calc(100vh - ${header.clientHeight}px)`;
-
+      if(window.innerWidth <= 640){
+        nav.style.height = `calc(100vh - ${header.clientHeight}px)`;
+      }
+      else{
+        nav.style.height = "";
+      }
       if (ham.classList.contains('show') && ham.classList.contains('active')) {
         ham.classList.remove('show');
         ham.classList.remove('active');
@@ -29,7 +34,7 @@ function toggleHamberger() {
 // Nếu không phải thì ta sẽ không cho hiển thị Menu nữa
 function activeHamberger(evt: any) {
   var btnHam = document.querySelector('.header-main__button');
-  var nav = document.querySelector('.header-main__nav');
+  var nav = document.querySelector('.header-main__navMobile');
 
   if (btnHam) {
     var evtTarget = evt.target;
@@ -65,11 +70,11 @@ function handleActiveHeader() {
     toggleHamberger();
     toggleLanguage();
     toggleOrder();
-    listOptionOrder();
+    listOptionOrder();  
 
     // resize window
     var btnHam = document.querySelector('.header-main__button');
-    var nav = document.querySelector('.header-main__nav');
+    var nav = document.querySelector('.header-main__navMobile');
 
     window.addEventListener('resize', function () {
       if (window.innerWidth > 1336) {
