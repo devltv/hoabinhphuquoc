@@ -25,6 +25,13 @@
                 }
                 
                 position: relative; 
+
+                display: none;
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+                &.show{
+                    display: block;
+                    animation: clipPathToLeft .7s ease forwards;
+                }
             }
                 
             &--color{

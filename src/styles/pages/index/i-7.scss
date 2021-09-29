@@ -36,17 +36,17 @@
 
     width: 100%;
 
-    & > * {
-      &:not(:first-child) {
-        margin-left: $sp;
+    // & > * {
+    //   &:nth-of-type(2n + 1) {
+    //     margin-left: $sp;
 
-        @include rp(tx){
-          margin-left: 0;
+    //     @include rp(tx){
+    //       margin-left: 0;
 
-          margin-top: $sp;
-        }
-      }
-    }
+    //       margin-top: $sp;
+    //     }
+    //   }
+    // }
 
     label {
       color: map-get($color, subInput);
@@ -133,6 +133,10 @@
             margin-left: 0;
             margin-top: $sp;
           }
+        }
+
+        &:not(:nth-of-type(n + 3)){
+          margin-left: 0;
         }
       }
 

@@ -9,9 +9,9 @@
     }
     &-box{
       &-list{
-        @include rp(ps){
-          justify-content: center;
-        }
+        justify-content: center;
+        // @include rp(ps){
+        // }
       }
       &__item{
         max-width: 416px;

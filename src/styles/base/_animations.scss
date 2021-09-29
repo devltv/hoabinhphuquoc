@@ -1,3 +1,13 @@
+@keyframes clipPathToLeft {
+	0%{
+		display: block;
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	}
+	100%{
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	}
+}
+
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
