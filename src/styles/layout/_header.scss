@@ -318,7 +318,177 @@
         width: 100%;
       }
     }
+    &__navMobile {
+      list-style-type: none;
+      display: none;
+      justify-content: flex-end;
+      align-items: center;
 
+      height: 100%;
+
+      &-item {
+        @include uppercase;
+
+        & > * {
+          @include bold;
+          @include size(s18);
+          color: map-get($color, main);
+          white-space: nowrap;
+
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 50%;
+            width: 0%;
+            opacity: 0;
+            height: 3px;
+            background-color: map-get($color, underline);
+            transition: 0.3s all ease;
+          }
+        }
+
+
+
+        &.active {
+          
+          &>*{
+            &::after {
+              width: 100%;
+              left: 0%;
+              opacity: 1;
+            }
+          }
+        }
+
+        &:hover {
+          &>*{
+            &::after {
+              width: 100%;
+              left: 0%;
+              opacity: 1;
+            }
+          }
+        }
+
+        @include rp(ps) {
+          // margin: 12px 0;
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          padding: 40px 0px;
+          
+          & > * {
+            display: block;
+            padding-bottom: 4px;
+            
+            color: map-get($color, mainBg );
+            
+            &::after {
+              top: calc(100% - 3px);
+            }
+          }
+          &:not(:first-child){
+            // border-top: 1px solid rgba(0, 0, 0, 0.16);
+           
+            
+          }
+        }
+        @include rp(mx){
+          width: 100%;
+          padding: 25px 60px;
+          justify-content: flex-start;
+        }
+        @include rp(sx){
+          padding: 25px 40px;
+        }
+      }
+      &-item + &-item {
+        @include spaceHeader(s42, margin-left);
+
+        @include rp(ps) {
+          margin-left: 0;
+         
+        }
+      }
+      &-item{
+        position: relative;
+        @include rp(mx){
+          &:not(:first-child)::after{
+            top: 0%;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            content: "";
+            background: rgba(255, 255, 255, 0.16);
+            width: 85% ;
+            height: 1px;
+          } 
+        }
+        
+      }
+      @include rp(ps) {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        
+        height: auto;
+        
+        // display: flex;
+        // justify-content: initial;
+        // align-items: center;
+        flex-wrap: wrap;
+
+        display: none;
+       
+          
+        
+        
+          &:not(:first-child)::after{
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            content: "";
+            background: rgba(255, 255, 255, 0.16);
+            width: 85% ;
+            height: 1px;
+          }
+          
+          @include rp(mx){
+            &:not(:first-child)::after{
+              width: 0%;
+              height: 0%;
+            }
+            
+          }
+        
+        &.active{
+          display: flex;
+          animation: fadeRightTo .3s ease forwards;
+        }
+
+        min-width: 100%;
+        @include rp(mx){
+          min-width: 100%;
+          width: 100%;
+          max-width: 100%;
+          flex-direction: column;
+        }
+        
+        background-color: map-get($color, main);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+
+        max-height: calc(100vh - 320px);
+        overflow-y: auto;
+      }
+
+      @include rp(ml){
+        width: 100%;
+      }
+    }
     &__button {
       width: 42px;
       height: 42px;
