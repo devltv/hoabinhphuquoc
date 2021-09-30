@@ -3,15 +3,19 @@ if banner
   - attributes["data-src"] = imgBanner;
 
   section#banner
-    .banner
-      .overlay
-      .banner-img 
-        img.lazyload(alt="banner")&attributes(attributes)
-      .container
-        .banner-content
-          .banner-content__titleSub
-              h3 welcome to
-          .banner-content__title
-            h2 Hòa Bình Phú Quốc
-          .banner-content__desc
-            p resort
+    .slide-banner
+      .swiper-container
+        .swiper-wrapper 
+          .swiper-slide
+            .banner
+              .overlay
+              .banner-img 
+                img.lazyload(alt="banner")&attributes(attributes)
+              .container
+                .banner-content
+                  .banner-content__titleSub
+                      h3 welcome to
+                  .banner-content__title
+                    h2 Hòa Bình Phú Quốc
+                  .banner-content__desc
+                    p resort

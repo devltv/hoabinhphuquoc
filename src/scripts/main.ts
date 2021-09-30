@@ -13,7 +13,9 @@ import * as fetchData from "./components/fetchData";
 
 // Layout
 import {header} from "./layout/header";
+import {banner} from "./layout/banner";
 import {GoogleMapApiController} from "./layout/GoogleMapApiController";
+
 // import {language} from "./layout/language";
 
 // Page
@@ -45,7 +47,9 @@ var swiper2 = new Swiper('.home-swiper-2', {
 // function Layout
 function layout(){
   header();
-  GoogleMapApiController()
+  GoogleMapApiController();
+  banner();
+
   // language();
 }
 
