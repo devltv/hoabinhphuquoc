@@ -65,33 +65,33 @@ function index2() {
     var moreLinks = document.querySelectorAll('#index2 .restroom-box .btn-link--more');
     moreLinks.forEach(function (link) {
       link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var dtHr = link.getAttribute('data-href');
-        var hr = link.getAttribute('href');
-        localStorage.setItem('url', `${hr}`);
+        // e.preventDefault();
+        // // var dtHr = link.getAttribute('data-href');
+        // // var hr = link.getAttribute('href');
+        // // // localStorage.setItem('url', `${hr}`);
 
-        var valueItem = "";
-        var tmpItem = link;
-        var count = 0;
-        if (!tmpItem.getAttribute('data-box')) {
-          do {
-            tmpItem = tmpItem.parentElement;
-            ++count;
-          } while (!tmpItem.getAttribute('data-box') && count < 100);
-        }
+        // // var valueItem = "";
+        // // var tmpItem = link;
+        // // var count = 0;
+        // // if (!tmpItem.getAttribute('data-box')) {
+        // //   do {
+        // //     tmpItem = tmpItem.parentElement;
+        // //     ++count;
+        // //   } while (!tmpItem.getAttribute('data-box') && count < 100);
+        // // }
 
-        valueItem = tmpItem.getAttribute('data-box')
-        if (!valueItem) {
-          console.log('Not found data-box!!');
-          e.preventDefault();
-          return false;
-        }
+        // // valueItem = tmpItem.getAttribute('data-box')
+        // // if (!valueItem) {
+        // //   console.log('Not found data-box!!');
+        // //   e.preventDefault();
+        // //   return false;
+        // // }
 
-        localStorage.setItem('box', `${valueItem}`);
+        // // localStorage.setItem('box', `${valueItem}`);
 
-        history.pushState({id: null}, hr, hr);
+        // // history.pushState({id: null}, hr, hr);
 
-        location.replace(dtHr);
+        // location.replace(dtHr);
         return true;
       })
     })
