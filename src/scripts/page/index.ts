@@ -244,7 +244,6 @@ function toggleIndex4() {
       }
     })
 
-    console.log(imgList)
     imgList.forEach(function(imgItem){
       var activeImg = imgItem.getAttribute('data-layout');
       if (itemActive === activeImg){
@@ -303,10 +302,9 @@ function index6() {
   if (document.getElementById('index6')) {
     new Swiper(".index-discover--swiper", {
       slidesPerView: 3,
-      centeredSlides: true,
       spaceBetween: 0,
+      centeredSlides: true,
       
-
       // slidesPerGroup: 3,
       loop: true,
       // loopFillGroupWithBlank: true,
