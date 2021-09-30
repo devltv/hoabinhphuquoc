@@ -4,7 +4,7 @@ function bannerSlide() {
       new Swiper(`.slide-banner  .swiper-container`, {
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: true,
+        // loop: true,
         autoplay: true,
         deplay: 3000,
         pagination: {
