@@ -14,19 +14,34 @@ function toggleHamberger() {
       else{
         nav.style.height = "";
       }
+      var bodyHeight = <HTMLElement> document.querySelector('body');
       if (ham.classList.contains('show') && ham.classList.contains('active')) {
         ham.classList.remove('show');
         ham.classList.remove('active');
 
         nav.classList.remove('active');
+
+        bodyHeight.classList.remove('enableSrcoll');
+        
       }
       else {
         ham.classList.add('show');
         ham.classList.add('active');
 
         nav.classList.add('active');
+
+        bodyHeight.classList.add('enableSrcoll');
+        
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+        
       }
     })
+    
+      
   }
 }
 
@@ -50,7 +65,7 @@ function activeHamberger(evt: any) {
     } while (evtTarget);
 
     // Neu ko thi se remove class active
-
+    
     btnHam.classList.remove('show');
     btnHam.classList.remove('active');
     nav.classList.remove('active');
