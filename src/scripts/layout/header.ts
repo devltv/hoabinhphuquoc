@@ -30,7 +30,6 @@ function toggleHamberger() {
 
         nav.classList.add('active');
 
-
       }
       if (ham.classList.contains('show') && ham.classList.contains('active') && window.innerWidth <= 640) {
         bodyHeight.classList.add('enableSrcoll'); 
