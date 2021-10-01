@@ -1,8 +1,11 @@
 #header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 5000;
+  
 }
+
 .enableSrcoll{
   height: 100vh;
   overflow: hidden;
@@ -480,6 +483,7 @@
           max-width: 100%;
           justify-content: flex-start;
           flex-direction: column;
+          flex-wrap: nowrap;
         }
         
         background-color: map-get($color, main);

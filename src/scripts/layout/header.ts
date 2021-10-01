@@ -10,9 +10,11 @@ function toggleHamberger() {
       nav.style.maxHeight = `calc(100vh - ${header.clientHeight}px)`;
       if(window.innerWidth <= 640){
         nav.style.height = `calc(100vh - ${header.clientHeight}px)`;
+        
       }
       else{
         nav.style.height = "";
+        
       }
       var bodyHeight = <HTMLElement> document.querySelector('body');
       if (ham.classList.contains('show') && ham.classList.contains('active')) {
@@ -21,8 +23,6 @@ function toggleHamberger() {
 
         nav.classList.remove('active');
 
-        bodyHeight.classList.remove('enableSrcoll');
-        
       }
       else {
         ham.classList.add('show');
@@ -30,19 +30,35 @@ function toggleHamberger() {
 
         nav.classList.add('active');
 
-        bodyHeight.classList.add('enableSrcoll');
-        
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        });
-        
+
       }
+      if (ham.classList.contains('show') && ham.classList.contains('active') && window.innerWidth <= 640) {
+        bodyHeight.classList.add('enableSrcoll'); 
+      }
+      else{
+        bodyHeight.classList.remove('enableSrcoll');
+      }
+
     })
     
       
   }
+}
+function srcoll(){
+  // if(document.getElementById('header')){
+  //   window.addEventListener('scroll', function (e) {
+  //     // console.log(document.querySelector('header').style.position)
+  //     const scrolled = window.scrollY;
+  //     const header_overlay = <HTMLElement>document.querySelector('#header');
+    
+  //     if(scrolled > 200){
+  //       header_overlay.classList.add('srcollMenu');
+  //     }else{
+  //       header_overlay.classList.remove('srcollMenu');
+  //     }
+    
+  //   })
+  // }
 }
 
 // Kiểm tra xem sự kiện click trên document có click vào trong menu hay submenu or là icon không?
@@ -480,4 +496,5 @@ export const header = function () {
   handleActiveHeader();
   dateTimePickerOrder();
   submitOrder();
+  srcoll();
 }
