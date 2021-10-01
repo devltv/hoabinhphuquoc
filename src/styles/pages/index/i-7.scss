@@ -135,9 +135,12 @@
           }
         }
 
-        &:not(:nth-of-type(n + 3)){
-          margin-left: 0;
+        @include rp(tx){
+          &:not(:nth-of-type(n + 3)){
+            margin-left: 0;
+          }
         }
+
       }
 
       &-item{

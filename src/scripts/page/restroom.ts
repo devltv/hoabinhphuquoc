@@ -253,18 +253,19 @@ function loadRestroom(){
       }
     })
 
-    if(localStorage.getItem('box') && localStorage.getItem('url')){
-      var boxLocal = localStorage.getItem('box');
-      var urlLocal = localStorage.getItem('url');
+    // if(localStorage.getItem('box') && localStorage.getItem('url')){
+    //   var boxLocal = localStorage.getItem('box');
+    //   var urlLocal = localStorage.getItem('url');
      
-      history.pushState({id: boxLocal}, urlLocal, urlLocal);
-      popupRest(boxLocal);
+    //   history.pushState({id: boxLocal}, urlLocal, urlLocal);
+    //   popupRest(boxLocal);
 
-      // localStorage.setItem('box', '');
-      // localStorage.setItem('url', '');
-    }
+    //   // localStorage.setItem('box', '');
+    //   // localStorage.setItem('url', '');
+    // }
 
-    else if (inpRest) {
+    // else 
+    if (inpRest) {
       var val = inpRest.getAttribute('data-url');
       var id = inpRest.getAttribute('data-box');
 

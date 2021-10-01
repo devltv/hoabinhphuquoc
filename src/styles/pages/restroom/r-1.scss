@@ -14,7 +14,9 @@
         // }
       }
       &__item{
-        max-width: 416px;
+        @media (max-width: map-get($media, tx)){
+          max-width: 440px;
+        }
         .box{
           box-shadow: 0 3px 6px rgba(0,0,0,.16);
           height: 100%;
@@ -53,7 +55,7 @@
               color: map-get($color, main);
               @include p-line-clamp(2);
               
-              @include title(s41);
+              @include title(s37);
               // min-height: 98px;
               // @include rp(pl){
               //   min-height: 90px;
