@@ -180,8 +180,8 @@
       // width: 186px;
       display: block;
       @include blockHeader(logoWidth, width);
-
       height: 100%;
+      padding: 8px 0;
       img {
         object-fit: contain;
         object-position: left;
