@@ -62,25 +62,25 @@
                         color: map-get($color, mainBg );
                         background: map-get($color, boxOverlay );
                         &>*{
-                            @include size(s51);
-                            @include rp(pm){
-                                font-size: 4.0rem;
-                            }
-                            @include rp(ps){
-                                font-size: 3.6rem;
-                            }
-                            @include rp(tx){
-                                font-size: 3.2rem;
-                            }
-                            @include rp(tl){
-                                font-size: 3rem;
-                            }
-                            @include rp(ts){
-                                font-size: 2.8rem;
-                            }
-                            @include rp(mm){
-                                font-size: 3rem;
-                            }
+                            @include size(s48);
+                            // @include rp(pm){
+                            //     font-size: 4.0rem;
+                            // }
+                            // @include rp(ps){
+                            //     font-size: 3.6rem;
+                            // }
+                            // @include rp(tx){
+                            //     font-size: 3.2rem;
+                            // }
+                            // @include rp(tl){
+                            //     font-size: 3rem;
+                            // }
+                            // @include rp(ts){
+                            //     font-size: 2.8rem;
+                            // }
+                            // @include rp(mm){
+                            //     font-size: 3rem;
+                            // }
                             @include rp(sl){
                                 font-size: 2.4rem;
                             }

@@ -192,6 +192,10 @@
                 max-width: 100%;
                 & > * {
                     background: map-get($color, main);
+                    transition: .3s all ease;
+                    &:hover{
+                        background: map-get($color, underline);
+                    }
                     
                     padding: 8px 16px;
                     @include rp(mx){

@@ -1,138 +1,197 @@
-.index{
-    .index-intro{
-        @include spaceIndex1(s130,padding-top);
-        @include spaceIndex1(s130,padding-bottom);
-        .content{
+.index {
+    .index-intro {
+        @include spaceIndex1(s130, padding-top);
+        @include spaceIndex1(s130, padding-bottom);
+
+        .content {
             position: relative;
             height: auto;
-            &__left{
-                @include spaceIndex1(s140,padding-top);
-                @include spaceIndex1(s120,padding-bottom);
-                @include spaceIndex1(s110,padding-left);
-                @include spaceIndex1(s110,padding-right);
+
+            &__left {
+                @include spaceIndex1(s140, padding-top);
+                @include spaceIndex1(s120, padding-bottom);
+                @include spaceIndex1(s110, padding-left);
+                @include spaceIndex1(s110, padding-right);
                 // @include spaceIndex1(s110,padding-right);
                 box-shadow: 0px 3px 6px rgba(#000, .16);
                 position: relative;
-                background: map-get($color, mainBg );
-                &::after{
+                background: map-get($color, mainBg);
+
+                margin-left: auto;
+
+                &::after {
                     position: absolute;
                     top: 30px;
                     left: 30px;
                     right: 30px;
                     bottom: 30px;
                     content: "";
-                    border:  1px solid map-get($color, main );
-                
+                    border: 2px solid #003F7A;
+
                     z-index: -1;
                 }
-                
+
                 z-index: 1;
             }
-            &__title{
-                @include spaceIndex1(s16,margin-bottom);
-              
-                &>*{
+
+            &__title {
+                width: 60%;
+                margin-left: auto;
+
+                @include rp(tm) {
+                    width: 100%;
+                    margin-left: initial;
+                }
+
+                @include spaceIndex1(s16, margin-bottom);
+
+                &>* {
                     @include size(s26);
-                    @include rp(pm){
+
+                    @include rp(pm) {
                         font-size: 24px;
-                     }
-                     @include rp(tx){
+                    }
+
+                    @include rp(tx) {
                         font-size: 20px;
-                     }
-                     @include rp(ml){
+                    }
+
+                    @include rp(ml) {
                         font-size: 18px;
-                     }
+                    }
+
                     @include bold;
-                    color: map-get($color, base );
+                    @include regular;
+                    color: map-get($color, base);
                 }
             }
-            &__titleSub{
-                @include spaceIndex1(s40,margin-bottom);
-                
-                &>*{
+
+            &__titleSub {
+                width: 60%;
+                margin-left: auto;
+
+                @include rp(tm) {
+                    width: 100%;
+                    margin-left: initial;
+                }
+
+                @include spaceIndex1(s40, margin-bottom);
+
+                &>* {
                     @include family--primary;
-                    @include title(s51);
-                    @include rp(pm){
-                       font-size: 44px;
-                    }
-                    @include rp(tx){
-                        font-size: 32px;
-                    }
-                     @include rp(tl){
-                        font-size: 31px;
-                     }
-                     @include rp(ml){
-                        font-size: 29px;
-                     }
-                     @include rp(ms){
-                        font-size: 27px;
-                     }
+                    @include title(s48);
+
+                    // @include rp(pm) {
+                    //     font-size: 40px;
+                    // }
+
+                    // @include rp(tx) {
+                    //     font-size: 30px;
+                    // }
+
+                    // @include rp(tl) {
+                    //     font-size: 28px;
+                    // }
+
+                    // @include rp(ml) {
+                    //     font-size: 26px;
+                    // }
+
+                    // @include rp(ms) {
+                    //     font-size: 26px;
+                    // }
+
                     color: map-get($color, main);
                     font-weight: bold;
-                    
+
                 }
             }
-            &__desc{
+
+            &__desc {
+                // width: 60%;
                 width: 60%;
-                @include rp(tm){
-                    width: 100%
-                 }
-                @include spaceIndex1(s50,margin-bottom);
+                margin-left: auto;
+
+                @include rp(tm) {
+                    width: 100%;
+                    margin-left: initial;
+                }
+
+                @include spaceIndex1(s50, margin-bottom);
                 @include p-line-clamp(6);
-                &>*{
+
+                &>* {
                     @include title(s18);
-                    @include rp(tx){
+
+                    @include rp(tx) {
                         font-size: 15px;
-                     }
-                    color: map-get($color, base );
+                    }
+
+                    color: map-get($color, base);
                     line-height: 1.6;
                     text-align: justify;
                 }
-                    
+
             }
-            &__more{
-                svg{
+
+            &__more {
+                svg {
                     margin-left: 8px;
                 }
 
             }
-            &__right{
+
+            &__right {
                 z-index: 1;
                 position: absolute;
                 top: 50%;
-                left: 50%;
+                // left: 50%;
+                left: 0;
                 transform: translateY(-50%);
-                @include rp(tm){
+
+                @include rp(tm) {
                     position: relative;
                     top: 0%;
                     left: 0%;
                     transform: translate(0);
                     margin-top: 16px;
-                    
+
                 }
+
                 // @include rp(ps){
                 //     left: 55%;
                 // }
             }
-            &__img{
-                @include blockIndex(wimgIndex1,width);
-                @include blockIndex(himgIndex1,height);
+
+            &__img {
+                @include blockIndex(wimgIndex1, width);
+                @include blockIndex(himgIndex1, height);
             }
-            &__slide{
+
+            &__slide {
                 position: relative;
-                .swiper-pagination{
+
+                .swiper-pagination {
                     position: absolute;
-                    right: 10%;
+                    // right: 10%;
                     bottom: -5%;
+                    left: 5%;
+
+                    .swiper-pagination-bullet{
+                        &:not(:first-child){
+                            margin-left: 4px;
+                        }
+                    }
                 }
-                @include rp(tm){
-                    .swiper-pagination{
+
+                @include rp(tm) {
+                    .swiper-pagination {
                         position: absolute;
                         right: 50%;
                         bottom: -10%;
                         transform: translateY(-50%);
                     }
-                    
+
                 }
             }
         }

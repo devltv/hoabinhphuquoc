@@ -81,7 +81,9 @@
                 // @include rp(pm){
                 //     font-size: 1.3vw;
                 // }
-                @include family--second;
+                // @include family--second;
+                @include family--primary;
+                
                 font-weight: bold;
                 color: map-get($color, main );
             }

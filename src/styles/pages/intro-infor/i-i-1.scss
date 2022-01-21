@@ -24,7 +24,7 @@
             }
             &__title{
                 @include spaceIntro-Infor(m-b-50, margin-bottom);
-                @include title(s51);
+                @include title(s48);
                 @include family--primary;
                 font-weight: bold;
                 color: map-get($color, main );

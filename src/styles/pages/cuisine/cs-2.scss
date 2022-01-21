@@ -18,7 +18,7 @@
             }
         }
 
-        &:nth-of-type(2n) {
+        &:nth-of-type(2n + 1) {
             .content {
                 &__left {
                     order: 2;
@@ -129,13 +129,13 @@
                     }
                 }
                 & > * {
-                    @include size(s51);
-                    @include rp(tx) {
-                        font-size: 50px;
-                    }
-                    @include rp(sx) {
-                        font-size: 46px;
-                    }
+                    @include title(s48);
+                    // @include rp(tx) {
+                    //     font-size: 50px;
+                    // }
+                    // @include rp(sx) {
+                    //     font-size: 46px;
+                    // }
                     @include bold;
                     @include family--primary;
                     color: map-get($color, main);

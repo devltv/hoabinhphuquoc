@@ -59,12 +59,12 @@
                     @include spacewedding4(s16,margin-bottom);
                     &>*{
                         color: map-get($color, mainBg );
-                        @include size(s58);
                         @include rp(mx){
                             font-size: 46px;
                         }
                         @include bold;
                         
+                        @include title(s48);
                     }
                 }
                &__desc{

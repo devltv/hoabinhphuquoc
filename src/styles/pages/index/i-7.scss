@@ -264,10 +264,12 @@
       transition: .3s all linear;
 
       &:hover{
-        background-color: white;
-        border: 2px solid map-get($color, main);
-
-        color: map-get($color, main);
+        // background-color: white;
+        // border: 2px solid map-get($color, main);
+        // color: map-get($color, main);
+        
+        border: 2px solid map-get($color, underline);
+        background-color: map-get($color, underline);
       }
     }
   }

@@ -107,7 +107,9 @@
                 left: 20px;
                 right: 20px;
                 bottom: 20px;
+                
                 border: 1px solid map-get($color, main );
+
                 @include rp(mx){
                     top: 14px;
                     left: 14px;
@@ -150,7 +152,7 @@
                 }
                 &--size {
                     // @include size(s58);
-                    @include title(s51);
+                    @include title(s48);
 
                     color: map-get($color, main);
                     font-weight: bold;
@@ -214,6 +216,7 @@
                 // @include blockIndex(boxRighrIndex4, height);
 
                 background: map-get($color, main);
+                
 
                 list-style-type: none;
                 text-align: center;
@@ -230,7 +233,9 @@
                 }
             
                 &.active {
-                    background: map-get($color, mainOverlay);
+                    // background: map-get($color, mainOverlay);
+                    background: map-get($color, underline);
+
                     width: 140px;
                     @include rp(tm){
                         width: 126px;
@@ -256,7 +261,8 @@
                         left: 100%;
                         height: 100%;
                         width: 10%;
-                        background: map-get($color, underline);
+                        // background: map-get($color, underline);
+                        background: white;
                     }
                 }
             }

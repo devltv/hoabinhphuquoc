@@ -3,13 +3,13 @@
   top: 0;
   width: 100%;
   z-index: 5000;
-  
 }
 
 .enableSrcoll{
   height: 100vh;
   overflow: hidden;
 }
+
 .header {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
 
@@ -43,7 +43,7 @@
             line-height: 2rem;
 
             & > * {
-              @include bold;
+              // @include bold;
               &:not(:first-child) {
                 margin-left: 12px;
 
@@ -225,21 +225,24 @@
         &.active {
           
           &>*{
-            &::after {
-              width: 100%;
-              left: 0%;
-              opacity: 1;
-            }
+            color: map-get($color, underline);
+
+            // &::after {
+            //   width: 100%;
+            //   left: 0%;
+            //   opacity: 1;
+            // }
           }
         }
 
         &:hover {
           &>*{
-            &::after {
-              width: 100%;
-              left: 0%;
-              opacity: 1;
-            }
+            color: map-get($color, underline);
+            // &::after {
+            //   width: 100%;
+            //   left: 0%;
+            //   opacity: 1;
+            // }
           }
         }
 

@@ -203,7 +203,7 @@
         &__title {
           text-align: center;
           & > * {
-            @include title(s51);
+            @include title(s48);
             @include bold;
             color: map-get($color, main);
             @include family--primary;

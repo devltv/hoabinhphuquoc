@@ -1,7 +1,9 @@
 // $default: calc(14px + (16 - 14) * ((100vw - 400px) / (1600 - 400)));
 $family: (
-	primary: "Judson",
-	second: "Open Sans",
+	// primary: "Judson",
+	// second: "Open Sans",
+	primary: "UTM-Americana",
+	second: "UTM-Avo"
 );
 
 $color: (
@@ -30,7 +32,10 @@ $color: (
 	boxOverlayActive: rgba(#000, 0.7),
 	boxOverlay: rgba(#000, 0.16),
 	boxLightOverlay: rgba(#ffffff, 0.95),
-	boxVideoOverlay: rgba(#707070, 0.7),
+
+	// boxVideoOverlay: rgba(#707070, 0.7),
+	boxVideoOverlay:#D1CECE,
+	
 	iconMain: #004a8f,
 	iconMainBgActive: #eeeeee,
 
@@ -40,7 +45,10 @@ $color: (
 	bulletBgHidden: #F8F8F8,
 	bulletBg: #c4c4c4,
 	bulletText: #c4c4c4,
-	bulletTextActive: #004a8f,
+
+	// bulletTextActive: #004a8f,
+	bulletTextActive: #ed1c24,
+
 	bulletBtn: #707070,
 	//cuisine bg overlay
 	bg-cuisineOverlay: rgba(#ECECEC,0.4),
@@ -131,6 +139,8 @@ $sizes: (
 
 	// TITLE
 	s45: 4.5rem,
+	s48: 4.8rem,
+
 	s50: 5.0rem,
 	s51: 5.1rem,
 	s58: 5.8rem,
@@ -153,6 +163,20 @@ $title: (
 		tx: 3.8rem,
 		ml: 3.4rem,
 	),
+	s48: (
+		default: 4.8rem,
+		pm: 4.0rem,
+		ps: 3.4rem,
+		tx: 3.2rem,
+		ml: 3rem,
+	),
+	s46: (
+		default: 4.6rem,
+		pm: 3.8rem,
+		ps: 3.1rem,
+		tx: 3rem,
+		ml: 2.8rem,
+	),
 	s45: (
 		default: 4.5rem,
 		pm: 4.2rem,
@@ -172,6 +196,20 @@ $title: (
 		tx: 3.2rem,
 		mx: 3.2rem,
 		ms: 2.8rem,
+	),
+	s36: (
+		default: 3.6rem,
+		pl: 3.1rem,
+		tx: 3.1rem,
+		mx: 3rem,
+		ms: 2.8rem,
+	),
+	s32: (
+		default: 3.2rem,
+		pl: 2.6rem,
+		tx: 2rem,
+		mx: 2rem,
+		ms: 1.8rem,
 	),
 
 

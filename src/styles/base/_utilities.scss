@@ -21,6 +21,10 @@
   font-weight: bold;
   @include size(s17);
 
+  transition: .3s ease;
+  &:hover{
+    background: map-get($color, underline);
+  }
 }
 .btn-link--more{
   display: inline-flex;
@@ -54,15 +58,24 @@
   }
 
  .title-shadow{
-    line-height: 1.05;
+    line-height: 1.2;
 
-    @include size(s215);
+    // @include size(s215);
+    // @include rp(ps){
+    //   font-size: 18.5rem;
+    // }
+    // @include rp(tl){
+    //   font-size: 13.5rem;
+    // }
+
+    font-size: 16rem;
     @include rp(ps){
-      font-size: 18.5rem;
+      font-size: 12rem;
     }
     @include rp(tl){
-      font-size: 13.5rem;
+      font-size: 10rem;
     }
+
 
     @include family--primary;
     color: map-get($color, textShadow );
@@ -75,7 +88,7 @@
 
   .title-content{
     // @include size(s51);
-    @include title(s51);
+    @include title(s48);
     @include family--primary;
     font-weight: bold;
     color: map-get($color, main );
@@ -102,7 +115,7 @@
   &>*{
     color: map-get($color, main);
     // @include size(s51);
-    @include title(s51);
+    @include title(s48);
 
     @include bold;
     @include family--primary;
@@ -246,11 +259,13 @@
       @include rp(mm) {
         font-size: 2.2rem;
       }
+
       @include family--primary;
       font-weight: bold;
       color: map-get($color, base);
       &.active {
-        color: map-get($color, main);
+        // color: map-get($color, main);
+        color: map-get($color, underline);
       }
     }
   }
@@ -291,6 +306,8 @@
           @include rp(ts) {
             font-size: 2.4rem;
           }
+
+          @include family--primary;
           font-weight: bold;
           color: map-get($color, main);
           

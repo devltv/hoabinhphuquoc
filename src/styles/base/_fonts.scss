@@ -7,19 +7,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap');
 // font-family: 'Judson', serif;
 
+@font-face {
+  font-family: "UTM-Americana";
+  src: url("./../fonts/UTM Americana.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UTM-Americana";
+  src: url("./../fonts/UTM AmericanaB.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "UTM-Americana";
+  src: url("./../fonts/UTM AmericanaItalic.ttf") format("truetype");
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "UTM-Avo";
+  src: url("./../fonts/UTM Avo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UTM-Avo";
+  src: url("./../fonts/UTM AvoBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UTM-Avo";
+  src: url("./../fonts/UTM AvoBold_Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "UTM-Avo";
+  src: url("./../fonts/UTM AvoItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
 // @font-face {
-//   font-family: "Lexend";
-//   src: url("DroidSerif-Regular-webfont.ttf") format("truetype");
+//   font-family: "UTM-Avo";
+//   src: url("./../UTM Avo.ttf") format("truetype");
 //   font-weight: normal;
 //   font-style: normal;
 // }
-
 // @font-face {
-//   font-family: "Lexend";
-//   src: url("DroidSerif-Italic-webfont.ttf") format("truetype");
-//   font-weight: normal;
+//   font-family: "UTM-Avo";
+//   src: url("./../UTM AvoBold.ttf") format("truetype");
+//   font-weight: bold;
+// }
+// @font-face {
+//   font-family: "UTM-Avo";
+//   src: url("./../UTM AvoItalic.ttf") format("truetype");
 //   font-style: italic;
 // }
+// @font-face {
+//   font-family: "UTM-Avo";
+//   src: url("./../UTM AvoBold_Italic.ttf") format("truetype");
+//   font-weight: bold;
+//   font-style: italic;
+// }
+
 
 // @font-face {
 //   font-family: "Lexend";

@@ -16,8 +16,10 @@
             @include title(s26);
             color: map-get($color,breadcrumb );
             @include spaceIntro(s30, margin-bottom);
-            @include family--second;
             font-weight: bold;
+            
+            // @include family--second;
+            @include family--primary;
         }
         &__decs{
             @include spaceIntro(s30, padding-top);
@@ -49,16 +51,17 @@
             @include blockIntro-3(Intro-nav, width);
             @include blockIntro-3(Intro-nav-flex, flex);
             &-items{
+                @include family--primary;
                 @include title(s26);
                 color: map-get($color, bulletText );
                 cursor: pointer;
                 transition: 0.2s ease-in-out;
                 &:hover{
-                    color: map-get($color,main );
+                    color: map-get($color, underline);
                 }
             }
             .active{
-                color: map-get($color, main );
+                color: map-get($color, underline );
             }
         }
         &--content{

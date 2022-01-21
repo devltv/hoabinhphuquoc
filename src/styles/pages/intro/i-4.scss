@@ -59,7 +59,7 @@
                         }
                         .title{
                             position: relative;
-                            @include title(s51);
+                            @include title(s48);
                             @include spaceIntro(s45, margin-bottom);
                             @include family--primary;
                             font-weight: bold;

@@ -59,6 +59,7 @@
                             &--icon,
                             &--name,
                             &--decs{
+
                                 p{
                                     text-align: justify;
                                 }
@@ -77,6 +78,8 @@
                                 @include title(s26);
                                 font-weight: bold;
                                 color: map-get($color, mainBg );
+                                @include family--primary;
+
                                 &::after{
                                     position: absolute;
                                     bottom: -15px;

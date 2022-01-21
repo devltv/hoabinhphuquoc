@@ -29,7 +29,7 @@
   }
 
   &-content {
-    width: 50%;
+    width: 80%;
     @include rp(mx){
       width: 80%;
     }
@@ -40,13 +40,18 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 25%;
+    // top: 25%;
+    // left: 50%;
+    // @include rp(tx){
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%,-50%);
+    // }
+
+    top: 50%;
     left: 50%;
-    @include rp(tx){
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
+    transform: translate(-50%,-50%);
+
     z-index: 1;
     &__titleSub {
       padding-bottom: 12px;
@@ -160,7 +165,6 @@
       }
     }
   }
-
 }
 //////////////// BANNER ///////////////////////////////
 ////////////////////////////////////////////////////////////

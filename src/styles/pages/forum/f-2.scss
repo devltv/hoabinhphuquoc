@@ -17,6 +17,7 @@
 
         display: inline-block;
         &>*{
+          @include family--primary;
           @include uppercase;
           @include title(s26);
           @include bold;
@@ -34,7 +35,7 @@
 
         transition: .16s all ease;
         &.active{
-          color: map-get($color, main);
+          color: map-get($color, underline);
         }
       }
     }
@@ -234,9 +235,12 @@
           @include spaceForum2(s72, margin-left);
         }
         &>*{
+          @include family--primary;
           @include bold;
           @include title(s26);
           color: map-get($color, main);
+
+          transition: .3s linear;
         }
         position: relative;
         &::after{
@@ -253,9 +257,13 @@
         }
 
         &.active{
+          &>*{
+            color: map-get($color, main);
+          }
           &::after{
             width: 100%;
             opacity: 1;
+            background-color: map-get($color, underline);
             // border-bottom: 4px solid map-get($color, main);
           }
         }

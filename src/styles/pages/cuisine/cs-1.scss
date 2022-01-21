@@ -21,6 +21,7 @@
                 // @include blockCuisine(sectionCuisine1,height);
                 &__left{
                     width: 50%;
+                    order: 2;
                     @include rp(tm){
                         width: 80%;
                         order: 2;
@@ -73,10 +74,10 @@
                     }
                 }
                 &__right{
-                    @include spaceCuisine1(sRight,padding-left);
-                    
+                    @include spaceCuisine1(sRight,padding-right);
                     width: 50%;
-
+                    
+                    order: 1;
                     @include rp(tm){
                         width: 80%;
                         order: 1;
@@ -103,9 +104,9 @@
                         @include rp(mm){
                             font-size: 18px;
                         }
-                        font-weight: bold;
+                        // font-weight: bold;
                         color: map-get($color, base );
-                        
+                        @include regular;
                     }
                 
                 }
@@ -113,26 +114,26 @@
                     @include spaceCuisine1(s54,margin-bottom);
                     &>*{
                         @include family--primary;
-                        @include size(s50);
-                        @include rp(pm){
-                            font-size: 48px;
-                        }
-                        @include rp(tx){
-                            font-size: 46px;
-                        }
-                        @include rp(tx){
-                            font-size: 44px;
-                        }
+                        @include title(s46);
+                        // @include rp(pm){
+                        //     font-size: 48px;
+                        // }
+                        // @include rp(tx){
+                        //     font-size: 46px;
+                        // }
+                        // @include rp(tx){
+                        //     font-size: 44px;
+                        // }
                 
-                        @include rp(mm){
-                            font-size: 40px;
-                        }
-                        @include rp(sx){
-                            font-size: 34px;
-                        }
-                        @include rp(sl){
-                            font-size: 30px;
-                        }
+                        // @include rp(mm){
+                        //     font-size: 40px;
+                        // }
+                        // @include rp(sx){
+                        //     font-size: 34px;
+                        // }
+                        // @include rp(sl){
+                        //     font-size: 30px;
+                        // }
                         font-weight: bold;
                         color: map-get($color, main );
                     }

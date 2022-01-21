@@ -38,6 +38,12 @@
                             @include italic;
                         }
                     }
+
+                    // input[type="submit"]{
+                    //     &:hover, &:active{
+                    //         background: map-get($color, underline );
+                    //     }
+                    // }
                 }
                 .input-btn{
                     width: 100%;
@@ -51,8 +57,9 @@
                         font-weight: bold;
                         transition: .2s ease-in-out;
                         &:hover{
-                            background: map-get($color, mainBg );
-                            color: map-get($color, main );
+                            // background: map-get($color, mainBg );
+                            // color: map-get($color, main );
+                            background: map-get($color, underline );
                         }
                     }
                 }

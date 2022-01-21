@@ -20,7 +20,7 @@
 
     &--size{
     // @include size(s51);
-    @include title(s51);
+    @include title(s48);
     @include family--primary;
     color: map-get($color, mainBg);
     font-weight: bold;

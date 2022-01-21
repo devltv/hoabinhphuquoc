@@ -41,10 +41,10 @@
                     background: map-get($color, underline);
                 }
                 & > * {
-                    @include size(s51);
-                    @include rp(tm){
-                        font-size: 4.6rem;
-                    }
+                    @include title(s48);
+                    // @include rp(tm){
+                    //     font-size: 4.6rem;
+                    // }
                     @include family--primary;
                     @include bold;
                     color: map-get($color, main);
@@ -52,12 +52,12 @@
             }
             &__desc {
                 & > * {
-                    @include size(s18);
                     @include rp(pm){
                         font-size: 1.6rem;
                     }
                     line-height: 1.4;
                     color: map-get($color, base);
+                    @include size(s18);
                 }
             }
             &__list {
@@ -109,16 +109,16 @@
                     opacity: .3;
                 }
                 & > * {
-                    @include size(s26);
-                    @include rp(tm){
-                        font-size: 2.2rem;
-                    }
-                    @include rp(ml){
-                        font-size: 2rem;
-                    }
-                    @include rp(mm){
-                        font-size: 1.8rem;
-                    }
+                    @include title(s26);
+                    // @include rp(tm){
+                    //     font-size: 2.2rem;
+                    // }
+                    // @include rp(ml){
+                    //     font-size: 2rem;
+                    // }
+                    // @include rp(mm){
+                    //     font-size: 1.8rem;
+                    // }
                     @include bold;
                     color: map-get($color, base);
 

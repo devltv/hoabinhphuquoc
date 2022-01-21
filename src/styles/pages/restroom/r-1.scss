@@ -55,7 +55,8 @@
               color: map-get($color, main);
               @include p-line-clamp(2);
               
-              @include title(s37);
+              // @include title(s37);
+              @include title(s26);
               // min-height: 98px;
               // @include rp(pl){
               //   min-height: 90px;

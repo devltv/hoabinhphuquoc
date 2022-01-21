@@ -119,15 +119,17 @@
         &--text{
             @include spaceIntro(p-l-53, padding-left);
             &-headtitle{
-                text-transform: uppercase;
+                // text-transform: uppercase;
+                // font-weight: normal;
+                @include regular;
+
                 @include spaceIntro(s20, margin-bottom);
                 @include title(s26);
-                font-weight: bold;
                 color: map-get($color, base );
             }
             &-title{
                 @include spaceIntro(m-b-60, margin-bottom);
-                @include title(s51);
+                @include title(s48);
                 a{
 
                     color: map-get($color, main );

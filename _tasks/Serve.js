@@ -41,6 +41,10 @@ export default (_) => {
 		return FileManage(_).Copy("src/api/**", "dist/api");
 	};
 
+	// const watchFonts = () => {
+	// 	return FileManage(_).Copy("src/fonts/**", "dist/fonts");
+	// };
+
 	function server() {
 		_.bSync.init({
 			notify: false,
@@ -110,6 +114,8 @@ export default (_) => {
 		_.gulp.watch(["src/styles/**/**.scss"], _.gulp.series(watchScss));
 
 		_.gulp.watch("src/api/**/**", _.gulp.series(watchApi));
+
+		// _.gulp.watch("src/fonts/**/**", _.gulp.series(watchFonts));
 
 		_.gulp.watch(["dist/**/**.**"]).on("change", _.bSync.reload);
 	}

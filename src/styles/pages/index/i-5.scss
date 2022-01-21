@@ -18,7 +18,10 @@
             right: 0;
             @include blockIndex(mapBtnIndex, width);
             height: 100%;
-            background-color: map-get($color, base );
+            
+            background-color: map-get($color, main );
+
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,6 +47,7 @@
             // max-width: 300px;
             height: 100%;
             background-color: map-get($color, boxVideoOverlay );
+
             @include spaceIndex5(s15, padding);
             .pic__infor{
                 width: 100%;
@@ -69,7 +73,9 @@
                     
                     background-color: map-get($color, mainBg );
                     &--title{
-                        @include title(s41);
+                        // @include title(s41);
+                        @include title(s32);
+
                         @include family--primary;
                         font-weight: bold;
                         color: map-get($color, main );
