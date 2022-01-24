@@ -19,6 +19,7 @@ function bannerSlide() {
     var hHeader = header.offsetHeight;
     var banner = document.getElementById('banner');
     var bannerSub = document.getElementById('bannerSub');
+    var booking = document.getElementById('booking');
 
     if (bannerSub){
       bannerSub.style.marginTop = `${hHeader}px`;
@@ -26,10 +27,12 @@ function bannerSlide() {
     if (banner){
       banner.style.marginTop = `${hHeader}px`;
     }
+    if (booking){
+      booking.style.paddingTop = `${hHeader}px`;
+    }
   
     window.addEventListener('resize', function(e){
       // resize sub banner
-      console.log(header.offsetHeight);
       setTimeout(function(){
         var hHeaderResize = header.offsetHeight;
     
@@ -38,6 +41,9 @@ function bannerSlide() {
         }
         if (bannerSub){
           bannerSub.style.marginTop = `${hHeaderResize}px`;
+        }
+        if (booking){
+          booking.style.paddingTop = `${hHeaderResize}px`;
         }
       }, 600);
     })

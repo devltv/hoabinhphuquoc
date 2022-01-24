@@ -10,7 +10,6 @@ function initMap(){
             center: { lat: 10.212398668954327, lng: 103.97652478376206 },
             zoom: 15,
             styles:
-            
             [
                 
                 {
